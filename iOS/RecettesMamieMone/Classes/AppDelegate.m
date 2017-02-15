@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "RootViewController.h"
 
 @interface AppDelegate ()
 
@@ -52,7 +52,7 @@
 - (void)setupRootViewController
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [ViewController new];
+    self.window.rootViewController = [RootViewController instance];
     [self.window makeKeyAndVisible];
 }
 

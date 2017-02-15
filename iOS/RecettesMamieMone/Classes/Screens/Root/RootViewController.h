@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  RootViewController.h
 //  RecettesMamieMone
 //
 //  Created by Alexandre Thomas on 2/15/17.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface RootViewController : UIViewController
 
++ (instancetype)instance;
 
 @end
-
