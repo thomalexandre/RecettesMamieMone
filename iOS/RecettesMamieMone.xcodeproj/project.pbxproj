@@ -13,6 +13,9 @@
 		9133C5691E54B57200959AFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9133C5671E54B57200959AFF /* LaunchScreen.storyboard */; };
 		9133C5741E54B57200959AFF /* RecettesMamieMoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9133C5731E54B57200959AFF /* RecettesMamieMoneTests.m */; };
 		91FEAE6B1E54FDD30023FEBE /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE6A1E54FDD30023FEBE /* RootViewController.m */; };
+		91FEAE701E54FE870023FEBE /* UIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE6F1E54FE870023FEBE /* UIView+Utils.m */; };
+		91FEAE731E54FEB00023FEBE /* UIViewController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE721E54FEB00023FEBE /* UIViewController+Utils.m */; };
+		91FEAE761E54FEE10023FEBE /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE751E54FEE10023FEBE /* NSString+Utils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,12 @@
 		9133C5751E54B57200959AFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91FEAE691E54FDD30023FEBE /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		91FEAE6A1E54FDD30023FEBE /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		91FEAE6E1E54FE870023FEBE /* UIView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utils.h"; sourceTree = "<group>"; };
+		91FEAE6F1E54FE870023FEBE /* UIView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utils.m"; sourceTree = "<group>"; };
+		91FEAE711E54FEB00023FEBE /* UIViewController+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Utils.h"; sourceTree = "<group>"; };
+		91FEAE721E54FEB00023FEBE /* UIViewController+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utils.m"; sourceTree = "<group>"; };
+		91FEAE741E54FEE10023FEBE /* NSString+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
+		91FEAE751E54FEE10023FEBE /* NSString+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +119,7 @@
 			children = (
 				9133C55C1E54B57200959AFF /* AppDelegate.h */,
 				9133C55D1E54B57200959AFF /* AppDelegate.m */,
+				91FEAE6C1E54FE4B0023FEBE /* Utils */,
 				91FEAE671E54FC010023FEBE /* Screens */,
 			);
 			path = Classes;
@@ -146,6 +156,27 @@
 				91FEAE6A1E54FDD30023FEBE /* RootViewController.m */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		91FEAE6C1E54FE4B0023FEBE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				91FEAE6D1E54FE680023FEBE /* Category */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		91FEAE6D1E54FE680023FEBE /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				91FEAE6E1E54FE870023FEBE /* UIView+Utils.h */,
+				91FEAE6F1E54FE870023FEBE /* UIView+Utils.m */,
+				91FEAE711E54FEB00023FEBE /* UIViewController+Utils.h */,
+				91FEAE721E54FEB00023FEBE /* UIViewController+Utils.m */,
+				91FEAE741E54FEE10023FEBE /* NSString+Utils.h */,
+				91FEAE751E54FEE10023FEBE /* NSString+Utils.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,7 +283,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9133C55E1E54B57200959AFF /* AppDelegate.m in Sources */,
+				91FEAE761E54FEE10023FEBE /* NSString+Utils.m in Sources */,
 				91FEAE6B1E54FDD30023FEBE /* RootViewController.m in Sources */,
+				91FEAE701E54FE870023FEBE /* UIView+Utils.m in Sources */,
+				91FEAE731E54FEB00023FEBE /* UIViewController+Utils.m in Sources */,
 				9133C55B1E54B57200959AFF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
