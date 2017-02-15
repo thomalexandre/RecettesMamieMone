@@ -81,10 +81,8 @@
 		9133C5581E54B57200959AFF /* RecettesMamieMone */ = {
 			isa = PBXGroup;
 			children = (
-				9133C55C1E54B57200959AFF /* AppDelegate.h */,
-				9133C55D1E54B57200959AFF /* AppDelegate.m */,
-				9133C55F1E54B57200959AFF /* ViewController.h */,
-				9133C5601E54B57200959AFF /* ViewController.m */,
+				91FEAE651E54FBD00023FEBE /* Resources */,
+				91FEAE641E54FBB80023FEBE /* Classes */,
 				9133C5621E54B57200959AFF /* Main.storyboard */,
 				9133C5651E54B57200959AFF /* Assets.xcassets */,
 				9133C5671E54B57200959AFF /* LaunchScreen.storyboard */,
@@ -109,6 +107,40 @@
 				9133C5751E54B57200959AFF /* Info.plist */,
 			);
 			path = RecettesMamieMoneTests;
+			sourceTree = "<group>";
+		};
+		91FEAE641E54FBB80023FEBE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9133C55C1E54B57200959AFF /* AppDelegate.h */,
+				9133C55D1E54B57200959AFF /* AppDelegate.m */,
+				91FEAE671E54FC010023FEBE /* Screens */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		91FEAE651E54FBD00023FEBE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				91FEAE661E54FBF10023FEBE /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		91FEAE661E54FBF10023FEBE /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		91FEAE671E54FC010023FEBE /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				9133C55F1E54B57200959AFF /* ViewController.h */,
+				9133C5601E54B57200959AFF /* ViewController.m */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
