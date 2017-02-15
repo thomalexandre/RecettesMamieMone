@@ -115,7 +115,6 @@
 			children = (
 				91FEAE651E54FBD00023FEBE /* Resources */,
 				91FEAE641E54FBB80023FEBE /* Classes */,
-				9133C5671E54B57200959AFF /* LaunchScreen.storyboard */,
 				9133C5591E54B57200959AFF /* Supporting Files */,
 			);
 			path = RecettesMamieMone;
@@ -157,6 +156,7 @@
 			children = (
 				91FEAE851E54FFCF0023FEBE /* Fonts */,
 				91FEAE661E54FBF10023FEBE /* Images */,
+				9133C5671E54B57200959AFF /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -390,6 +390,7 @@
 				9133C5681E54B57200959AFF /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
