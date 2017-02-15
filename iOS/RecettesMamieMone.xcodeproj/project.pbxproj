@@ -25,6 +25,7 @@
 		91FEAE8D1E54FFF20023FEBE /* SF-UI-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91FEAE881E54FFF20023FEBE /* SF-UI-Text-Medium.otf */; };
 		91FEAE8E1E54FFF20023FEBE /* SF-UI-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91FEAE891E54FFF20023FEBE /* SF-UI-Text-Regular.otf */; };
 		91FEAE8F1E54FFF20023FEBE /* SF-UI-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91FEAE8A1E54FFF20023FEBE /* SF-UI-Text-Semibold.otf */; };
+		91FEAE921E5500AE0023FEBE /* ConfigurationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE911E5500AE0023FEBE /* ConfigurationManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		91FEAE881E54FFF20023FEBE /* SF-UI-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Medium.otf"; sourceTree = "<group>"; };
 		91FEAE891E54FFF20023FEBE /* SF-UI-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Regular.otf"; sourceTree = "<group>"; };
 		91FEAE8A1E54FFF20023FEBE /* SF-UI-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Semibold.otf"; sourceTree = "<group>"; };
+		91FEAE901E5500AE0023FEBE /* ConfigurationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigurationManager.h; sourceTree = "<group>"; };
+		91FEAE911E5500AE0023FEBE /* ConfigurationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurationManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +210,8 @@
 		91FEAE771E54FF030023FEBE /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				91FEAE901E5500AE0023FEBE /* ConfigurationManager.h */,
+				91FEAE911E5500AE0023FEBE /* ConfigurationManager.m */,
 				91FEAE7C1E54FF5D0023FEBE /* DataManager.h */,
 				91FEAE7D1E54FF5D0023FEBE /* DataManager.m */,
 				91FEAE7F1E54FF780023FEBE /* StorageManager.h */,
@@ -356,6 +361,7 @@
 				91FEAE841E54FFB50023FEBE /* ThemeManager.m in Sources */,
 				91FEAE731E54FEB00023FEBE /* UIViewController+Utils.m in Sources */,
 				9133C55B1E54B57200959AFF /* main.m in Sources */,
+				91FEAE921E5500AE0023FEBE /* ConfigurationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
