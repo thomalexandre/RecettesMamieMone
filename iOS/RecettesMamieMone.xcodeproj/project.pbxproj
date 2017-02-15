@@ -16,6 +16,15 @@
 		91FEAE701E54FE870023FEBE /* UIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE6F1E54FE870023FEBE /* UIView+Utils.m */; };
 		91FEAE731E54FEB00023FEBE /* UIViewController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE721E54FEB00023FEBE /* UIViewController+Utils.m */; };
 		91FEAE761E54FEE10023FEBE /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE751E54FEE10023FEBE /* NSString+Utils.m */; };
+		91FEAE7B1E54FF3C0023FEBE /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE7A1E54FF3C0023FEBE /* Recipe.m */; };
+		91FEAE7E1E54FF5D0023FEBE /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE7D1E54FF5D0023FEBE /* DataManager.m */; };
+		91FEAE811E54FF780023FEBE /* StorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE801E54FF780023FEBE /* StorageManager.m */; };
+		91FEAE841E54FFB50023FEBE /* ThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE831E54FFB50023FEBE /* ThemeManager.m */; };
+		91FEAE8B1E54FFF20023FEBE /* SF-UI-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91FEAE861E54FFF20023FEBE /* SF-UI-Text-Bold.otf */; };
+		91FEAE8C1E54FFF20023FEBE /* SF-UI-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91FEAE871E54FFF20023FEBE /* SF-UI-Text-Light.otf */; };
+		91FEAE8D1E54FFF20023FEBE /* SF-UI-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91FEAE881E54FFF20023FEBE /* SF-UI-Text-Medium.otf */; };
+		91FEAE8E1E54FFF20023FEBE /* SF-UI-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91FEAE891E54FFF20023FEBE /* SF-UI-Text-Regular.otf */; };
+		91FEAE8F1E54FFF20023FEBE /* SF-UI-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91FEAE8A1E54FFF20023FEBE /* SF-UI-Text-Semibold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +56,19 @@
 		91FEAE721E54FEB00023FEBE /* UIViewController+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utils.m"; sourceTree = "<group>"; };
 		91FEAE741E54FEE10023FEBE /* NSString+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
 		91FEAE751E54FEE10023FEBE /* NSString+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
+		91FEAE791E54FF3C0023FEBE /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
+		91FEAE7A1E54FF3C0023FEBE /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
+		91FEAE7C1E54FF5D0023FEBE /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		91FEAE7D1E54FF5D0023FEBE /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		91FEAE7F1E54FF780023FEBE /* StorageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageManager.h; sourceTree = "<group>"; };
+		91FEAE801E54FF780023FEBE /* StorageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageManager.m; sourceTree = "<group>"; };
+		91FEAE821E54FFB50023FEBE /* ThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeManager.h; sourceTree = "<group>"; };
+		91FEAE831E54FFB50023FEBE /* ThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeManager.m; sourceTree = "<group>"; };
+		91FEAE861E54FFF20023FEBE /* SF-UI-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Bold.otf"; sourceTree = "<group>"; };
+		91FEAE871E54FFF20023FEBE /* SF-UI-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Light.otf"; sourceTree = "<group>"; };
+		91FEAE881E54FFF20023FEBE /* SF-UI-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Medium.otf"; sourceTree = "<group>"; };
+		91FEAE891E54FFF20023FEBE /* SF-UI-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Regular.otf"; sourceTree = "<group>"; };
+		91FEAE8A1E54FFF20023FEBE /* SF-UI-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Semibold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +141,8 @@
 			children = (
 				9133C55C1E54B57200959AFF /* AppDelegate.h */,
 				9133C55D1E54B57200959AFF /* AppDelegate.m */,
+				91FEAE781E54FF240023FEBE /* Model */,
+				91FEAE771E54FF030023FEBE /* Managers */,
 				91FEAE6C1E54FE4B0023FEBE /* Utils */,
 				91FEAE671E54FC010023FEBE /* Screens */,
 			);
@@ -128,6 +152,7 @@
 		91FEAE651E54FBD00023FEBE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				91FEAE851E54FFCF0023FEBE /* Fonts */,
 				91FEAE661E54FBF10023FEBE /* Images */,
 			);
 			path = Resources;
@@ -177,6 +202,40 @@
 				91FEAE751E54FEE10023FEBE /* NSString+Utils.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		91FEAE771E54FF030023FEBE /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				91FEAE7C1E54FF5D0023FEBE /* DataManager.h */,
+				91FEAE7D1E54FF5D0023FEBE /* DataManager.m */,
+				91FEAE7F1E54FF780023FEBE /* StorageManager.h */,
+				91FEAE801E54FF780023FEBE /* StorageManager.m */,
+				91FEAE821E54FFB50023FEBE /* ThemeManager.h */,
+				91FEAE831E54FFB50023FEBE /* ThemeManager.m */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		91FEAE781E54FF240023FEBE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				91FEAE791E54FF3C0023FEBE /* Recipe.h */,
+				91FEAE7A1E54FF3C0023FEBE /* Recipe.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		91FEAE851E54FFCF0023FEBE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				91FEAE861E54FFF20023FEBE /* SF-UI-Text-Bold.otf */,
+				91FEAE871E54FFF20023FEBE /* SF-UI-Text-Light.otf */,
+				91FEAE881E54FFF20023FEBE /* SF-UI-Text-Medium.otf */,
+				91FEAE891E54FFF20023FEBE /* SF-UI-Text-Regular.otf */,
+				91FEAE8A1E54FFF20023FEBE /* SF-UI-Text-Semibold.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,7 +322,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91FEAE8F1E54FFF20023FEBE /* SF-UI-Text-Semibold.otf in Resources */,
+				91FEAE8B1E54FFF20023FEBE /* SF-UI-Text-Bold.otf in Resources */,
 				9133C5691E54B57200959AFF /* LaunchScreen.storyboard in Resources */,
+				91FEAE8E1E54FFF20023FEBE /* SF-UI-Text-Regular.otf in Resources */,
+				91FEAE8C1E54FFF20023FEBE /* SF-UI-Text-Light.otf in Resources */,
+				91FEAE8D1E54FFF20023FEBE /* SF-UI-Text-Medium.otf in Resources */,
 				9133C5661E54B57200959AFF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,9 +347,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9133C55E1E54B57200959AFF /* AppDelegate.m in Sources */,
+				91FEAE7B1E54FF3C0023FEBE /* Recipe.m in Sources */,
 				91FEAE761E54FEE10023FEBE /* NSString+Utils.m in Sources */,
 				91FEAE6B1E54FDD30023FEBE /* RootViewController.m in Sources */,
 				91FEAE701E54FE870023FEBE /* UIView+Utils.m in Sources */,
+				91FEAE7E1E54FF5D0023FEBE /* DataManager.m in Sources */,
+				91FEAE811E54FF780023FEBE /* StorageManager.m in Sources */,
+				91FEAE841E54FFB50023FEBE /* ThemeManager.m in Sources */,
 				91FEAE731E54FEB00023FEBE /* UIViewController+Utils.m in Sources */,
 				9133C55B1E54B57200959AFF /* main.m in Sources */,
 			);
