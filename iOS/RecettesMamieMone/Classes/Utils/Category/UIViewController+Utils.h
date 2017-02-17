@@ -10,4 +10,20 @@
 
 @interface UIViewController (Utils)
 
+/// Add content view controller as a sub view controller. view must be in the hierarchy.
+- (void)addContentController:(UIViewController *)content toView:(UIView *)view;
+
+// Same as above and add margin.
+- (void)addContentController:(UIViewController *)content toView:(UIView *)view
+               withTopMargin:(float)top
+             withRightMargin:(float)right
+            withBottomMargin:(float)bottom
+              withleftMargin:(float)left;
+
+/// Add content view controller as a sub view controller.
+- (void)addContentController:(UIViewController *)content;
+
+// Remove the content view controller from the current view controller.
+- (void)removeContentController:(UIViewController *)content;
+
 @end

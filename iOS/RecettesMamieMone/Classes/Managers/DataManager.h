@@ -7,9 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Recipe.h"
 
 @interface DataManager : NSObject
 
 + (instancetype)instance;
+
+#pragma mark - Recipes Management
+
+/// Load all recipes from the database, and return in the completion block.
+- (void)recipes:(void (^)(NSArray<Recipe *> *recipes))completion;
 
 @end

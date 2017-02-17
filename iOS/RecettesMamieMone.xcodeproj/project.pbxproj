@@ -15,6 +15,9 @@
 		9133C5661E54B57200959AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9133C5651E54B57200959AFF /* Assets.xcassets */; };
 		9133C5691E54B57200959AFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9133C5671E54B57200959AFF /* LaunchScreen.storyboard */; };
 		9133C5741E54B57200959AFF /* RecettesMamieMoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9133C5731E54B57200959AFF /* RecettesMamieMoneTests.m */; };
+		91EB571F1E5796F000131FD4 /* RecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB571E1E5796F000131FD4 /* RecipeViewController.m */; };
+		91EB57221E5796FA00131FD4 /* RecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB57211E5796FA00131FD4 /* RecipesViewController.m */; };
+		91EB57251E57978A00131FD4 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB57241E57978A00131FD4 /* UIView+Layout.m */; };
 		91FEAE6B1E54FDD30023FEBE /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE6A1E54FDD30023FEBE /* RootViewController.m */; };
 		91FEAE701E54FE870023FEBE /* UIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE6F1E54FE870023FEBE /* UIView+Utils.m */; };
 		91FEAE731E54FEB00023FEBE /* UIViewController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE721E54FEB00023FEBE /* UIViewController+Utils.m */; };
@@ -57,6 +60,12 @@
 		9133C56F1E54B57200959AFF /* RecettesMamieMoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecettesMamieMoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9133C5731E54B57200959AFF /* RecettesMamieMoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecettesMamieMoneTests.m; sourceTree = "<group>"; };
 		9133C5751E54B57200959AFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91EB571D1E5796F000131FD4 /* RecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeViewController.h; sourceTree = "<group>"; };
+		91EB571E1E5796F000131FD4 /* RecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeViewController.m; sourceTree = "<group>"; };
+		91EB57201E5796FA00131FD4 /* RecipesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesViewController.h; sourceTree = "<group>"; };
+		91EB57211E5796FA00131FD4 /* RecipesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipesViewController.m; sourceTree = "<group>"; };
+		91EB57231E57978A00131FD4 /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
+		91EB57241E57978A00131FD4 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
 		91FEAE691E54FDD30023FEBE /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		91FEAE6A1E54FDD30023FEBE /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		91FEAE6E1E54FE870023FEBE /* UIView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utils.h"; sourceTree = "<group>"; };
@@ -173,6 +182,24 @@
 			path = RecettesMamieMoneTests;
 			sourceTree = "<group>";
 		};
+		91EB571B1E5796BA00131FD4 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				91EB57201E5796FA00131FD4 /* RecipesViewController.h */,
+				91EB57211E5796FA00131FD4 /* RecipesViewController.m */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		91EB571C1E5796C800131FD4 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				91EB571D1E5796F000131FD4 /* RecipeViewController.h */,
+				91EB571E1E5796F000131FD4 /* RecipeViewController.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		91FEAE641E54FBB80023FEBE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +234,8 @@
 		91FEAE671E54FC010023FEBE /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				91EB571C1E5796C800131FD4 /* Detail */,
+				91EB571B1E5796BA00131FD4 /* List */,
 				91FEAE681E54FDBF0023FEBE /* Root */,
 			);
 			path = Screens;
@@ -232,6 +261,8 @@
 		91FEAE6D1E54FE680023FEBE /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				91EB57231E57978A00131FD4 /* UIView+Layout.h */,
+				91EB57241E57978A00131FD4 /* UIView+Layout.m */,
 				91FEAE6E1E54FE870023FEBE /* UIView+Utils.h */,
 				91FEAE6F1E54FE870023FEBE /* UIView+Utils.m */,
 				91FEAE711E54FEB00023FEBE /* UIViewController+Utils.h */,
@@ -489,11 +520,14 @@
 				9133C55E1E54B57200959AFF /* AppDelegate.m in Sources */,
 				91FEAE7B1E54FF3C0023FEBE /* Recipe.m in Sources */,
 				91FEAE761E54FEE10023FEBE /* NSString+Utils.m in Sources */,
+				91EB57221E5796FA00131FD4 /* RecipesViewController.m in Sources */,
+				91EB57251E57978A00131FD4 /* UIView+Layout.m in Sources */,
 				91FEAE6B1E54FDD30023FEBE /* RootViewController.m in Sources */,
 				91FEAE701E54FE870023FEBE /* UIView+Utils.m in Sources */,
 				91FEAE7E1E54FF5D0023FEBE /* DataManager.m in Sources */,
 				91FEAE811E54FF780023FEBE /* StorageManager.m in Sources */,
 				91FEAE841E54FFB50023FEBE /* ThemeManager.m in Sources */,
+				91EB571F1E5796F000131FD4 /* RecipeViewController.m in Sources */,
 				91FEAE731E54FEB00023FEBE /* UIViewController+Utils.m in Sources */,
 				9133C55B1E54B57200959AFF /* main.m in Sources */,
 				91FEAE921E5500AE0023FEBE /* ConfigurationManager.m in Sources */,

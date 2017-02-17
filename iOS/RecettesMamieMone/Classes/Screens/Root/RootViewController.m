@@ -7,6 +7,8 @@
 //
 
 #import "RootViewController.h"
+#import "RecipesViewController.h"
+#import "UIViewController+Utils.h"
 
 @interface RootViewController ()
 
@@ -32,6 +34,10 @@
     [super viewDidLoad];
 
     self.view.backgroundColor = [UIColor blueColor];
+    
+    RecipesViewController *recipes = [RecipesViewController new];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:recipes];
+    [self addContentController:nav];
 }
 
 

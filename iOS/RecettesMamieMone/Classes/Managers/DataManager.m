@@ -7,6 +7,13 @@
 //
 
 #import "DataManager.h"
+@import FirebaseDatabase;
+
+@interface DataManager ()
+
+@property (strong, nonatomic) FIRDatabaseReference *database;
+
+@end
 
 @implementation DataManager
 
@@ -22,5 +29,35 @@
     
     return _instance;
 }
+
+- (instancetype)init
+{
+    self = [super init];
+    if(self) {
+        self.database = [[FIRDatabase database] reference];
+    }
+    return self;
+}
+
+#pragma mark - Recipes Management
+
+- (void)recipes:(void (^)(NSArray<Recipe *> *recipes))completion
+{
+    [[self.database child:@"recipes"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshotRecipes) {
+        
+        NSMutableArray *recipes = [NSMutableArray new];
+        for(NSDictionary *dict in snapshotRecipes.value) {
+            Recipe *recipe = [Recipe recipeWithDictionary:dict];
+            [recipes addObject:recipe];
+        }
+
+        if(completion) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion([recipes copy]);
+            });
+        }
+    }];
+}
+
 
 @end

@@ -10,6 +10,7 @@ target 'RecettesMamieMone' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'Firebase/RemoteConfig'
+  pod 'SDWebImage'
 
   target 'RecettesMamieMoneTests' do
     inherit! :search_paths
