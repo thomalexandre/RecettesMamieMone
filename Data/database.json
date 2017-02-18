@@ -1,24 +1,34 @@
 {
-	"recipes": [
-		{
-			"title": "Lorem ipsum dolor sit amet",
-			"ingredients": "-Fusce dapibus\n-tellus ac cursus commodo\n-tortor mauris condimentum nibh\n-ut fermentum massa justo sit amet risus\n-Aenean lacinia bibendum nulla sed consectetur\n-Maecenas sed diam eget risus varius blandit sit amet non magna\n-Fusce dapibus\n-tellus ac cursus commodo\n-tortor mauris condimentum nibh\n-ut fermentum massa justo sit amet risus",
+	"recipes": {
+		"recipe_0": {
+			"title": "0 Lorem ipsum dolor sit amet"
+		},
+		"recipe_1": {
+			"title": "1 Duis mollis"
+		},
+		"recipe_2": {
+			"title": "2 Euismod Nullam Risus"
+		},
+		"recipe_3": {
+			"title": "3 Nullam Pellentesque Ornare"
+		}
+	},
+	"details": {
+		"recipe_0": {
+			"ingredients": "-000000Fusce dapibus\n-tellus ac cursus commodo\n-tortor mauris condimentum nibh\n-ut fermentum massa justo sit amet risus\n-Aenean lacinia bibendum nulla sed consectetur\n-Maecenas sed diam eget risus varius blandit sit amet non magna\n-Fusce dapibus\n-tellus ac cursus commodo\n-tortor mauris condimentum nibh\n-ut fermentum massa justo sit amet risus",
 			"preparation": "Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Maecenas faucibus mollis interdum.\n\nCurabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nVestibulum id ligula porta felis euismod semper. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.\n\nCras mattis consectetur purus sit amet fermentum. Etiam porta sem malesuada magna mollis euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus auctor fringilla. Curabitur blandit tempus porttitor."
 		},
-		{
-			"title": "Duis mollis",
-			"ingredients": "-Fusce dapibus\n-tellus ac cursus commodo\n-tortor mauris condimentum nibh\n-ut fermentum massa justo sit amet risus\n-Aenean lacinia bibendum nulla sed consectetur\n-Maecenas sed diam eget risus varius blandit sit amet non magna\n-Fusce dapibus\n-tellus ac cursus commodo\n-tortor mauris condimentum nibh\n-ut fermentum massa justo sit amet risus",
+		"recipe_1": {
+			"ingredients": "-111111Fusce dapibus\n-tellus ac cursus commodo\n-tortor mauris condimentum nibh\n-ut fermentum massa justo sit amet risus\n-Aenean lacinia bibendum nulla sed consectetur\n-Maecenas sed diam eget risus varius blandit sit amet non magna\n-Fusce dapibus\n-tellus ac cursus commodo\n-tortor mauris condimentum nibh\n-ut fermentum massa justo sit amet risus",
 			"preparation": "Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Maecenas faucibus mollis interdum.\n\nCurabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nVestibulum id ligula porta felis euismod semper. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.\n\nCras mattis consectetur purus sit amet fermentum. Etiam porta sem malesuada magna mollis euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus auctor fringilla. Curabitur blandit tempus porttitor."
 		},
-		{
-			"title": "Euismod Nullam Risus",
-			"ingredients": "-Fusce dapibus\n-tellus ac cursus commodo\n-tortor mauris condimentum nibh\n-ut fermentum massa justo sit amet risus\n-Aenean lacinia bibendum nulla sed consectetur\n-Maecenas sed diam eget risus varius blandit sit amet non magna\n-Fusce dapibus\n-tellus ac cursus commodo\n-tortor mauris condimentum nibh\n-ut fermentum massa justo sit amet risus",
+		"recipe_2": {
+			"ingredients": "-222222Fusce dapibus\n-tellus ac cursus commodo\n-tortor mauris condimentum nibh\n-ut fermentum massa justo sit amet risus\n-Aenean lacinia bibendum nulla sed consectetur\n-Maecenas sed diam eget risus varius blandit sit amet non magna\n-Fusce dapibus\n-tellus ac cursus commodo\n-tortor mauris condimentum nibh\n-ut fermentum massa justo sit amet risus",
 			"preparation": "Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Maecenas faucibus mollis interdum.\n\nCurabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nVestibulum id ligula porta felis euismod semper. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.\n\nCras mattis consectetur purus sit amet fermentum. Etiam porta sem malesuada magna mollis euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus auctor fringilla. Curabitur blandit tempus porttitor."
 		},
-		{
-			"title": "Nullam Pellentesque Ornare",
-			"ingredients": "-Fusce dapibus\n-tellus ac cursus commodo\n-tortor mauris condimentum nibh\n-ut fermentum massa justo sit amet risus\n-Aenean lacinia bibendum nulla sed consectetur\n-Maecenas sed diam eget risus varius blandit sit amet non magna\n-Fusce dapibus\n-tellus ac cursus commodo\n-tortor mauris condimentum nibh\n-ut fermentum massa justo sit amet risus",
+		"recipe_3": {
+			"ingredients": "-333333Fusce dapibus\n-tellus ac cursus commodo\n-tortor mauris condimentum nibh\n-ut fermentum massa justo sit amet risus\n-Aenean lacinia bibendum nulla sed consectetur\n-Maecenas sed diam eget risus varius blandit sit amet non magna\n-Fusce dapibus\n-tellus ac cursus commodo\n-tortor mauris condimentum nibh\n-ut fermentum massa justo sit amet risus",
 			"preparation": "Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Maecenas faucibus mollis interdum.\n\nCurabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nVestibulum id ligula porta felis euismod semper. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.\n\nCras mattis consectetur purus sit amet fermentum. Etiam porta sem malesuada magna mollis euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus auctor fringilla. Curabitur blandit tempus porttitor."
 		}
-	]
+	}
 }

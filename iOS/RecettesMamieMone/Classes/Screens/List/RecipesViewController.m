@@ -41,7 +41,7 @@
 
 - (void)reloadData
 {
-    [[DataManager instance] recipes:^(NSArray<Recipe *> *recipes) {
+    [[DataManager instance] fetchRecipes:^(NSArray<Recipe *> *recipes) {
        
         self.recipes = recipes;
         [self.tableView reloadData];

@@ -8,6 +8,7 @@
 
 #import "RecipeViewController.h"
 #import "UIView+Layout.h"
+#import "DataManager.h"
 
 @interface RecipeViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -33,6 +34,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = self.recipe.title;
     [self setupTableView];
+    [self reloadData];
 }
 
 - (void)setupTableView
@@ -44,6 +46,16 @@
     self.tableView.estimatedRowHeight = 100;
     [self.view addSubviewAutoLayout:self.tableView];
     [self.tableView snap];
+}
+
+
+- (void)reloadData
+{
+    [[DataManager instance] fetchDetails:self.recipe completion:^(Recipe *recipe) {
+        
+        self.recipe = recipe;
+        [self.tableView reloadData];
+    }];
 }
 
 #pragma mark - UITableViewDataSource

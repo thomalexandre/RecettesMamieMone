@@ -10,29 +10,33 @@
 
 @interface Recipe ()
 
-@property (nonatomic, strong) NSDictionary *rawData;
+@property (nonatomic, strong, readwrite) NSString *identifier;
 
 @end
 
 @implementation Recipe
 
-+ (instancetype)recipeWithDictionary:(NSDictionary *)dict
++ (instancetype)recipe:(NSString *)identifier withDictionary:(NSDictionary *)dict;
 {
-    return [[Recipe alloc] initWithDictionary:dict];
+    Recipe *recipe = [[Recipe alloc] initWithDictionary:dict];
+    recipe.identifier = identifier;
+    return recipe;
 }
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict
 {
     self = [super init];
     if(self) {
-        
         self.title       = dict[@"title"];
-        self.ingredients = dict[@"ingredients"];
-        self.preparation = dict[@"preparation"];
-        
-        self.rawData     = dict;
     }
     return self;
+}
+
+
+- (void)setDetails:(NSDictionary *)dict
+{
+    self.ingredients = dict[@"ingredients"];
+    self.preparation = dict[@"preparation"];
 }
 
 @end

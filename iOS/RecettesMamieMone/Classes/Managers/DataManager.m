@@ -41,22 +41,45 @@
 
 #pragma mark - Recipes Management
 
-- (void)recipes:(void (^)(NSArray<Recipe *> *recipes))completion
+- (void)fetchRecipes:(void (^)(NSArray<Recipe *> *recipes))completion
 {
     [[self.database child:@"recipes"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshotRecipes) {
         
         NSMutableArray *recipes = [NSMutableArray new];
-        for(NSDictionary *dict in snapshotRecipes.value) {
-            Recipe *recipe = [Recipe recipeWithDictionary:dict];
+        for(NSString *identifier in [snapshotRecipes.value allKeys]) {
+            
+            NSDictionary *dict = snapshotRecipes.value[identifier];
+            Recipe *recipe = [Recipe recipe:identifier withDictionary:dict];
             [recipes addObject:recipe];
         }
-
+        
+        // sort array
+        NSArray *result = [recipes sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+            Recipe *first  = (Recipe*)a ;
+            Recipe *second = (Recipe*)b ;
+            return [first.title compare:second.title];
+        }];
+        
         if(completion) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                completion([recipes copy]);
+                completion(result);
             });
         }
     }];
+}
+
+- (void)fetchDetails:(Recipe *)recipe completion:(void (^)(Recipe *recipe))completion
+{
+    [[[self.database child:@"details"] child:recipe.identifier] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshotRecipe) {
+        
+        [recipe setDetails:snapshotRecipe.value];
+        if(completion) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(recipe);
+            });
+        }
+    }];
+
 }
 
 
