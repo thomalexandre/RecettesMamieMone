@@ -66,6 +66,7 @@
 		91EB57211E5796FA00131FD4 /* RecipesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipesViewController.m; sourceTree = "<group>"; };
 		91EB57231E57978A00131FD4 /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
 		91EB57241E57978A00131FD4 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		91EB57261E588B8200131FD4 /* RecettesMamieMone.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RecettesMamieMone.entitlements; sourceTree = "<group>"; };
 		91FEAE691E54FDD30023FEBE /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		91FEAE6A1E54FDD30023FEBE /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		91FEAE6E1E54FE870023FEBE /* UIView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utils.h"; sourceTree = "<group>"; };
@@ -156,6 +157,7 @@
 		9133C5581E54B57200959AFF /* RecettesMamieMone */ = {
 			isa = PBXGroup;
 			children = (
+				91EB57261E588B8200131FD4 /* RecettesMamieMone.entitlements */,
 				91FEAE651E54FBD00023FEBE /* Resources */,
 				91FEAE641E54FBB80023FEBE /* Classes */,
 				9133C5591E54B57200959AFF /* Supporting Files */,
@@ -366,6 +368,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = F93QSNY8PR;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					9133C56E1E54B57200959AFF = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -660,6 +667,7 @@
 			baseConfigurationReference = 71BACCCB56CCBC88F124A8A2 /* Pods-RecettesMamieMone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RecettesMamieMone/RecettesMamieMone.entitlements;
 				DEVELOPMENT_TEAM = F93QSNY8PR;
 				INFOPLIST_FILE = RecettesMamieMone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -673,6 +681,7 @@
 			baseConfigurationReference = 2294FBC798555B5534FF838E /* Pods-RecettesMamieMone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RecettesMamieMone/RecettesMamieMone.entitlements;
 				DEVELOPMENT_TEAM = F93QSNY8PR;
 				INFOPLIST_FILE = RecettesMamieMone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
