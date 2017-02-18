@@ -11,6 +11,7 @@
 
 @interface UIView (Layout)
 
+- (void) addSubviewAutoLayout:(UIView *)view;
 - (void) snap;
 - (void) align:(NSArray *)views withProperties:(NSDictionary *)props;
 

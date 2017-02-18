@@ -10,6 +10,12 @@
 
 @implementation UIView (Layout)
 
+- (void)addSubviewAutoLayout:(UIView *)view
+{
+    [self addSubview:view];
+    view.translatesAutoresizingMaskIntoConstraints = NO;
+}
+
 - (void) snap
 {
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];

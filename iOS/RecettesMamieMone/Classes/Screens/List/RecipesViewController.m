@@ -35,8 +35,7 @@
     self.tableView = [UITableView new];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addSubview:self.tableView];
+    [self.view addSubviewAutoLayout:self.tableView];
     [self.tableView snap];
 }
 
@@ -54,9 +53,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Recipe *recipe = self.recipes[indexPath.row];
-    
     RecipeViewController *recipeViewController = [[RecipeViewController alloc] initWithRecipe:recipe];
-    
     [self.navigationController pushViewController:recipeViewController animated:YES];
 }
 
