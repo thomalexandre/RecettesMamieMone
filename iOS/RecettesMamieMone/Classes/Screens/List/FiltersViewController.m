@@ -18,6 +18,24 @@
 {
     [super viewDidLoad];
 
+    self.view.backgroundColor = [UIColor redColor];
+    
+    self.title = @"Filtres";
+    
+    [self setupNavBar];
+}
+
+- (void)setupNavBar
+{
+    UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleDone target:self action:@selector(closeDidPress)];
+    self.navigationItem.leftBarButtonItem = closeButton;
+}
+
+#pragma mark - Actions
+
+- (void)closeDidPress
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
