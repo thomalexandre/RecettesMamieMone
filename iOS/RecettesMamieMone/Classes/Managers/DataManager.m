@@ -7,6 +7,7 @@
 //
 
 #import "DataManager.h"
+#import "RecipesParser.h"
 @import FirebaseDatabase;
 
 @interface DataManager ()
@@ -45,24 +46,11 @@
 {
     [[self.database child:@"recipes"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshotRecipes) {
         
-        NSMutableArray *recipes = [NSMutableArray new];
-        for(NSString *identifier in [snapshotRecipes.value allKeys]) {
-            
-            NSDictionary *dict = snapshotRecipes.value[identifier];
-            Recipe *recipe = [Recipe recipe:identifier withDictionary:dict];
-            [recipes addObject:recipe];
-        }
-        
-        // sort array
-        NSArray *result = [recipes sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-            Recipe *first  = (Recipe*)a ;
-            Recipe *second = (Recipe*)b ;
-            return [first.title compare:second.title];
-        }];
+        RecipesParser *parser = [[RecipesParser alloc] initWithDictionary:snapshotRecipes.value];
         
         if(completion) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                completion(result);
+                completion(parser.recipes);
             });
         }
     }];
@@ -79,7 +67,6 @@
             });
         }
     }];
-
 }
 
 

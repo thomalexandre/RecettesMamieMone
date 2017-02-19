@@ -27,11 +27,10 @@
 {
     self = [super init];
     if(self) {
-        self.title       = dict[@"title"];
+        self.title = dict[@"title"];
     }
     return self;
 }
-
 
 - (void)setDetails:(NSDictionary *)dict
 {

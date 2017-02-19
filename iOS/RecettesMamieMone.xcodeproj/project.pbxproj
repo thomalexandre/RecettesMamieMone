@@ -18,6 +18,10 @@
 		91EB571F1E5796F000131FD4 /* RecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB571E1E5796F000131FD4 /* RecipeViewController.m */; };
 		91EB57221E5796FA00131FD4 /* RecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB57211E5796FA00131FD4 /* RecipesViewController.m */; };
 		91EB57251E57978A00131FD4 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB57241E57978A00131FD4 /* UIView+Layout.m */; };
+		91EB57291E5A00E400131FD4 /* RecipeType.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB57281E5A00E400131FD4 /* RecipeType.m */; };
+		91EB57301E5A01F400131FD4 /* RecipesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB572F1E5A01F400131FD4 /* RecipesParser.m */; };
+		91EB57331E5A025D00131FD4 /* RecipeTypesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB57321E5A025D00131FD4 /* RecipeTypesParser.m */; };
+		91EB57361E5A06D600131FD4 /* FiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB57351E5A06D600131FD4 /* FiltersViewController.m */; };
 		91FEAE6B1E54FDD30023FEBE /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE6A1E54FDD30023FEBE /* RootViewController.m */; };
 		91FEAE701E54FE870023FEBE /* UIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE6F1E54FE870023FEBE /* UIView+Utils.m */; };
 		91FEAE731E54FEB00023FEBE /* UIViewController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE721E54FEB00023FEBE /* UIViewController+Utils.m */; };
@@ -67,6 +71,14 @@
 		91EB57231E57978A00131FD4 /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
 		91EB57241E57978A00131FD4 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
 		91EB57261E588B8200131FD4 /* RecettesMamieMone.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RecettesMamieMone.entitlements; sourceTree = "<group>"; };
+		91EB57271E5A00E400131FD4 /* RecipeType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeType.h; sourceTree = "<group>"; };
+		91EB57281E5A00E400131FD4 /* RecipeType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeType.m; sourceTree = "<group>"; };
+		91EB572E1E5A01F400131FD4 /* RecipesParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesParser.h; sourceTree = "<group>"; };
+		91EB572F1E5A01F400131FD4 /* RecipesParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipesParser.m; sourceTree = "<group>"; };
+		91EB57311E5A025D00131FD4 /* RecipeTypesParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeTypesParser.h; sourceTree = "<group>"; };
+		91EB57321E5A025D00131FD4 /* RecipeTypesParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeTypesParser.m; sourceTree = "<group>"; };
+		91EB57341E5A06D600131FD4 /* FiltersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiltersViewController.h; sourceTree = "<group>"; };
+		91EB57351E5A06D600131FD4 /* FiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiltersViewController.m; sourceTree = "<group>"; };
 		91FEAE691E54FDD30023FEBE /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		91FEAE6A1E54FDD30023FEBE /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		91FEAE6E1E54FE870023FEBE /* UIView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utils.h"; sourceTree = "<group>"; };
@@ -189,6 +201,8 @@
 			children = (
 				91EB57201E5796FA00131FD4 /* RecipesViewController.h */,
 				91EB57211E5796FA00131FD4 /* RecipesViewController.m */,
+				91EB57341E5A06D600131FD4 /* FiltersViewController.h */,
+				91EB57351E5A06D600131FD4 /* FiltersViewController.m */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -200,6 +214,17 @@
 				91EB571E1E5796F000131FD4 /* RecipeViewController.m */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		91EB572D1E5A01D600131FD4 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				91EB572E1E5A01F400131FD4 /* RecipesParser.h */,
+				91EB572F1E5A01F400131FD4 /* RecipesParser.m */,
+				91EB57311E5A025D00131FD4 /* RecipeTypesParser.h */,
+				91EB57321E5A025D00131FD4 /* RecipeTypesParser.m */,
+			);
+			path = Parsers;
 			sourceTree = "<group>";
 		};
 		91FEAE641E54FBB80023FEBE /* Classes */ = {
@@ -293,8 +318,11 @@
 		91FEAE781E54FF240023FEBE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				91EB572D1E5A01D600131FD4 /* Parsers */,
 				91FEAE791E54FF3C0023FEBE /* Recipe.h */,
 				91FEAE7A1E54FF3C0023FEBE /* Recipe.m */,
+				91EB57271E5A00E400131FD4 /* RecipeType.h */,
+				91EB57281E5A00E400131FD4 /* RecipeType.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -530,13 +558,17 @@
 				91EB57221E5796FA00131FD4 /* RecipesViewController.m in Sources */,
 				91EB57251E57978A00131FD4 /* UIView+Layout.m in Sources */,
 				91FEAE6B1E54FDD30023FEBE /* RootViewController.m in Sources */,
+				91EB57361E5A06D600131FD4 /* FiltersViewController.m in Sources */,
 				91FEAE701E54FE870023FEBE /* UIView+Utils.m in Sources */,
 				91FEAE7E1E54FF5D0023FEBE /* DataManager.m in Sources */,
 				91FEAE811E54FF780023FEBE /* StorageManager.m in Sources */,
 				91FEAE841E54FFB50023FEBE /* ThemeManager.m in Sources */,
+				91EB57291E5A00E400131FD4 /* RecipeType.m in Sources */,
 				91EB571F1E5796F000131FD4 /* RecipeViewController.m in Sources */,
 				91FEAE731E54FEB00023FEBE /* UIViewController+Utils.m in Sources */,
 				9133C55B1E54B57200959AFF /* main.m in Sources */,
+				91EB57301E5A01F400131FD4 /* RecipesParser.m in Sources */,
+				91EB57331E5A025D00131FD4 /* RecipeTypesParser.m in Sources */,
 				91FEAE921E5500AE0023FEBE /* ConfigurationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

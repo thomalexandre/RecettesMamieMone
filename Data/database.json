@@ -1,16 +1,33 @@
 {
 	"recipes": {
-		"recipe_0": {
-			"title": "0 Lorem ipsum dolor sit amet"
+		"list" :{
+			"recipe_0": {
+				"title": "0 Lorem ipsum dolor sit amet",
+				"type": "type_0"
+			},
+			"recipe_1": {
+				"title": "1 Duis mollis",
+				"type": "type_2"
+			},
+			"recipe_2": {
+				"title": "2 Euismod Nullam Risus",
+				"type": "type_1"
+			},
+			"recipe_3": {
+				"title": "3 Nullam Pellentesque Ornare",
+				"type": "type_2"
+			}
 		},
-		"recipe_1": {
-			"title": "1 Duis mollis"
-		},
-		"recipe_2": {
-			"title": "2 Euismod Nullam Risus"
-		},
-		"recipe_3": {
-			"title": "3 Nullam Pellentesque Ornare"
+		"types": {
+			"type_0":{
+				"name": "entrée"
+			},
+			"type_1":{
+				"name": "plat principal"
+			},
+			"type_2":{
+				"name": "dessert"
+			}
 		}
 	},
 	"details": {

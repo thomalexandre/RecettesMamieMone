@@ -67,12 +67,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *text = indexPath.row == 0 ? self.recipe.title : indexPath.row == 1 ? self.recipe.ingredients : self.recipe.preparation;
+    NSString *text = indexPath.row == 0 ? self.recipe.title :
+                     indexPath.row == 1 ? self.recipe.type.name :
+                     indexPath.row == 2 ? self.recipe.ingredients :
+                                          self.recipe.preparation;
     UIFont   *font = indexPath.row == 0 ? [UIFont boldSystemFontOfSize:18] : [UIFont systemFontOfSize:14];
     
     UITableViewCell *cell = [UITableViewCell new];
