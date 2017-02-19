@@ -10,8 +10,6 @@
 #import "DataManager.h"
 #import "UIView+Layout.h"
 #import "RecipeViewController.h"
-#import "FiltersViewController.h"
-#import "SearchViewController.h"
 
 @interface RecipesViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -28,7 +26,6 @@
     self.title = @"Recettes";
 
     [self setupTableView];
-    [self setupNavBar];
     
     [self reloadData];
 }
@@ -42,36 +39,12 @@
     [self.tableView snap];
 }
 
-- (void)setupNavBar
-{
-    UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithTitle:@"Search" style:UIBarButtonItemStyleDone target:self action:@selector(searchDidPress)];
-    self.navigationItem.leftBarButtonItem = searchButton;
-    
-    UIBarButtonItem *showFiltresButton = [[UIBarButtonItem alloc] initWithTitle:@"Filtres" style:UIBarButtonItemStyleDone target:self action:@selector(filtresDidPress)];
-    self.navigationItem.rightBarButtonItem = showFiltresButton;
-}
-
 - (void)reloadData
 {
     [[DataManager instance] fetchRecipes:^(NSArray<Recipe *> *recipes) {
         self.recipes = recipes;
         [self.tableView reloadData];
     }];
-}
-
-#pragma mark - Actions
-
-- (void)searchDidPress
-{
-    SearchViewController *vc = [SearchViewController new];
-    [self.navigationController presentViewController:vc animated:YES completion:nil];
-}
-
-- (void)filtresDidPress
-{
-    FiltersViewController *vc = [FiltersViewController new];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-    [self.navigationController presentViewController:nav animated:YES completion:nil];
 }
 
 #pragma mark - UITableViewDelegate

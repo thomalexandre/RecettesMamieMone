@@ -53,9 +53,9 @@
 #pragma mark - Setup
 
 - (void)setupRootViewController
-{
+{   
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [RootViewController instance];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[RootViewController instance]];
     [self.window makeKeyAndVisible];
 }
 
