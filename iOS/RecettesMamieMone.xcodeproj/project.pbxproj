@@ -22,6 +22,7 @@
 		91EB57301E5A01F400131FD4 /* RecipesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB572F1E5A01F400131FD4 /* RecipesParser.m */; };
 		91EB57331E5A025D00131FD4 /* RecipeTypesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB57321E5A025D00131FD4 /* RecipeTypesParser.m */; };
 		91EB57361E5A06D600131FD4 /* FiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB57351E5A06D600131FD4 /* FiltersViewController.m */; };
+		91EB573A1E5A30D900131FD4 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB57391E5A30D900131FD4 /* SearchViewController.m */; };
 		91FEAE6B1E54FDD30023FEBE /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE6A1E54FDD30023FEBE /* RootViewController.m */; };
 		91FEAE701E54FE870023FEBE /* UIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE6F1E54FE870023FEBE /* UIView+Utils.m */; };
 		91FEAE731E54FEB00023FEBE /* UIViewController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE721E54FEB00023FEBE /* UIViewController+Utils.m */; };
@@ -79,6 +80,8 @@
 		91EB57321E5A025D00131FD4 /* RecipeTypesParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeTypesParser.m; sourceTree = "<group>"; };
 		91EB57341E5A06D600131FD4 /* FiltersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiltersViewController.h; sourceTree = "<group>"; };
 		91EB57351E5A06D600131FD4 /* FiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiltersViewController.m; sourceTree = "<group>"; };
+		91EB57381E5A30D900131FD4 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		91EB57391E5A30D900131FD4 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		91FEAE691E54FDD30023FEBE /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		91FEAE6A1E54FDD30023FEBE /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		91FEAE6E1E54FE870023FEBE /* UIView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utils.h"; sourceTree = "<group>"; };
@@ -227,6 +230,15 @@
 			path = Parsers;
 			sourceTree = "<group>";
 		};
+		91EB57371E5A30BC00131FD4 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				91EB57381E5A30D900131FD4 /* SearchViewController.h */,
+				91EB57391E5A30D900131FD4 /* SearchViewController.m */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		91FEAE641E54FBB80023FEBE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +273,7 @@
 		91FEAE671E54FC010023FEBE /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				91EB57371E5A30BC00131FD4 /* Search */,
 				91EB571C1E5796C800131FD4 /* Detail */,
 				91EB571B1E5796BA00131FD4 /* List */,
 				91FEAE681E54FDBF0023FEBE /* Root */,
@@ -558,6 +571,7 @@
 				91EB57221E5796FA00131FD4 /* RecipesViewController.m in Sources */,
 				91EB57251E57978A00131FD4 /* UIView+Layout.m in Sources */,
 				91FEAE6B1E54FDD30023FEBE /* RootViewController.m in Sources */,
+				91EB573A1E5A30D900131FD4 /* SearchViewController.m in Sources */,
 				91EB57361E5A06D600131FD4 /* FiltersViewController.m in Sources */,
 				91FEAE701E54FE870023FEBE /* UIView+Utils.m in Sources */,
 				91FEAE7E1E54FF5D0023FEBE /* DataManager.m in Sources */,

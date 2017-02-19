@@ -11,6 +11,7 @@
 #import "UIView+Layout.h"
 #import "RecipeViewController.h"
 #import "FiltersViewController.h"
+#import "SearchViewController.h"
 
 @interface RecipesViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -53,7 +54,6 @@
 - (void)reloadData
 {
     [[DataManager instance] fetchRecipes:^(NSArray<Recipe *> *recipes) {
-       
         self.recipes = recipes;
         [self.tableView reloadData];
     }];
@@ -63,7 +63,8 @@
 
 - (void)searchDidPress
 {
-    
+    SearchViewController *vc = [SearchViewController new];
+    [self.navigationController presentViewController:vc animated:YES completion:nil];
 }
 
 - (void)filtresDidPress
