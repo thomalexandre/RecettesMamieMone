@@ -49,8 +49,8 @@
 
 - (void)setupNavBar
 {
-    UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithTitle:@"Search" style:UIBarButtonItemStyleDone target:self action:@selector(searchDidPress)];
-    self.navigationItem.leftBarButtonItem = searchButton;
+//    UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithTitle:@"Search" style:UIBarButtonItemStyleDone target:self action:@selector(searchDidPress)];
+//    self.navigationItem.leftBarButtonItem = searchButton;
     
     UIBarButtonItem *showFiltresButton = [[UIBarButtonItem alloc] initWithTitle:@"Filtres" style:UIBarButtonItemStyleDone target:self action:@selector(filtresDidPress)];
     self.navigationItem.rightBarButtonItem = showFiltresButton;
