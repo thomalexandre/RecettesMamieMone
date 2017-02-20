@@ -10,6 +10,8 @@
 #import "DataManager.h"
 #import "UIView+Layout.h"
 #import "RecipeViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "StorageManager.h"
 
 @interface RecipesViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -72,9 +74,15 @@
 {
     Recipe *recipe = self.recipes[indexPath.row];
     
-    UITableViewCell *cell = [UITableViewCell new];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"something"];
     
     cell.textLabel.text = recipe.title;
+    cell.imageView.image = [UIImage imageNamed:@"placeholder"];
+    
+    [[StorageManager instance] urlForPath:[recipe thumbnailPath] completion:^(NSURL *url, NSError *error) {
+        [cell.imageView sd_setImageWithURL:url];
+        NSLog(@"Loading... %@", url);
+    }];
     
     return cell;
 }

@@ -47,4 +47,23 @@
     return self;
 }
 
+- (void)urlForPath:(NSString *)path completion:(void (^)(NSURL *url, NSError *error))completion
+{
+    FIRStorageReference *reference = [self.storageRef child:path];
+    if(reference) {
+        [reference downloadURLWithCompletion:^(NSURL *URL, NSError *error){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if(completion) {
+                    completion(URL, error);
+                }
+            });
+        }];
+    } else if(completion) {
+        NSError *error = [NSError errorWithDomain:@"athomas.me" code:1 userInfo:@{NSLocalizedFailureReasonErrorKey:@"Not a valid path"}];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completion(nil, error);
+        });
+    }
+}
+
 @end

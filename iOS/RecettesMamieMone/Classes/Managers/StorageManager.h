@@ -12,4 +12,6 @@
 
 + (instancetype)instance;
 
+- (void)urlForPath:(NSString *)path completion:(void (^)(NSURL *url, NSError *error))completion;
+
 @end

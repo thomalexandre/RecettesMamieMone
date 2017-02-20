@@ -23,4 +23,6 @@
 
 - (void)setDetails:(NSDictionary *)dict;
 
+- (NSString *)thumbnailPath;
+
 @end

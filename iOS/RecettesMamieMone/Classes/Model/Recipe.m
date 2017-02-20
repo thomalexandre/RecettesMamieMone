@@ -38,4 +38,10 @@
     self.preparation = dict[@"preparation"];
 }
 
+- (NSString *)thumbnailPath
+{
+    return [NSString stringWithFormat:@"%@/thumbnail.jpg", self.identifier];
+}
+
+
 @end
