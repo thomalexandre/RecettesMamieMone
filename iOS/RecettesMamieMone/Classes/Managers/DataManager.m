@@ -35,8 +35,8 @@
 {
     self = [super init];
     if(self) {
+        [FIRDatabase database].persistenceEnabled = YES; // To test on device
         self.database = [[FIRDatabase database] reference];
-//        self.database.persistenceEnabled = YES; // To test on device
     }
     return self;
 }

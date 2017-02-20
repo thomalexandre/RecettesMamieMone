@@ -8,6 +8,7 @@
 
 #import "RecipesParser.h"
 #import "RecipeTypesParser.h"
+#import "HardnessParser.h"
 
 @interface RecipesParser ()
 
@@ -30,15 +31,17 @@
 - (void)parse:(NSDictionary *)value
 {
     RecipeTypesParser *recipeTypesParser = [[RecipeTypesParser alloc] initWithDictionary:value[@"types"]];
+    HardnessParser    *hardnessParser    = [[HardnessParser alloc] initWithDictionary:value[@"hardnesses"]];
     
     // Load
     NSDictionary *recipesList = value[@"list"];
     NSMutableArray *recipes = [NSMutableArray new];
     for(NSString *identifier in [recipesList allKeys]) {
         
-        NSDictionary *dict = recipesList[identifier];
-        Recipe *recipe = [Recipe recipe:identifier withDictionary:dict];
-        recipe.type = [recipeTypesParser recipeTypeWithId:dict[@"type"]];
+        NSDictionary *dict  = recipesList[identifier];
+        Recipe *recipe      = [Recipe recipe:identifier withDictionary:dict];
+        recipe.type         = [recipeTypesParser recipeTypeWithId:dict[@"type"]];
+        recipe.hardness     = [hardnessParser hardnessTypeWithId:dict[@"hardness"]];
         [recipes addObject:recipe];
     }
     

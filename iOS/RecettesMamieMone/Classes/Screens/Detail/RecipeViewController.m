@@ -73,7 +73,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *text = indexPath.row == 0 ? self.recipe.title :
-                     indexPath.row == 1 ? self.recipe.type.name :
+                     indexPath.row == 1 ? [NSString stringWithFormat:@"%@ - %@", self.recipe.type.name, self.recipe.hardness.name] :
                      indexPath.row == 2 ? self.recipe.ingredients :
                                           self.recipe.preparation;
     UIFont   *font = indexPath.row == 0 ? [UIFont boldSystemFontOfSize:18] : [UIFont systemFontOfSize:14];

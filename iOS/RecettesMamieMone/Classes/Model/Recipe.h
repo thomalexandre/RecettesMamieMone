@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "RecipeType.h"
+#import "Hardness.h"
 
 @interface Recipe : NSObject
 
@@ -16,6 +17,7 @@
 @property (nonatomic, strong)   NSString   *ingredients;
 @property (nonatomic, strong)   NSString   *preparation;
 @property (nonatomic, strong)   RecipeType *type;
+@property (nonatomic, strong)   Hardness   *hardness;
 
 + (instancetype)recipe:(NSString *)identifier withDictionary:(NSDictionary *)dict;
 
