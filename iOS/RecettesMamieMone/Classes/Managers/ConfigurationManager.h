@@ -27,4 +27,10 @@
 /// Remove the persistent setting for the given key.
 - (BOOL)removePersistentSettingForKey:(NSString *)key;
 
+/// return YES if the device is an ipad.
++ (BOOL)isIpad;
+
+/// return YES if the device is an iphone.
++ (BOOL)isIphone;
+
 @end

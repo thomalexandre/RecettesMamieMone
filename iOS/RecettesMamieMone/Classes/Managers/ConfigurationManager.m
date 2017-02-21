@@ -7,6 +7,7 @@
 //
 
 #import "ConfigurationManager.h"
+#import <UIKit/UIKit.h>
 @import FirebaseRemoteConfig;
 
 @interface ConfigurationManager ()
@@ -91,6 +92,18 @@
     NSUserDefaults *cache = [NSUserDefaults standardUserDefaults];
     [cache removeObjectForKey:key];
     return [cache synchronize];
+}
+
+#pragma mark - Device
+
++ (BOOL)isIpad
+{
+    return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
+}
+
++ (BOOL)isIphone
+{
+    return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone;
 }
 
 @end

@@ -205,9 +205,24 @@
 			path = RecettesMamieMoneTests;
 			sourceTree = "<group>";
 		};
+		91502A421E5B9CE200001D2B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		91502A431E5B9CE800001D2B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		91EB571B1E5796BA00131FD4 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				91502A421E5B9CE200001D2B /* Cells */,
 				91EB57201E5796FA00131FD4 /* RecipesViewController.h */,
 				91EB57211E5796FA00131FD4 /* RecipesViewController.m */,
 				91EB57341E5A06D600131FD4 /* FiltersViewController.h */,
@@ -219,6 +234,7 @@
 		91EB571C1E5796C800131FD4 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				91502A431E5B9CE800001D2B /* Cells */,
 				91EB571D1E5796F000131FD4 /* RecipeViewController.h */,
 				91EB571E1E5796F000131FD4 /* RecipeViewController.m */,
 			);
