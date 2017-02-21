@@ -12,13 +12,15 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "UIView+Utils.h"
 #import "ThemeManager.h"
+#import "GradientView.h"
 
-#define kTextHeight 34
+#define kTextHeight 50
 
 @interface ReceipeCollectionViewCell ()
 
-@property (nonatomic, strong) UIImageView *imageView;
-@property (nonatomic, strong) UILabel     *titleLabel;
+@property (nonatomic, strong) UIImageView  *imageView;
+@property (nonatomic, strong) UILabel      *titleLabel;
+@property (nonatomic, strong) UIView *gradient;
 
 @end
 
@@ -35,6 +37,7 @@
 
 - (void)setup
 {
+    // view...
     self.contentView.backgroundColor = [UIColor whiteColor];
 
     self.contentView.layer.cornerRadius  = 4.0f;
@@ -47,23 +50,28 @@
     self.layer.shadowRadius  = 2.0f;
     self.layer.shadowOpacity = 1.0f;
     self.layer.masksToBounds = NO;
-
-    
     
     // image....
     self.imageView = [UIImageView new];
     self.imageView.contentMode = UIViewContentModeScaleAspectFill;
     self.imageView.clipsToBounds = YES;
     [self.contentView addSubviewAutoLayout:self.imageView];
-    [self.imageView snapTop];
-    [self.imageView snapLeft];
-    [self.imageView snapRight];
-    [self.imageView snapBottomConstant:kTextHeight];
+    [self.imageView snap];
+    
+    // gradient...
+    self.gradient = [UIView new];
+    self.gradient.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4];
+    [self.contentView addSubviewAutoLayout:self.gradient];
+    [self.gradient snapBottom];
+    [self.gradient snapLeft];
+    [self.gradient snapRight];
+    [self.gradient setHeightConstant:kTextHeight];
     
     // text ...
     self.titleLabel           = [UILabel new];
-    self.titleLabel.textColor = [[ThemeManager instance] text];
-    self.titleLabel.font      = [[ThemeManager instance] mediumFontWithSize:15];
+    self.titleLabel.numberOfLines = 2;
+    self.titleLabel.textColor = [[ThemeManager instance] cardText];
+    self.titleLabel.font      = [[ThemeManager instance] boldFontWithSize:15];
     [self.contentView addSubviewAutoLayout:self.titleLabel];
     [self.titleLabel snapBottom];
     [self.titleLabel snapLeftConstant:6];

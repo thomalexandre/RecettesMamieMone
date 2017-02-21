@@ -12,10 +12,13 @@
 
 + (instancetype)instance;
 
+- (void)configureProxies;
+
 #pragma mark - colors
 
 - (UIColor *)background;
 - (UIColor *)text;
+- (UIColor *)cardText;
 
 #pragma mark - fonts
 

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
+#import "ThemeManager.h"
 @import Firebase;
 
 @interface AppDelegate ()
@@ -22,6 +23,8 @@
     // Override point for customization after application launch.
     
     [FIRApp configure];
+    
+    [[ThemeManager instance] configureProxies];
     
     [self setupRootViewController];
     

@@ -42,7 +42,7 @@
     self.recipes = [RecipesViewController new];
     [self addContentController:self.recipes];
     
-    self.title = @"Recettes";
+    self.title = @"Les Recettes de Mamie Mone";
     
     [self setupNavBar];
 }

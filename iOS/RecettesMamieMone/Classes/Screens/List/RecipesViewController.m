@@ -102,7 +102,7 @@
         CGFloat textHeight  = 34.f;
         CGFloat height      = pictheight + textHeight;
         
-        return CGSizeMake(width, height);
+        return CGSizeMake(width, width/1.2);
         
     } else {
         
@@ -111,7 +111,7 @@
         CGFloat textHeight  = 34.f;
         CGFloat height      = pictheight + textHeight;
         
-        return CGSizeMake(width, height);
+        return CGSizeMake(width, width / 1.2);
     }
 }
 

@@ -25,16 +25,93 @@
     return _instance;
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    if(self) {
+        [self configureProxies];
+    }
+    return self;
+}
+
+//// Components proxies
+
+- (void)configureProxies
+{
+    [self configureNavigationBar];
+}
+
+- (void)configureNavigationBar
+{
+    // http://www.appcoda.com/customize-navigation-status-bar-ios-7/
+    
+    [[UINavigationBar appearance] setBarTintColor:[self navBar]];
+    [[UINavigationBar appearance] setTintColor:[self navBarText]];
+    [[UINavigationBar appearance] setTranslucent:NO];
+    [[UINavigationBar appearance] setTitleTextAttributes: @{NSForegroundColorAttributeName: [self navBarText],
+                                                            NSFontAttributeName: [self mediumFontWithSize:14]}];
+    
+}
+
 #pragma mark - colors
+
+/// palette https://coolors.co/e63946-f1faee-2c3037-457b9d-1d3557
+
+- (UIColor *)spaceCadet
+{
+    return UIColorFromRGB(0x1D3557);
+}
+
+- (UIColor *)queenBlue
+{
+    return UIColorFromRGB(0x457B9D);
+}
+
+- (UIColor *)honeydew
+{
+    return UIColorFromRGB(0xF1FAEE);
+}
+
+- (UIColor *)desire
+{
+    return UIColorFromRGB(0xE63946);
+}
+
+- (UIColor *)ghostWhite
+{
+    return UIColorFromRGB(0xF8F9FA);
+}
+
+- (UIColor *)gunMetal
+{
+    return UIColorFromRGB(0x2C3037);
+}
+
+/// Colors for ui elements
+
+- (UIColor *)navBar
+{
+    return [self spaceCadet];
+}
+
+- (UIColor *)navBarText
+{
+    return [self honeydew];
+}
 
 - (UIColor *)background
 {
-    return UIColorFromRGB(0xF6F6F6);
+    return [self ghostWhite];
 }
 
 - (UIColor *)text
 {
-    return UIColorFromRGB(0x333333);
+    return [self gunMetal];
+}
+
+- (UIColor *)cardText
+{
+    return [self ghostWhite];
 }
 
 #pragma mark - fonts
