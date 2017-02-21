@@ -52,7 +52,9 @@
 //    UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithTitle:@"Search" style:UIBarButtonItemStyleDone target:self action:@selector(searchDidPress)];
 //    self.navigationItem.leftBarButtonItem = searchButton;
     
-    UIBarButtonItem *showFiltresButton = [[UIBarButtonItem alloc] initWithTitle:@"Filtres" style:UIBarButtonItemStyleDone target:self action:@selector(filtresDidPress)];
+    UIImage *image = [UIImage imageNamed:@"filter"];
+    UIBarButtonItem *showFiltresButton = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStyleDone target:self action:@selector(filtresDidPress)];
+    
     self.navigationItem.rightBarButtonItem = showFiltresButton;
 }
 
