@@ -10,4 +10,6 @@
 
 @interface UIView (Utils)
 
+- (void)roundedCorner:(CGFloat)radius;
+
 @end

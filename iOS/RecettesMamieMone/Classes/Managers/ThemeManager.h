@@ -6,10 +6,23 @@
 //  Copyright © 2017 MBC. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface ThemeManager : NSObject
 
 + (instancetype)instance;
+
+#pragma mark - colors
+
+- (UIColor *)background;
+- (UIColor *)text;
+
+#pragma mark - fonts
+
+- (UIFont *)semiBoldFontWithSize:(CGFloat)size;
+- (UIFont *)boldFontWithSize:(CGFloat)size;
+- (UIFont *)regularFontWithSize:(CGFloat)size;
+- (UIFont *)lightFontWithSize:(CGFloat)size;
+- (UIFont *)mediumFontWithSize:(CGFloat)size;
 
 @end

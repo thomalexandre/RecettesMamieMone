@@ -15,6 +15,7 @@
 		9133C5661E54B57200959AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9133C5651E54B57200959AFF /* Assets.xcassets */; };
 		9133C5691E54B57200959AFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9133C5671E54B57200959AFF /* LaunchScreen.storyboard */; };
 		9133C5741E54B57200959AFF /* RecettesMamieMoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9133C5731E54B57200959AFF /* RecettesMamieMoneTests.m */; };
+		91502A461E5C807500001D2B /* ReceipeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91502A451E5C807500001D2B /* ReceipeCollectionViewCell.m */; };
 		91EB571F1E5796F000131FD4 /* RecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB571E1E5796F000131FD4 /* RecipeViewController.m */; };
 		91EB57221E5796FA00131FD4 /* RecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB57211E5796FA00131FD4 /* RecipesViewController.m */; };
 		91EB57251E57978A00131FD4 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB57241E57978A00131FD4 /* UIView+Layout.m */; };
@@ -67,6 +68,8 @@
 		9133C56F1E54B57200959AFF /* RecettesMamieMoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecettesMamieMoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9133C5731E54B57200959AFF /* RecettesMamieMoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecettesMamieMoneTests.m; sourceTree = "<group>"; };
 		9133C5751E54B57200959AFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91502A441E5C807500001D2B /* ReceipeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceipeCollectionViewCell.h; sourceTree = "<group>"; };
+		91502A451E5C807500001D2B /* ReceipeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceipeCollectionViewCell.m; sourceTree = "<group>"; };
 		91EB571D1E5796F000131FD4 /* RecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeViewController.h; sourceTree = "<group>"; };
 		91EB571E1E5796F000131FD4 /* RecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeViewController.m; sourceTree = "<group>"; };
 		91EB57201E5796FA00131FD4 /* RecipesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesViewController.h; sourceTree = "<group>"; };
@@ -208,6 +211,8 @@
 		91502A421E5B9CE200001D2B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				91502A441E5C807500001D2B /* ReceipeCollectionViewCell.h */,
+				91502A451E5C807500001D2B /* ReceipeCollectionViewCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -611,6 +616,7 @@
 				91EB57301E5A01F400131FD4 /* RecipesParser.m in Sources */,
 				91EB57331E5A025D00131FD4 /* RecipeTypesParser.m in Sources */,
 				91FEAE921E5500AE0023FEBE /* ConfigurationManager.m in Sources */,
+				91502A461E5C807500001D2B /* ReceipeCollectionViewCell.m in Sources */,
 				91EB57401E5AC66600131FD4 /* HardnessParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
