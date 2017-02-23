@@ -1,8 +1,10 @@
 package com.github.maksadavid.recettesmamiemone.service;
 
 import android.content.Context;
+import android.widget.ImageView;
 
 import com.github.maksadavid.recettesmamiemone.model.Recipe;
+import com.github.maksadavid.recettesmamiemone.util.Callback;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -15,38 +17,59 @@ import java.util.ArrayList;
 /**
  * Created by maksadavid on 2017. 02. 21..
  */
-public class RecipeServiceImpl implements RecipeService, ValueEventListener {
+public class RecipeServiceImpl implements RecipeService {
 
     private DatabaseReference recipesDbRef;
-    private ArrayList<Recipe> recipes;
+    private DatabaseReference recipeDetailsDbRef;
 
     public RecipeServiceImpl() {
         this.recipesDbRef = FirebaseDatabase.getInstance().getReference("recipes").child("list");
-        recipesDbRef.addValueEventListener(this);
+        this.recipeDetailsDbRef = FirebaseDatabase.getInstance().getReference("details");
     }
 
     @Override
-    public ArrayList<Recipe> getAllRecipes(Context context) throws Exception {
-        ArrayList<Recipe> recipes = new ArrayList<>();
-        for (int i=0 ; i<10; i++) {
-            recipes.add(new Recipe("Recipe " + i, Recipe.Type.TYPE0, Recipe.Hardness.HARDNESS0));
-        }
-        return recipes;
+    public void getAllRecipes(final Callback<ArrayList<Recipe>> success, final Callback<Exception> failure) {
+        recipesDbRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                ArrayList<Recipe> newRecipes = new ArrayList<>();
+                for (DataSnapshot recipeData : dataSnapshot.getChildren()) {
+                    newRecipes.add(new Recipe(recipeData));
+                }
+                success.execute(newRecipes);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                failure.execute(new Exception("getAllRecipes was cancelled"));
+            }
+        });
     }
 
     @Override
-    public void onDataChange(DataSnapshot dataSnapshot) {
-        ArrayList<Recipe> newRecipes = new ArrayList<>();
-        for (DataSnapshot recipeData : dataSnapshot.getChildren()) {
-            newRecipes.add(new Recipe((String) recipeData.child("title").getValue(),
-                    Recipe.Type.TYPE0,
-                    Recipe.Hardness.HARDNESS0));
-        }
-        recipes = newRecipes;
+    public void fetchDetailsForRecipe(final Recipe recipe, final Callback<Recipe> success, final Callback<Exception> failure) {
+        recipeDetailsDbRef.child(recipe.getId()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                recipe.setIngredients((String) dataSnapshot.child("ingredients").getValue());
+                recipe.setPreparation((String) dataSnapshot.child("preparation").getValue());
+                success.execute(recipe);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                failure.execute(new Exception("fetchDetailsForRecipe was cancelled"));
+            }
+        });
     }
 
     @Override
-    public void onCancelled(DatabaseError databaseError) {
-
+    public void loadImageForRecipe(Context context, Recipe recipe, ImageView imageView) {
+//        StorageReference storageReference = FirebaseStorage.getInstance().getReference(recipe.getId()).child("thumbnail.jpg");
+//        Glide.with(imageView.getContext())
+//                .using(new FirebaseImageLoader())
+//                .load(storageReference)
+//                .into(imageView);
     }
+
 }

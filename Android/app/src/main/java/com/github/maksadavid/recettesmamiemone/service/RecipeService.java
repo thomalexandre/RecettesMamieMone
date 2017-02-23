@@ -1,8 +1,10 @@
 package com.github.maksadavid.recettesmamiemone.service;
 
 import android.content.Context;
+import android.widget.ImageView;
 
 import com.github.maksadavid.recettesmamiemone.model.Recipe;
+import com.github.maksadavid.recettesmamiemone.util.Callback;
 
 import java.util.ArrayList;
 
@@ -11,11 +13,10 @@ import java.util.ArrayList;
  */
 public interface RecipeService {
 
-    /**
-     * @param context
-     * @return a list of Recipes, never null.
-     * @throws Exception contains information about what went wrong.
-     */
-    ArrayList<Recipe> getAllRecipes(Context context) throws Exception;
+    void getAllRecipes(Callback<ArrayList<Recipe>> success, Callback<Exception> failure);
+
+    void fetchDetailsForRecipe(Recipe recipe, Callback<Recipe> success, Callback<Exception> failure);
+
+    void loadImageForRecipe(Context context, Recipe recipe, ImageView imageView);
 
 }

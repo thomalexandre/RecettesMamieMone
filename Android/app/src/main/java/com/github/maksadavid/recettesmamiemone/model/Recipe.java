@@ -1,26 +1,66 @@
 package com.github.maksadavid.recettesmamiemone.model;
 
+import com.google.firebase.database.DataSnapshot;
+
+import java.io.Serializable;
+
 /**
  * Created by maksadavid on 2017. 02. 21..
  */
-public class Recipe {
+public class Recipe implements Serializable {
 
     public enum Type {
-        TYPE0, TYPE1, TYPE2
+        TYPE0("type_0"), TYPE1("type_1"), TYPE2("type_2");
+        private String text;
+
+        public static Type fromString(String text) {
+            for (Type t : Type.values()) {
+                if (t.text.equalsIgnoreCase(text)) {
+                    return t;
+                }
+            }
+            return null;
+        }
+
+        Type(String text) {
+            this.text = text;
+        }
     }
 
     public enum Hardness {
-        HARDNESS0, HARDNESS1, HARDNESS2
+        HARDNESS0("hardness_0"), HARDNESS1("hardness_1"), HARDNESS2("hardness_2");
+        private String text;
+
+        public static Hardness fromString(String text) {
+            for (Hardness t : Hardness.values()) {
+                if (t.text.equalsIgnoreCase(text)) {
+                    return t;
+                }
+            }
+            return null;
+        }
+
+        Hardness(String text) {
+            this.text = text;
+        }
     }
 
+    private String id;
     private String title;
     private Type type;
     private Hardness hardness;
+    private String ingredients;
+    private String preparation;
 
-    public Recipe(String title, Type type, Hardness hardness) {
-        this.title = title;
-        this.type = type;
-        this.hardness = hardness;
+    public Recipe(DataSnapshot recipeData) {
+        this.id = recipeData.getKey();
+        this.title = (String) recipeData.child("title").getValue();
+        this.type = Type.fromString((String) recipeData.child("type").getValue());
+        this.hardness = Hardness.fromString((String) recipeData.child("hardness").getValue());
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getTitle() {
@@ -33,6 +73,22 @@ public class Recipe {
 
     public Hardness getHardness() {
         return hardness;
+    }
+
+    public String getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(String ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public String getPreparation() {
+        return preparation;
+    }
+
+    public void setPreparation(String preparation) {
+        this.preparation = preparation;
     }
 
     @Override

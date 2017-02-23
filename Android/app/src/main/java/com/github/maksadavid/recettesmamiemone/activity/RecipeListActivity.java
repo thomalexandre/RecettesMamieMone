@@ -10,11 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 import com.github.maksadavid.recettesmamiemone.R;
 import com.github.maksadavid.recettesmamiemone.fragment.RecipeDetailFragment;
 import com.github.maksadavid.recettesmamiemone.model.Recipe;
 import com.github.maksadavid.recettesmamiemone.service.ServiceHolder;
+import com.github.maksadavid.recettesmamiemone.util.Callback;
 import com.github.maksadavid.recettesmamiemone.viewholder.RecipeViewHolder;
 
 import java.util.ArrayList;
@@ -34,6 +34,7 @@ public class RecipeListActivity extends AppCompatActivity {
      * device.
      */
     private boolean mTwoPane;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,21 +45,27 @@ public class RecipeListActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recipe_list);
+        recyclerView = (RecyclerView) findViewById(R.id.recipe_list);
         assert recyclerView != null;
-        ArrayList<Recipe> recipes = null;
-        try {
-            recipes = ServiceHolder.recipeService.getAllRecipes(this);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(recipes));
-
+        updateRecipes();
         if (findViewById(R.id.recipe_detail_container) != null) {
             mTwoPane = true;
         }
     }
 
+    private void updateRecipes() {
+        ServiceHolder.recipeService.getAllRecipes(new Callback<ArrayList<Recipe>>() {
+            @Override
+            public void execute(ArrayList<Recipe> result) {
+                recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(result));
+            }
+        }, new Callback<Exception>() {
+            @Override
+            public void execute(Exception result) {
+
+            }
+        });
+    }
 
     public class SimpleItemRecyclerViewAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
 
@@ -77,28 +84,28 @@ public class RecipeListActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(final RecipeViewHolder holder, int position) {
-            holder.title.setText(recipes.get(position).getTitle());
-
-//            holder.mView.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    if (mTwoPane) {
-//                        Bundle arguments = new Bundle();
-//                        arguments.putString(RecipeDetailFragment.ARG_ITEM_ID, holder.mItem.id);
-//                        RecipeDetailFragment fragment = new RecipeDetailFragment();
-//                        fragment.setArguments(arguments);
-//                        getSupportFragmentManager().beginTransaction()
-//                                .replace(R.id.recipe_detail_container, fragment)
-//                                .commit();
-//                    } else {
-//                        Context context = v.getContext();
-//                        Intent intent = new Intent(context, RecipeDetailActivity.class);
-//                        intent.putExtra(RecipeDetailFragment.ARG_ITEM_ID, holder.mItem.id);
-//
-//                        context.startActivity(intent);
-//                    }
-//                }
-//            });
+            final Recipe recipe = recipes.get(position);
+            holder.titleTextView.setText(recipe.getTitle());
+            ServiceHolder.recipeService.loadImageForRecipe(RecipeListActivity.this, recipe, holder.imageView);
+            holder.view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mTwoPane) {
+                        Bundle arguments = new Bundle();
+                        arguments.putSerializable(RecipeDetailFragment.ARG_RECIPE, recipe);
+                        RecipeDetailFragment fragment = new RecipeDetailFragment();
+                        fragment.setArguments(arguments);
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.recipe_detail_container, fragment)
+                                .commit();
+                    } else {
+                        Context context = v.getContext();
+                        Intent intent = new Intent(context, RecipeDetailActivity.class);
+                        intent.putExtra(RecipeDetailFragment.ARG_RECIPE, recipe);
+                        context.startActivity(intent);
+                    }
+                }
+            });
         }
 
         @Override

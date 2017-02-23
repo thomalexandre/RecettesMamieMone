@@ -2,6 +2,7 @@ package com.github.maksadavid.recettesmamiemone.viewholder;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.github.maksadavid.recettesmamiemone.R;
@@ -11,15 +12,19 @@ import com.github.maksadavid.recettesmamiemone.R;
  */
 public class RecipeViewHolder extends RecyclerView.ViewHolder {
 
-    public final TextView title;
+    public final View view;
+    public final TextView titleTextView;
+    public final ImageView imageView;
 
     public RecipeViewHolder(View view) {
         super(view);
-        title = (TextView) view.findViewById(R.id.title);
+        this.view = view;
+        titleTextView = (TextView) view.findViewById(R.id.title);
+        imageView = (ImageView) view.findViewById(R.id.image_view);
     }
 
     @Override
     public String toString() {
-        return super.toString() + " '" + title.getText() + "'";
+        return super.toString() + " '" + titleTextView.getText() + "'";
     }
 }

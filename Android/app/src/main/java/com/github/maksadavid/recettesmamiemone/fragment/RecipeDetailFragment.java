@@ -1,6 +1,8 @@
 package com.github.maksadavid.recettesmamiemone.fragment;
 
+import android.app.Activity;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +13,10 @@ import com.github.maksadavid.recettesmamiemone.R;
 import com.github.maksadavid.recettesmamiemone.activity.RecipeDetailActivity;
 import com.github.maksadavid.recettesmamiemone.activity.RecipeListActivity;
 import com.github.maksadavid.recettesmamiemone.model.Recipe;
+import com.github.maksadavid.recettesmamiemone.service.ServiceHolder;
+import com.github.maksadavid.recettesmamiemone.util.Callback;
+
+import org.w3c.dom.Text;
 
 /**
  * A fragment representing a single Recipe detail screen.
@@ -20,7 +26,10 @@ import com.github.maksadavid.recettesmamiemone.model.Recipe;
  */
 public class RecipeDetailFragment extends Fragment {
 
+    public final static String ARG_RECIPE = "argRecipe";
+
     private Recipe recipe;
+    private TextView ingredientsTextView;
 
     public RecipeDetailFragment() {
     }
@@ -29,28 +38,39 @@ public class RecipeDetailFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        if (getArguments().containsKey(ARG_ITEM_ID)) {
-//            // Load the dummy content specified by the fragment
-//            // arguments. In a real-world scenario, use a Loader
-//            // to load content from a content provider.
-//            mItem = DummyContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
-//
-//            Activity activity = this.getActivity();
-//            CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
-//            if (appBarLayout != null) {
-//                appBarLayout.setTitle(mItem.content);
-//            }
-//        }
+        if (getArguments().containsKey(ARG_RECIPE)) {
+            recipe = (Recipe) getArguments().getSerializable(ARG_RECIPE);
+            Activity activity = this.getActivity();
+            CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
+            if (appBarLayout != null) {
+                appBarLayout.setTitle(recipe.getTitle());
+            }
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.recipe_detail, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_recipe_detail, container, false);
+        ingredientsTextView = (TextView) rootView.findViewById(R.id.recipe_detail);
 
-        // Show the dummy content as text in a TextView.
         if (recipe != null) {
-            ((TextView) rootView.findViewById(R.id.recipe_detail)).setText(recipe.getTitle());
+            ServiceHolder.recipeService.fetchDetailsForRecipe(recipe, new Callback<Recipe>() {
+                @Override
+                public void execute(Recipe result) {
+                    RecipeDetailFragment.this.recipe = recipe;
+                    RecipeDetailFragment.this.ingredientsTextView.setText(recipe.getType().toString() +
+                            "\n\n" + recipe.getHardness().toString() +
+                            "\n\n" + recipe.getIngredients() +
+                            "\n\n" + recipe.getPreparation()
+                    );
+                }
+            }, new Callback<Exception>() {
+                @Override
+                public void execute(Exception result) {
+
+                }
+            });
         }
 
         return rootView;

@@ -5,6 +5,8 @@ package com.github.maksadavid.recettesmamiemone.service;
  */
 public class ServiceHolder {
 
+    public static final String RECIPES_UPDATE_ACTION = "com.github.maksadavid.recettesmamiemome.RECIPES_UPDATE";
+
     public static final RecipeService recipeService = new RecipeServiceImpl();
 
 }
