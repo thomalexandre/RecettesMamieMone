@@ -12,12 +12,12 @@ public class Recipe implements Serializable {
 
     public enum Type {
         TYPE0("type_0"), TYPE1("type_1"), TYPE2("type_2");
+        private static DataSnapshot dataSnapshot;
         private String rawText;
 
-        public String getRawText() {
-            return rawText;
+        public static void setDataSnapshot(DataSnapshot dataSnapshot) {
+            Type.dataSnapshot = dataSnapshot;
         }
-
         public static Type fromString(String text) {
             for (Type t : Type.values()) {
                 if (t.rawText.equalsIgnoreCase(text)) {
@@ -33,16 +33,17 @@ public class Recipe implements Serializable {
 
         @Override
         public String toString() {
-            return ServiceHolder.configurationService.toString(this);
+            return (String) dataSnapshot.child(rawText).child("name").getValue();
         }
     }
 
     public enum Hardness {
         HARDNESS0("hardness_0"), HARDNESS1("hardness_1"), HARDNESS2("hardness_2");
+        private static DataSnapshot dataSnapshot;
         private String rawText;
 
-        public String getRawText() {
-            return rawText;
+        public static void setDataSnapshot(DataSnapshot dataSnapshot) {
+            Hardness.dataSnapshot = dataSnapshot;
         }
 
         public static Hardness fromString(String text) {
@@ -60,7 +61,7 @@ public class Recipe implements Serializable {
 
         @Override
         public String toString() {
-            return ServiceHolder.configurationService.toString(this);
+            return (String) dataSnapshot.child(rawText).child("name").getValue();
         }
     }
 

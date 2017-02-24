@@ -28,7 +28,7 @@ public class RecipeServiceImpl implements RecipeService {
     private StorageReference recipeImageStorageRef;
 
     public RecipeServiceImpl() {
-        this.recipesDbRef = FirebaseDatabase.getInstance().getReference("recipes").child("list");
+        this.recipesDbRef = FirebaseDatabase.getInstance().getReference("recipes");
         this.recipeDetailsDbRef = FirebaseDatabase.getInstance().getReference("details");
         this.recipeImageStorageRef = FirebaseStorage.getInstance().getReferenceFromUrl("gs://recettesmamie-d0853.appspot.com");
     }
@@ -38,8 +38,10 @@ public class RecipeServiceImpl implements RecipeService {
         recipesDbRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                Recipe.Type.setDataSnapshot(dataSnapshot.child("types"));
+                Recipe.Hardness.setDataSnapshot(dataSnapshot.child("hardnesses"));
                 ArrayList<Recipe> newRecipes = new ArrayList<>();
-                for (DataSnapshot recipeData : dataSnapshot.getChildren()) {
+                for (DataSnapshot recipeData : dataSnapshot.child("list").getChildren()) {
                     newRecipes.add(new Recipe(recipeData));
                 }
                 success.execute(newRecipes);

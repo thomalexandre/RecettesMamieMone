@@ -7,5 +7,4 @@ public class ServiceHolder {
 
     public static final RecipeService recipeService = new RecipeServiceImpl();
 
-    public static final ConfigurationService configurationService = new ConfigurationServiceImpl();
 }
