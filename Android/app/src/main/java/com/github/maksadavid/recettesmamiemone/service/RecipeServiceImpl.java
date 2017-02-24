@@ -3,6 +3,8 @@ package com.github.maksadavid.recettesmamiemone.service;
 import android.content.Context;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.github.maksadavid.recettesmamiemone.model.Recipe;
 import com.github.maksadavid.recettesmamiemone.util.Callback;
 import com.google.firebase.database.DataSnapshot;
@@ -10,6 +12,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
@@ -21,10 +25,12 @@ public class RecipeServiceImpl implements RecipeService {
 
     private DatabaseReference recipesDbRef;
     private DatabaseReference recipeDetailsDbRef;
+    private StorageReference recipeImageStorageRef;
 
     public RecipeServiceImpl() {
         this.recipesDbRef = FirebaseDatabase.getInstance().getReference("recipes").child("list");
         this.recipeDetailsDbRef = FirebaseDatabase.getInstance().getReference("details");
+        this.recipeImageStorageRef = FirebaseStorage.getInstance().getReferenceFromUrl("gs://recettesmamie-d0853.appspot.com");
     }
 
     @Override
@@ -65,11 +71,11 @@ public class RecipeServiceImpl implements RecipeService {
 
     @Override
     public void loadImageForRecipe(Context context, Recipe recipe, ImageView imageView) {
-//        StorageReference storageReference = FirebaseStorage.getInstance().getReference(recipe.getId()).child("thumbnail.jpg");
-//        Glide.with(imageView.getContext())
-//                .using(new FirebaseImageLoader())
-//                .load(storageReference)
-//                .into(imageView);
+        StorageReference storageReference = recipeImageStorageRef.child(recipe.getId()).child("thumbnail.jpg");
+        Glide.with(imageView.getContext())
+                .using(new FirebaseImageLoader())
+                .load(storageReference)
+                .into(imageView);
     }
 
 }
