@@ -6,8 +6,8 @@
 
     <ImageView
         android:id="@+id/image_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/recipe_list_image_height"
+        android:layout_height="@dimen/recipe_list_image_height"
         android:layout_weight="1"
         android:src="@drawable/ic_action_name"
         android:layout_gravity="center_vertical"/>

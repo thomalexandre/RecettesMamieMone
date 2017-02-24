@@ -1,5 +1,6 @@
 package com.github.maksadavid.recettesmamiemone.model;
 
+import com.github.maksadavid.recettesmamiemone.service.ServiceHolder;
 import com.google.firebase.database.DataSnapshot;
 
 import java.io.Serializable;
@@ -11,11 +12,15 @@ public class Recipe implements Serializable {
 
     public enum Type {
         TYPE0("type_0"), TYPE1("type_1"), TYPE2("type_2");
-        private String text;
+        private String rawText;
+
+        public String getRawText() {
+            return rawText;
+        }
 
         public static Type fromString(String text) {
             for (Type t : Type.values()) {
-                if (t.text.equalsIgnoreCase(text)) {
+                if (t.rawText.equalsIgnoreCase(text)) {
                     return t;
                 }
             }
@@ -23,17 +28,26 @@ public class Recipe implements Serializable {
         }
 
         Type(String text) {
-            this.text = text;
+            this.rawText = text;
+        }
+
+        @Override
+        public String toString() {
+            return ServiceHolder.configurationService.toString(this);
         }
     }
 
     public enum Hardness {
         HARDNESS0("hardness_0"), HARDNESS1("hardness_1"), HARDNESS2("hardness_2");
-        private String text;
+        private String rawText;
+
+        public String getRawText() {
+            return rawText;
+        }
 
         public static Hardness fromString(String text) {
             for (Hardness t : Hardness.values()) {
-                if (t.text.equalsIgnoreCase(text)) {
+                if (t.rawText.equalsIgnoreCase(text)) {
                     return t;
                 }
             }
@@ -41,7 +55,12 @@ public class Recipe implements Serializable {
         }
 
         Hardness(String text) {
-            this.text = text;
+            this.rawText = text;
+        }
+
+        @Override
+        public String toString() {
+            return ServiceHolder.configurationService.toString(this);
         }
     }
 
