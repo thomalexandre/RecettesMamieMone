@@ -29,16 +29,28 @@
     [self addSubviewAutoLayout:gradient];
     [gradient snap];
     
-    // close buttom ...
+    // close button ...
+    static int closeButtonImageSize = 20.f;
+    static int closeButtonImageTop  = 25.f;
+    static int closeButtonImageLeft = 14.f;
+    static int closeButtonSize      = 44.f;
+    
+    UIImageView *closeButtonImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"close"]];
+    [closeButtonImage setTintColor:[UIColor whiteColor]];
+    [self addSubviewAutoLayout:closeButtonImage];
+    [closeButtonImage setHeightConstant:closeButtonImageSize];
+    [closeButtonImage setWidthConstant:closeButtonImageSize];
+    [closeButtonImage snapTopConstant:closeButtonImageTop];
+    [closeButtonImage snapLeftConstant:closeButtonImageLeft];
+    
     UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [closeButton setTintColor:[UIColor whiteColor]];
-    [closeButton setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
+//    closeButton.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:0.5];
     [closeButton addTarget:self action:@selector(closeButtonDidPress) forControlEvents:UIControlEventTouchUpInside];
     [self addSubviewAutoLayout:closeButton];
-    [closeButton setHeightConstant:18];
-    [closeButton setWidthConstant:18];
-    [closeButton snapTopConstant:26];
-    [closeButton snapLeftConstant:15];
+    [closeButton setHeightConstant:closeButtonSize];
+    [closeButton setWidthConstant:closeButtonSize];
+    [closeButton snapTopConstant:closeButtonImageTop - (closeButtonSize - closeButtonImageSize) / 2.f];
+    [closeButton snapLeftConstant:closeButtonImageLeft - (closeButtonSize - closeButtonImageSize) / 2.f];
 }
 
 - (void)closeButtonDidPress
