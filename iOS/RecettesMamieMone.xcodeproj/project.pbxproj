@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3897E2B20D349D43DD6FAC8D /* libPods-RecettesMamieMone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C3A2F557DBF937EB479FD6 /* libPods-RecettesMamieMone.a */; };
 		81598D5FB7968D3649A83A85 /* libPods-RecettesMamieMoneTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA6616AABF05A9E19E58B72 /* libPods-RecettesMamieMoneTests.a */; };
+		910AA4EC1E64BF3700EAF56A /* HeroImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 910AA4EB1E64BF3700EAF56A /* HeroImageTableViewCell.m */; };
 		912A9B491E578C59004DCCE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 912A9B481E578C59004DCCE0 /* GoogleService-Info.plist */; };
 		9133C55B1E54B57200959AFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9133C55A1E54B57200959AFF /* main.m */; };
 		9133C55E1E54B57200959AFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9133C55D1E54B57200959AFF /* AppDelegate.m */; };
@@ -58,6 +59,8 @@
 		2294FBC798555B5534FF838E /* Pods-RecettesMamieMone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecettesMamieMone.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecettesMamieMone/Pods-RecettesMamieMone.release.xcconfig"; sourceTree = "<group>"; };
 		4871897896FE16E0A2C912A7 /* Pods-RecettesMamieMoneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecettesMamieMoneTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecettesMamieMoneTests/Pods-RecettesMamieMoneTests.debug.xcconfig"; sourceTree = "<group>"; };
 		71BACCCB56CCBC88F124A8A2 /* Pods-RecettesMamieMone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecettesMamieMone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecettesMamieMone/Pods-RecettesMamieMone.debug.xcconfig"; sourceTree = "<group>"; };
+		910AA4EA1E64BF3700EAF56A /* HeroImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroImageTableViewCell.h; sourceTree = "<group>"; };
+		910AA4EB1E64BF3700EAF56A /* HeroImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroImageTableViewCell.m; sourceTree = "<group>"; };
 		912A9B481E578C59004DCCE0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9133C5561E54B57200959AFF /* RecettesMamieMone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecettesMamieMone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9133C55A1E54B57200959AFF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -223,6 +226,8 @@
 		91502A431E5B9CE800001D2B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				910AA4EA1E64BF3700EAF56A /* HeroImageTableViewCell.h */,
+				910AA4EB1E64BF3700EAF56A /* HeroImageTableViewCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -632,6 +637,7 @@
 				91FEAE921E5500AE0023FEBE /* ConfigurationManager.m in Sources */,
 				91502A461E5C807500001D2B /* ReceipeCollectionViewCell.m in Sources */,
 				91EB57401E5AC66600131FD4 /* HardnessParser.m in Sources */,
+				910AA4EC1E64BF3700EAF56A /* HeroImageTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

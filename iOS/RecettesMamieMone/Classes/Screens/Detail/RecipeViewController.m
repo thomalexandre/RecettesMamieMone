@@ -9,6 +9,7 @@
 #import "RecipeViewController.h"
 #import "UIView+Layout.h"
 #import "DataManager.h"
+#import "HeroImageTableViewCell.h"
 
 @interface RecipeViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -43,9 +44,13 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.estimatedRowHeight = 100;
     [self.view addSubviewAutoLayout:self.tableView];
     [self.tableView snap];
+    
+    // register cells
+    [self.tableView registerClass:[HeroImageTableViewCell class] forCellReuseIdentifier:kHeroImageTableViewCellIdentifier];
 }
 
 
@@ -67,16 +72,21 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *text = indexPath.row == 0 ? self.recipe.title :
-                     indexPath.row == 1 ? [NSString stringWithFormat:@"%@ - %@", self.recipe.type.name, self.recipe.hardness.name] :
-                     indexPath.row == 2 ? self.recipe.ingredients :
+    if(indexPath.row == 0) {
+        return [self heroImageCell];
+    }
+    
+    
+    NSString *text = indexPath.row == 1 ? self.recipe.title :
+                     indexPath.row == 2 ? [NSString stringWithFormat:@"%@ - %@", self.recipe.type.name, self.recipe.hardness.name] :
+                     indexPath.row == 3 ? self.recipe.ingredients :
                                           self.recipe.preparation;
-    UIFont   *font = indexPath.row == 0 ? [UIFont boldSystemFontOfSize:18] : [UIFont systemFontOfSize:14];
+    UIFont   *font = indexPath.row == 1 ? [UIFont boldSystemFontOfSize:18] : [UIFont systemFontOfSize:14];
     
     UITableViewCell *cell = [UITableViewCell new];
     
@@ -87,6 +97,24 @@
     cell.textLabel.font = font;
     
     return cell;
+}
+    
+- (UITableViewCell *)heroImageCell
+{
+    HeroImageTableViewCell *cell = (HeroImageTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:kHeroImageTableViewCellIdentifier];
+    
+    [cell setup:self.recipe];
+    
+    return cell;
+}
+    
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.row == 0) {
+        return 200;
+    }
+    
+    return 44;
 }
 
 @end

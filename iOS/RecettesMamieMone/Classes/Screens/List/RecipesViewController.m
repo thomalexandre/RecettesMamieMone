@@ -89,7 +89,8 @@
 {
     Recipe *recipe = self.recipes[indexPath.row];
     RecipeViewController *recipeViewController = [[RecipeViewController alloc] initWithRecipe:recipe];
-    [self.navigationController pushViewController:recipeViewController animated:YES];
+//    [self.navigationController pushViewController:recipeViewController animated:YES];
+    [self presentViewController:recipeViewController animated:YES completion:nil];
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
