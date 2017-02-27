@@ -8,7 +8,7 @@
         android:id="@+id/image_view"
         android:layout_width="@dimen/recipe_list_image_height"
         android:layout_height="@dimen/recipe_list_image_height"
-        android:layout_weight="1"
+        android:layout_weight="0"
         android:src="@drawable/ic_action_name"
         android:layout_gravity="center_vertical"/>
 
@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"
         android:textAppearance="?attr/textAppearanceListItem"
-        android:layout_weight="0"
+        android:layout_weight="1"
         android:layout_gravity="center_vertical"/>
 
 </LinearLayout>
