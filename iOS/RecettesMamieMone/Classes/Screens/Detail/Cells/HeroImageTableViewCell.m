@@ -53,8 +53,8 @@
 
 - (void)setup:(Recipe *)recipe
 {
-    UIImage *image = [UIImage imageNamed:@"placeholder"];
-    self.heroImageView.image = image;
+    //UIImage *image = [UIImage imageNamed:@"placeholder"];
+    //self.heroImageView.image = image;
     
     [[StorageManager instance] urlForPath:[recipe thumbnailPath] completion:^(NSURL *url, NSError *error) {
         [self.heroImageView sd_setImageWithURL:url];

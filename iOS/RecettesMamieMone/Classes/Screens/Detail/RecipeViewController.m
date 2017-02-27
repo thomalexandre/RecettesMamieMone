@@ -10,8 +10,9 @@
 #import "UIView+Layout.h"
 #import "DataManager.h"
 #import "HeroImageTableViewCell.h"
+#import "UIDetailHeaderView.h"
 
-@interface RecipeViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface RecipeViewController () <UITableViewDelegate, UITableViewDataSource, UIDetailHeaderViewDelegate>
 
 @property (nonatomic, strong) Recipe *recipe;
 @property (nonatomic, strong) UITableView *tableView;
@@ -35,6 +36,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = self.recipe.title;
     [self setupTableView];
+    [self setupHeader];
     [self reloadData];
 }
 
@@ -53,6 +55,16 @@
     [self.tableView registerClass:[HeroImageTableViewCell class] forCellReuseIdentifier:kHeroImageTableViewCellIdentifier];
 }
 
+- (void)setupHeader
+{
+    UIDetailHeaderView *header = [UIDetailHeaderView new];
+    header.delegate = self;
+    [self.view addSubviewAutoLayout:header];
+    [header snapTop];
+    [header snapRight];
+    [header snapLeft];
+    [header setHeightConstant:60];
+}
 
 - (void)reloadData
 {
@@ -108,13 +120,20 @@
     return cell;
 }
     
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+//- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    if(indexPath.row == 0) {
+//        return 200;
+//    }
+//    
+//    return 44;
+//}
+
+#pragma mark - UIDetailHeaderViewDelegate
+
+- (void)headerDidClose
 {
-    if(indexPath.row == 0) {
-        return 200;
-    }
-    
-    return 44;
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

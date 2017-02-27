@@ -18,13 +18,29 @@
 
 - (instancetype)init
 {
+    return [self init:GradientTopDown];
+}
+    
+- (instancetype)init:(GradientDirection)direction
+{
     self = [super init];
     if(self) {
         self.backgroundColor = [UIColor clearColor];
         
         self.gradient = [CAGradientLayer layer];
-        self.gradient.colors = @[(id)[[UIColor colorWithRed:0 green:0 blue:0 alpha:0] CGColor],
-                                 (id)[[UIColor colorWithRed:0 green:0 blue:0 alpha:0.2] CGColor]];
+        
+        switch (direction) {
+            case GradientTopDown:
+            self.gradient.colors = @[(id)[[UIColor clearColor] CGColor],
+                                     (id)[[UIColor colorWithRed:0 green:0 blue:0 alpha:0.5] CGColor]];
+            break;
+            
+            case GradientDownTop:
+            self.gradient.colors = @[(id)[[UIColor colorWithRed:0 green:0 blue:0 alpha:0.5] CGColor],
+                                     (id)[[UIColor clearColor] CGColor]];
+            break;
+        }
+        
         [self.layer insertSublayer:self.gradient atIndex:0];
     }
     return self;

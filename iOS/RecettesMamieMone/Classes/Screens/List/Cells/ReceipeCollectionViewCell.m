@@ -59,8 +59,8 @@
     [self.imageView snap];
     
     // gradient...
-    self.gradient = [UIView new];
-    self.gradient.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4];
+    self.gradient = [GradientView new];
+//    self.gradient.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4];
     [self.contentView addSubviewAutoLayout:self.gradient];
     [self.gradient snapBottom];
     [self.gradient snapLeft];

@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GradientView : UIView
 
+typedef NS_ENUM(NSInteger, GradientDirection) {
+    GradientTopDown,
+    GradientDownTop,
+};
+
+@interface GradientView : UIView
+    
+- (instancetype)init:(GradientDirection)direction;
+    
 @end
