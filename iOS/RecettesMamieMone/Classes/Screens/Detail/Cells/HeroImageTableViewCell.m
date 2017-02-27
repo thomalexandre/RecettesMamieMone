@@ -10,11 +10,18 @@
 #import "UIView+Layout.h"
 #import "StorageManager.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "ThemeManager.h"
+
+#define kHeroImageHeight   300.f
+#define kHeroNavbarHeight  64.f
 
 @interface HeroImageTableViewCell ()
-    
+
+@property (nonatomic, strong) UIView      *overView;
 @property (nonatomic, strong) UIImageView *heroImageView;
 @property (nonatomic, strong) UIImageView *borderImageView;
+@property (nonatomic, strong) NSLayoutConstraint *topConstraint;
+@property (nonatomic, strong) NSLayoutConstraint *heightConstraint;
 
 @end
 
@@ -38,9 +45,19 @@
     self.heroImageView.contentMode = UIViewContentModeScaleAspectFill;
     self.heroImageView.clipsToBounds = YES;
     [self.contentView addSubviewAutoLayout:self.heroImageView];
-    [self.heroImageView snap];
-    [self.heroImageView setHeightConstant:300];
+    self.topConstraint = [self.heroImageView snapTop];
+    [self.heroImageView snapLeft];
+    [self.heroImageView snapRight];
+    [self.heroImageView snapBottom];
+    self.heightConstraint = [self.heroImageView setHeightConstant:kHeroImageHeight];
     
+    // over view ...
+    self.overView = [UIView new];
+    self.overView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.0];
+    [self.contentView addSubviewAutoLayout:self.overView];
+    [self.overView snap];
+    
+    // border ...
     self.borderImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hero-border-bottom"]];
     self.borderImageView.contentMode = UIViewContentModeScaleAspectFill;
     self.borderImageView.clipsToBounds = YES;
@@ -68,5 +85,20 @@
 {
     self.heroImageView.image = nil;
 }
+
+- (BOOL)viewDidScroll:(CGFloat)scrollY
+{
+    self.topConstraint.constant    = scrollY > 0 ? 0.0 : scrollY;
+    self.heightConstraint.constant = scrollY > 0 ? kHeroImageHeight : kHeroImageHeight + fabs(scrollY);
     
+    //CGFloat alpha = scrollY > kHeroImageHeight / 3.f ? (kHeroImageHeight/3.f-(kHeroImageHeight-scrollY)) / (kHeroImageHeight/3.f) : 0;
+    CGFloat alpha = scrollY > kHeroImageHeight / 3.f ? (scrollY - kHeroImageHeight / 3.0) / ((kHeroImageHeight - 64) - (kHeroImageHeight / 3.0)) : 0;
+    self.overView.backgroundColor = [[ThemeManager instance] navBar:alpha];
+    
+   // NSLog(@"%f %f", scrollY, alpha);
+    
+    return alpha >= 1.f;
+}
+
+
 @end

@@ -16,6 +16,9 @@
 
 #pragma mark - colors
 
+- (UIColor *)navBar;
+- (UIColor *)navBar:(CGFloat)alpha;
+- (UIColor *)navBarText;
 - (UIColor *)background;
 - (UIColor *)text;
 - (UIColor *)cardText;

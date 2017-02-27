@@ -94,6 +94,11 @@
     return [self spaceCadet];
 }
 
+- (UIColor *)navBar:(CGFloat)alpha
+{
+    return [[self navBar] colorWithAlphaComponent:alpha];
+}
+
 - (UIColor *)navBarText
 {
     return [self honeydew];

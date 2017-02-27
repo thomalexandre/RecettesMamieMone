@@ -15,4 +15,7 @@
 
 - (void)setup:(Recipe *)recipe;
 
+// update the view based on scrolling. Returns YES, if the view has become hidden fully.
+- (BOOL)viewDidScroll:(CGFloat)scrollY;
+
 @end

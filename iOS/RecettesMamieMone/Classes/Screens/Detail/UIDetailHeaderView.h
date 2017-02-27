@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Recipe.h"
 
 @protocol UIDetailHeaderViewDelegate <NSObject>
 
@@ -17,5 +18,7 @@
 @interface UIDetailHeaderView : UIView
 
 @property (nonatomic, weak) id<UIDetailHeaderViewDelegate> delegate;
-    
+
+- (void)showTopBar:(BOOL)showBar recipe:(Recipe *)recipe;
+
 @end

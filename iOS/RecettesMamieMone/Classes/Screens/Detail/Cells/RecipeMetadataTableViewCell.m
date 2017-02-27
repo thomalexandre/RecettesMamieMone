@@ -47,7 +47,7 @@
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.titleLabel.font = [[ThemeManager instance] mediumFontWithSize:18];
     [self addSubviewAutoLayout:self.titleLabel];
-    [self.titleLabel snapBottomConstant:10];
+    [self.titleLabel snapBottomConstant:20];
     [self.titleLabel snapLeftConstant:10];
     [self.titleLabel snapRightConstant:10];
     [self.titleLabel setHeightConstant:20];

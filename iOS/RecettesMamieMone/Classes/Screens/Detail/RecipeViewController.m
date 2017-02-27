@@ -18,6 +18,8 @@
 
 @property (nonatomic, strong) Recipe *recipe;
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, weak)   HeroImageTableViewCell *heroCell;
+@property (nonatomic, strong) UIDetailHeaderView *header;
 
 @end
 
@@ -61,13 +63,13 @@
 
 - (void)setupHeader
 {
-    UIDetailHeaderView *header = [UIDetailHeaderView new];
-    header.delegate = self;
-    [self.view addSubviewAutoLayout:header];
-    [header snapTop];
-    [header snapRight];
-    [header snapLeft];
-    [header setHeightConstant:64];
+    self.header = [UIDetailHeaderView new];
+    self.header.delegate = self;
+    [self.view addSubviewAutoLayout:self.header];
+    [self.header snapTop];
+    [self.header snapRight];
+    [self.header snapLeft];
+    [self.header setHeightConstant:64];
 }
 
 - (void)reloadData
@@ -107,6 +109,7 @@
 {
     HeroImageTableViewCell *cell = (HeroImageTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:kHeroImageTableViewCellIdentifier];
     [cell setup:self.recipe];
+    self.heroCell = cell;
     return cell;
 }
 
@@ -122,6 +125,14 @@
     TitleContentTableViewCell *cell = (TitleContentTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:kTitleContentTableViewCellIdentifier];
     [cell setup:self.recipe type:type];
     return cell;
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    BOOL needToShowBar = [self.heroCell viewDidScroll:scrollView.contentOffset.y];
+    [self.header showTopBar:needToShowBar recipe:self.recipe];
 }
 
 #pragma mark - UIDetailHeaderViewDelegate
