@@ -19,6 +19,8 @@
 		9133C5741E54B57200959AFF /* RecettesMamieMoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9133C5731E54B57200959AFF /* RecettesMamieMoneTests.m */; };
 		91502A461E5C807500001D2B /* ReceipeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91502A451E5C807500001D2B /* ReceipeCollectionViewCell.m */; };
 		91502A4A1E5CE3C800001D2B /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91502A491E5CE3C800001D2B /* GradientView.m */; };
+		91D8934F1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D8934E1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.m */; };
+		91D893521E64D44C003E0C57 /* TitleContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D893511E64D44C003E0C57 /* TitleContentTableViewCell.m */; };
 		91EB571F1E5796F000131FD4 /* RecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB571E1E5796F000131FD4 /* RecipeViewController.m */; };
 		91EB57221E5796FA00131FD4 /* RecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB57211E5796FA00131FD4 /* RecipesViewController.m */; };
 		91EB57251E57978A00131FD4 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB57241E57978A00131FD4 /* UIView+Layout.m */; };
@@ -79,6 +81,10 @@
 		91502A451E5C807500001D2B /* ReceipeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceipeCollectionViewCell.m; sourceTree = "<group>"; };
 		91502A481E5CE3C800001D2B /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
 		91502A491E5CE3C800001D2B /* GradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
+		91D8934D1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeMetadataTableViewCell.h; sourceTree = "<group>"; };
+		91D8934E1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeMetadataTableViewCell.m; sourceTree = "<group>"; };
+		91D893501E64D44C003E0C57 /* TitleContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleContentTableViewCell.h; sourceTree = "<group>"; };
+		91D893511E64D44C003E0C57 /* TitleContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleContentTableViewCell.m; sourceTree = "<group>"; };
 		91EB571D1E5796F000131FD4 /* RecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeViewController.h; sourceTree = "<group>"; };
 		91EB571E1E5796F000131FD4 /* RecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeViewController.m; sourceTree = "<group>"; };
 		91EB57201E5796FA00131FD4 /* RecipesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesViewController.h; sourceTree = "<group>"; };
@@ -231,6 +237,10 @@
 			children = (
 				910AA4EA1E64BF3700EAF56A /* HeroImageTableViewCell.h */,
 				910AA4EB1E64BF3700EAF56A /* HeroImageTableViewCell.m */,
+				91D8934D1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.h */,
+				91D8934E1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.m */,
+				91D893501E64D44C003E0C57 /* TitleContentTableViewCell.h */,
+				91D893511E64D44C003E0C57 /* TitleContentTableViewCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -627,6 +637,7 @@
 				91EB573D1E5AC61600131FD4 /* Hardness.m in Sources */,
 				91FEAE6B1E54FDD30023FEBE /* RootViewController.m in Sources */,
 				91EB573A1E5A30D900131FD4 /* SearchViewController.m in Sources */,
+				91D8934F1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.m in Sources */,
 				91EB57361E5A06D600131FD4 /* FiltersViewController.m in Sources */,
 				910AA4EF1E64C9E500EAF56A /* UIDetailHeaderView.m in Sources */,
 				91502A4A1E5CE3C800001D2B /* GradientView.m in Sources */,
@@ -637,6 +648,7 @@
 				91EB57291E5A00E400131FD4 /* RecipeType.m in Sources */,
 				91EB571F1E5796F000131FD4 /* RecipeViewController.m in Sources */,
 				91FEAE731E54FEB00023FEBE /* UIViewController+Utils.m in Sources */,
+				91D893521E64D44C003E0C57 /* TitleContentTableViewCell.m in Sources */,
 				9133C55B1E54B57200959AFF /* main.m in Sources */,
 				91EB57301E5A01F400131FD4 /* RecipesParser.m in Sources */,
 				91EB57331E5A025D00131FD4 /* RecipeTypesParser.m in Sources */,

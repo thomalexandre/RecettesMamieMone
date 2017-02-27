@@ -10,7 +10,9 @@
 #import "UIView+Layout.h"
 #import "DataManager.h"
 #import "HeroImageTableViewCell.h"
+#import "RecipeMetadataTableViewCell.h"
 #import "UIDetailHeaderView.h"
+#import "TitleContentTableViewCell.h"
 
 @interface RecipeViewController () <UITableViewDelegate, UITableViewDataSource, UIDetailHeaderViewDelegate>
 
@@ -52,7 +54,9 @@
     [self.tableView snap];
     
     // register cells
-    [self.tableView registerClass:[HeroImageTableViewCell class] forCellReuseIdentifier:kHeroImageTableViewCellIdentifier];
+    [self.tableView registerClass:[HeroImageTableViewCell class]      forCellReuseIdentifier:kHeroImageTableViewCellIdentifier];
+    [self.tableView registerClass:[RecipeMetadataTableViewCell class] forCellReuseIdentifier:kRecipeMetadataTableViewCellIdentifier];
+    [self.tableView registerClass:[TitleContentTableViewCell class]   forCellReuseIdentifier:kTitleContentTableViewCellIdentifier];
 }
 
 - (void)setupHeader
@@ -63,7 +67,7 @@
     [header snapTop];
     [header snapRight];
     [header snapLeft];
-    [header setHeightConstant:60];
+    [header setHeightConstant:64];
 }
 
 - (void)reloadData
@@ -84,50 +88,41 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.row == 0) {
-        return [self heroImageCell];
+    switch (indexPath.row) {
+        case 0: return [self heroImageCell]; break;
+        case 1: return [self metadataCell];  break;
+        case 2: return [self titleContent:RecipeContentTypeIngredients];  break;
+        case 3: return [self titleContent:RecipeContentTypePreparation];  break;
+            
+        default: return nil; break;
     }
-    
-    
-    NSString *text = indexPath.row == 1 ? self.recipe.title :
-                     indexPath.row == 2 ? [NSString stringWithFormat:@"%@ - %@", self.recipe.type.name, self.recipe.hardness.name] :
-                     indexPath.row == 3 ? self.recipe.ingredients :
-                                          self.recipe.preparation;
-    UIFont   *font = indexPath.row == 1 ? [UIFont boldSystemFontOfSize:18] : [UIFont systemFontOfSize:14];
-    
-    UITableViewCell *cell = [UITableViewCell new];
-    
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    cell.textLabel.numberOfLines = 0;
-    cell.textLabel.text = text;
-    cell.textLabel.font = font;
-    
-    return cell;
 }
     
 - (UITableViewCell *)heroImageCell
 {
     HeroImageTableViewCell *cell = (HeroImageTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:kHeroImageTableViewCellIdentifier];
-    
     [cell setup:self.recipe];
-    
     return cell;
 }
-    
-//- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    if(indexPath.row == 0) {
-//        return 200;
-//    }
-//    
-//    return 44;
-//}
+
+- (UITableViewCell *)metadataCell
+{
+    RecipeMetadataTableViewCell *cell = (RecipeMetadataTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:kRecipeMetadataTableViewCellIdentifier];
+    [cell setup:self.recipe];
+    return cell;
+}
+
+- (UITableViewCell *)titleContent:(RecipeContentType)type
+{
+    TitleContentTableViewCell *cell = (TitleContentTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:kTitleContentTableViewCellIdentifier];
+    [cell setup:self.recipe type:type];
+    return cell;
+}
 
 #pragma mark - UIDetailHeaderViewDelegate
 
