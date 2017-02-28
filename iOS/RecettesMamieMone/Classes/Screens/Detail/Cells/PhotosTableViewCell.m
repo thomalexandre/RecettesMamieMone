@@ -7,18 +7,100 @@
 //
 
 #import "PhotosTableViewCell.h"
+#import "UIView+Layout.h"
+#import "ThemeManager.h"
+#import "PhotoCollectionViewCell.h"
+#import "ConfigurationManager.h"
+
+@interface PhotosTableViewCell () <UICollectionViewDelegate, UICollectionViewDataSource>
+
+@property (nonatomic, strong) UICollectionView *collectionView;
+
+@end
 
 @implementation PhotosTableViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if(self) {
+        [self setupUI];
+    }
+    return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
+- (void)setupUI
+{
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+    
+    self.collectionView = [[UICollectionView alloc] initWithFrame:self.frame collectionViewLayout:layout];
+    self.collectionView.backgroundColor = [UIColor clearColor];
+    [self.collectionView setDataSource:self];
+    [self.collectionView setDelegate:self];
+    
+    [self.collectionView registerClass:[PhotoCollectionViewCell class] forCellWithReuseIdentifier:kPhotoCollectionViewCellIdentifier];
+    
+    [self addSubviewAutoLayout:self.collectionView];
+    [self.collectionView snap];
+    [self.collectionView setHeightConstant:180];
+}
+
+#pragma mark - UICollectionViewDelegate
+
+
+#pragma mark - UICollectionViewDataSource
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 10;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    PhotoCollectionViewCell *cell = (PhotoCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kPhotoCollectionViewCellIdentifier forIndexPath:indexPath];
+    
+    return cell;
+}
+
+#pragma mark - UICollectionViewDelegateFlowLayout
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    /*if([ConfigurationManager isIphone]) {
+        CGFloat width       = (collectionView.frame.size.width - 3 * 16) / 2;
+        //        CGFloat pictheight  = width / 1.5f;
+        //        CGFloat textHeight  = 34.f;
+        //        CGFloat height      = pictheight + textHeight;
+        
+        return CGSizeMake(width, width/1.2);
+        
+    } else {
+        
+        CGFloat width       = 220.f;//(collectionView.frame.size.width - 3 * 16) / 2;
+        //        CGFloat pictheight  = width / 1.5f;
+        //        CGFloat textHeight  = 34.f;
+        //        CGFloat height      = pictheight + textHeight;
+        
+        return CGSizeMake(width, width / 1.2);
+    }*/
+    
+    return CGSizeMake(150, 150);
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    CGFloat margin = [ConfigurationManager isIphone] ? 16.f : 20.f;
+    return UIEdgeInsetsMake(margin, margin, margin, margin);
+}
+
+
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    CGFloat spacing = [ConfigurationManager isIphone] ? 16.f : 20.f;
+    return spacing;
 }
 
 @end

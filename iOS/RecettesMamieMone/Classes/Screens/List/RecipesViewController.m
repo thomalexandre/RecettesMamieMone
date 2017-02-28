@@ -38,7 +38,7 @@
 
 - (void)setupCollectionView
 {
-    UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:layout];
     self.collectionView.backgroundColor = [[ThemeManager instance] background];
     [self.collectionView setDataSource:self];
@@ -99,18 +99,18 @@
 {
     if([ConfigurationManager isIphone]) {
         CGFloat width       = (collectionView.frame.size.width - 3 * 16) / 2;
-        CGFloat pictheight  = width / 1.5f;
-        CGFloat textHeight  = 34.f;
-        CGFloat height      = pictheight + textHeight;
+//        CGFloat pictheight  = width / 1.5f;
+//        CGFloat textHeight  = 34.f;
+//        CGFloat height      = pictheight + textHeight;
         
         return CGSizeMake(width, width/1.2);
         
     } else {
         
         CGFloat width       = 220.f;//(collectionView.frame.size.width - 3 * 16) / 2;
-        CGFloat pictheight  = width / 1.5f;
-        CGFloat textHeight  = 34.f;
-        CGFloat height      = pictheight + textHeight;
+//        CGFloat pictheight  = width / 1.5f;
+//        CGFloat textHeight  = 34.f;
+//        CGFloat height      = pictheight + textHeight;
         
         return CGSizeMake(width, width / 1.2);
     }

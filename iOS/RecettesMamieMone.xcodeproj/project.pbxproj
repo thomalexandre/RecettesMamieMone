@@ -22,6 +22,7 @@
 		91D8934F1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D8934E1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.m */; };
 		91D893521E64D44C003E0C57 /* TitleContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D893511E64D44C003E0C57 /* TitleContentTableViewCell.m */; };
 		91D893551E65543A003E0C57 /* PhotosTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D893541E65543A003E0C57 /* PhotosTableViewCell.m */; };
+		91D893581E65D52D003E0C57 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D893571E65D52D003E0C57 /* PhotoCollectionViewCell.m */; };
 		91EB571F1E5796F000131FD4 /* RecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB571E1E5796F000131FD4 /* RecipeViewController.m */; };
 		91EB57221E5796FA00131FD4 /* RecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB57211E5796FA00131FD4 /* RecipesViewController.m */; };
 		91EB57251E57978A00131FD4 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB57241E57978A00131FD4 /* UIView+Layout.m */; };
@@ -88,6 +89,8 @@
 		91D893511E64D44C003E0C57 /* TitleContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleContentTableViewCell.m; sourceTree = "<group>"; };
 		91D893531E65543A003E0C57 /* PhotosTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosTableViewCell.h; sourceTree = "<group>"; };
 		91D893541E65543A003E0C57 /* PhotosTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosTableViewCell.m; sourceTree = "<group>"; };
+		91D893561E65D52D003E0C57 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		91D893571E65D52D003E0C57 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		91EB571D1E5796F000131FD4 /* RecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeViewController.h; sourceTree = "<group>"; };
 		91EB571E1E5796F000131FD4 /* RecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeViewController.m; sourceTree = "<group>"; };
 		91EB57201E5796FA00131FD4 /* RecipesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesViewController.h; sourceTree = "<group>"; };
@@ -246,6 +249,8 @@
 				91D893511E64D44C003E0C57 /* TitleContentTableViewCell.m */,
 				91D893531E65543A003E0C57 /* PhotosTableViewCell.h */,
 				91D893541E65543A003E0C57 /* PhotosTableViewCell.m */,
+				91D893561E65D52D003E0C57 /* PhotoCollectionViewCell.h */,
+				91D893571E65D52D003E0C57 /* PhotoCollectionViewCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -639,6 +644,7 @@
 				91FEAE761E54FEE10023FEBE /* NSString+Utils.m in Sources */,
 				91EB57221E5796FA00131FD4 /* RecipesViewController.m in Sources */,
 				91D893551E65543A003E0C57 /* PhotosTableViewCell.m in Sources */,
+				91D893581E65D52D003E0C57 /* PhotoCollectionViewCell.m in Sources */,
 				91EB57251E57978A00131FD4 /* UIView+Layout.m in Sources */,
 				91EB573D1E5AC61600131FD4 /* Hardness.m in Sources */,
 				91FEAE6B1E54FDD30023FEBE /* RootViewController.m in Sources */,
