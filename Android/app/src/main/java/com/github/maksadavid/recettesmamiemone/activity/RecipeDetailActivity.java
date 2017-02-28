@@ -7,9 +7,12 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 import com.github.maksadavid.recettesmamiemone.R;
 import com.github.maksadavid.recettesmamiemone.fragment.RecipeDetailFragment;
+import com.github.maksadavid.recettesmamiemone.model.Recipe;
+import com.github.maksadavid.recettesmamiemone.service.ServiceHolder;
 
 /**
  * An activity representing a single Recipe detail screen. This
@@ -17,7 +20,10 @@ import com.github.maksadavid.recettesmamiemone.fragment.RecipeDetailFragment;
  * item details are presented side-by-side with a list of items
  * in a {@link RecipeListActivity}.
  */
+
 public class RecipeDetailActivity extends AppCompatActivity {
+
+    private ImageView headerImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +31,13 @@ public class RecipeDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recipe_detail);
         Toolbar toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
         setSupportActionBar(toolbar);
+
+        headerImageView = (ImageView) findViewById(R.id.header_image_view);
+
+        if (getIntent().getExtras().containsKey(RecipeDetailFragment.ARG_RECIPE)) {
+            Recipe recipe = (Recipe) getIntent().getExtras().getSerializable(RecipeDetailFragment.ARG_RECIPE);
+            ServiceHolder.recipeService.loadImageForRecipe(this, recipe, headerImageView);
+        }
 
         // Show the Up button in the action bar.
         ActionBar actionBar = getSupportActionBar();
