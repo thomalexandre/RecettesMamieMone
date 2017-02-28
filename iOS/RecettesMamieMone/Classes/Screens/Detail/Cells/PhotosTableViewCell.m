@@ -68,24 +68,6 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*if([ConfigurationManager isIphone]) {
-        CGFloat width       = (collectionView.frame.size.width - 3 * 16) / 2;
-        //        CGFloat pictheight  = width / 1.5f;
-        //        CGFloat textHeight  = 34.f;
-        //        CGFloat height      = pictheight + textHeight;
-        
-        return CGSizeMake(width, width/1.2);
-        
-    } else {
-        
-        CGFloat width       = 220.f;//(collectionView.frame.size.width - 3 * 16) / 2;
-        //        CGFloat pictheight  = width / 1.5f;
-        //        CGFloat textHeight  = 34.f;
-        //        CGFloat height      = pictheight + textHeight;
-        
-        return CGSizeMake(width, width / 1.2);
-    }*/
-    
     return CGSizeMake(150, 150);
 }
 
@@ -94,8 +76,6 @@
     CGFloat margin = [ConfigurationManager isIphone] ? 16.f : 20.f;
     return UIEdgeInsetsMake(margin, margin, margin, margin);
 }
-
-
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
