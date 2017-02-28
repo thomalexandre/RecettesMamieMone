@@ -1,6 +1,7 @@
 package com.github.maksadavid.recettesmamiemone.activity;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,9 @@ import com.github.maksadavid.recettesmamiemone.model.Recipe;
 import com.github.maksadavid.recettesmamiemone.service.ServiceHolder;
 import com.github.maksadavid.recettesmamiemone.util.Callback;
 import com.github.maksadavid.recettesmamiemone.viewholder.RecipeViewHolder;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.gms.common.GooglePlayServicesUtil;
 
 import java.util.ArrayList;
 
@@ -50,6 +54,20 @@ public class RecipeListActivity extends AppCompatActivity {
         updateRecipes();
         if (findViewById(R.id.recipe_detail_container) != null) {
             mTwoPane = true;
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        int code = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(this);
+        if (code != ConnectionResult.SUCCESS) {
+            GooglePlayServicesUtil.showErrorDialogFragment(code, this, null, 0, new DialogInterface.OnCancelListener() {
+                @Override
+                public void onCancel(DialogInterface dialog) {
+
+                }
+            });
         }
     }
 
