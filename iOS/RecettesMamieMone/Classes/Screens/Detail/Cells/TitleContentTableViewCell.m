@@ -46,11 +46,11 @@
     self.contentLabel = [UILabel new];
     self.contentLabel.numberOfLines = 0;
     self.contentLabel.textAlignment = NSTextAlignmentLeft;
-    self.contentLabel.font = [[ThemeManager instance] mediumFontWithSize:12];
+    self.contentLabel.font = [[ThemeManager instance] mediumFontWithSize:14];
     [self addSubviewAutoLayout:self.contentLabel];
     [self.contentLabel snapBottomConstant:20];
-    [self.contentLabel snapLeftConstant:10];
-    [self.contentLabel snapRightConstant:10];
+    [self.contentLabel snapLeftConstant:15];
+    [self.contentLabel snapRightConstant:15];
     
     [self.contentLabel snapTopToBottom:20 relativeToView:self.titleLabel];
 }

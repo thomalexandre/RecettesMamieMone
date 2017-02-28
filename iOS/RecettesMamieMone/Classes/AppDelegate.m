@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "RootViewController.h"
 #import "ThemeManager.h"
+#import "ConfigurationManager.h"
 @import Firebase;
 
 @interface AppDelegate ()
@@ -51,6 +52,15 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+    if ([ConfigurationManager isIpad]) {
+        return UIInterfaceOrientationMaskAll;
+    } else if ([ConfigurationManager isIphone]) {
+        return UIInterfaceOrientationMaskPortrait;
+    }
+    return 0;
 }
 
 #pragma mark - Setup
