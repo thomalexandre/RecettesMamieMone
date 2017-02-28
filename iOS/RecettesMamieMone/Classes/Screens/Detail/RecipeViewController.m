@@ -13,6 +13,7 @@
 #import "RecipeMetadataTableViewCell.h"
 #import "UIDetailHeaderView.h"
 #import "TitleContentTableViewCell.h"
+#import "PhotosTableViewCell.h"
 
 @interface RecipeViewController () <UITableViewDelegate, UITableViewDataSource, UIDetailHeaderViewDelegate>
 
@@ -59,6 +60,7 @@
     [self.tableView registerClass:[HeroImageTableViewCell class]      forCellReuseIdentifier:kHeroImageTableViewCellIdentifier];
     [self.tableView registerClass:[RecipeMetadataTableViewCell class] forCellReuseIdentifier:kRecipeMetadataTableViewCellIdentifier];
     [self.tableView registerClass:[TitleContentTableViewCell class]   forCellReuseIdentifier:kTitleContentTableViewCellIdentifier];
+    [self.tableView registerClass:[PhotosTableViewCell class]         forCellReuseIdentifier:kPhotosTableViewCellIdentifier];
 }
 
 - (void)setupHeader
@@ -75,7 +77,6 @@
 - (void)reloadData
 {
     [[DataManager instance] fetchDetails:self.recipe completion:^(Recipe *recipe) {
-        
         self.recipe = recipe;
         [self.tableView reloadData];
     }];
@@ -90,7 +91,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -100,6 +101,7 @@
         case 1: return [self metadataCell];  break;
         case 2: return [self titleContent:RecipeContentTypeIngredients];  break;
         case 3: return [self titleContent:RecipeContentTypePreparation];  break;
+        case 4: return [self photosCarousel]; break;
             
         default: return nil; break;
     }
@@ -124,6 +126,13 @@
 {
     TitleContentTableViewCell *cell = (TitleContentTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:kTitleContentTableViewCellIdentifier];
     [cell setup:self.recipe type:type];
+    return cell;
+}
+
+- (UITableViewCell *)photosCarousel
+{
+    PhotosTableViewCell *cell = (PhotosTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:kPhotosTableViewCellIdentifier];
+    
     return cell;
 }
 
