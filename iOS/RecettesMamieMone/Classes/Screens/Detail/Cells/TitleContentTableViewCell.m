@@ -52,7 +52,7 @@
     [self.contentLabel snapLeftConstant:10];
     [self.contentLabel snapRightConstant:10];
     
-    [self.contentLabel snapTopToBottom:10 relativeToView:self.titleLabel];
+    [self.contentLabel snapTopToBottom:20 relativeToView:self.titleLabel];
 }
 
 - (void)setup:(Recipe *)recipe type:(RecipeContentType)type

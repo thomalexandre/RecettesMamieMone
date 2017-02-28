@@ -131,8 +131,13 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    BOOL needToShowBar = [self.heroCell viewDidScroll:scrollView.contentOffset.y];
+    CGFloat scrollY = scrollView.contentOffset.y;
+    BOOL needToShowBar = [self.heroCell viewDidScroll:scrollY];
     [self.header showTopBar:needToShowBar recipe:self.recipe];
+    
+    if(scrollY < -120) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 #pragma mark - UIDetailHeaderViewDelegate
