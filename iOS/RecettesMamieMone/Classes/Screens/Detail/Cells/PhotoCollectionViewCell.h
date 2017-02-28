@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Photo.h"
 
 #define kPhotoCollectionViewCellIdentifier @"kPhotoCollectionViewCellIdentifier"
 
 @interface PhotoCollectionViewCell : UICollectionViewCell
 
-
+- (void)setup:(Photo *)photo;
 
 @end

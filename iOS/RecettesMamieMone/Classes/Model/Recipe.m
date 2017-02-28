@@ -36,11 +36,31 @@
 {
     self.ingredients = dict[@"ingredients"];
     self.preparation = dict[@"preparation"];
+    
+    if(dict[@"photos"]) {
+        self.photos = [self loadPhotos:dict[@"photos"]];
+    }
+}
+
+- (NSArray *)loadPhotos:(NSArray *)photosList
+{
+    
+    NSMutableArray *array = [NSMutableArray new];
+    for(NSDictionary *dict in photosList) {
+        Photo *photo = [Photo photosWithDictionary:dict prefix:[self imagePrefix]];
+        [array addObject:photo];
+    }
+    return [array copy];
 }
 
 - (NSString *)thumbnailPath
 {
-    return [NSString stringWithFormat:@"%@/thumbnail.jpg", self.identifier];
+    return [NSString stringWithFormat:@"%@thumbnail.jpg", [self imagePrefix]];
+}
+
+- (NSString *)imagePrefix
+{
+    return [NSString stringWithFormat:@"%@/", self.identifier];
 }
 
 

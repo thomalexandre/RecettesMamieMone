@@ -15,7 +15,7 @@
 @interface PhotosTableViewCell () <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
-
+@property (nonatomic, strong) Recipe *recipe;
 @end
 
 @implementation PhotosTableViewCell
@@ -47,20 +47,24 @@
     [self.collectionView setHeightConstant:180];
 }
 
-#pragma mark - UICollectionViewDelegate
-
+- (void)setup:(Recipe *)recipe
+{
+    self.recipe = recipe;
+    [self.collectionView reloadData];
+}
 
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+    return [self.recipe.photos count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     PhotoCollectionViewCell *cell = (PhotoCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kPhotoCollectionViewCellIdentifier forIndexPath:indexPath];
-    
+    Photo *photo = self.recipe.photos[indexPath.row];
+    [cell setup:photo];
     return cell;
 }
 

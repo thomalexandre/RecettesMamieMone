@@ -53,7 +53,33 @@
 	"details": {
 		"recipe_0": {
 			"ingredients": "-000000Fusce dapibus\n-tellus ac cursus commodo\n-tortor mauris condimentum nibh\n-ut fermentum massa justo sit amet risus\n-Aenean lacinia bibendum nulla sed consectetur\n-Maecenas sed diam eget risus varius blandit sit amet non magna\n-Fusce dapibus\n-tellus ac cursus commodo\n-tortor mauris condimentum nibh\n-ut fermentum massa justo sit amet risus",
-			"preparation": "Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Maecenas faucibus mollis interdum.\n\nCurabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nVestibulum id ligula porta felis euismod semper. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.\n\nCras mattis consectetur purus sit amet fermentum. Etiam porta sem malesuada magna mollis euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus auctor fringilla. Curabitur blandit tempus porttitor."
+			"preparation": "Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Maecenas faucibus mollis interdum.\n\nCurabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nVestibulum id ligula porta felis euismod semper. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.\n\nCras mattis consectetur purus sit amet fermentum. Etiam porta sem malesuada magna mollis euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus auctor fringilla. Curabitur blandit tempus porttitor.",
+			"photos": [
+				{
+					"filename": "1.jpg"
+				},
+				{
+					"filename": "2.jpg"
+				},
+				{
+					"filename": "3.jpg"
+				},
+				{
+					"filename": "4.jpg"
+				},
+				{
+					"filename": "5.jpg"
+				},
+				{
+					"filename": "6.jpg"
+				},
+				{
+					"filename": "7.jpg"
+				},
+				{
+					"filename": "8.jpg"
+				}
+			]
 		},
 		"recipe_1": {
 			"ingredients": "-111111Fusce dapibus\n-tellus ac cursus commodo\n-tortor mauris condimentum nibh\n-ut fermentum massa justo sit amet risus\n-Aenean lacinia bibendum nulla sed consectetur\n-Maecenas sed diam eget risus varius blandit sit amet non magna\n-Fusce dapibus\n-tellus ac cursus commodo\n-tortor mauris condimentum nibh\n-ut fermentum massa justo sit amet risus",

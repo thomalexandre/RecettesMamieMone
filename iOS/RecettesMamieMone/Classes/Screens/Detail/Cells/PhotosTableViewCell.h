@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Recipe.h"
 
 #define kPhotosTableViewCellIdentifier @"kPhotosTableViewCellIdentifier"
 
 @interface PhotosTableViewCell : UITableViewCell
+
+- (void)setup:(Recipe *)recipe;
 
 @end

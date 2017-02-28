@@ -91,7 +91,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    NSInteger count = 4;
+    
+    if([self.recipe.photos count] > 0) {
+        count ++;
+    }
+    
+    return count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -132,7 +138,7 @@
 - (UITableViewCell *)photosCarousel
 {
     PhotosTableViewCell *cell = (PhotosTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:kPhotosTableViewCellIdentifier];
-    
+    [cell setup:self.recipe];
     return cell;
 }
 
