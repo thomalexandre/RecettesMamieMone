@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -33,11 +34,6 @@ import java.util.ArrayList;
  */
 public class RecipeListActivity extends AppCompatActivity {
 
-    /**
-     * Whether or not the activity is in two-pane mode, i.e. running on a tablet
-     * device.
-     */
-    private boolean mTwoPane;
     private RecyclerView recyclerView;
 
     @Override
@@ -51,10 +47,8 @@ public class RecipeListActivity extends AppCompatActivity {
 
         recyclerView = (RecyclerView) findViewById(R.id.recipe_list);
         assert recyclerView != null;
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 4));
         updateRecipes();
-        if (findViewById(R.id.recipe_detail_container) != null) {
-            mTwoPane = true;
-        }
     }
 
     @Override
@@ -108,20 +102,10 @@ public class RecipeListActivity extends AppCompatActivity {
             holder.view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (mTwoPane) {
-                        Bundle arguments = new Bundle();
-                        arguments.putSerializable(RecipeDetailFragment.ARG_RECIPE, recipe);
-                        RecipeDetailFragment fragment = new RecipeDetailFragment();
-                        fragment.setArguments(arguments);
-                        getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.recipe_detail_container, fragment)
-                                .commit();
-                    } else {
-                        Context context = v.getContext();
-                        Intent intent = new Intent(context, RecipeDetailActivity.class);
-                        intent.putExtra(RecipeDetailFragment.ARG_RECIPE, recipe);
-                        context.startActivity(intent);
-                    }
+                    Context context = v.getContext();
+                    Intent intent = new Intent(context, RecipeDetailActivity.class);
+                    intent.putExtra(RecipeDetailFragment.ARG_RECIPE, recipe);
+                    context.startActivity(intent);
                 }
             });
         }
