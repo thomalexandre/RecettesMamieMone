@@ -19,7 +19,6 @@
 
 @property (nonatomic, strong) UIView      *overView;
 @property (nonatomic, strong) UIImageView *heroImageView;
-@property (nonatomic, strong) UIImageView *borderImageView;
 @property (nonatomic, strong) NSLayoutConstraint *topConstraint;
 @property (nonatomic, strong) NSLayoutConstraint *heightConstraint;
 
@@ -58,14 +57,14 @@
     [self.overView snap];
     
     // border ...
-    self.borderImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hero-border-bottom"]];
-    self.borderImageView.contentMode = UIViewContentModeScaleAspectFill;
-    self.borderImageView.clipsToBounds = YES;
-    [self.contentView addSubviewAutoLayout:self.borderImageView];
-    [self.borderImageView snapBottom];
-    [self.borderImageView snapLeft];
-    [self.borderImageView snapRight];
-    [self.borderImageView setHeightConstant:10];
+    UIImageView *borderImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hero-border-bottom"]];
+    borderImageView.contentMode = UIViewContentModeScaleAspectFill;
+    borderImageView.clipsToBounds = YES;
+    [self.contentView addSubviewAutoLayout:borderImageView];
+    [borderImageView snapBottom];
+    [borderImageView snapLeft];
+    [borderImageView snapRight];
+    [borderImageView setHeightConstant:10];
 }
 
 - (void)setup:(Recipe *)recipe
