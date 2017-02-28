@@ -1,8 +1,16 @@
 package com.github.maksadavid.recettesmamiemone.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.NavUtils;
+import android.support.v4.view.ViewPager;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -14,6 +22,8 @@ import com.github.maksadavid.recettesmamiemone.fragment.RecipeDetailFragment;
 import com.github.maksadavid.recettesmamiemone.model.Recipe;
 import com.github.maksadavid.recettesmamiemone.service.ServiceHolder;
 
+import java.util.ArrayList;
+
 /**
  * An activity representing a single Recipe detail screen. This
  * activity is only used narrow width devices. On tablet-size devices,
@@ -23,8 +33,6 @@ import com.github.maksadavid.recettesmamiemone.service.ServiceHolder;
 
 public class RecipeDetailActivity extends AppCompatActivity {
 
-    private ImageView headerImageView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,11 +40,16 @@ public class RecipeDetailActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
         setSupportActionBar(toolbar);
 
-        headerImageView = (ImageView) findViewById(R.id.header_image_view);
+        ImageView headerImageView = (ImageView) findViewById(R.id.header_image_view);
+        assert (headerImageView != null);
 
         if (getIntent().getExtras().containsKey(RecipeDetailFragment.ARG_RECIPE)) {
             Recipe recipe = (Recipe) getIntent().getExtras().getSerializable(RecipeDetailFragment.ARG_RECIPE);
             ServiceHolder.recipeService.loadImageForRecipe(this, recipe, headerImageView);
+            CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
+            if (appBarLayout != null) {
+                appBarLayout.setTitle(recipe.getTitle());
+            }
         }
 
         // Show the Up button in the action bar.
@@ -45,15 +58,25 @@ public class RecipeDetailActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        if (savedInstanceState == null) {
-            // Create the detail fragment and add it to the activity
-            // using a fragment transaction.
+        ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
+        assert (viewPager != null);
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        assert (tabLayout != null);
+
+        NestedScrollView scrollView = (NestedScrollView) findViewById(R.id.nested_scrollview);
+        scrollView.setFillViewport(true);
+        tabLayout.setupWithViewPager(viewPager);
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+
+        String[] fragmentTitles = getResources().getStringArray(R.array.recipe_detail_fragment_titles);
+        for (String title : fragmentTitles) {
             RecipeDetailFragment fragment = new RecipeDetailFragment();
             fragment.setArguments(getIntent().getExtras());
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.recipe_detail_container, fragment)
-                    .commit();
+            adapter.addFragment(fragment, title);
         }
+
+        viewPager.setAdapter(adapter);
     }
 
     @Override
@@ -64,5 +87,30 @@ public class RecipeDetailActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    static class ViewPagerAdapter extends FragmentPagerAdapter {
+        private final ArrayList<Fragment> fragments = new ArrayList<>();
+        private final ArrayList<String> fragmentTitles = new ArrayList<>();
+        public ViewPagerAdapter(FragmentManager manager) {
+            super(manager);
+        }
+        public void addFragment(Fragment fragment, String title) {
+            fragments.add(fragment);
+            fragmentTitles.add(title);
+        }
+        @Override
+        public Fragment getItem(int position) {
+            return fragments.get(position);
+        }
+        @Override
+        public int getCount() {
+            return fragments.size();
+        }
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return fragmentTitles.get(position);
+        }
+
     }
 }

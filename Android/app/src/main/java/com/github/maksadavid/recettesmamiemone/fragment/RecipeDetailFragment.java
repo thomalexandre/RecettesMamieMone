@@ -16,8 +16,6 @@ import com.github.maksadavid.recettesmamiemone.model.Recipe;
 import com.github.maksadavid.recettesmamiemone.service.ServiceHolder;
 import com.github.maksadavid.recettesmamiemone.util.Callback;
 
-import org.w3c.dom.Text;
-
 /**
  * A fragment representing a single Recipe detail screen.
  * This fragment is either contained in a {@link RecipeListActivity}
@@ -40,11 +38,6 @@ public class RecipeDetailFragment extends Fragment {
 
         if (getArguments().containsKey(ARG_RECIPE)) {
             recipe = (Recipe) getArguments().getSerializable(ARG_RECIPE);
-            Activity activity = this.getActivity();
-            CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
-            if (appBarLayout != null) {
-                appBarLayout.setTitle(recipe.getTitle());
-            }
         }
     }
 
