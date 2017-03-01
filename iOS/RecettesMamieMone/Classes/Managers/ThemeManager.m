@@ -34,6 +34,19 @@
     return self;
 }
 
+- (void)printListOfFonts
+{
+    for (NSString* family in [UIFont familyNames])
+    {
+        NSLog(@"%@", family);
+        
+        for (NSString* name in [UIFont fontNamesForFamilyName: family])
+        {
+            NSLog(@"  %@", name);
+        }
+    }
+}
+
 //// Components proxies
 
 - (void)configureProxies
