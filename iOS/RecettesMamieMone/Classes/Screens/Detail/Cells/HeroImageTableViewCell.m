@@ -72,8 +72,9 @@
     //UIImage *image = [UIImage imageNamed:@"placeholder"];
     //self.heroImageView.image = image;
     
+    __weak HeroImageTableViewCell * wSelf = self;
     [[StorageManager instance] urlForPath:[recipe thumbnailPath] completion:^(NSURL *url, NSError *error) {
-        [self.heroImageView sd_setImageWithURL:url];
+        [wSelf.heroImageView sd_setImageWithURL:url];
         NSLog(@"Loading... %@", url);
     }];
     
