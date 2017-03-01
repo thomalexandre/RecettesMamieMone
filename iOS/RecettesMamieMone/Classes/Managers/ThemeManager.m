@@ -68,44 +68,43 @@
 
 #pragma mark - colors
 
-/// palette https://coolors.co/e63946-f1faee-2c3037-457b9d-1d3557
+/// palette https://coolors.co/870055-d10068-6f3d96-d07fff-050505
 
-- (UIColor *)spaceCadet
+- (UIColor *)frenchPlum
 {
-    return UIColorFromRGB(0x1D3557);
+    return UIColorFromRGB(0xD10068);
 }
 
-- (UIColor *)queenBlue
+- (UIColor *)rubineRed
 {
-    return UIColorFromRGB(0x457B9D);
+    return UIColorFromRGB(0xD10068);
 }
 
-- (UIColor *)honeydew
+- (UIColor *)purpleHeart
 {
-    return UIColorFromRGB(0xF1FAEE);
+    return UIColorFromRGB(0x6F3D96);
 }
 
-- (UIColor *)desire
+- (UIColor *)heliotrope
 {
-    return UIColorFromRGB(0xE63946);
+    return UIColorFromRGB(0xD07FFF);
 }
 
-- (UIColor *)ghostWhite
+- (UIColor *)whiteSmoke
 {
-    return UIColorFromRGB(0xF8F9FA);
+    return UIColorFromRGB(0xF7F7F7);
 }
 
-- (UIColor *)gunMetal
+- (UIColor *)richBlack
 {
-    return UIColorFromRGB(0x2C3037);
+    return UIColorFromRGB(0x050505);
 }
 
 /// Colors for ui elements
 
 - (UIColor *)navBar
 {
-    return [self spaceCadet];
-//    return UIColorFromRGB(0xE8985E);
+    return [self rubineRed];
 }
 
 - (UIColor *)navBar:(CGFloat)alpha
@@ -115,22 +114,27 @@
 
 - (UIColor *)navBarText
 {
-    return [self honeydew];
+    return [self whiteSmoke];
 }
 
 - (UIColor *)background
 {
-    return [self ghostWhite];
+    return [self whiteSmoke];
 }
 
 - (UIColor *)text
 {
-    return [self gunMetal];
+    return [self richBlack];
+}
+
+- (UIColor *)metaText
+{
+    return [self rubineRed];
 }
 
 - (UIColor *)cardText
 {
-    return [self ghostWhite];
+    return [self whiteSmoke];
 }
 
 - (UIColor *)line

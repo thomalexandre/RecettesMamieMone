@@ -34,6 +34,7 @@
     
     // type ...
     self.typeLabel = [UILabel new];
+    self.typeLabel.textColor = [[ThemeManager instance] metaText];
     self.typeLabel.textAlignment = NSTextAlignmentCenter;
     self.typeLabel.font = [[ThemeManager instance] mediumFontWithSize:12];
     [self addSubviewAutoLayout:self.typeLabel];
@@ -46,6 +47,7 @@
     self.titleLabel = [UILabel new];
     self.titleLabel.numberOfLines = 0;
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    self.titleLabel.textColor = [[ThemeManager instance] text];
     self.titleLabel.font = [[ThemeManager instance] mediumFontWithSize:20];
     [self addSubviewAutoLayout:self.titleLabel];
     [self.titleLabel snapBottomConstant:20];

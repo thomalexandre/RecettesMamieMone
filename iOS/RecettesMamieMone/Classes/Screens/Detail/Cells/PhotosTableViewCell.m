@@ -46,6 +46,7 @@
     titleLabel.text = @"Photos";
     titleLabel.numberOfLines = 0;
     titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.textColor = [[ThemeManager instance] metaText];
     titleLabel.font = [[ThemeManager instance] mediumFontWithSize:20];
     [self addSubviewAutoLayout:titleLabel];
     [titleLabel snapTopConstant:20];

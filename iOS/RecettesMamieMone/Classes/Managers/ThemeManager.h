@@ -21,6 +21,7 @@
 - (UIColor *)navBarText;
 - (UIColor *)background;
 - (UIColor *)text;
+- (UIColor *)metaText;
 - (UIColor *)cardText;
 - (UIColor *)line;
 
