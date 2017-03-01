@@ -1,6 +1,5 @@
 package com.github.maksadavid.recettesmamiemone.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -58,25 +57,20 @@ public class RecipeDetailActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
-        assert (viewPager != null);
-
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        assert (tabLayout != null);
+        tabLayout.addTab(tabLayout.newTab().setText("recipe 1"));
+        tabLayout.addTab(tabLayout.newTab().setText("recipe 2"));
+        tabLayout.addTab(tabLayout.newTab().setText("recipe 3"));
 
-        NestedScrollView scrollView = (NestedScrollView) findViewById(R.id.nested_scrollview);
-        scrollView.setFillViewport(true);
-        tabLayout.setupWithViewPager(viewPager);
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
-        String[] fragmentTitles = getResources().getStringArray(R.array.recipe_detail_fragment_titles);
-        for (String title : fragmentTitles) {
-            RecipeDetailFragment fragment = new RecipeDetailFragment();
+        if (savedInstanceState == null) {
+            Fragment fragment = new RecipeDetailFragment();
             fragment.setArguments(getIntent().getExtras());
-            adapter.addFragment(fragment, title);
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.nested_scrollview, fragment)
+                    .commit();
         }
 
-        viewPager.setAdapter(adapter);
     }
 
     @Override
@@ -87,30 +81,5 @@ public class RecipeDetailActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    static class ViewPagerAdapter extends FragmentPagerAdapter {
-        private final ArrayList<Fragment> fragments = new ArrayList<>();
-        private final ArrayList<String> fragmentTitles = new ArrayList<>();
-        public ViewPagerAdapter(FragmentManager manager) {
-            super(manager);
-        }
-        public void addFragment(Fragment fragment, String title) {
-            fragments.add(fragment);
-            fragmentTitles.add(title);
-        }
-        @Override
-        public Fragment getItem(int position) {
-            return fragments.get(position);
-        }
-        @Override
-        public int getCount() {
-            return fragments.size();
-        }
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return fragmentTitles.get(position);
-        }
-
     }
 }
