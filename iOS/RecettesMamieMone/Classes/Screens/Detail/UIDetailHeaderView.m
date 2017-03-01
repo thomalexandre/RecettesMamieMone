@@ -46,7 +46,7 @@
     
     // close button ...
     static int closeButtonImageSize = 16.f;
-    static int closeButtonImageTop  = 30.f;
+    static int closeButtonImageTop  = 34.f;
     static int closeButtonImageLeft = 14.f;
     static int closeButtonSize      = 44.f;
     
@@ -71,7 +71,7 @@
     self.titleLabel.font = [[ThemeManager instance] mediumFontWithSize:15];
     self.titleLabel.textColor = [[ThemeManager instance] navBarText];
     [self addSubviewAutoLayout:self.titleLabel];
-    [self.titleLabel snapTopConstant:10];
+    [self.titleLabel snapTopConstant:20];
     [self.titleLabel snapBottom];
     [self.titleLabel centerX];
     self.titleLabel.hidden = YES;

@@ -25,9 +25,12 @@
     
     [FIRApp configure];
     
-    [[ThemeManager instance] configureProxies];
     
-    [self setupRootViewController];
+    [[ConfigurationManager instance] fetchConfiguration:^{
+        [[ThemeManager instance] configureProxies];
+        [self setupRootViewController];
+    }];
+    
     
     return YES;
 }

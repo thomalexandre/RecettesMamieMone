@@ -10,4 +10,8 @@
 
 @interface NSString (Utils)
 
+- (id)toJSON;
+- (NSArray *)toArray;
+- (NSDictionary *)toDictionary;
+
 @end

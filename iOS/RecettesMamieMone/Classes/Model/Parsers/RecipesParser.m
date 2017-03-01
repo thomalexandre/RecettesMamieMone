@@ -9,6 +9,7 @@
 #import "RecipesParser.h"
 #import "RecipeTypesParser.h"
 #import "HardnessParser.h"
+#import "ConfigurationManager.h"
 
 @interface RecipesParser ()
 
@@ -40,7 +41,7 @@
         
         NSDictionary *dict  = recipesList[identifier];
         Recipe *recipe      = [Recipe recipe:identifier withDictionary:dict];
-        if(recipe.live) {
+        if(recipe.live || [[ConfigurationManager instance] isTestDevice]) {
             recipe.type         = [recipeTypesParser recipeTypeWithId:dict[@"type"]];
             recipe.hardness     = [hardnessParser hardnessTypeWithId:dict[@"hardness"]];
             [recipes addObject:recipe];
