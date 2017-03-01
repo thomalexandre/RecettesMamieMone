@@ -10,4 +10,10 @@
 
 @implementation UIView (Utils)
 
+- (void)roundedCorner:(CGFloat)radius
+{
+    self.layer.cornerRadius  = radius;
+    self.layer.masksToBounds = YES;
+}
+
 @end

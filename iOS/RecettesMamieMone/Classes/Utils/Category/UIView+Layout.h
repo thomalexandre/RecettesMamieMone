@@ -55,6 +55,16 @@
 -(NSLayoutConstraint *) setMinimumHeightPercent : (float) percent;
 -(NSLayoutConstraint *) setMaximumHeightPercent : (float) percent;
 
+/*! @brief snap view right margin to the left margin of @param view by @param constant pixels (to be used in horizontal arrangements) */
+-(NSLayoutConstraint *) snapRightToLeft :(float)constant relativeToView:(UIView *)view;
+/*! @brief snap view left margin to the right margin of @param view by @param constant pixels (to be used in horizontal arrangements) */
+-(NSLayoutConstraint *) snapLeftToRight :(float)constant relativeToView:(UIView *)view;
+/*! @brief snap view bottom margin to top margin of @param view by @param constant pixels (to be used in vertical arrangements) */
+-(NSLayoutConstraint *) snapBottomToTop :(float)constant relativeToView:(UIView *)view;
+/*! @brief snap view top margin to bottom margin of @param view by @param constant pixels (to be used in vertical arrangements) */
+-(NSLayoutConstraint *) snapTopToBottom :(float)constant relativeToView:(UIView *)view;
+
+
 - (void)removeConstraints;
 
 

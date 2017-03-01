@@ -13,11 +13,12 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "StorageManager.h"
 #import "ConfigurationManager.h"
+#import "ReceipeCollectionViewCell.h"
+#import "ThemeManager.h"
 
 @interface RecipesViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
-//@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray<Recipe *> *recipes;
 
 @end
@@ -30,38 +31,29 @@
     self.title = @"Recettes";
     
     [self setupCollectionView];
-//    [self setupTableView];
     
     [self reloadData];
+    self.view.backgroundColor = [[ThemeManager instance] background];
 }
 
 - (void)setupCollectionView
 {
-    UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:layout];
+    self.collectionView.backgroundColor = [[ThemeManager instance] background];
     [self.collectionView setDataSource:self];
     [self.collectionView setDelegate:self];
     
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
+    [self.collectionView registerClass:[ReceipeCollectionViewCell class] forCellWithReuseIdentifier:kReceipeCollectionViewCellIdentifier];
     
     [self.view addSubviewAutoLayout:self.collectionView];
     [self.collectionView snap];
 }
 
-//- (void)setupTableView
-//{
-//    self.tableView = [UITableView new];
-//    self.tableView.delegate = self;
-//    self.tableView.dataSource = self;
-//    [self.view addSubviewAutoLayout:self.tableView];
-//    [self.tableView snap];
-//}
-
 - (void)reloadData
 {
     [[DataManager instance] fetchRecipes:^(NSArray<Recipe *> *recipes) {
         self.recipes = recipes;
-//        [self.tableView reloadData];
         [self.collectionView reloadData];
     }];
 }
@@ -81,16 +73,24 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [self.recipes count] * 10;
+    return [self.recipes count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    //Recipe *recipe = self.recipes[indexPath.row];
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
+    Recipe *recipe = self.recipes[indexPath.row];
+    ReceipeCollectionViewCell *cell = (ReceipeCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kReceipeCollectionViewCellIdentifier forIndexPath:indexPath];
+    [cell setup:recipe];
     
-    cell.backgroundColor = [UIColor greenColor];
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    Recipe *recipe = self.recipes[indexPath.row];
+    RecipeViewController *recipeViewController = [[RecipeViewController alloc] initWithRecipe:recipe];
+//    [self.navigationController pushViewController:recipeViewController animated:YES];
+    [self presentViewController:recipeViewController animated:YES completion:nil];
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
@@ -99,20 +99,20 @@
 {
     if([ConfigurationManager isIphone]) {
         CGFloat width       = (collectionView.frame.size.width - 3 * 16) / 2;
-        CGFloat pictheight  = width / 1.5f;
-        CGFloat textHeight  = 34.f;
-        CGFloat height      = pictheight + textHeight;
+//        CGFloat pictheight  = width / 1.5f;
+//        CGFloat textHeight  = 34.f;
+//        CGFloat height      = pictheight + textHeight;
         
-        return CGSizeMake(width, height);
+        return CGSizeMake(width, width/1.2);
         
     } else {
         
         CGFloat width       = 220.f;//(collectionView.frame.size.width - 3 * 16) / 2;
-        CGFloat pictheight  = width / 1.5f;
-        CGFloat textHeight  = 34.f;
-        CGFloat height      = pictheight + textHeight;
+//        CGFloat pictheight  = width / 1.5f;
+//        CGFloat textHeight  = 34.f;
+//        CGFloat height      = pictheight + textHeight;
         
-        return CGSizeMake(width, height);
+        return CGSizeMake(width, width / 1.2);
     }
 }
 
@@ -122,42 +122,12 @@
     return UIEdgeInsetsMake(margin, margin, margin, margin);
 }
 
-#pragma mark - UITableViewDelegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
-    Recipe *recipe = self.recipes[indexPath.row];
-    RecipeViewController *recipeViewController = [[RecipeViewController alloc] initWithRecipe:recipe];
-    [self.navigationController pushViewController:recipeViewController animated:YES];
-}
-
-#pragma mark - UITableViewDataSource
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [self.recipes count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    Recipe *recipe = self.recipes[indexPath.row];
-    
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"something"];
-    
-    cell.textLabel.text = recipe.title;
-    cell.imageView.image = [UIImage imageNamed:@"placeholder"];
-    
-    [[StorageManager instance] urlForPath:[recipe thumbnailPath] completion:^(NSURL *url, NSError *error) {
-        [cell.imageView sd_setImageWithURL:url];
-        NSLog(@"Loading... %@", url);
-    }];
-    
-    return cell;
+    CGFloat spacing = [ConfigurationManager isIphone] ? 16.f : 20.f;
+    return spacing;
 }
 
 @end

@@ -6,10 +6,30 @@
 //  Copyright © 2017 MBC. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface ThemeManager : NSObject
 
 + (instancetype)instance;
+
+- (void)configureProxies;
+
+#pragma mark - colors
+
+- (UIColor *)navBar;
+- (UIColor *)navBar:(CGFloat)alpha;
+- (UIColor *)navBarText;
+- (UIColor *)background;
+- (UIColor *)text;
+- (UIColor *)cardText;
+- (UIColor *)line;
+
+#pragma mark - fonts
+
+- (UIFont *)semiBoldFontWithSize:(CGFloat)size;
+- (UIFont *)boldFontWithSize:(CGFloat)size;
+- (UIFont *)regularFontWithSize:(CGFloat)size;
+- (UIFont *)lightFontWithSize:(CGFloat)size;
+- (UIFont *)mediumFontWithSize:(CGFloat)size;
 
 @end

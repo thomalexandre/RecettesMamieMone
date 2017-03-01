@@ -367,6 +367,41 @@
     return constraint;
 }
 
+#pragma mark - view relatives
+
+-(NSLayoutConstraint *) snapRightToLeft:(float)constant relativeToView:(UIView *)view {
+    NSAssert(view,@"Can't snap relative to view if no view exists");
+    NSLayoutConstraint * constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy: NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeLeft multiplier: 1.0 constant: constant];
+    [self.superview addConstraint:constraint];
+    
+    return constraint;
+}
+
+-(NSLayoutConstraint *) snapLeftToRight:(float)constant relativeToView:(UIView *)view {
+    NSAssert(view,@"Can't snap relative to view if no view exists");
+    NSLayoutConstraint * constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeft relatedBy: NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeRight multiplier: 1.0 constant: constant];
+    [self.superview addConstraint:constraint];
+    
+    return constraint;
+}
+
+-(NSLayoutConstraint *) snapBottomToTop:(float)constant relativeToView:(UIView *)view {
+    NSAssert(view,@"Can't snap relative to view if no view exists");
+    NSLayoutConstraint * constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom relatedBy: NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeTop multiplier: 1.0 constant: constant];
+    [self.superview addConstraint:constraint];
+    
+    return constraint;
+}
+
+-(NSLayoutConstraint *) snapTopToBottom:(float)constant relativeToView:(UIView *)view {
+    NSAssert(view,@"Can't snap relative to view if no view exists");
+    NSLayoutConstraint * constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy: NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeBottom multiplier: 1.0 constant: constant];
+    [self.superview addConstraint:constraint];
+    
+    return constraint;
+}
+
+
 -(void) removeConstraints
 {
     NSAssert(self.superview,@"Can't snap to a superview if no superview exists");
