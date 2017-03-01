@@ -47,7 +47,7 @@ public class RecipeListActivity extends AppCompatActivity {
 
         recyclerView = (RecyclerView) findViewById(R.id.recipe_list);
         assert recyclerView != null;
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 4));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, getResources().getInteger(R.integer.recipe_list_column_count)));
         updateRecipes();
     }
 

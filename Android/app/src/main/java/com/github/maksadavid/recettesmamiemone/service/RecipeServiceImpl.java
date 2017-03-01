@@ -35,7 +35,7 @@ public class RecipeServiceImpl implements RecipeService {
 
     @Override
     public void getAllRecipes(final Callback<ArrayList<Recipe>> success, final Callback<Exception> failure) {
-        recipesDbRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        recipesDbRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Recipe.Type.setDataSnapshot(dataSnapshot.child("types"));
@@ -56,7 +56,7 @@ public class RecipeServiceImpl implements RecipeService {
 
     @Override
     public void fetchDetailsForRecipe(final Recipe recipe, final Callback<Recipe> success, final Callback<Exception> failure) {
-        recipeDetailsDbRef.child(recipe.getId()).addListenerForSingleValueEvent(new ValueEventListener() {
+        recipeDetailsDbRef.child(recipe.getId()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 recipe.setIngredients((String) dataSnapshot.child("ingredients").getValue());
