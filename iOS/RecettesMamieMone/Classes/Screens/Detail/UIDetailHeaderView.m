@@ -45,7 +45,7 @@
     self.barView.hidden = YES;
     
     // close button ...
-    static int closeButtonImageSize = 20.f;
+    static int closeButtonImageSize = 16.f;
     static int closeButtonImageTop  = 28.f;
     static int closeButtonImageLeft = 14.f;
     static int closeButtonSize      = 44.f;
@@ -74,8 +74,9 @@
     [self addSubviewAutoLayout:self.titleLabel];
     [self.titleLabel snapTopConstant:10];
     [self.titleLabel snapBottom];
-    [self.titleLabel snapRightConstant:8];
-    [self.titleLabel snapLeftToRight:10 relativeToView:closeButton];
+    [self.titleLabel centerX];
+//    [self.titleLabel snapRightConstant:8];
+//    [self.titleLabel snapLeftToRight:10 relativeToView:closeButton];
     self.titleLabel.hidden = YES;
 }
 

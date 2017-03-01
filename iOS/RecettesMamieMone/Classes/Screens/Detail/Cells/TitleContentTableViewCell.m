@@ -45,7 +45,7 @@
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.titleLabel.font = [[ThemeManager instance] mediumFontWithSize:18];
     [self addSubviewAutoLayout:self.titleLabel];
-    [self.titleLabel snapTopConstant:20];
+    [self.titleLabel snapTopConstant:30];
     [self.titleLabel snapLeftConstant:10];
     [self.titleLabel snapRightConstant:10];
     [self.titleLabel setHeightConstant:20];
@@ -60,7 +60,7 @@
     [self.contentLabel snapLeftConstant:15];
     [self.contentLabel snapRightConstant:15];
     
-    [self.contentLabel snapTopToBottom:20 relativeToView:self.titleLabel];
+    [self.contentLabel snapTopToBottom:30 relativeToView:self.titleLabel];
 }
 
 - (void)setup:(Recipe *)recipe type:(RecipeContentType)type

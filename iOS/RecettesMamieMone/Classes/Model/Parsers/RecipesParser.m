@@ -40,9 +40,11 @@
         
         NSDictionary *dict  = recipesList[identifier];
         Recipe *recipe      = [Recipe recipe:identifier withDictionary:dict];
-        recipe.type         = [recipeTypesParser recipeTypeWithId:dict[@"type"]];
-        recipe.hardness     = [hardnessParser hardnessTypeWithId:dict[@"hardness"]];
-        [recipes addObject:recipe];
+        if(recipe.live) {
+            recipe.type         = [recipeTypesParser recipeTypeWithId:dict[@"type"]];
+            recipe.hardness     = [hardnessParser hardnessTypeWithId:dict[@"hardness"]];
+            [recipes addObject:recipe];
+        }
     }
     
     // sort array

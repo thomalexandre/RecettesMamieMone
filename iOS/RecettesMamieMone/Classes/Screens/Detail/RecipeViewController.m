@@ -150,7 +150,7 @@
     BOOL needToShowBar = [self.heroCell viewDidScroll:scrollY];
     [self.header showTopBar:needToShowBar recipe:self.recipe];
     
-    if(scrollY < -120) {
+    if(scrollY < -125) {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }

@@ -11,6 +11,10 @@
 @interface Recipe ()
 
 @property (nonatomic, strong, readwrite) NSString *identifier;
+@property (nonatomic, strong, readwrite) NSString   *title;
+@property (nonatomic, strong, readwrite) NSString   *ingredients;
+@property (nonatomic, strong, readwrite) NSString   *preparation;
+@property (nonatomic, strong, readwrite) NSString   *thumbnail;
 
 @end
 
@@ -27,7 +31,9 @@
 {
     self = [super init];
     if(self) {
-        self.title = dict[@"title"];
+        _title     = dict[@"title"];
+        _thumbnail = dict[@"thumbnail"];
+        _live      = [dict[@"live"] boolValue];
     }
     return self;
 }
@@ -53,9 +59,9 @@
     return [array copy];
 }
 
-- (NSString *)thumbnailPath
+- (NSString *)thumbnail
 {
-    return [NSString stringWithFormat:@"%@thumbnail.jpg", [self imagePrefix]];
+    return [NSString stringWithFormat:@"%@%@", [self imagePrefix], _thumbnail];
 }
 
 - (NSString *)imagePrefix

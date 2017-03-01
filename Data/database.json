@@ -4,27 +4,37 @@
 			"recipe_0": {
 				"title": "Mousseline au kirsh",
 				"type": "type_2",
-				"hardness": "hardness_1"
+				"hardness": "hardness_1",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
 			},
 			"recipe_1": {
 				"title": "1 Duis mollis",
 				"type": "type_2",
-				"hardness": "hardness_0"
+				"hardness": "hardness_0",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
 			},
 			"recipe_2": {
 				"title": "2 Euismod Nullam Risus",
 				"type": "type_1",
-				"hardness": "hardness_2"
+				"hardness": "hardness_2",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
 			},
 			"recipe_3": {
 				"title": "3 Nuuuuullam Pellentesque Ornare",
 				"type": "type_2",
-				"hardness": "hardness_1"
+				"hardness": "hardness_1",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
 			},
 			"recipe_4": {
 				"title": "4 Vestibulum id ligula porta.",
 				"type": "type_0",
-				"hardness": "hardness_0"
+				"hardness": "hardness_0",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
 			}
 		},
 		"types": {
