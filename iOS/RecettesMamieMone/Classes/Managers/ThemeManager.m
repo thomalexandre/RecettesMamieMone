@@ -92,6 +92,7 @@
 - (UIColor *)navBar
 {
     return [self spaceCadet];
+//    return UIColorFromRGB(0xE8985E);
 }
 
 - (UIColor *)navBar:(CGFloat)alpha
