@@ -83,7 +83,7 @@
     
 - (void)prepareForReuse
 {
-    self.heroImageView.image = nil;
+    //self.heroImageView.image = nil;
 }
 
 - (BOOL)viewDidScroll:(CGFloat)scrollY
