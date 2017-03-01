@@ -14,6 +14,7 @@
 #import "UIDetailHeaderView.h"
 #import "TitleContentTableViewCell.h"
 #import "PhotosTableViewCell.h"
+#import "ThemeManager.h"
 
 @interface RecipeViewController () <UITableViewDelegate, UITableViewDataSource, UIDetailHeaderViewDelegate>
 
@@ -38,7 +39,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [[ThemeManager instance] background];
     self.title = self.recipe.title;
     [self setupTableView];
     [self setupHeader];

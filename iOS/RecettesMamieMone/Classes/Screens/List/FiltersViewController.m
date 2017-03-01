@@ -7,6 +7,7 @@
 //
 
 #import "FiltersViewController.h"
+#import "ThemeManager.h"
 
 @interface FiltersViewController ()
 
@@ -21,11 +22,13 @@
     self.title = @"Filtres";
     
     [self setupNavBar];
+    self.view.backgroundColor = [[ThemeManager instance] background];
 }
 
 - (void)setupNavBar
 {
-    UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleDone target:self action:@selector(closeDidPress)];
+    UIImage *image = [UIImage imageNamed:@"close"];
+    UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStyleDone target:self action:@selector(closeDidPress)];
     self.navigationItem.leftBarButtonItem = closeButton;
 }
 
