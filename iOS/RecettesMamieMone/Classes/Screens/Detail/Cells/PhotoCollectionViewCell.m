@@ -30,6 +30,8 @@
 
 - (void)setup
 {
+    
+    // image
     self.imageview = [UIImageView new];
     self.imageview.contentMode = UIViewContentModeScaleAspectFill;
     self.imageview.clipsToBounds = YES;

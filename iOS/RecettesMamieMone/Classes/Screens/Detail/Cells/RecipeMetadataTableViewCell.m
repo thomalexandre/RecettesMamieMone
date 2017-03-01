@@ -44,8 +44,9 @@
     
     // title ...
     self.titleLabel = [UILabel new];
+    self.titleLabel.numberOfLines = 0;
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
-    self.titleLabel.font = [[ThemeManager instance] mediumFontWithSize:18];
+    self.titleLabel.font = [[ThemeManager instance] mediumFontWithSize:20];
     [self addSubviewAutoLayout:self.titleLabel];
     [self.titleLabel snapBottomConstant:20];
     [self.titleLabel snapLeftConstant:10];

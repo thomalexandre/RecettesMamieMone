@@ -32,12 +32,20 @@
 {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
+    UIView * line = [UIView new];
+    line.backgroundColor = [[ThemeManager instance] line];
+    [self addSubviewAutoLayout:line];
+    [line snapTopConstant:0];
+    [line snapLeftConstant:20];
+    [line snapRightConstant:20];
+    [line setHeightConstant:1];
+    
     // title ...
     self.titleLabel = [UILabel new];
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
-    self.titleLabel.font = [[ThemeManager instance] mediumFontWithSize:16];
+    self.titleLabel.font = [[ThemeManager instance] mediumFontWithSize:18];
     [self addSubviewAutoLayout:self.titleLabel];
-    [self.titleLabel snapTopConstant:15];
+    [self.titleLabel snapTopConstant:20];
     [self.titleLabel snapLeftConstant:10];
     [self.titleLabel snapRightConstant:10];
     [self.titleLabel setHeightConstant:20];
@@ -46,7 +54,7 @@
     self.contentLabel = [UILabel new];
     self.contentLabel.numberOfLines = 0;
     self.contentLabel.textAlignment = NSTextAlignmentLeft;
-    self.contentLabel.font = [[ThemeManager instance] mediumFontWithSize:14];
+    self.contentLabel.font = [[ThemeManager instance] mediumFontWithSize:16];
     [self addSubviewAutoLayout:self.contentLabel];
     [self.contentLabel snapBottomConstant:20];
     [self.contentLabel snapLeftConstant:15];

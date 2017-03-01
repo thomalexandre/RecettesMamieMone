@@ -32,6 +32,29 @@
 
 - (void)setupUI
 {
+    UIView * line = [UIView new];
+    line.backgroundColor = [[ThemeManager instance] line];
+    [self addSubviewAutoLayout:line];
+    [line snapTopConstant:0];
+    [line snapLeftConstant:20];
+    [line snapRightConstant:20];
+    [line setHeightConstant:1];
+    
+    
+    // title ...
+    UILabel *titleLabel = [UILabel new];
+    titleLabel.text = @"Photos";
+    titleLabel.numberOfLines = 0;
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.font = [[ThemeManager instance] mediumFontWithSize:20];
+    [self addSubviewAutoLayout:titleLabel];
+    [titleLabel snapTopConstant:20];
+    [titleLabel snapLeftConstant:10];
+    [titleLabel snapRightConstant:10];
+    [titleLabel setHeightConstant:20];
+    
+    
+    //collection view ...
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
     
@@ -43,8 +66,12 @@
     [self.collectionView registerClass:[PhotoCollectionViewCell class] forCellWithReuseIdentifier:kPhotoCollectionViewCellIdentifier];
     
     [self addSubviewAutoLayout:self.collectionView];
-    [self.collectionView snap];
+    [self.collectionView snapBottom];
+    [self.collectionView snapLeft];
+    [self.collectionView snapRight];
     [self.collectionView setHeightConstant:180];
+    
+    [self.collectionView snapTopToBottom:20 relativeToView:titleLabel];
 }
 
 - (void)setup:(Recipe *)recipe

@@ -119,6 +119,11 @@
     return [self ghostWhite];
 }
 
+- (UIColor *)line
+{
+    return [UIColorFromRGB(0xF0F0F0) colorWithAlphaComponent:0.8];
+}
+
 #pragma mark - fonts
 
 - (UIFont *)semiBoldFontWithSize:(CGFloat)size
