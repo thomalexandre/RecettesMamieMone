@@ -35,6 +35,8 @@
     self.imageview = [UIImageView new];
     self.imageview.contentMode = UIViewContentModeScaleAspectFill;
     self.imageview.clipsToBounds = YES;
+    self.imageview.layer.cornerRadius  = 4.0f;
+    self.imageview.layer.masksToBounds = YES;
     self.imageview.image = [UIImage imageNamed:@"placeholder"];
     [self addSubviewAutoLayout:self.imageview];
     [self.imageview snap];
@@ -46,7 +48,11 @@
         [self.imageview sd_setImageWithURL:url];
         NSLog(@"Loading... %@", url);
     }];
+}
 
+- (void)prepareForReuse
+{
+    self.imageview.image = nil;
 }
 
 @end

@@ -75,7 +75,7 @@
     [self.titleLabel snapTopConstant:10];
     [self.titleLabel snapBottom];
     [self.titleLabel snapRightConstant:8];
-    [self.titleLabel snapLeftToRight:0 relativeToView:closeButton];
+    [self.titleLabel snapLeftToRight:10 relativeToView:closeButton];
     self.titleLabel.hidden = YES;
 }
 

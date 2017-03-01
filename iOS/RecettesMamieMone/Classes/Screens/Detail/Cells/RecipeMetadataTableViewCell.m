@@ -58,7 +58,7 @@
 
 - (void)setup:(Recipe *)recipe
 {
-    self.typeLabel.text  = [recipe.type.name uppercaseString];
+    self.typeLabel.text  = [NSString stringWithFormat:@"%@ - %@", [recipe.type.name uppercaseString], [recipe.hardness.name uppercaseString]] ;
     self.titleLabel.text = recipe.title;
 }
 
