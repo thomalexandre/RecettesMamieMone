@@ -89,11 +89,11 @@
 
 - (BOOL)isTestDevice
 {
-#if (TARGET_OS_SIMULATOR)
+//#if (TARGET_OS_SIMULATOR)
     
-    return YES;
+  //  return YES;
     
-#else
+//#else
     
     NSString *currentDeviceUID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     for(NSString *deviceId in self.devicesTest) {
@@ -103,7 +103,7 @@
     }
     
     return NO;
-#endif
+//#endif
 }
 
 #pragma mark persistent setting (stored in NSUserDefault)
