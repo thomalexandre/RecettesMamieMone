@@ -41,11 +41,15 @@
         
         NSDictionary *dict  = recipesList[identifier];
         Recipe *recipe      = [Recipe recipe:identifier withDictionary:dict];
-        //if(recipe.live || [[ConfigurationManager instance] isTestDevice]) {
+        
+#if !(TARGET_OS_SIMULATOR)
+        if(recipe.live)
+#endif
+        {
             recipe.type         = [recipeTypesParser recipeTypeWithId:dict[@"type"]];
             recipe.hardness     = [hardnessParser hardnessTypeWithId:dict[@"hardness"]];
             [recipes addObject:recipe];
-        //}
+        }
     }
     
     // sort array

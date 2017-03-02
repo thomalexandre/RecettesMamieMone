@@ -44,19 +44,20 @@
 #warning TO remove in production
         FIRRemoteConfigSettings *remoteConfigSettings = [[FIRRemoteConfigSettings alloc] initWithDeveloperModeEnabled:YES];
         self.remoteConfig.configSettings = remoteConfigSettings;
+        
+        [self fetchConfiguration];
     }
     return self;
 }
 
-- (void)fetchConfiguration:(void (^)())completion
+- (void)fetchConfiguration
 {
     // cacheExpirationSeconds is set to cacheExpiration here, indicating that any previously
     // fetched and cached config would be considered expired because it would have been fetched
     // more than cacheExpiration seconds ago. Thus the next fetch would go to the server unless
     // throttling is in progress. The default expiration duration is 43200 (12 hours).
     
-    NSTimeInterval expirationDuration = 3600; // 1h
-    //43200;// (12 hours)
+    NSTimeInterval expirationDuration = 43200;// (12 hours)
     
     [self.remoteConfig fetchWithExpirationDuration:expirationDuration completionHandler:^(FIRRemoteConfigFetchStatus status, NSError *error) {
         if (status == FIRRemoteConfigFetchStatusSuccess) {
@@ -66,17 +67,12 @@
             NSLog(@"Config not fetched");
             NSLog(@"Error %@", error.localizedDescription);
         }
-        if(completion) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                completion();
-            });
-        }
     }];
 }
 
 #pragma mark - remote variable
 
-- (NSArray<NSString *> *)devicesTest
+/*- (NSArray<NSString *> *)devicesTest
 {
     if(!_devicesTest) {
         
@@ -104,7 +100,7 @@
     
     return NO;
 //#endif
-}
+}*/
 
 #pragma mark persistent setting (stored in NSUserDefault)
 

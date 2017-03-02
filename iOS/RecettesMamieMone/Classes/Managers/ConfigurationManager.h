@@ -12,9 +12,6 @@
 
 + (instancetype)instance;
 
-// fetch remote config
-- (void)fetchConfiguration:(void (^)())completion;
-
 #pragma mark persistent setting (stored in NSUserDefault)
 
 /// Store a persistent setting for the given key.
@@ -37,6 +34,6 @@
 + (BOOL)isIphone;
 
 /// Return YES if the device is a test device (taken from remote config)
-- (BOOL)isTestDevice;
+//- (BOOL)isTestDevice;
 
 @end
