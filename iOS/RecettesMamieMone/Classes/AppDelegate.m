@@ -10,6 +10,8 @@
 #import "RootViewController.h"
 #import "ThemeManager.h"
 #import "ConfigurationManager.h"
+@import Fabric;
+@import Crashlytics;
 @import Firebase;
 
 @interface AppDelegate ()
@@ -24,6 +26,7 @@
     // Override point for customization after application launch.
     
     [FIRApp configure];
+    [Fabric with:@[[Crashlytics class]]];
     
     [ConfigurationManager instance];
     [[ThemeManager instance] configureProxies];
