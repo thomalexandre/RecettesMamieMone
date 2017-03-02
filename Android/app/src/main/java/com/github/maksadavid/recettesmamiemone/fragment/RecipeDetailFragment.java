@@ -11,6 +11,7 @@ import com.github.maksadavid.recettesmamiemone.R;
 import com.github.maksadavid.recettesmamiemone.activity.RecipeDetailActivity;
 import com.github.maksadavid.recettesmamiemone.activity.RecipeListActivity;
 import com.github.maksadavid.recettesmamiemone.model.Recipe;
+import com.github.maksadavid.recettesmamiemone.util.Fonts;
 
 /**
  * A fragment representing a single Recipe detail screen.
@@ -21,7 +22,6 @@ import com.github.maksadavid.recettesmamiemone.model.Recipe;
 public class RecipeDetailFragment extends Fragment {
 
     private Recipe recipe;
-    private TextView ingredientsTextView;
 
     public RecipeDetailFragment() {
     }
@@ -39,14 +39,16 @@ public class RecipeDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_recipe_detail, container, false);
-        ingredientsTextView = (TextView) rootView.findViewById(R.id.recipe_detail);
+        TextView ingredientsTextView = (TextView) rootView.findViewById(R.id.ingredients_text_view);
+        TextView preparationTextView = (TextView) rootView.findViewById(R.id.preparation_text_view);
+        ingredientsTextView.setTypeface(Fonts.MerriweatherRegular);
+        preparationTextView.setTypeface(Fonts.MerriweatherRegular);
 
         if (recipe != null) {
-            RecipeDetailFragment.this.ingredientsTextView.setText(recipe.getType().toString() +
+            ingredientsTextView.setText(recipe.getType().toString() +
                     "\n\n" + recipe.getHardness().toString() +
-                    "\n\n" + recipe.getIngredients() +
-                    "\n\n" + recipe.getPreparation()
-            );
+                    "\n\n" + recipe.getIngredients());
+            preparationTextView.setText(recipe.getPreparation());
         }
 
         return rootView;
