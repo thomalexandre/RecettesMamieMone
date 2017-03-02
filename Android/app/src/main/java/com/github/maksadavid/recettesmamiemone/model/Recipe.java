@@ -4,6 +4,7 @@ import com.github.maksadavid.recettesmamiemone.service.ServiceHolder;
 import com.google.firebase.database.DataSnapshot;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * Created by maksadavid on 2017. 02. 21..
@@ -71,6 +72,7 @@ public class Recipe implements Serializable {
     private Hardness hardness;
     private String ingredients;
     private String preparation;
+    private ArrayList<String> photoPaths;
 
     public Recipe(DataSnapshot recipeData) {
         this.id = recipeData.getKey();
@@ -109,6 +111,14 @@ public class Recipe implements Serializable {
 
     public void setPreparation(String preparation) {
         this.preparation = preparation;
+    }
+
+    public ArrayList<String> getPhotoPaths() {
+        return photoPaths;
+    }
+
+    public void setPhotoPaths(ArrayList<String> photoPaths) {
+        this.photoPaths = photoPaths;
     }
 
     @Override

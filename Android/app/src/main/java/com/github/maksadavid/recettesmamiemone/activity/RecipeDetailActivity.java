@@ -5,11 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.NavUtils;
-import android.support.v4.view.ViewPager;
-import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -17,11 +13,11 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 
 import com.github.maksadavid.recettesmamiemone.R;
+import com.github.maksadavid.recettesmamiemone.fragment.PhotoCarouselFragment;
 import com.github.maksadavid.recettesmamiemone.fragment.RecipeDetailFragment;
 import com.github.maksadavid.recettesmamiemone.model.Recipe;
 import com.github.maksadavid.recettesmamiemone.service.ServiceHolder;
-
-import java.util.ArrayList;
+import com.github.maksadavid.recettesmamiemone.util.Callback;
 
 /**
  * An activity representing a single Recipe detail screen. This
@@ -31,6 +27,8 @@ import java.util.ArrayList;
  */
 
 public class RecipeDetailActivity extends AppCompatActivity {
+
+    public final static String ARG_RECIPE = "argRecipe";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +40,9 @@ public class RecipeDetailActivity extends AppCompatActivity {
         ImageView headerImageView = (ImageView) findViewById(R.id.header_image_view);
         assert (headerImageView != null);
 
-        if (getIntent().getExtras().containsKey(RecipeDetailFragment.ARG_RECIPE)) {
-            Recipe recipe = (Recipe) getIntent().getExtras().getSerializable(RecipeDetailFragment.ARG_RECIPE);
-            ServiceHolder.recipeService.loadImageForRecipe(this, recipe, headerImageView);
+        if (getIntent().getExtras().containsKey(ARG_RECIPE)) {
+            Recipe recipe = (Recipe) getIntent().getExtras().getSerializable(ARG_RECIPE);
+            ServiceHolder.recipeService.loadImageForRecipe(this, recipe, headerImageView, null);
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
             if (appBarLayout != null) {
                 appBarLayout.setTitle(recipe.getTitle());
@@ -58,17 +56,42 @@ public class RecipeDetailActivity extends AppCompatActivity {
         }
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("recipe 1"));
-        tabLayout.addTab(tabLayout.newTab().setText("recipe 2"));
-        tabLayout.addTab(tabLayout.newTab().setText("recipe 3"));
+        String[] sectionTitles = getResources().getStringArray(R.array.recipe_detail_section_titles);
+        for (String title : sectionTitles) {
+            tabLayout.addTab(tabLayout.newTab().setText(title));
+        }
 
+        final Recipe recipe = (Recipe) getIntent().getExtras().getSerializable(ARG_RECIPE);
+        if (savedInstanceState == null && recipe != null) {
 
-        if (savedInstanceState == null) {
-            Fragment fragment = new RecipeDetailFragment();
-            fragment.setArguments(getIntent().getExtras());
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.nested_scrollview, fragment)
-                    .commit();
+            ServiceHolder.recipeService.fetchDetailsForRecipe(recipe, new Callback<Recipe>() {
+                @Override
+                public void execute(Recipe result) {
+
+                    Bundle arguments = new Bundle();
+                    arguments.putSerializable(ARG_RECIPE, recipe);
+
+                    Fragment fragment = new RecipeDetailFragment();
+                    fragment.setArguments(arguments);
+                    getSupportFragmentManager().beginTransaction()
+                            .add(R.id.ingredients_fragment, fragment)
+                            .commit();
+
+                    if (recipe.getPhotoPaths().size() > 0) {
+                        Fragment photoCarouselFragment = new PhotoCarouselFragment();
+                        photoCarouselFragment.setArguments(arguments);
+                        getSupportFragmentManager().beginTransaction()
+                                .add(R.id.photos_fragment, photoCarouselFragment)
+                                .commit();
+                    }
+                }
+            }, new Callback<Exception>() {
+                @Override
+                public void execute(Exception result) {
+
+                }
+            });
+
         }
 
     }

@@ -1,21 +1,28 @@
 package com.github.maksadavid.recettesmamiemone.service;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.github.maksadavid.recettesmamiemone.model.Recipe;
 import com.github.maksadavid.recettesmamiemone.util.Callback;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageMetadata;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -61,6 +68,13 @@ public class RecipeServiceImpl implements RecipeService {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 recipe.setIngredients((String) dataSnapshot.child("ingredients").getValue());
                 recipe.setPreparation((String) dataSnapshot.child("preparation").getValue());
+                ArrayList<String> photoPaths = new ArrayList<>();
+                if (dataSnapshot.child("photos").getValue() instanceof ArrayList) {
+                    for (Map photoData : (ArrayList<Map>) dataSnapshot.child("photos").getValue()) {
+                        photoPaths.add((String) photoData.get("filename"));
+                    }
+                }
+                recipe.setPhotoPaths(photoPaths);
                 success.execute(recipe);
             }
 
@@ -72,8 +86,12 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public void loadImageForRecipe(Context context, Recipe recipe, ImageView imageView) {
-        StorageReference storageReference = recipeImageStorageRef.child(recipe.getId()).child("thumbnail.jpg");
+    public void loadImageForRecipe(Context context, Recipe recipe, ImageView imageView, String path) {
+        if (path == null) {
+            path = "thumbnail.jpg";
+        }
+
+        StorageReference storageReference = recipeImageStorageRef.child(recipe.getId()).child(path);
         Glide.with(imageView.getContext())
                 .using(new FirebaseImageLoader())
                 .load(storageReference)

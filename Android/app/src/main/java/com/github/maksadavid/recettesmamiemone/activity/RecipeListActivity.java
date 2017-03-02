@@ -90,7 +90,7 @@ public class RecipeListActivity extends AppCompatActivity {
         @Override
         public RecipeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.recipe_list_content, parent, false);
+                    .inflate(R.layout.item_recipe, parent, false);
             return new RecipeViewHolder(view);
         }
 
@@ -98,13 +98,13 @@ public class RecipeListActivity extends AppCompatActivity {
         public void onBindViewHolder(final RecipeViewHolder holder, int position) {
             final Recipe recipe = recipes.get(position);
             holder.titleTextView.setText(recipe.getTitle());
-            ServiceHolder.recipeService.loadImageForRecipe(RecipeListActivity.this, recipe, holder.imageView);
+            ServiceHolder.recipeService.loadImageForRecipe(RecipeListActivity.this, recipe, holder.imageView, null);
             holder.view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Context context = v.getContext();
                     Intent intent = new Intent(context, RecipeDetailActivity.class);
-                    intent.putExtra(RecipeDetailFragment.ARG_RECIPE, recipe);
+                    intent.putExtra(RecipeDetailActivity.ARG_RECIPE, recipe);
                     context.startActivity(intent);
                 }
             });
@@ -114,7 +114,6 @@ public class RecipeListActivity extends AppCompatActivity {
         public int getItemCount() {
             return recipes.size();
         }
-
 
     }
 }

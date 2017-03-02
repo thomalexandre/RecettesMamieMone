@@ -1,10 +1,12 @@
 package com.github.maksadavid.recettesmamiemone.service;
 
 import android.content.Context;
+import android.support.annotation.Nullable;
 import android.widget.ImageView;
 
 import com.github.maksadavid.recettesmamiemone.model.Recipe;
 import com.github.maksadavid.recettesmamiemone.util.Callback;
+import com.google.firebase.database.DataSnapshot;
 
 import java.util.ArrayList;
 
@@ -17,6 +19,6 @@ public interface RecipeService {
 
     void fetchDetailsForRecipe(Recipe recipe, Callback<Recipe> success, Callback<Exception> failure);
 
-    void loadImageForRecipe(Context context, Recipe recipe, ImageView imageView);
+    void loadImageForRecipe(Context context, Recipe recipe, ImageView imageView, @Nullable String path);
 
 }
