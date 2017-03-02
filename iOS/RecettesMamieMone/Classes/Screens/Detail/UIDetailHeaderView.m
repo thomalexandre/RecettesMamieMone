@@ -45,9 +45,9 @@
     self.barView.hidden = YES;
     
     // close button ...
-    static int closeButtonImageSize = 16.f;
-    static int closeButtonImageTop  = 34.f;
-    static int closeButtonImageLeft = 14.f;
+    static int closeButtonImageSize = 18.f;
+    static int closeButtonImageTop  = 32.f;
+    static int closeButtonImageLeft = 17.f;
     static int closeButtonSize      = 44.f;
     
     UIImageView *closeButtonImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"close"]];
