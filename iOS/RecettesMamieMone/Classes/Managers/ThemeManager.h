@@ -27,10 +27,15 @@
 
 #pragma mark - fonts
 
-- (UIFont *)semiBoldFontWithSize:(CGFloat)size;
-- (UIFont *)boldFontWithSize:(CGFloat)size;
-- (UIFont *)regularFontWithSize:(CGFloat)size;
-- (UIFont *)lightFontWithSize:(CGFloat)size;
-- (UIFont *)mediumFontWithSize:(CGFloat)size;
+//- (UIFont *)semiBoldFontWithSize:(CGFloat)size;
+//- (UIFont *)boldFontWithSize:(CGFloat)size;
+//- (UIFont *)regularFontWithSize:(CGFloat)size;
+//- (UIFont *)lightFontWithSize:(CGFloat)size;
+//- (UIFont *)mediumFontWithSize:(CGFloat)size;
+
+
+- (UIFont *)openSansRegularFontWithSize:(CGFloat)size;
+- (UIFont *)openSansBoldFontWithSize:(CGFloat)size;
+- (UIFont *)merriweatherFontWithSize:(CGFloat)size;
 
 @end

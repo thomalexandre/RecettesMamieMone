@@ -29,6 +29,7 @@
 {
     self = [super init];
     if(self) {
+        [self printListOfFonts];
         [self configureProxies];
     }
     return self;
@@ -62,7 +63,7 @@
     [[UINavigationBar appearance] setTintColor:[self navBarText]];
     [[UINavigationBar appearance] setTranslucent:NO];
     [[UINavigationBar appearance] setTitleTextAttributes: @{NSForegroundColorAttributeName: [self navBarText],
-                                                            NSFontAttributeName: [self mediumFontWithSize:14]}];
+                                                            NSFontAttributeName: [self openSansBoldFontWithSize:14]}];
     
 }
 
@@ -144,29 +145,44 @@
 
 #pragma mark - fonts
 
-- (UIFont *)semiBoldFontWithSize:(CGFloat)size
+//- (UIFont *)semiBoldFontWithSize:(CGFloat)size
+//{
+//    return [UIFont fontWithName:@"SFUIText-Semibold" size:size];
+//}
+//
+//- (UIFont *)boldFontWithSize:(CGFloat)size
+//{
+//    return [UIFont fontWithName:@"SFUIText-Bold" size:size];
+//}
+//
+//- (UIFont *)regularFontWithSize:(CGFloat)size
+//{
+//    return [UIFont fontWithName:@"SFUIText-Regular" size:size];
+//}
+//
+//- (UIFont *)lightFontWithSize:(CGFloat)size
+//{
+//    return [UIFont fontWithName:@"SFUIText-Light" size:size];
+//}
+//
+//- (UIFont *)mediumFontWithSize:(CGFloat)size
+//{
+//    return [UIFont fontWithName:@"SFUIText-Medium" size:size];
+//}
+
+- (UIFont *)openSansRegularFontWithSize:(CGFloat)size
 {
-    return [UIFont fontWithName:@"SFUIText-Semibold" size:size];
+    return [UIFont fontWithName:@"OpenSans" size:size];
 }
 
-- (UIFont *)boldFontWithSize:(CGFloat)size
+- (UIFont *)openSansBoldFontWithSize:(CGFloat)size
 {
-    return [UIFont fontWithName:@"SFUIText-Bold" size:size];
+    return [UIFont fontWithName:@"OpenSans-Bold" size:size];
 }
 
-- (UIFont *)regularFontWithSize:(CGFloat)size
+- (UIFont *)merriweatherFontWithSize:(CGFloat)size
 {
-    return [UIFont fontWithName:@"SFUIText-Regular" size:size];
-}
-
-- (UIFont *)lightFontWithSize:(CGFloat)size
-{
-    return [UIFont fontWithName:@"SFUIText-Light" size:size];
-}
-
-- (UIFont *)mediumFontWithSize:(CGFloat)size
-{
-    return [UIFont fontWithName:@"SFUIText-Medium" size:size];
+    return [UIFont fontWithName:@"Merriweather-Regular" size:size];
 }
 
 @end

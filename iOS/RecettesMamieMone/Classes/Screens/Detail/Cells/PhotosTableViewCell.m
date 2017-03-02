@@ -47,7 +47,7 @@
     titleLabel.numberOfLines = 0;
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.textColor = [[ThemeManager instance] metaText];
-    titleLabel.font = [[ThemeManager instance] mediumFontWithSize:20];
+    titleLabel.font = [[ThemeManager instance] openSansBoldFontWithSize:20];
     [self addSubviewAutoLayout:titleLabel];
     [titleLabel snapTopConstant:20];
     [titleLabel snapLeftConstant:10];

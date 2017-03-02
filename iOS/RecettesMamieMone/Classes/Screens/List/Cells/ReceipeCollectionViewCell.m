@@ -71,7 +71,7 @@
     self.titleLabel           = [UILabel new];
     self.titleLabel.numberOfLines = 2;
     self.titleLabel.textColor = [[ThemeManager instance] cardText];
-    self.titleLabel.font      = [[ThemeManager instance] boldFontWithSize:15];
+    self.titleLabel.font      = [[ThemeManager instance] openSansRegularFontWithSize:15];
     [self.contentView addSubviewAutoLayout:self.titleLabel];
     [self.titleLabel snapBottom];
     [self.titleLabel snapLeftConstant:6];

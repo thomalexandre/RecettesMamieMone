@@ -68,7 +68,7 @@
     
     // title ...
     self.titleLabel = [UILabel new];
-    self.titleLabel.font = [[ThemeManager instance] mediumFontWithSize:15];
+    self.titleLabel.font = [[ThemeManager instance] openSansBoldFontWithSize:15];
     self.titleLabel.textColor = [[ThemeManager instance] navBarText];
     [self addSubviewAutoLayout:self.titleLabel];
     [self.titleLabel snapTopConstant:20];
