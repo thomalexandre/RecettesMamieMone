@@ -50,7 +50,7 @@
     static int closeButtonImageLeft = 17.f;
     static int closeButtonSize      = 44.f;
     
-    UIImageView *closeButtonImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"close"]];
+    UIImageView *closeButtonImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon-close"]];
     [closeButtonImage setTintColor:[UIColor whiteColor]];
     [self addSubviewAutoLayout:closeButtonImage];
     [closeButtonImage setHeightConstant:closeButtonImageSize];

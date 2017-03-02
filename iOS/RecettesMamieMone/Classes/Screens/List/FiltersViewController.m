@@ -27,7 +27,7 @@
 
 - (void)setupNavBar
 {
-    UIImage *image = [UIImage imageNamed:@"close"];
+    UIImage *image = [UIImage imageNamed:@"icon-close"];
     UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStyleDone target:self action:@selector(closeDidPress)];
     self.navigationItem.leftBarButtonItem = closeButton;
 }

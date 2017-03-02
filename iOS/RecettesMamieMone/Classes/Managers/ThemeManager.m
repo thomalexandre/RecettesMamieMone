@@ -63,7 +63,7 @@
     [[UINavigationBar appearance] setTintColor:[self navBarText]];
     [[UINavigationBar appearance] setTranslucent:NO];
     [[UINavigationBar appearance] setTitleTextAttributes: @{NSForegroundColorAttributeName: [self navBarText],
-                                                            NSFontAttributeName: [self openSansBoldFontWithSize:14]}];
+                                                            NSFontAttributeName: [self openSansBoldFontWithSize:15]}];
     
 }
 
@@ -71,25 +71,28 @@
 
 /// palette https://coolors.co/870055-d10068-6f3d96-d07fff-050505
 
-- (UIColor *)frenchPlum
-{
-    return UIColorFromRGB(0xD10068);
-}
+//- (UIColor *)frenchPlum
+//{
+//    return UIColorFromRGB(0xD10068);
+//}
+
 
 - (UIColor *)rubineRed
 {
-    return UIColorFromRGB(0xD10068);
+    // https://material.io/guidelines/style/color.html#color-color-palette
+    // Google material pink 600
+    return UIColorFromRGB(0xD81B60);
 }
 
-- (UIColor *)purpleHeart
-{
-    return UIColorFromRGB(0x6F3D96);
-}
+//- (UIColor *)purpleHeart
+//{
+//    return UIColorFromRGB(0x6F3D96);
+//}
 
-- (UIColor *)heliotrope
-{
-    return UIColorFromRGB(0xD07FFF);
-}
+//- (UIColor *)heliotrope
+//{
+//    return UIColorFromRGB(0xD07FFF);
+//}
 
 - (UIColor *)whiteSmoke
 {
