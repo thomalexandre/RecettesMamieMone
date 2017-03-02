@@ -53,6 +53,8 @@
 - (void)configureProxies
 {
     [self configureNavigationBar];
+    
+    [[UISegmentedControl appearance] setTintColor:[self segmentedControl]];
 }
 
 - (void)configureNavigationBar
@@ -111,6 +113,11 @@
 
 /// Colors for ui elements
 
+- (UIColor *)segmentedControl
+{
+    return [self rubineRed];   
+}
+
 - (UIColor *)navBar
 {
     return [self rubineRed];
@@ -129,6 +136,11 @@
 - (UIColor *)background
 {
     return [self whiteSmoke];
+}
+
+- (UIColor *)backgroundClickabke
+{
+    return [[self richBlack] colorWithAlphaComponent:0.3];
 }
 
 - (UIColor *)text

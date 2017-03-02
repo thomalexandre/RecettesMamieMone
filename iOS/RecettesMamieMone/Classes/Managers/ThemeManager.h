@@ -20,6 +20,7 @@
 - (UIColor *)navBar:(CGFloat)alpha;
 - (UIColor *)navBarText;
 - (UIColor *)background;
+- (UIColor *)backgroundClickabke;
 - (UIColor *)text;
 - (UIColor *)metaText;
 - (UIColor *)cardText;
