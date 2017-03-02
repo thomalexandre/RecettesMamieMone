@@ -58,7 +58,7 @@
     self.contentLabel.textColor = [[ThemeManager instance] text];
 //    self.contentLabel.font = ;
     [self addSubviewAutoLayout:self.contentLabel];
-    [self.contentLabel snapBottomConstant:20];
+    [self.contentLabel snapBottomConstant:30];
     [self.contentLabel snapLeftConstant:15];
     [self.contentLabel snapRightConstant:15];
     
