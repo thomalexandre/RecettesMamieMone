@@ -23,6 +23,7 @@
 - (UIColor *)text;
 - (UIColor *)metaText;
 - (UIColor *)cardText;
+- (UIColor *)cardBackground;
 - (UIColor *)line;
 
 #pragma mark - fonts

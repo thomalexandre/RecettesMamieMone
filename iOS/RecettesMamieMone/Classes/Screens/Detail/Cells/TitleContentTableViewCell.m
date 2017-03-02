@@ -9,6 +9,7 @@
 #import "TitleContentTableViewCell.h"
 #import "UIView+Layout.h"
 #import "ThemeManager.h"
+#import "ConfigurationManager.h"
 
 @interface TitleContentTableViewCell ()
 
@@ -31,13 +32,14 @@
 - (void)setupUI
 {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    CGFloat margin = [ConfigurationManager isIphone] ? 15 : 40;
     
     UIView * line = [UIView new];
     line.backgroundColor = [[ThemeManager instance] line];
     [self addSubviewAutoLayout:line];
     [line snapTopConstant:0];
-    [line snapLeftConstant:20];
-    [line snapRightConstant:20];
+    [line snapLeftConstant:margin];
+    [line snapRightConstant:margin];
     [line setHeightConstant:1];
     
     // title ...
@@ -59,8 +61,8 @@
 //    self.contentLabel.font = ;
     [self addSubviewAutoLayout:self.contentLabel];
     [self.contentLabel snapBottomConstant:30];
-    [self.contentLabel snapLeftConstant:15];
-    [self.contentLabel snapRightConstant:15];
+    [self.contentLabel snapLeftConstant:margin];
+    [self.contentLabel snapRightConstant:margin];
     
     [self.contentLabel snapTopToBottom:30 relativeToView:self.titleLabel];
 }

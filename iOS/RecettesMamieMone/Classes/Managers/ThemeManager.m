@@ -104,6 +104,11 @@
     return UIColorFromRGB(0x050505);
 }
 
+- (UIColor *)lightGray
+{
+    return [UIColorFromRGB(0xF0F0F0) colorWithAlphaComponent:0.8];
+}
+
 /// Colors for ui elements
 
 - (UIColor *)navBar
@@ -141,9 +146,14 @@
     return [self whiteSmoke];
 }
 
+- (UIColor *)cardBackground
+{
+    return [self lightGray];
+}
+
 - (UIColor *)line
 {
-    return [UIColorFromRGB(0xF0F0F0) colorWithAlphaComponent:0.8];
+    return [self lightGray];
 }
 
 #pragma mark - fonts

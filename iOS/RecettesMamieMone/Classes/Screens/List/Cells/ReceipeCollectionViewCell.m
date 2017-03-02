@@ -20,7 +20,8 @@
 
 @property (nonatomic, strong) UIImageView  *imageView;
 @property (nonatomic, strong) UILabel      *titleLabel;
-@property (nonatomic, strong) UIView *gradient;
+@property (nonatomic, strong) UIView       *gradient;
+//@property (nonatomic, strong) UIImage      *placeholder;
 
 @end
 
@@ -52,8 +53,10 @@
     self.layer.masksToBounds = NO;
     
     // image....
-    self.imageView = [UIImageView new];
+//    self.placeholder = [UIImage imageNamed:@"placeholder"];
+    self.imageView = [[UIImageView alloc] initWithImage:nil/*self.placeholder*/];
     self.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.imageView.backgroundColor = [[ThemeManager instance] cardBackground];
     self.imageView.clipsToBounds = YES;
     [self.contentView addSubviewAutoLayout:self.imageView];
     [self.imageView snap];
@@ -81,8 +84,7 @@
 
 - (void)prepareForReuse
 {
-    UIImage *image = [UIImage imageNamed:@"placeholder"];
-    self.imageView = [[UIImageView alloc] initWithImage:image];
+    self.imageView.image = nil;//self.placeholder;
     self.titleLabel.text = nil;
 }
 
@@ -92,7 +94,7 @@
     __weak ReceipeCollectionViewCell * wSelf = self;
     [[StorageManager instance] urlForPath:[recipe thumbnail] completion:^(NSURL *url, NSError *error) {
         [wSelf.imageView sd_setImageWithURL:url];
-        NSLog(@"Loading... %@", url);
+//        NSLog(@"Loading... %@", url);
     }];
 }
 

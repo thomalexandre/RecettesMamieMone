@@ -32,6 +32,8 @@
 
 - (void)setupUI
 {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     UIView * line = [UIView new];
     line.backgroundColor = [[ThemeManager instance] line];
     [self addSubviewAutoLayout:line];

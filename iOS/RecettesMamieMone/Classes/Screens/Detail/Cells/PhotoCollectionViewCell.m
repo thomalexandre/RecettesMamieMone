@@ -10,6 +10,7 @@
 #import "UIView+Layout.h"
 #import "StorageManager.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "ThemeManager.h"
 
 @interface PhotoCollectionViewCell ()
 
@@ -37,7 +38,8 @@
     self.imageview.clipsToBounds = YES;
     self.imageview.layer.cornerRadius  = 4.0f;
     self.imageview.layer.masksToBounds = YES;
-    self.imageview.image = [UIImage imageNamed:@"placeholder"];
+//    self.imageview.image = [UIImage imageNamed:@"placeholder"];
+    self.imageview.backgroundColor = [[ThemeManager instance] cardBackground];
     [self addSubviewAutoLayout:self.imageview];
     [self.imageview snap];
 }
