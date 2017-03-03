@@ -15,8 +15,9 @@
 #import "TitleContentTableViewCell.h"
 #import "PhotosTableViewCell.h"
 #import "ThemeManager.h"
+#import "PhotoViewerViewController.h"
 
-@interface RecipeViewController () <UITableViewDelegate, UITableViewDataSource, UIDetailHeaderViewDelegate>
+@interface RecipeViewController () <UITableViewDelegate, UITableViewDataSource, UIDetailHeaderViewDelegate, PhotosTableViewCellDelegate>
 
 @property (nonatomic, strong) Recipe *recipe;
 @property (nonatomic, strong) UITableView *tableView;
@@ -139,6 +140,7 @@
 - (UITableViewCell *)photosCarousel
 {
     PhotosTableViewCell *cell = (PhotosTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:kPhotosTableViewCellIdentifier];
+    cell.delegate = self;
     [cell setup:self.recipe];
     return cell;
 }
@@ -161,6 +163,15 @@
 - (void)headerDidClose
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - PhotosTableViewCellDelegate
+
+- (void)photoDidTapAtIndex:(NSUInteger)photoIndex
+{
+    PhotoViewerViewController *viewer = [[PhotoViewerViewController alloc] initWithRecipe:self.recipe withPhotoIndex:photoIndex];
+    
+    [self presentViewController:viewer animated:YES completion:nil];
 }
 
 @end

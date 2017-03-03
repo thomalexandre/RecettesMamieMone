@@ -143,6 +143,11 @@
     return [[self richBlack] colorWithAlphaComponent:0.3];
 }
 
+- (UIColor *)backgroundPhoto
+{
+    return [self richBlack];
+}
+
 - (UIColor *)text
 {
     return [self richBlack];

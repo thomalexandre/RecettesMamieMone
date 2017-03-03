@@ -42,7 +42,6 @@
     [line snapRightConstant:20];
     [line setHeightConstant:1];
     
-    
     // title ...
     UILabel *titleLabel = [UILabel new];
     titleLabel.text = @"Photos";
@@ -55,7 +54,6 @@
     [titleLabel snapLeftConstant:10];
     [titleLabel snapRightConstant:10];
     [titleLabel setHeightConstant:20];
-    
     
     //collection view ...
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
@@ -96,6 +94,13 @@
     Photo *photo = self.recipe.photos[indexPath.row];
     [cell setup:photo];
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(self.delegate && [self.delegate respondsToSelector:@selector(photoDidTapAtIndex:)]) {
+        [self.delegate photoDidTapAtIndex:indexPath.row];
+    }
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
