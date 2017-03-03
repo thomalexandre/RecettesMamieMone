@@ -14,6 +14,7 @@
 @interface StorageManager ()
 
 @property (nonatomic, strong) FIRStorageReference *storageRef;
+@property (nonatomic, strong) NSDictionary        *pathToURLs;  /// store links between Firebase path in the storage and the actual URL
 
 @end
 
@@ -36,10 +37,14 @@
 {
     self = [super init];
     if(self) {
+        
+        self.pathToURLs = [NSDictionary new];
+        
         FIRStorage *storage = [FIRStorage storage];
         self.storageRef = [storage referenceForURL:@"gs://recettesmamie-d0853.appspot.com"];
         
         SDWebImageManager.sharedManager.cacheKeyFilter = ^(NSURL *url) {
+            
             url = [[NSURL alloc] initWithScheme:url.scheme host:url.host path:url.path];
             return [url absoluteString];
         };
@@ -64,6 +69,31 @@
             completion(nil, error);
         });
     }
+}
+
+- (void)setImage:(UIImageView *)imageView path:(NSString *)path
+{
+    NSURL *url = [self.pathToURLs objectForKey:path];
+    if(url) {
+        if([SDWebImageManager.sharedManager cachedImageExistsForURL:url]) {
+            [imageView sd_setImageWithURL:url];
+            return;
+        }
+    }
+    
+    __weak StorageManager * wSelf = self;
+    [self urlForPath:path completion:^(NSURL *url, NSError *error) {
+        
+        [imageView sd_setImageWithURL:url];
+        [wSelf saveURL:url forPath:path];
+    }];
+}
+
+- (void)saveURL:(NSURL *)url forPath:(NSString *)path
+{
+    NSMutableDictionary *mutable = [self.pathToURLs mutableCopy];
+    [mutable setObject:url forKey:path];
+    self.pathToURLs = [mutable copy];
 }
 
 @end

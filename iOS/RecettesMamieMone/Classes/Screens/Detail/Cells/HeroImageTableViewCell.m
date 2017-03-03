@@ -69,15 +69,9 @@
 
 - (void)setup:(Recipe *)recipe
 {
-    //UIImage *image = [UIImage imageNamed:@"placeholder"];
-    //self.heroImageView.image = image;
-    
-    __weak HeroImageTableViewCell * wSelf = self;
-    [[StorageManager instance] urlForPath:[recipe thumbnail] completion:^(NSURL *url, NSError *error) {
-        [wSelf.heroImageView sd_setImageWithURL:url];
-        NSLog(@"Loading... %@", url);
-    }];
-    
+   
+    [[StorageManager instance] setImage:self.heroImageView path:[recipe thumbnail]];
+
     [self updateConstraintsIfNeeded];
 }
     

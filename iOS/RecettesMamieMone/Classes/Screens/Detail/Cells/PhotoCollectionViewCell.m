@@ -46,11 +46,7 @@
 
 - (void)setup:(Photo *)photo
 {
-    __weak PhotoCollectionViewCell * wSelf = self;
-    [[StorageManager instance] urlForPath:[photo path] completion:^(NSURL *url, NSError *error) {
-        [wSelf.imageview sd_setImageWithURL:url];
-        NSLog(@"Loading... %@", url);
-    }];
+     [[StorageManager instance] setImage:self.imageview path:[photo path]];
 }
 
 - (void)prepareForReuse

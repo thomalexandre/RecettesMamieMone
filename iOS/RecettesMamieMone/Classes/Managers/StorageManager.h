@@ -6,12 +6,12 @@
 //  Copyright © 2017 MBC. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface StorageManager : NSObject
 
 + (instancetype)instance;
 
-- (void)urlForPath:(NSString *)path completion:(void (^)(NSURL *url, NSError *error))completion;
+- (void)setImage:(UIImageView *)imageView path:(NSString *)path;
 
 @end

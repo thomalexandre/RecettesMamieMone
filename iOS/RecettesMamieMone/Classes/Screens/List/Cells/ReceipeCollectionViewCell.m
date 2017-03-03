@@ -91,11 +91,7 @@
 - (void)setup:(Recipe *)recipe
 {
     self.titleLabel.text = recipe.title;
-    __weak ReceipeCollectionViewCell * wSelf = self;
-    [[StorageManager instance] urlForPath:[recipe thumbnail] completion:^(NSURL *url, NSError *error) {
-        [wSelf.imageView sd_setImageWithURL:url];
-//        NSLog(@"Loading... %@", url);
-    }];
+    [[StorageManager instance] setImage:self.imageView path:[recipe thumbnail]];
 }
 
 @end
