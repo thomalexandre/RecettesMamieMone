@@ -12,8 +12,9 @@
 #import "GradientView.h"
 #import "StorageManager.h"
 #import "ThemeManager.h"
+#import "UIDetailHeaderView.h"
 
-@interface PhotoViewerViewController ()
+@interface PhotoViewerViewController () <UIDetailHeaderViewDelegate>
 
 @property (nonatomic, strong) Recipe *recipe;
 @property (nonatomic, assign) NSUInteger photoIndex;
@@ -39,6 +40,7 @@
     
     self.view.backgroundColor = [[ThemeManager instance] backgroundPhoto];
     
+    // Image
     self.imageView = [UIImageView new];
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     self.imageView.backgroundColor = [UIColor clearColor];
@@ -47,40 +49,21 @@
     Photo *photo = self.recipe.photos[self.photoIndex];
     [[StorageManager instance] setImage:self.imageView path:[photo path]];
     
-    // gradient ...
-    GradientView *gradient = [[GradientView alloc] init:GradientDownTop];
-    [self.view addSubviewAutoLayout:gradient];
-    [gradient snapTop];
-    [gradient snapLeft];
-    [gradient snapRight];
-    [gradient setHeightConstant:64];
-    
-    // close button ...
-    static int closeButtonImageSize = 18.f;
-    static int closeButtonImageTop  = 32.f;
-    static int closeButtonImageLeft = 17.f;
-    static int closeButtonSize      = 44.f;
-    
-    UIImageView *closeButtonImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon-close"]];
-    [closeButtonImage setTintColor:[UIColor whiteColor]];
-    [self.view addSubviewAutoLayout:closeButtonImage];
-    [closeButtonImage setHeightConstant:closeButtonImageSize];
-    [closeButtonImage setWidthConstant:closeButtonImageSize];
-    [closeButtonImage snapTopConstant:closeButtonImageTop];
-    [closeButtonImage snapLeftConstant:closeButtonImageLeft];
-    
-    UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [closeButton addTarget:self action:@selector(closeButtonDidPress) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubviewAutoLayout:closeButton];
-    [closeButton setHeightConstant:closeButtonSize];
-    [closeButton setWidthConstant:closeButtonSize];
-    [closeButton snapTopConstant:closeButtonImageTop - (closeButtonSize - closeButtonImageSize) / 2.f];
-    [closeButton snapLeftConstant:closeButtonImageLeft - (closeButtonSize - closeButtonImageSize) / 2.f];
+    // Navbar
+    UIDetailHeaderView *header = [UIDetailHeaderView new];
+    header.delegate = self;
+    [self.view addSubviewAutoLayout:header];
+    [header snapTop];
+    [header snapRight];
+    [header snapLeft];
+    [header setHeightConstant:64];
+    [header showTopBar:NO showText:YES recipe:self.recipe];
 }
 
-- (void)closeButtonDidPress
+- (void)headerDidClose
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 @end

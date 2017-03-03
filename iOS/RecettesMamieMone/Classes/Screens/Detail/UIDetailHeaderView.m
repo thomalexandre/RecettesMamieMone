@@ -84,11 +84,11 @@
     }
 }
 
-- (void)showTopBar:(BOOL)showBar recipe:(Recipe *)recipe
+- (void)showTopBar:(BOOL)showBar showText:(BOOL)showText recipe:(Recipe *)recipe
 {
     self.gradient.hidden = showBar;
     self.barView.hidden = !showBar;
-    self.titleLabel.hidden = !showBar;
+    self.titleLabel.hidden = !showText;
     self.titleLabel.text = recipe.title;
 }
 

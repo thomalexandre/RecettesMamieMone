@@ -151,7 +151,7 @@
 {
     CGFloat scrollY = scrollView.contentOffset.y;
     BOOL needToShowBar = [self.heroCell viewDidScroll:scrollY];
-    [self.header showTopBar:needToShowBar recipe:self.recipe];
+    [self.header showTopBar:needToShowBar showText:needToShowBar recipe:self.recipe];
     
     if(scrollY < -125) {
         [self dismissViewControllerAnimated:YES completion:nil];
