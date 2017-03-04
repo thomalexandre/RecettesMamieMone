@@ -10,7 +10,6 @@
 #import "RecipesViewController.h"
 #import "UIViewController+Utils.h"
 #import "FiltersViewController.h"
-#import "SearchViewController.h"
 #import "ThemeManager.h"
 
 #define kFiltersWidth       300.f
@@ -55,10 +54,7 @@
 }
 
 - (void)setupNavBar
-{
-//    UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithTitle:@"Search" style:UIBarButtonItemStyleDone target:self action:@selector(searchDidPress)];
-//    self.navigationItem.leftBarButtonItem = searchButton;
-    
+{  
     UIImage *image = [UIImage imageNamed:(!self.menuIsOpened ? @"icon-filter" : @"icon-close")];
     UIBarButtonItem *showFiltresButton = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStyleDone target:self action:@selector(filtresDidPress)];
     
@@ -92,12 +88,6 @@
 }
 
 #pragma mark - Actions
-
-- (void)searchDidPress
-{
-    SearchViewController *vc = [SearchViewController new];
-    [self.navigationController presentViewController:vc animated:YES completion:nil];
-}
 
 - (void)filtresDidPress
 {
