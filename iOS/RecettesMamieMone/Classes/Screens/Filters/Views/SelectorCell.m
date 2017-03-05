@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UILabel *typeLabel;
+@property (nonatomic, strong) NSLayoutConstraint *imageHeightConstraint;
 
 @end
 
@@ -43,7 +44,7 @@
     [self.imageView snapTop];
     [self.imageView snapLeft];
     [self.imageView snapRight];
-    [self.imageView setHeightConstant:63];
+    self.imageHeightConstraint = [self.imageView setHeightConstant:63.f];
     
     self.typeLabel = [UILabel new];
     self.typeLabel.textColor = [[ThemeManager instance] border];
@@ -61,7 +62,8 @@
 {
     self.imageView.image = [[UIImage imageNamed:recipeType.image] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.typeLabel.text = recipeType.name;
-
+    self.imageHeightConstraint.active = YES;
+    
     [self updateSelected:recipeType.selected];
 }
 
@@ -69,6 +71,7 @@
 {
     self.imageView.image = nil;
     self.typeLabel .text = hardness.name;
+    self.imageHeightConstraint.active = NO;
     
     [self updateSelected:hardness.selected];
 }

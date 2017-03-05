@@ -108,7 +108,7 @@
 {
     UILabel *bottomLabel = [UILabel new];
     bottomLabel.text = @"Á notre mamie ♥";
-    bottomLabel.font = [[ThemeManager instance] merriweatherFontWithSize:14];
+    bottomLabel.font = [[ThemeManager instance] openSansBoldFontWithSize:14];
     bottomLabel.textColor = [[ThemeManager instance] text];
     [self.view addSubviewAutoLayout:bottomLabel];
     [bottomLabel snapBottomConstant:10];
