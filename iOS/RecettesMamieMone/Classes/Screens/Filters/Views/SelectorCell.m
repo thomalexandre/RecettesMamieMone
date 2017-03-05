@@ -57,14 +57,23 @@
     [self.typeLabel snapTopToBottom:0 relativeToView:self.imageView];
 }
 
-- (void)setup:(RecipeType *)recipeType
+- (void)setupWithRecipeType:(RecipeType *)recipeType
 {
     self.imageView.image = [[UIImage imageNamed:recipeType.image] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    [self.imageView setTintColor:[[ThemeManager instance] border]];
     self.typeLabel.text = recipeType.name;
+
+    [self updateSelected:recipeType.selected];
 }
 
-- (void)setSelected:(BOOL)selected
+- (void)setupWithHardness:(Hardness *)hardness
+{
+    self.imageView.image = nil;
+    self.typeLabel .text = hardness.name;
+    
+    [self updateSelected:hardness.selected];
+}
+
+- (void)updateSelected:(BOOL)selected
 {
     if(selected) {
         self.contentView.backgroundColor = [[ThemeManager instance] cardBackground];

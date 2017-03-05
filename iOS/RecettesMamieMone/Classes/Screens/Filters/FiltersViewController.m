@@ -11,8 +11,16 @@
 #import "UIView+Utils.h"
 #import "UIView+Layout.h"
 #import "FilterTypeView.h"
+#import "FilterHardnessView.h"
+#import "DataManager.h"
+
+#define kMarginSection 25.f
+#define kMarginTitleContent 15.f
 
 @interface FiltersViewController ()
+
+@property (nonatomic, strong) FilterTypeView     *typeView;
+@property (nonatomic, strong) FilterHardnessView *hardnessView;
 
 @end
 
@@ -42,47 +50,56 @@
 {
     CGFloat margin = 10.f;
     
+    /// Recipe type
     UILabel *typeLabel = [UILabel new];
     typeLabel.text = @"Type de plat";
     typeLabel.font = [[ThemeManager instance] openSansRegularFontWithSize:18];
     typeLabel.textColor = [[ThemeManager instance] text];
     [self.view addSubviewAutoLayout:typeLabel];
-    [typeLabel snapTopConstant:20];
+    [typeLabel snapTopConstant:kMarginSection];
     [typeLabel snapLeftConstant:margin];
     
-    FilterTypeView *typeView = [FilterTypeView new];
-    [self.view addSubviewAutoLayout:typeView];
-    [typeView snapTopToBottom:10 relativeToView:typeLabel];
-//    [typeView snapLeftConstant:margin];
-//    [typeView snapRightConstant:margin];
-    [typeView centerX];
-    [typeView setWidthConstant:270];
-    [typeView setHeightConstant:90];
+    /// recipe type ...
+    self.typeView = [FilterTypeView new];
+    [self.view addSubviewAutoLayout:self.typeView];
+    [self.typeView snapTopToBottom:kMarginTitleContent relativeToView:typeLabel];
+    [self.typeView centerX];
+    [self.typeView setWidthConstant:270];
+    [self.typeView setHeightConstant:90];
 
-    
-    
-//    NSArray *typesArray = [NSArray arrayWithObjects: @"entrée", @"plat principal", @"dessert", nil];
-//    UISegmentedControl *segmentedControlTypes = [[UISegmentedControl alloc] initWithItems:typesArray];
-//    [self.view addSubviewAutoLayout:segmentedControlTypes];
-//    [segmentedControlTypes snapLeftConstant:margin];
-//    [segmentedControlTypes snapRightConstant:margin];
-//    [segmentedControlTypes snapTopToBottom:10 relativeToView:typeLabel];
-//    
+    /// Hardness title ....
     UILabel *hardnessLabel = [UILabel new];
     hardnessLabel.text = @"Difficulté";
-    hardnessLabel.font = [[ThemeManager instance] openSansRegularFontWithSize:18];
+    hardnessLabel.font = [[ThemeManager instance] openSansRegularFontWithSize:18.f];
     hardnessLabel.textColor = [[ThemeManager instance] text];
     [self.view addSubviewAutoLayout:hardnessLabel];
-    [hardnessLabel snapTopToBottom:20 relativeToView:typeView];
+    [hardnessLabel snapTopToBottom:kMarginSection relativeToView:self.typeView];
     [hardnessLabel snapLeftConstant:margin];
+
+    /// Hardness selector ...
+    self.hardnessView = [FilterHardnessView new];
+    [self.view addSubviewAutoLayout:self.hardnessView];
+    [self.hardnessView snapTopToBottom:kMarginTitleContent relativeToView:hardnessLabel];
+    [self.hardnessView centerX];
+    [self.hardnessView setWidthConstant:270.f];
+    [self.hardnessView setHeightConstant:37.f];
     
-    NSArray *hardnessArray = [NSArray arrayWithObjects: @"facile", @"moyen", @"difficile", nil];
-    UISegmentedControl *segmentedControlHardness = [[UISegmentedControl alloc] initWithItems:hardnessArray];
-    [self.view addSubviewAutoLayout:segmentedControlHardness];
-    [segmentedControlHardness snapLeftConstant:margin];
-    [segmentedControlHardness snapRightConstant:margin];
-    [segmentedControlHardness snapTopToBottom:10 relativeToView:hardnessLabel];
-    
+    /// Apply button ...
+    UIButton *applyButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [applyButton setTitle:@"Appliquer" forState:UIControlStateNormal];
+    applyButton.titleLabel.font = [[ThemeManager instance] openSansRegularFontWithSize:14.f];
+    applyButton.titleLabel.textColor = [[ThemeManager instance] textButton];
+    applyButton.backgroundColor =  [[ThemeManager instance] backgroundButton];
+    static CGFloat buttonHeight = 44.f;
+    applyButton.layer.cornerRadius = buttonHeight / 2.f;
+    [self.view addSubviewAutoLayout:applyButton];
+//    [applyButton setWidthConstant:270.f];
+    [applyButton setHeightConstant:buttonHeight];
+//    [applyButton centerX];
+    [applyButton snapLeftConstant:margin];
+    [applyButton snapRightConstant:margin];
+    [applyButton snapTopToBottom:(kMarginSection * 2.f) relativeToView:self.hardnessView];
+    [applyButton addTarget:self action:@selector(applyFilters) forControlEvents:UIControlEventTouchUpInside];
 
     [self setupBottomText];
 }
@@ -98,11 +115,22 @@
     [bottomLabel centerX];
 }
 
+- (void)reset
+{
+    [[DataManager instance].filters reset];
+    [self.typeView reset];
+    [self.hardnessView reset];
+}
+
 #pragma mark - Actions
 
-- (void)closeDidPress
+- (void)applyFilters
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [[DataManager instance].filters apply];
+    
+    if(self.delegate && [self.delegate respondsToSelector:@selector(filtersDidApply)]) {
+        [self.delegate filtersDidApply];
+    }
 }
 
 @end

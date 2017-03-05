@@ -68,7 +68,7 @@
     [self.gradient snapBottom];
     [self.gradient snapLeft];
     [self.gradient snapRight];
-    [self.gradient setHeightConstant:kTextHeight];
+    [self.gradient setHeightConstant:kTextHeight+20];
     
     // text ...
     self.titleLabel           = [UILabel new];

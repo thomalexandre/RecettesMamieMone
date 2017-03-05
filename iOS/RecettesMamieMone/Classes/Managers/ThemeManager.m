@@ -153,9 +153,19 @@
     return [self richBlack];
 }
 
+- (UIColor *)backgroundButton
+{
+    return [self rubineRed];
+}
+
 - (UIColor *)text
 {
     return [self richBlack];
+}
+
+- (UIColor *)textButton
+{
+    return [self whiteSmoke];
 }
 
 - (UIColor *)metaText

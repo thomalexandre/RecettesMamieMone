@@ -1,24 +1,24 @@
 //
-//  FilterTypeView.m
+//  FilterHardnessView.m
 //  RecettesMamieMone
 //
-//  Created by Alexandre Thomas on 3/4/17.
+//  Created by Alexandre Thomas on 3/5/17.
 //  Copyright © 2017 MBC. All rights reserved.
 //
 
-#import "FilterTypeView.h"
+#import "FilterHardnessView.h"
 #import "UIView+Layout.h"
 #import "DataManager.h"
 #import "ThemeManager.h"
 #import "SelectorCell.h"
 
-@interface FilterTypeView () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface FilterHardnessView () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 
 @end
 
-@implementation FilterTypeView
+@implementation FilterHardnessView
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -56,18 +56,19 @@
     [self.collectionView reloadData];
 }
 
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [[DataManager instance].filters numberOfRecipeTypes];
+    return [[DataManager instance].filters numberOfHardnesses];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    RecipeType *recipeType = [[DataManager instance].filters recipeAtIndex:indexPath.row];
+    Hardness *hardness = [[DataManager instance].filters hardnessAtIndex:indexPath.row];
     SelectorCell *cell = (SelectorCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kSelectorCellIdentifier forIndexPath:indexPath];
-    [cell setupWithRecipeType:recipeType];
+    [cell setupWithHardness:hardness];
     
     return cell;
 }
@@ -84,16 +85,15 @@
 
 - (void)collectionView:(UICollectionView *)collectionView selectDeselectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    SelectorCell *cell = (SelectorCell *)[collectionView cellForItemAtIndexPath:indexPath];
-    RecipeType *recipeType = [[DataManager instance].filters selectDeselectRecipeAtIndex:indexPath.row];
-    [cell setupWithRecipeType:recipeType];
+    [[DataManager instance].filters selectDeselectHardnessAtIndex:indexPath.row];
+    [self.collectionView reloadData];
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(90, 90);
+    return CGSizeMake(90, 37);
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section

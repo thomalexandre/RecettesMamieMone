@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol FiltersViewControllerDelegate <NSObject>
+
+- (void)filtersDidApply;
+
+@end
+
 @interface FiltersViewController : UIViewController
+
+@property (nonatomic, weak) id<FiltersViewControllerDelegate> delegate;
+
+- (void)reset;
 
 @end

@@ -28,8 +28,21 @@
     self = [super init];
     if(self) {
         self.name = dict[@"name"];
+        self.selected = NO;
     }
     return self;
 }
+
+- (id)copyWithZone:(nullable NSZone *)zone
+{
+    Hardness *h = [[[self class] allocWithZone:zone] init];
+    if(h) {
+        h.identifier = self.identifier;
+        h.name = self.name;
+        h.selected = self.selected;
+    }
+    return h;
+}
+
 @end
 

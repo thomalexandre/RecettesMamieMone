@@ -9,15 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "Recipe.h"
 #import "RecipeType.h"
+#import "Filters.h"
 
 @interface DataManager : NSObject
 
 + (instancetype)instance;
 
-#pragma mark - Recipes Management
+@property (nonatomic, strong) Filters *filters;
 
-/// load types
-- (void)fetchRecipeTypes:(void (^)(NSArray<RecipeType *> *recipeTypes))completion;
+#pragma mark - Recipes Management
 
 /// Load all recipes from the database, and return in the completion block.
 - (void)fetchRecipes:(void (^)(NSArray<Recipe *> *recipes))completion;

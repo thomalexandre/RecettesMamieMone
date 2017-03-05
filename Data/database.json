@@ -3,28 +3,28 @@
 		"list" :{
 			"recipe_0": {
 				"title": "Mousseline au kirsh",
-				"type": "type_2",
+				"type": "type_20",
 				"hardness": "hardness_1",
 				"thumbnail": "thumbnail.jpg",
 				"live": true
 			},
 			"recipe_1": {
 				"title": "1 Duis mollis",
-				"type": "type_2",
+				"type": "type_20",
 				"hardness": "hardness_0",
 				"thumbnail": "thumbnail.jpg",
 				"live": false
 			},
 			"recipe_2": {
 				"title": "2 Euismod Nullam Risus",
-				"type": "type_1",
+				"type": "type_10",
 				"hardness": "hardness_2",
 				"thumbnail": "thumbnail.jpg",
 				"live": false
 			},
 			"recipe_3": {
 				"title": "3 Nuuuuullam Pellentesque Ornare",
-				"type": "type_2",
+				"type": "type_20",
 				"hardness": "hardness_1",
 				"thumbnail": "thumbnail.jpg",
 				"live": false
@@ -42,11 +42,11 @@
 				"name": "entrée",
 				"image": "filter-soup"
 			},
-			"type_1":{
+			"type_10":{
 				"name": "plat principal",
 				"image": "filter-chicken"
 			},
-			"type_2":{
+			"type_20":{
 				"name": "dessert",
 				"image": "filter-icecream"
 			}

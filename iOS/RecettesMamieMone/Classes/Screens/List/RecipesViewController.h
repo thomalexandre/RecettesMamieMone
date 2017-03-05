@@ -10,4 +10,6 @@
 
 @interface RecipesViewController : UIViewController
 
+- (void)reloadData;
+
 @end

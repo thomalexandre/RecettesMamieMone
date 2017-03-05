@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "RecipeType.h"
+#import "Hardness.h"
 
 #define kSelectorCellIdentifier @"kSelectorCellIdentifier"
 
 @interface SelectorCell : UICollectionViewCell
 
-- (void)setup:(RecipeType *)recipeType;
+- (void)setupWithRecipeType:(RecipeType *)recipeType;
+- (void)setupWithHardness:(Hardness *)hardness;
 
 @end

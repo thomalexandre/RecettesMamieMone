@@ -11,11 +11,12 @@
 #import "UIViewController+Utils.h"
 #import "FiltersViewController.h"
 #import "ThemeManager.h"
+#import "DataManager.h"
 
 #define kFiltersWidth       300.f
 #define kAnimationDuration  0.3f
 
-@interface RootViewController ()
+@interface RootViewController () <FiltersViewControllerDelegate>
 
 @property (nonatomic, strong) RecipesViewController *recipes;
 @property (nonatomic, strong) FiltersViewController *filters;
@@ -66,6 +67,7 @@
 {
     if(!_filters) {
         _filters = [FiltersViewController new];
+        _filters.delegate = self;
         [self addContentController:_filters];
         [_filters.view snapTop];
         [_filters.view snapBottom];
@@ -108,6 +110,8 @@
         [self loadBackgroundButton];
         [self loadFiltersController];
         
+        [self.filters reset];
+        
         [UIView animateWithDuration:kAnimationDuration delay:0 usingSpringWithDamping:1 initialSpringVelocity:0.5 options:0 animations:^{
             self.filterLeftConstraint.constant = -kFiltersWidth;
             [self.view layoutIfNeeded];
@@ -129,6 +133,14 @@
         self.menuIsOpened = NO;
         [self setupNavBar];
     }
+}
+
+#pragma mark - FiltersViewControllerDelegate
+
+- (void)filtersDidApply
+{
+    [self closeMenu];
+    [self.recipes reloadData];
 }
 
 @end

@@ -22,7 +22,9 @@
 - (UIColor *)background;
 - (UIColor *)backgroundPhoto;
 - (UIColor *)backgroundClickabke;
+- (UIColor *)backgroundButton;
 - (UIColor *)text;
+- (UIColor *)textButton;
 - (UIColor *)metaText;
 - (UIColor *)cardText;
 - (UIColor *)cardBackground;

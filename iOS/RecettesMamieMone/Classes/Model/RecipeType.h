@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RecipeType : NSObject
+@interface RecipeType : NSObject <NSCopying>
 
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, strong)   NSString *name;
 @property (nonatomic, strong)   NSString *image;
+@property (nonatomic, assign)   BOOL selected;  /// NO as default
 
 + (instancetype)recipeType:(NSString *)identifier withDictionary:(NSDictionary *)dict;
 

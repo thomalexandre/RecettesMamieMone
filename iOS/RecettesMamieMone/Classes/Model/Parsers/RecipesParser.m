@@ -52,12 +52,7 @@
         }
     }
     
-    // sort array
-    self.recipes = [recipes sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-        Recipe *first  = (Recipe*)a ;
-        Recipe *second = (Recipe*)b ;
-        return [first.title compare:second.title];
-    }];
+    self.recipes = recipes;
 }
 
 @end
