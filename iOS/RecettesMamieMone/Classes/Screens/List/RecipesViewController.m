@@ -19,6 +19,7 @@
 @interface RecipesViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) UILabel *emptyStateLabel;
 @property (nonatomic, strong) NSArray<Recipe *> *recipes;
 
 @end
@@ -31,6 +32,7 @@
     self.title = @"Recettes";
     
     [self setupCollectionView];
+    [self setupEmptyState];
     
     [self reloadData];
     self.view.backgroundColor = [[ThemeManager instance] background];
@@ -50,10 +52,24 @@
     [self.collectionView snap];
 }
 
+- (void)setupEmptyState
+{
+    self.emptyStateLabel = [UILabel new];
+    self.emptyStateLabel.text = @"Aucune recette !";
+    self.emptyStateLabel.textAlignment = NSTextAlignmentCenter;
+    self.emptyStateLabel.textColor = [[ThemeManager instance] text];
+    self.emptyStateLabel.font = [[ThemeManager instance] openSansBoldFontWithSize:18];
+    [self.view addSubviewAutoLayout:self.emptyStateLabel];
+    [self.emptyStateLabel snap];
+    self.emptyStateLabel.hidden = YES;
+}
+
 - (void)reloadData
 {
     [[DataManager instance] fetchRecipes:^(NSArray<Recipe *> *recipes) {
         self.recipes = recipes;
+        self.emptyStateLabel.hidden = [recipes count] >  0;
+        self.collectionView.hidden  = [recipes count] == 0;
         [self.collectionView reloadData];
     }];
 }
