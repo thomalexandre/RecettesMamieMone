@@ -116,7 +116,7 @@
 
 - (BOOL)allowRecipe:(Recipe *)recipe
 {
-    BOOL result = false;
+    BOOL result = NO;
     do {
         if(![self allowRecipeForType:recipe.type])
             break;
