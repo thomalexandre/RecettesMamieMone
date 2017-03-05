@@ -40,6 +40,9 @@
 		91A8C4191E6858750009A78D /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C40F1E6858750009A78D /* OpenSans-Regular.ttf */; };
 		91A8C41A1E6858750009A78D /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C4101E6858750009A78D /* OpenSans-Semibold.ttf */; };
 		91A8C41B1E6858750009A78D /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C4111E6858750009A78D /* OpenSans-SemiboldItalic.ttf */; };
+		91D624671E6B624F00FE40A2 /* FilterTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D624661E6B624F00FE40A2 /* FilterTypeView.m */; };
+		91D6246A1E6B63D700FE40A2 /* SelectorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D624691E6B63D700FE40A2 /* SelectorCell.m */; };
+		91D6246D1E6B6E8500FE40A2 /* UIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D6246C1E6B6E8500FE40A2 /* UIImage+Utils.m */; };
 		91D8934F1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D8934E1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.m */; };
 		91D893521E64D44C003E0C57 /* TitleContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D893511E64D44C003E0C57 /* TitleContentTableViewCell.m */; };
 		91D893551E65543A003E0C57 /* PhotosTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D893541E65543A003E0C57 /* PhotosTableViewCell.m */; };
@@ -126,6 +129,12 @@
 		91A8C40F1E6858750009A78D /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		91A8C4101E6858750009A78D /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		91A8C4111E6858750009A78D /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		91D624651E6B624F00FE40A2 /* FilterTypeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterTypeView.h; sourceTree = "<group>"; };
+		91D624661E6B624F00FE40A2 /* FilterTypeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterTypeView.m; sourceTree = "<group>"; };
+		91D624681E6B63D700FE40A2 /* SelectorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectorCell.h; sourceTree = "<group>"; };
+		91D624691E6B63D700FE40A2 /* SelectorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectorCell.m; sourceTree = "<group>"; };
+		91D6246B1E6B6E8500FE40A2 /* UIImage+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utils.h"; sourceTree = "<group>"; };
+		91D6246C1E6B6E8500FE40A2 /* UIImage+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utils.m"; sourceTree = "<group>"; };
 		91D8934D1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeMetadataTableViewCell.h; sourceTree = "<group>"; };
 		91D8934E1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeMetadataTableViewCell.m; sourceTree = "<group>"; };
 		91D893501E64D44C003E0C57 /* TitleContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleContentTableViewCell.h; sourceTree = "<group>"; };
@@ -358,14 +367,33 @@
 			path = OpenSans;
 			sourceTree = "<group>";
 		};
+		91D624631E6B61CA00FE40A2 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				91D624641E6B622800FE40A2 /* Views */,
+				91EB57341E5A06D600131FD4 /* FiltersViewController.h */,
+				91EB57351E5A06D600131FD4 /* FiltersViewController.m */,
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
+		91D624641E6B622800FE40A2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				91D624651E6B624F00FE40A2 /* FilterTypeView.h */,
+				91D624661E6B624F00FE40A2 /* FilterTypeView.m */,
+				91D624681E6B63D700FE40A2 /* SelectorCell.h */,
+				91D624691E6B63D700FE40A2 /* SelectorCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		91EB571B1E5796BA00131FD4 /* List */ = {
 			isa = PBXGroup;
 			children = (
 				91502A421E5B9CE200001D2B /* Cells */,
 				91EB57201E5796FA00131FD4 /* RecipesViewController.h */,
 				91EB57211E5796FA00131FD4 /* RecipesViewController.m */,
-				91EB57341E5A06D600131FD4 /* FiltersViewController.h */,
-				91EB57351E5A06D600131FD4 /* FiltersViewController.m */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -430,6 +458,7 @@
 		91FEAE671E54FC010023FEBE /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				91D624631E6B61CA00FE40A2 /* Filters */,
 				918368331E69CC5400A480B7 /* PhotosViewer */,
 				91EB571C1E5796C800131FD4 /* Detail */,
 				91EB571B1E5796BA00131FD4 /* List */,
@@ -467,6 +496,8 @@
 				91FEAE721E54FEB00023FEBE /* UIViewController+Utils.m */,
 				91FEAE741E54FEE10023FEBE /* NSString+Utils.h */,
 				91FEAE751E54FEE10023FEBE /* NSString+Utils.m */,
+				91D6246B1E6B6E8500FE40A2 /* UIImage+Utils.h */,
+				91D6246C1E6B6E8500FE40A2 /* UIImage+Utils.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -776,6 +807,7 @@
 				91FEAE7E1E54FF5D0023FEBE /* DataManager.m in Sources */,
 				91FEAE811E54FF780023FEBE /* StorageManager.m in Sources */,
 				91FEAE841E54FFB50023FEBE /* ThemeManager.m in Sources */,
+				91D6246D1E6B6E8500FE40A2 /* UIImage+Utils.m in Sources */,
 				9108BCCA1E65F7C50097B86B /* Photo.m in Sources */,
 				91EB57291E5A00E400131FD4 /* RecipeType.m in Sources */,
 				91EB571F1E5796F000131FD4 /* RecipeViewController.m in Sources */,
@@ -787,6 +819,8 @@
 				91FEAE921E5500AE0023FEBE /* ConfigurationManager.m in Sources */,
 				91502A461E5C807500001D2B /* ReceipeCollectionViewCell.m in Sources */,
 				91EB57401E5AC66600131FD4 /* HardnessParser.m in Sources */,
+				91D6246A1E6B63D700FE40A2 /* SelectorCell.m in Sources */,
+				91D624671E6B624F00FE40A2 /* FilterTypeView.m in Sources */,
 				910AA4EC1E64BF3700EAF56A /* HeroImageTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

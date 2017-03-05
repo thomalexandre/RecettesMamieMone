@@ -111,6 +111,11 @@
     return [UIColorFromRGB(0xF0F0F0) colorWithAlphaComponent:0.8];
 }
 
+- (UIColor *)darkGray
+{
+    return UIColorFromRGB(0x979797);
+}
+
 /// Colors for ui elements
 
 - (UIColor *)segmentedControl
@@ -140,7 +145,7 @@
 
 - (UIColor *)backgroundClickabke
 {
-    return [[self richBlack] colorWithAlphaComponent:0.3];
+    return [[self richBlack] colorWithAlphaComponent:0.4];
 }
 
 - (UIColor *)backgroundPhoto
@@ -171,6 +176,11 @@
 - (UIColor *)line
 {
     return [self lightGray];
+}
+
+- (UIColor *)border
+{
+    return [self darkGray];
 }
 
 #pragma mark - fonts

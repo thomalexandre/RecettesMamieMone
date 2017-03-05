@@ -12,6 +12,7 @@
 
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, strong)   NSString *name;
+@property (nonatomic, strong)   NSString *image;
 
 + (instancetype)recipeType:(NSString *)identifier withDictionary:(NSDictionary *)dict;
 

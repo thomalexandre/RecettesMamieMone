@@ -10,6 +10,7 @@
 #import "ThemeManager.h"
 #import "UIView+Utils.h"
 #import "UIView+Layout.h"
+#import "FilterTypeView.h"
 
 @interface FiltersViewController ()
 
@@ -49,19 +50,30 @@
     [typeLabel snapTopConstant:20];
     [typeLabel snapLeftConstant:margin];
     
-    NSArray *typesArray = [NSArray arrayWithObjects: @"entrée", @"plat principal", @"dessert", nil];
-    UISegmentedControl *segmentedControlTypes = [[UISegmentedControl alloc] initWithItems:typesArray];
-    [self.view addSubviewAutoLayout:segmentedControlTypes];
-    [segmentedControlTypes snapLeftConstant:margin];
-    [segmentedControlTypes snapRightConstant:margin];
-    [segmentedControlTypes snapTopToBottom:10 relativeToView:typeLabel];
+    FilterTypeView *typeView = [FilterTypeView new];
+    [self.view addSubviewAutoLayout:typeView];
+    [typeView snapTopToBottom:10 relativeToView:typeLabel];
+//    [typeView snapLeftConstant:margin];
+//    [typeView snapRightConstant:margin];
+    [typeView centerX];
+    [typeView setWidthConstant:270];
+    [typeView setHeightConstant:90];
+
     
+    
+//    NSArray *typesArray = [NSArray arrayWithObjects: @"entrée", @"plat principal", @"dessert", nil];
+//    UISegmentedControl *segmentedControlTypes = [[UISegmentedControl alloc] initWithItems:typesArray];
+//    [self.view addSubviewAutoLayout:segmentedControlTypes];
+//    [segmentedControlTypes snapLeftConstant:margin];
+//    [segmentedControlTypes snapRightConstant:margin];
+//    [segmentedControlTypes snapTopToBottom:10 relativeToView:typeLabel];
+//    
     UILabel *hardnessLabel = [UILabel new];
     hardnessLabel.text = @"Difficulté";
     hardnessLabel.font = [[ThemeManager instance] openSansRegularFontWithSize:18];
     hardnessLabel.textColor = [[ThemeManager instance] text];
     [self.view addSubviewAutoLayout:hardnessLabel];
-    [hardnessLabel snapTopToBottom:20 relativeToView:segmentedControlTypes];
+    [hardnessLabel snapTopToBottom:20 relativeToView:typeView];
     [hardnessLabel snapLeftConstant:margin];
     
     NSArray *hardnessArray = [NSArray arrayWithObjects: @"facile", @"moyen", @"difficile", nil];

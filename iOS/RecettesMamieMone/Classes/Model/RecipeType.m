@@ -27,7 +27,8 @@
 {
     self = [super init];
     if(self) {
-        self.name = dict[@"name"];
+        self.name  = dict[@"name"];
+        self.image = dict[@"image"];
     }
     return self;
 }

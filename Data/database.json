@@ -39,13 +39,16 @@
 		},
 		"types": {
 			"type_0":{
-				"name": "entrée"
+				"name": "entrée",
+				"image": "filter-soup"
 			},
 			"type_1":{
-				"name": "plat principal"
+				"name": "plat principal",
+				"image": "filter-chicken"
 			},
 			"type_2":{
-				"name": "dessert"
+				"name": "dessert",
+				"image": "filter-icecream"
 			}
 		},
 		"hardnesses": {

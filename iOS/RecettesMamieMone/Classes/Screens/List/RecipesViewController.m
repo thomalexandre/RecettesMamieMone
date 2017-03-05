@@ -122,8 +122,6 @@
     return UIEdgeInsetsMake(margin, margin, margin, margin);
 }
 
-
-
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
     CGFloat spacing = [ConfigurationManager isIphone] ? 16.f : 20.f;

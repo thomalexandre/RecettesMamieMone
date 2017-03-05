@@ -8,6 +8,7 @@
 
 #import "DataManager.h"
 #import "RecipesParser.h"
+#import "RecipeTypesParser.h"
 @import FirebaseDatabase;
 
 @interface DataManager ()
@@ -42,6 +43,19 @@
 }
 
 #pragma mark - Recipes Management
+
+- (void)fetchRecipeTypes:(void (^)(NSArray<RecipeType *> *recipeTypes))completion
+{
+    [[[self.database child:@"recipes"] child:@"types"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshotTypes) {
+        
+        RecipeTypesParser *parser = [[RecipeTypesParser alloc] initWithDictionary:snapshotTypes.value];
+        if(completion) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(parser.recipeTypes);
+            });
+        }
+    }];
+}
 
 - (void)fetchRecipes:(void (^)(NSArray<Recipe *> *recipes))completion
 {
