@@ -142,4 +142,22 @@
     return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone;
 }
 
+#pragma mark - application
+
++ (NSString *)appVersion
+{
+    return [ConfigurationManager settingForKey:@"CFBundleShortVersionString"];
+}
+
++ (NSString *)appBuild
+{
+    return [ConfigurationManager settingForKey:@"CFBundleVersion"];
+}
+
++ (id)settingForKey:(NSString *)key
+{
+    NSBundle *mainBundle = [NSBundle mainBundle];
+    return [mainBundle objectForInfoDictionaryKey:key];
+}
+
 @end

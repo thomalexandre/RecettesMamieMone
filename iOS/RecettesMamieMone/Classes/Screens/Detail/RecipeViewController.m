@@ -73,7 +73,7 @@
     [self.header snapTop];
     [self.header snapRight];
     [self.header snapLeft];
-    [self.header setHeightConstant:64];
+    [self.header setHeightConstant:64 + kBorderDentelHeight];
 }
 
 - (void)reloadData
@@ -149,7 +149,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    CGFloat scrollY = scrollView.contentOffset.y;
+    CGFloat scrollY    = scrollView.contentOffset.y;
     BOOL needToShowBar = [self.heroCell viewDidScroll:scrollY];
     [self.header showTopBar:needToShowBar showText:needToShowBar recipe:self.recipe];
     

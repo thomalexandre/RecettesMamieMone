@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Recipe.h"
 
+#define kBorderDentelHeight 10.f
+
 @protocol UIDetailHeaderViewDelegate <NSObject>
 
 - (void)headerDidClose;

@@ -17,6 +17,7 @@
 @property (nonatomic, strong) GradientView *gradient;
 @property (nonatomic, strong) UIView       *barView;
 @property (nonatomic, strong) UILabel      *titleLabel;
+@property (nonatomic, strong) UIImageView  *borderImageView;
 
 @end
 
@@ -72,9 +73,20 @@
     self.titleLabel.textColor = [[ThemeManager instance] navBarText];
     [self addSubviewAutoLayout:self.titleLabel];
     [self.titleLabel snapTopConstant:20];
-    [self.titleLabel snapBottom];
+    [self.titleLabel snapBottomConstant:kBorderDentelHeight];
     [self.titleLabel centerX];
     self.titleLabel.hidden = YES;
+    
+    // border ...
+    self.borderImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hero-border-bottom"]];
+    self.borderImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.borderImageView.clipsToBounds = YES;
+    [self addSubviewAutoLayout:self.borderImageView];
+    [self.borderImageView snapBottom];
+    [self.borderImageView snapLeft];
+    [self.borderImageView snapRight];
+    [self.borderImageView setHeightConstant:kBorderDentelHeight];
+    self.borderImageView.hidden = YES;
 }
 
 - (void)closeButtonDidPress
@@ -88,6 +100,7 @@
 {
     self.gradient.hidden = showBar;
     self.barView.hidden = !showBar;
+    self.borderImageView.hidden = !showBar;
     self.titleLabel.hidden = !showText;
     self.titleLabel.text = recipe.title;
 }

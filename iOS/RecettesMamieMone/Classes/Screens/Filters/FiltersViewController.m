@@ -13,6 +13,7 @@
 #import "FilterTypeView.h"
 #import "FilterHardnessView.h"
 #import "DataManager.h"
+#import "ConfigurationManager.h"
 
 #define kMarginSection 25.f
 #define kMarginTitleContent 15.f
@@ -107,7 +108,9 @@
 - (void)setupBottomText
 {
     UILabel *bottomLabel = [UILabel new];
-    bottomLabel.text = @"Á notre mamie ♥";
+    bottomLabel.numberOfLines = 0;
+    bottomLabel.textAlignment = NSTextAlignmentCenter;
+    bottomLabel.text = [NSString stringWithFormat:@"Á notre mamie ♥\nv %@", [ConfigurationManager appVersion]];
     bottomLabel.font = [[ThemeManager instance] openSansBoldFontWithSize:14];
     bottomLabel.textColor = [[ThemeManager instance] text];
     [self.view addSubviewAutoLayout:bottomLabel];

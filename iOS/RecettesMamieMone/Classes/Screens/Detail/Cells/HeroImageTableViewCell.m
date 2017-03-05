@@ -65,6 +65,15 @@
     [borderImageView snapLeft];
     [borderImageView snapRight];
     [borderImageView setHeightConstant:10];
+    
+    /// photos buttons
+//    UIButton *photoButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [photoButton setImage:[UIImage imageNamed:@"camera"] forState:UIControlStateNormal];
+//    [self.contentView addSubviewAutoLayout:photoButton];
+//    [photoButton snapBottomConstant:15];
+//    [photoButton snapRightConstant:10];
+//    [photoButton setHeightConstant:40];
+//    [photoButton setWidthConstant:40];
 }
 
 - (void)setup:(Recipe *)recipe
@@ -86,7 +95,7 @@
     self.heightConstraint.constant = scrollY > 0 ? kHeroImageHeight : kHeroImageHeight + fabs(scrollY);
     
     //CGFloat alpha = scrollY > kHeroImageHeight / 3.f ? (kHeroImageHeight/3.f-(kHeroImageHeight-scrollY)) / (kHeroImageHeight/3.f) : 0;
-    CGFloat alpha = scrollY > kHeroImageHeight / 3.f ? (scrollY - kHeroImageHeight / 3.0) / ((kHeroImageHeight - 64) - (kHeroImageHeight / 3.0)) : 0;
+    CGFloat alpha = scrollY > kHeroImageHeight / 3.f ? (scrollY - kHeroImageHeight / 3.0) / ((kHeroImageHeight - 74) - (kHeroImageHeight / 3.0)) : 0;
     self.overView.backgroundColor = [[ThemeManager instance] navBar:alpha];
     
    // NSLog(@"%f %f", scrollY, alpha);
