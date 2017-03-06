@@ -13,12 +13,13 @@
 #import "StorageManager.h"
 #import "ThemeManager.h"
 #import "UIDetailHeaderView.h"
+#import "iCarousel.h"
 
-@interface PhotoViewerViewController () <UIDetailHeaderViewDelegate>
+@interface PhotoViewerViewController () <UIDetailHeaderViewDelegate, iCarouselDataSource>
 
 @property (nonatomic, strong) Recipe *recipe;
 @property (nonatomic, assign) NSUInteger photoIndex;
-@property (nonatomic, strong) UIImageView * imageView;
+@property (nonatomic, strong) iCarousel *carousel;
 
 @end
 
@@ -39,15 +40,16 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [[ThemeManager instance] backgroundPhoto];
-    
-    // Image
-    self.imageView = [UIImageView new];
-    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
-    self.imageView.backgroundColor = [UIColor clearColor];
-    [self.view addSubviewAutoLayout:self.imageView];
-    [self.imageView snap];
-    Photo *photo = self.recipe.photos[self.photoIndex];
-    [[StorageManager instance] setImage:self.imageView path:[photo path]];
+
+    // image carouse
+    self.carousel = [iCarousel new];
+    self.carousel.pagingEnabled = YES;
+    self.carousel.type = iCarouselTypeLinear;
+    self.carousel.stopAtItemBoundary = NO;
+    self.carousel.backgroundColor = [[ThemeManager instance] backgroundPhoto];
+    self.carousel.dataSource = self;
+    [self.view addSubviewAutoLayout:self.carousel];
+    [self.carousel snap];
     
     // Navbar
     UIDetailHeaderView *header = [UIDetailHeaderView new];
@@ -60,10 +62,36 @@
     [header showTopBar:NO showText:YES recipe:self.recipe];
 }
 
+- (void)dealloc
+{
+    self.carousel.delegate = nil;
+    self.carousel.dataSource = nil;
+}
+
+#pragma mark - UIDetailHeaderViewDelegate
+
 - (void)headerDidClose
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark - iCarouselDataSource
+
+- (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel
+{
+    return [self.recipe.photos count];
+}
+
+- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view
+{
+    UIView *v = [[UIView alloc] initWithFrame:self.view.frame];
+    v.backgroundColor = [UIColor clearColor];
+    UIImageView *imageView  = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, self.view.frame.size.width-10, self.view.frame.size.height-10)];
+    [v addSubview:imageView];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    Photo *photo = self.recipe.photos[index];
+    [[StorageManager instance] setImage:imageView path:[photo path]];
+    return v;
+}
 
 @end

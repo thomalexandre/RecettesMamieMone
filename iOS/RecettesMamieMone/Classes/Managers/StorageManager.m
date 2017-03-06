@@ -54,12 +54,14 @@
 
 - (void)urlForPath:(NSString *)path completion:(void (^)(NSURL *url, NSError *error))completion
 {
+    __weak StorageManager * wSelf = self;
     FIRStorageReference *reference = [self.storageRef child:path];
     if(reference) {
-        [reference downloadURLWithCompletion:^(NSURL *URL, NSError *error){
+        [reference downloadURLWithCompletion:^(NSURL *url, NSError *error) {
             dispatch_async(dispatch_get_main_queue(), ^{
+                [wSelf saveURL:url forPath:path];
                 if(completion) {
-                    completion(URL, error);
+                    completion(url, error);
                 }
             });
         }];
@@ -80,13 +82,11 @@
             return;
         }
     }
-    
-    __weak StorageManager * wSelf = self;
+
     [self urlForPath:path completion:^(NSURL *url, NSError *error) {
         
         if(url) {
             [imageView sd_setImageWithURL:url];
-            [wSelf saveURL:url forPath:path];
         } else {
             imageView.image = [UIImage imageNamed:@"placeholder"];
         }

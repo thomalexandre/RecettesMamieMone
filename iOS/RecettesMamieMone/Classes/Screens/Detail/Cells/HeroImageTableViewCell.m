@@ -21,6 +21,7 @@
 @property (nonatomic, strong) UIImageView *heroImageView;
 @property (nonatomic, strong) NSLayoutConstraint *topConstraint;
 @property (nonatomic, strong) NSLayoutConstraint *heightConstraint;
+@property (nonatomic, strong) UIButton *photoButton;
 
 @end
 
@@ -67,19 +68,21 @@
     [borderImageView setHeightConstant:10];
     
     /// photos buttons
-//    UIButton *photoButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [photoButton setImage:[UIImage imageNamed:@"camera"] forState:UIControlStateNormal];
-//    [self.contentView addSubviewAutoLayout:photoButton];
-//    [photoButton snapBottomConstant:15];
-//    [photoButton snapRightConstant:10];
-//    [photoButton setHeightConstant:40];
-//    [photoButton setWidthConstant:40];
+    self.photoButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.photoButton setImage:[UIImage imageNamed:@"camera"] forState:UIControlStateNormal];
+    [self.photoButton addTarget:self action:@selector(cameraButtondidClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.contentView addSubviewAutoLayout:self.photoButton];
+    [self.photoButton snapBottomConstant:12];
+    [self.photoButton snapRightConstant:8];
+    [self.photoButton setHeightConstant:40];
+    [self.photoButton setWidthConstant:40];
 }
 
 - (void)setup:(Recipe *)recipe
 {
-   
     [[StorageManager instance] setImage:self.heroImageView path:[recipe thumbnail]];
+    
+    self.photoButton.hidden = [recipe.photos count] == 0;
 
     [self updateConstraintsIfNeeded];
 }
@@ -97,10 +100,18 @@
     //CGFloat alpha = scrollY > kHeroImageHeight / 3.f ? (kHeroImageHeight/3.f-(kHeroImageHeight-scrollY)) / (kHeroImageHeight/3.f) : 0;
     CGFloat alpha = scrollY > kHeroImageHeight / 3.f ? (scrollY - kHeroImageHeight / 3.0) / ((kHeroImageHeight - 74) - (kHeroImageHeight / 3.0)) : 0;
     self.overView.backgroundColor = [[ThemeManager instance] navBar:alpha];
+    self.photoButton.alpha = 1.f - alpha;
     
    // NSLog(@"%f %f", scrollY, alpha);
     
     return alpha >= 1.f;
+}
+
+- (void)cameraButtondidClick
+{
+    if(self.delegate && [self.delegate respondsToSelector:@selector(photoButtonDidSelect)]) {
+        [self.delegate photoButtonDidSelect];
+    }
 }
 
 

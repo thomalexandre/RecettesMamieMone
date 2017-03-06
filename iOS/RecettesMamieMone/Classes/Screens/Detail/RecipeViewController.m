@@ -17,7 +17,7 @@
 #import "ThemeManager.h"
 #import "PhotoViewerViewController.h"
 
-@interface RecipeViewController () <UITableViewDelegate, UITableViewDataSource, UIDetailHeaderViewDelegate, PhotosTableViewCellDelegate>
+@interface RecipeViewController () <UITableViewDelegate, UITableViewDataSource, UIDetailHeaderViewDelegate, PhotosTableViewCellDelegate, HeroImageTableViewCellDelegate>
 
 @property (nonatomic, strong) Recipe *recipe;
 @property (nonatomic, strong) UITableView *tableView;
@@ -118,6 +118,7 @@
 - (UITableViewCell *)heroImageCell
 {
     HeroImageTableViewCell *cell = (HeroImageTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:kHeroImageTableViewCellIdentifier];
+    cell.delegate = self;
     [cell setup:self.recipe];
     self.heroCell = cell;
     return cell;
@@ -172,6 +173,13 @@
     PhotoViewerViewController *viewer = [[PhotoViewerViewController alloc] initWithRecipe:self.recipe withPhotoIndex:photoIndex];
     
     [self presentViewController:viewer animated:YES completion:nil];
+}
+
+#pragma mark - HeroImageTableViewCellDelegate
+
+- (void)photoButtonDidSelect
+{
+    [self photoDidTapAtIndex:0];
 }
 
 @end

@@ -11,7 +11,15 @@
 
 #define kHeroImageTableViewCellIdentifier @"kHeroImageTableViewCellIdentifier"
 
+@protocol HeroImageTableViewCellDelegate <NSObject>
+
+- (void)photoButtonDidSelect;
+
+@end
+
 @interface HeroImageTableViewCell : UITableViewCell
+
+@property (nonatomic, weak) id<HeroImageTableViewCellDelegate> delegate;
 
 - (void)setup:(Recipe *)recipe;
 
