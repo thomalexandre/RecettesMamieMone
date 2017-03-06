@@ -75,7 +75,11 @@
     [self.photoButton snapBottomConstant:12];
     [self.photoButton snapRightConstant:8];
     [self.photoButton setHeightConstant:40];
-    [self.photoButton setWidthConstant:40];
+    [self.photoButton setWidthConstant:60];
+    self.photoButton.titleLabel.font = [[ThemeManager instance] openSansRegularFontWithSize:10];
+    self.photoButton.titleLabel.textAlignment = NSTextAlignmentRight;
+    [self.photoButton setTitleEdgeInsets: UIEdgeInsetsMake(2,-45,0,0)];
+    [self.photoButton setImageEdgeInsets: UIEdgeInsetsMake(0,25,0,0)];
 }
 
 - (void)setup:(Recipe *)recipe
@@ -83,6 +87,7 @@
     [[StorageManager instance] setImage:self.heroImageView path:[recipe thumbnail]];
     
     self.photoButton.hidden = [recipe.photos count] == 0;
+    [self.photoButton setTitle:[NSString stringWithFormat:@"%ld", [recipe.photos count] ] forState:UIControlStateNormal];
 
     [self updateConstraintsIfNeeded];
 }
