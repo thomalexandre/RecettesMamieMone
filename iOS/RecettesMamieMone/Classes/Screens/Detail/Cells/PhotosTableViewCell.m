@@ -92,7 +92,7 @@
 {
     PhotoCollectionViewCell *cell = (PhotoCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kPhotoCollectionViewCellIdentifier forIndexPath:indexPath];
     Photo *photo = self.recipe.photos[indexPath.row];
-    [cell setup:photo];
+    [cell setup:photo mode:UIViewContentModeScaleAspectFill];
     return cell;
 }
 

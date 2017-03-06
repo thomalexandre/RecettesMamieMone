@@ -13,13 +13,14 @@
 #import "StorageManager.h"
 #import "ThemeManager.h"
 #import "UIDetailHeaderView.h"
-#import "iCarousel.h"
+#import "PhotoCollectionViewCell.h"
+#import "ConfigurationManager.h"
 
-@interface PhotoViewerViewController () <UIDetailHeaderViewDelegate, iCarouselDataSource>
+@interface PhotoViewerViewController () <UIDetailHeaderViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) Recipe *recipe;
 @property (nonatomic, assign) NSUInteger photoIndex;
-@property (nonatomic, strong) iCarousel *carousel;
+@property (nonatomic, strong) UICollectionView *collectionView;
 
 @end
 
@@ -41,17 +42,23 @@
     
     self.view.backgroundColor = [[ThemeManager instance] backgroundPhoto];
 
-    // image carouse
-    self.carousel = [iCarousel new];
-    self.carousel.pagingEnabled = YES;
-    self.carousel.type = iCarouselTypeLinear;
-    self.carousel.stopAtItemBoundary = NO;
-    self.carousel.backgroundColor = [[ThemeManager instance] backgroundPhoto];
-    self.carousel.dataSource = self;
-    [self.view addSubviewAutoLayout:self.carousel];
-    [self.carousel snap];
+    // image carousel ...
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+    self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:layout];
+    self.collectionView.backgroundColor = [UIColor clearColor];
+    [self.collectionView setDataSource:self];
+    [self.collectionView setDelegate:self];
+    self.collectionView.backgroundColor = [UIColor clearColor];
+    [self.collectionView setPagingEnabled:YES];
     
-    // Navbar
+    [self.collectionView registerClass:[PhotoCollectionViewCell class] forCellWithReuseIdentifier:kPhotoCollectionViewCellIdentifier];
+    
+    [self.view addSubviewAutoLayout:self.collectionView];
+    [self.collectionView snap];
+    
+    
+    // Navbar ...
     UIDetailHeaderView *header = [UIDetailHeaderView new];
     header.delegate = self;
     [self.view addSubviewAutoLayout:header];
@@ -62,10 +69,19 @@
     [header showTopBar:NO showText:YES recipe:self.recipe];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+//    [self.view layoutIfNeeded];
+    NSIndexPath *path = [NSIndexPath indexPathForRow:self.photoIndex inSection:0];
+    [self.collectionView scrollToItemAtIndexPath:path atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+}
+
 - (void)dealloc
 {
-    self.carousel.delegate = nil;
-    self.carousel.dataSource = nil;
+    self.collectionView.delegate = nil;
+    self.collectionView.dataSource = nil;
 }
 
 #pragma mark - UIDetailHeaderViewDelegate
@@ -75,23 +91,31 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma mark - iCarouselDataSource
+#pragma mark - UICollectionViewDataSource
 
-- (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return [self.recipe.photos count];
 }
 
-- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIView *v = [[UIView alloc] initWithFrame:self.view.frame];
-    v.backgroundColor = [UIColor clearColor];
-    UIImageView *imageView  = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, self.view.frame.size.width-10, self.view.frame.size.height-10)];
-    [v addSubview:imageView];
-    imageView.contentMode = UIViewContentModeScaleAspectFit;
-    Photo *photo = self.recipe.photos[index];
-    [[StorageManager instance] setImage:imageView path:[photo path]];
-    return v;
+    PhotoCollectionViewCell *cell = (PhotoCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kPhotoCollectionViewCellIdentifier forIndexPath:indexPath];
+    Photo *photo = self.recipe.photos[indexPath.row];
+    [cell setup:photo mode:UIViewContentModeScaleAspectFit];
+    return cell;
+}
+
+#pragma mark - UICollectionViewDelegateFlowLayout
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return self.view.bounds.size;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 0;
 }
 
 @end

@@ -15,7 +15,6 @@
 @interface PhotoCollectionViewCell ()
 
 @property (nonatomic, strong) UIImageView *imageview;
-
 @end
 
 @implementation PhotoCollectionViewCell
@@ -30,8 +29,7 @@
 }
 
 - (void)setup
-{
-    
+{   
     // image
     self.imageview = [UIImageView new];
     self.imageview.contentMode = UIViewContentModeScaleAspectFill;
@@ -39,14 +37,15 @@
     self.imageview.layer.cornerRadius  = 4.0f;
     self.imageview.layer.masksToBounds = YES;
 //    self.imageview.image = [UIImage imageNamed:@"placeholder"];
-    self.imageview.backgroundColor = [[ThemeManager instance] cardBackground];
+    self.imageview.backgroundColor = [UIColor clearColor];
     [self addSubviewAutoLayout:self.imageview];
     [self.imageview snap];
 }
 
-- (void)setup:(Photo *)photo
+- (void)setup:(Photo *)photo mode:(UIViewContentMode)mode
 {
      [[StorageManager instance] setImage:self.imageview path:[photo path]];
+    self.imageview.contentMode = mode;
 }
 
 - (void)prepareForReuse
