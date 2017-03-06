@@ -10,8 +10,7 @@
 #import "ThemeManager.h"
 #import "UIView+Utils.h"
 #import "UIView+Layout.h"
-#import "FilterTypeView.h"
-#import "FilterHardnessView.h"
+#import "FilterSelectorView.h"
 #import "DataManager.h"
 #import "ConfigurationManager.h"
 

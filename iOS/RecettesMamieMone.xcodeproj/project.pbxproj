@@ -40,11 +40,10 @@
 		91A8C4191E6858750009A78D /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C40F1E6858750009A78D /* OpenSans-Regular.ttf */; };
 		91A8C41A1E6858750009A78D /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C4101E6858750009A78D /* OpenSans-Semibold.ttf */; };
 		91A8C41B1E6858750009A78D /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C4111E6858750009A78D /* OpenSans-SemiboldItalic.ttf */; };
-		91D624671E6B624F00FE40A2 /* FilterTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D624661E6B624F00FE40A2 /* FilterTypeView.m */; };
+		91B0B71A1E6D4F8B00DF6FA5 /* FilterSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B0B7191E6D4F8B00DF6FA5 /* FilterSelectorView.m */; };
 		91D6246A1E6B63D700FE40A2 /* SelectorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D624691E6B63D700FE40A2 /* SelectorCell.m */; };
 		91D6246D1E6B6E8500FE40A2 /* UIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D6246C1E6B6E8500FE40A2 /* UIImage+Utils.m */; };
 		91D624701E6C528300FE40A2 /* Filters.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D6246F1E6C528300FE40A2 /* Filters.m */; };
-		91D624731E6C600400FE40A2 /* FilterHardnessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D624721E6C600400FE40A2 /* FilterHardnessView.m */; };
 		91D8934F1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D8934E1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.m */; };
 		91D893521E64D44C003E0C57 /* TitleContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D893511E64D44C003E0C57 /* TitleContentTableViewCell.m */; };
 		91D893551E65543A003E0C57 /* PhotosTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D893541E65543A003E0C57 /* PhotosTableViewCell.m */; };
@@ -131,16 +130,14 @@
 		91A8C40F1E6858750009A78D /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		91A8C4101E6858750009A78D /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		91A8C4111E6858750009A78D /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
-		91D624651E6B624F00FE40A2 /* FilterTypeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterTypeView.h; sourceTree = "<group>"; };
-		91D624661E6B624F00FE40A2 /* FilterTypeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterTypeView.m; sourceTree = "<group>"; };
+		91B0B7181E6D4F8B00DF6FA5 /* FilterSelectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterSelectorView.h; sourceTree = "<group>"; };
+		91B0B7191E6D4F8B00DF6FA5 /* FilterSelectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterSelectorView.m; sourceTree = "<group>"; };
 		91D624681E6B63D700FE40A2 /* SelectorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectorCell.h; sourceTree = "<group>"; };
 		91D624691E6B63D700FE40A2 /* SelectorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectorCell.m; sourceTree = "<group>"; };
 		91D6246B1E6B6E8500FE40A2 /* UIImage+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utils.h"; sourceTree = "<group>"; };
 		91D6246C1E6B6E8500FE40A2 /* UIImage+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utils.m"; sourceTree = "<group>"; };
 		91D6246E1E6C528300FE40A2 /* Filters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filters.h; sourceTree = "<group>"; };
 		91D6246F1E6C528300FE40A2 /* Filters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Filters.m; sourceTree = "<group>"; };
-		91D624711E6C600400FE40A2 /* FilterHardnessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterHardnessView.h; sourceTree = "<group>"; };
-		91D624721E6C600400FE40A2 /* FilterHardnessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterHardnessView.m; sourceTree = "<group>"; };
 		91D8934D1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeMetadataTableViewCell.h; sourceTree = "<group>"; };
 		91D8934E1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeMetadataTableViewCell.m; sourceTree = "<group>"; };
 		91D893501E64D44C003E0C57 /* TitleContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleContentTableViewCell.h; sourceTree = "<group>"; };
@@ -386,10 +383,8 @@
 		91D624641E6B622800FE40A2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				91D624651E6B624F00FE40A2 /* FilterTypeView.h */,
-				91D624661E6B624F00FE40A2 /* FilterTypeView.m */,
-				91D624711E6C600400FE40A2 /* FilterHardnessView.h */,
-				91D624721E6C600400FE40A2 /* FilterHardnessView.m */,
+				91B0B7181E6D4F8B00DF6FA5 /* FilterSelectorView.h */,
+				91B0B7191E6D4F8B00DF6FA5 /* FilterSelectorView.m */,
 				91D624681E6B63D700FE40A2 /* SelectorCell.h */,
 				91D624691E6B63D700FE40A2 /* SelectorCell.m */,
 			);
@@ -800,6 +795,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9133C55E1E54B57200959AFF /* AppDelegate.m in Sources */,
+				91B0B71A1E6D4F8B00DF6FA5 /* FilterSelectorView.m in Sources */,
 				91FEAE7B1E54FF3C0023FEBE /* Recipe.m in Sources */,
 				91FEAE761E54FEE10023FEBE /* NSString+Utils.m in Sources */,
 				91EB57221E5796FA00131FD4 /* RecipesViewController.m in Sources */,
@@ -811,7 +807,6 @@
 				91FEAE6B1E54FDD30023FEBE /* RootViewController.m in Sources */,
 				91D8934F1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.m in Sources */,
 				91EB57361E5A06D600131FD4 /* FiltersViewController.m in Sources */,
-				91D624731E6C600400FE40A2 /* FilterHardnessView.m in Sources */,
 				910AA4EF1E64C9E500EAF56A /* UIDetailHeaderView.m in Sources */,
 				91502A4A1E5CE3C800001D2B /* GradientView.m in Sources */,
 				91FEAE701E54FE870023FEBE /* UIView+Utils.m in Sources */,
@@ -832,7 +827,6 @@
 				91502A461E5C807500001D2B /* ReceipeCollectionViewCell.m in Sources */,
 				91EB57401E5AC66600131FD4 /* HardnessParser.m in Sources */,
 				91D6246A1E6B63D700FE40A2 /* SelectorCell.m in Sources */,
-				91D624671E6B624F00FE40A2 /* FilterTypeView.m in Sources */,
 				910AA4EC1E64BF3700EAF56A /* HeroImageTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
