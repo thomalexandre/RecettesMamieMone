@@ -84,16 +84,22 @@
     __weak StorageManager * wSelf = self;
     [self urlForPath:path completion:^(NSURL *url, NSError *error) {
         
-        [imageView sd_setImageWithURL:url];
-        [wSelf saveURL:url forPath:path];
+        if(url) {
+            [imageView sd_setImageWithURL:url];
+            [wSelf saveURL:url forPath:path];
+        } else {
+            imageView.image = [UIImage imageNamed:@"placeholder"];
+        }
     }];
 }
 
 - (void)saveURL:(NSURL *)url forPath:(NSString *)path
 {
-    NSMutableDictionary *mutable = [self.pathToURLs mutableCopy];
-    [mutable setObject:url forKey:path];
-    self.pathToURLs = [mutable copy];
+    if(url) {
+        NSMutableDictionary *mutable = [self.pathToURLs mutableCopy];
+        [mutable setObject:url forKey:path];
+        self.pathToURLs = [mutable copy];
+    }
 }
 
 @end
