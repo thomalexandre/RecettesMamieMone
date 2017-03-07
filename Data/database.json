@@ -40,15 +40,15 @@
 		"types": {
 			"type_10":{
 				"name": "entrée",
-				"image": "filter•soup"
+				"image": "filter-soup"
 			},
 			"type_20":{
 				"name": "plat principal",
-				"image": "filter•chicken"
+				"image": "filter-chicken"
 			},
 			"type_30":{
 				"name": "dessert",
-				"image": "filter•icecream"
+				"image": "filter-icecream"
 			}
 		},
 		"hardnesses": {
