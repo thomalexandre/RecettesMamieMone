@@ -77,8 +77,8 @@
     self.titleLabel.font      = [[ThemeManager instance] openSansRegularFontWithSize:15];
     [self.contentView addSubviewAutoLayout:self.titleLabel];
     [self.titleLabel snapBottom];
-    [self.titleLabel snapLeftConstant:6];
-    [self.titleLabel snapRightConstant:6];
+    [self.titleLabel snapLeftConstant:10];
+    [self.titleLabel snapRightConstant:10];
     [self.titleLabel setHeightConstant:kTextHeight];
 }
 
