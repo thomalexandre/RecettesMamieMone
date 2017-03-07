@@ -57,6 +57,7 @@
     self.tableView.estimatedRowHeight = 100;
     [self.view addSubviewAutoLayout:self.tableView];
     [self.tableView snap];
+    self.tableView.showsVerticalScrollIndicator = NO;
     
     // register cells
     [self.tableView registerClass:[HeroImageTableViewCell class]      forCellReuseIdentifier:kHeroImageTableViewCellIdentifier];

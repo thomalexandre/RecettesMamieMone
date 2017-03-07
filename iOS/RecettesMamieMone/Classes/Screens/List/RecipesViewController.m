@@ -45,7 +45,7 @@
     self.collectionView.backgroundColor = [[ThemeManager instance] background];
     [self.collectionView setDataSource:self];
     [self.collectionView setDelegate:self];
-    
+    self.collectionView.showsHorizontalScrollIndicator = NO;
     [self.collectionView registerClass:[ReceipeCollectionViewCell class] forCellWithReuseIdentifier:kReceipeCollectionViewCellIdentifier];
     
     [self.view addSubviewAutoLayout:self.collectionView];

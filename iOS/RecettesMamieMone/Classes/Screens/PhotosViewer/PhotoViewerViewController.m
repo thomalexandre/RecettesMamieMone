@@ -51,7 +51,7 @@
     [self.collectionView setDelegate:self];
     self.collectionView.backgroundColor = [UIColor clearColor];
     [self.collectionView setPagingEnabled:YES];
-    
+    self.collectionView.showsHorizontalScrollIndicator = NO;
     [self.collectionView registerClass:[PhotoCollectionViewCell class] forCellWithReuseIdentifier:kPhotoCollectionViewCellIdentifier];
     
     [self.view addSubviewAutoLayout:self.collectionView];

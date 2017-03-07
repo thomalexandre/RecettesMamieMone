@@ -63,7 +63,7 @@
     self.collectionView.backgroundColor = [UIColor clearColor];
     [self.collectionView setDataSource:self];
     [self.collectionView setDelegate:self];
-    
+    self.collectionView.showsHorizontalScrollIndicator = NO;
     [self.collectionView registerClass:[PhotoCollectionViewCell class] forCellWithReuseIdentifier:kPhotoCollectionViewCellIdentifier];
     
     [self addSubviewAutoLayout:self.collectionView];
