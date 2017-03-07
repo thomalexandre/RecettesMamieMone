@@ -75,13 +75,21 @@
 - (void)reset
 {
     self.recipeTypes = [[NSArray alloc] initWithArray:self.recipeTypes_backup copyItems:YES];
-    self.hardnesses  = [[NSArray alloc] initWithArray:self.hardnesses_backup copyItems:YES];}
+    self.hardnesses  = [[NSArray alloc] initWithArray:self.hardnesses_backup copyItems:YES];
+}
 
 - (void)apply
 {
     
     self.recipeTypes_backup = [[NSArray alloc] initWithArray:self.recipeTypes copyItems:YES];
     self.hardnesses_backup  = [[NSArray alloc] initWithArray:self.hardnesses copyItems:YES];
+}
+
+- (BOOL)hasFilters
+{
+    for(RecipeType *t in self.recipeTypes_backup) if(t.selected) return YES;
+    for(Hardness *h in self.hardnesses_backup) if(h.selected) return YES;
+    return NO;
 }
 
 - (NSArray<Recipe *> *)filterRecipes:(NSArray<Recipe *> *)allRecipes

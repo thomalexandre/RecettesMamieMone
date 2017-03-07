@@ -26,6 +26,7 @@
 
 - (void)reset;
 - (void)apply;
+- (BOOL)hasFilters;
 
 /// Filter all recipes based on the current user choise.
 - (NSArray<Recipe *> *)filterRecipes:(NSArray<Recipe *> *)allRecipes;

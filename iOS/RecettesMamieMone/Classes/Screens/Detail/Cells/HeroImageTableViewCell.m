@@ -105,7 +105,7 @@
     //CGFloat alpha = scrollY > kHeroImageHeight / 3.f ? (kHeroImageHeight/3.f-(kHeroImageHeight-scrollY)) / (kHeroImageHeight/3.f) : 0;
     CGFloat alpha = scrollY > kHeroImageHeight / 3.f ? (scrollY - kHeroImageHeight / 3.0) / ((kHeroImageHeight - 74) - (kHeroImageHeight / 3.0)) : 0;
     self.overView.backgroundColor = [[ThemeManager instance] navBar:alpha];
-    self.photoButton.alpha = 1.f - alpha;
+    self.photoButton.alpha = 1.f - alpha * 10.;
     
    // NSLog(@"%f %f", scrollY, alpha);
     
