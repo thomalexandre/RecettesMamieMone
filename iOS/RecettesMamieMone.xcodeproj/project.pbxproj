@@ -958,6 +958,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RecettesMamieMone/RecettesMamieMone.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = F93QSNY8PR;
 				INFOPLIST_FILE = RecettesMamieMone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -973,6 +974,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RecettesMamieMone/RecettesMamieMone.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = F93QSNY8PR;
 				INFOPLIST_FILE = RecettesMamieMone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

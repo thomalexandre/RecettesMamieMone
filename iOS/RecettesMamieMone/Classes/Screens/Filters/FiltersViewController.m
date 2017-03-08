@@ -87,7 +87,7 @@
     /// Apply button ...
     UIButton *applyButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [applyButton setTitle:@"Appliquer" forState:UIControlStateNormal];
-    applyButton.titleLabel.font = [[ThemeManager instance] openSansRegularFontWithSize:14.f];
+    applyButton.titleLabel.font = [[ThemeManager instance] openSansBoldFontWithSize:14.f];
     applyButton.titleLabel.textColor = [[ThemeManager instance] textButton];
     applyButton.backgroundColor =  [[ThemeManager instance] backgroundButton];
     static CGFloat buttonHeight = 44.f;

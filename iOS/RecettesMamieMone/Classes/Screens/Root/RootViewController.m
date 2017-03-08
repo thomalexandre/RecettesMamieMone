@@ -55,10 +55,14 @@
 }
 
 - (void)setupNavBar
-{  
+{
     UIImage *image = [UIImage imageNamed:(!self.menuIsOpened ? @"icon-3dots" : @"icon-close")];
-    UIBarButtonItem *showFiltresButton = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStyleDone target:self action:@selector(filtresDidPress)];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0.f, 0.f, 22.f, 22.f);
+    [button setImage:image forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(filtresDidPress) forControlEvents:UIControlEventTouchUpInside];
     
+    UIBarButtonItem *showFiltresButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.rightBarButtonItem = showFiltresButton;
 }
 
