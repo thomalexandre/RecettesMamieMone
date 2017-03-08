@@ -97,7 +97,7 @@
     //self.heroImageView.image = nil;
 }
 
-- (BOOL)viewDidScroll:(CGFloat)scrollY
+- (CGFloat)viewDidScroll:(CGFloat)scrollY
 {
     self.topConstraint.constant    = scrollY > 0 ? 0.0 : scrollY;
     self.heightConstraint.constant = scrollY > 0 ? kHeroImageHeight : kHeroImageHeight + fabs(scrollY);
@@ -109,7 +109,7 @@
     
    // NSLog(@"%f %f", scrollY, alpha);
     
-    return alpha >= 1.f;
+    return alpha;
 }
 
 - (void)cameraButtondidClick

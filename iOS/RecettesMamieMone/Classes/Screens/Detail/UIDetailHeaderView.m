@@ -98,11 +98,16 @@
 
 - (void)showTopBar:(BOOL)showBar showText:(BOOL)showText recipe:(Recipe *)recipe
 {
-    self.gradient.hidden = showBar;
-    self.barView.hidden = !showBar;
+    self.gradient.hidden        = showBar;
+    self.barView.hidden         = !showBar;
     self.borderImageView.hidden = !showBar;
-    self.titleLabel.hidden = !showText;
-    self.titleLabel.text = recipe.title;
+    self.titleLabel.hidden      = !showText;
+    self.titleLabel.text        = recipe.title;
+}
+
+- (void)updateGradientAlpha:(CGFloat)alpha
+{
+    self.gradient.alpha = alpha;
 }
 
 @end

@@ -23,4 +23,6 @@
 
 - (void)showTopBar:(BOOL)showBar showText:(BOOL)showText recipe:(Recipe *)recipe;
 
+- (void)updateGradientAlpha:(CGFloat)alpha;
+
 @end

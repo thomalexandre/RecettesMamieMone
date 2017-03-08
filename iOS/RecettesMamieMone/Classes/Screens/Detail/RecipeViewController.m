@@ -152,8 +152,10 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat scrollY    = scrollView.contentOffset.y;
-    BOOL needToShowBar = [self.heroCell viewDidScroll:scrollY];
+    CGFloat alpha = [self.heroCell viewDidScroll:scrollY];
+    BOOL needToShowBar = alpha > 1.f;
     [self.header showTopBar:needToShowBar showText:needToShowBar recipe:self.recipe];
+    [self.header updateGradientAlpha:1.f-alpha];
     
     if(scrollY < -125) {
         [self dismissViewControllerAnimated:YES completion:nil];
