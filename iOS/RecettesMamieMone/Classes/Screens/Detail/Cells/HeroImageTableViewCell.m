@@ -69,14 +69,14 @@
     
     /// photos buttons
     self.photoButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.photoButton setImage:[UIImage imageNamed:@"camera"] forState:UIControlStateNormal];
+    [self.photoButton setImage:[UIImage imageNamed:@"icon-camera"] forState:UIControlStateNormal];
     [self.photoButton addTarget:self action:@selector(cameraButtondidClick) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubviewAutoLayout:self.photoButton];
     [self.photoButton snapBottomConstant:12];
     [self.photoButton snapRightConstant:8];
     [self.photoButton setHeightConstant:40];
     [self.photoButton setWidthConstant:60];
-    self.photoButton.titleLabel.font = [[ThemeManager instance] openSansRegularFontWithSize:10];
+    self.photoButton.titleLabel.font = [[ThemeManager instance] openSansBoldFontWithSize:10];
     self.photoButton.titleLabel.textAlignment = NSTextAlignmentRight;
     [self.photoButton setTitleEdgeInsets: UIEdgeInsetsMake(2,-45,0,0)];
     [self.photoButton setImageEdgeInsets: UIEdgeInsetsMake(0,25,0,0)];

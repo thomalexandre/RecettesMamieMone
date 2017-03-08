@@ -56,7 +56,7 @@
 
 - (void)setupNavBar
 {  
-    UIImage *image = [UIImage imageNamed:(!self.menuIsOpened ? @"icon-filter" : @"icon-close")];
+    UIImage *image = [UIImage imageNamed:(!self.menuIsOpened ? @"icon-3dots" : @"icon-close")];
     UIBarButtonItem *showFiltresButton = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStyleDone target:self action:@selector(filtresDidPress)];
     
     self.navigationItem.rightBarButtonItem = showFiltresButton;
