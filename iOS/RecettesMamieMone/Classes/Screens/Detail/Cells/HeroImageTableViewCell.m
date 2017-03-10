@@ -99,8 +99,8 @@
 
 - (CGFloat)viewDidScroll:(CGFloat)scrollY
 {
-    self.topConstraint.constant    = scrollY > 0 ? 0.0 : scrollY;
-    self.heightConstraint.constant = scrollY > 0 ? kHeroImageHeight : kHeroImageHeight + fabs(scrollY);
+    self.topConstraint.constant    = scrollY > 0 ? scrollY/2 : scrollY;
+    self.heightConstraint.constant = scrollY > 0 ? kHeroImageHeight-scrollY/2 : kHeroImageHeight + fabs(scrollY);
     
     //CGFloat alpha = scrollY > kHeroImageHeight / 3.f ? (kHeroImageHeight/3.f-(kHeroImageHeight-scrollY)) / (kHeroImageHeight/3.f) : 0;
     CGFloat alpha = scrollY > kHeroImageHeight / 3.f ? (scrollY - kHeroImageHeight / 3.0) / ((kHeroImageHeight - 74) - (kHeroImageHeight / 3.0)) : 0;
