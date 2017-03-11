@@ -34,8 +34,9 @@
     
     // type ...
     self.typeLabel = [UILabel new];
+    self.typeLabel.textColor = [[ThemeManager instance] metaText];
     self.typeLabel.textAlignment = NSTextAlignmentCenter;
-    self.typeLabel.font = [[ThemeManager instance] mediumFontWithSize:12];
+    self.typeLabel.font = [[ThemeManager instance] openSansBoldFontWithSize:12];
     [self addSubviewAutoLayout:self.typeLabel];
     [self.typeLabel snapTopConstant:10];
     [self.typeLabel snapLeftConstant:10];
@@ -46,12 +47,13 @@
     self.titleLabel = [UILabel new];
     self.titleLabel.numberOfLines = 0;
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
-    self.titleLabel.font = [[ThemeManager instance] mediumFontWithSize:20];
+    self.titleLabel.textColor = [[ThemeManager instance] text];
+    self.titleLabel.font = [[ThemeManager instance] openSansBoldFontWithSize:20];
     [self addSubviewAutoLayout:self.titleLabel];
     [self.titleLabel snapBottomConstant:20];
     [self.titleLabel snapLeftConstant:10];
     [self.titleLabel snapRightConstant:10];
-    [self.titleLabel setHeightConstant:20];
+    [self.titleLabel setHeightConstant:25];
     
     [self.titleLabel snapTopToBottom:10 relativeToView:self.typeLabel];
 }

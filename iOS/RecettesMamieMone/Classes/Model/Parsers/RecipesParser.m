@@ -9,6 +9,7 @@
 #import "RecipesParser.h"
 #import "RecipeTypesParser.h"
 #import "HardnessParser.h"
+#import "ConfigurationManager.h"
 
 @interface RecipesParser ()
 
@@ -40,17 +41,18 @@
         
         NSDictionary *dict  = recipesList[identifier];
         Recipe *recipe      = [Recipe recipe:identifier withDictionary:dict];
-        recipe.type         = [recipeTypesParser recipeTypeWithId:dict[@"type"]];
-        recipe.hardness     = [hardnessParser hardnessTypeWithId:dict[@"hardness"]];
-        [recipes addObject:recipe];
+        
+#if !(TARGET_OS_SIMULATOR)
+        if(recipe.live)
+#endif
+        {
+            recipe.type         = [recipeTypesParser recipeTypeWithId:dict[@"type"]];
+            recipe.hardness     = [hardnessParser hardnessTypeWithId:dict[@"hardness"]];
+            [recipes addObject:recipe];
+        }
     }
     
-    // sort array
-    self.recipes = [recipes sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-        Recipe *first  = (Recipe*)a ;
-        Recipe *second = (Recipe*)b ;
-        return [first.title compare:second.title];
-    }];
+    self.recipes = recipes;
 }
 
 @end

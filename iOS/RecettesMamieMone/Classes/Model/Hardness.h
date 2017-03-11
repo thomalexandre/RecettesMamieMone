@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Hardness : NSObject
+@interface Hardness : NSObject<NSCopying>
 
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, strong)   NSString *name;
+@property (nonatomic, assign)   BOOL selected;
 
 + (instancetype)hardness:(NSString *)identifier withDictionary:(NSDictionary *)dict;
 

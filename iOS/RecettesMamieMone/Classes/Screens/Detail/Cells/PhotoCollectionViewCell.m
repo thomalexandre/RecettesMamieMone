@@ -10,11 +10,11 @@
 #import "UIView+Layout.h"
 #import "StorageManager.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "ThemeManager.h"
 
 @interface PhotoCollectionViewCell ()
 
 @property (nonatomic, strong) UIImageView *imageview;
-
 @end
 
 @implementation PhotoCollectionViewCell
@@ -29,26 +29,23 @@
 }
 
 - (void)setup
-{
-    
+{   
     // image
     self.imageview = [UIImageView new];
     self.imageview.contentMode = UIViewContentModeScaleAspectFill;
     self.imageview.clipsToBounds = YES;
     self.imageview.layer.cornerRadius  = 4.0f;
     self.imageview.layer.masksToBounds = YES;
-    self.imageview.image = [UIImage imageNamed:@"placeholder"];
+//    self.imageview.image = [UIImage imageNamed:@"placeholder"];
+    self.imageview.backgroundColor = [UIColor clearColor];
     [self addSubviewAutoLayout:self.imageview];
     [self.imageview snap];
 }
 
-- (void)setup:(Photo *)photo
+- (void)setup:(Photo *)photo mode:(UIViewContentMode)mode
 {
-    __weak PhotoCollectionViewCell * wSelf = self;
-    [[StorageManager instance] urlForPath:[photo path] completion:^(NSURL *url, NSError *error) {
-        [wSelf.imageview sd_setImageWithURL:url];
-        NSLog(@"Loading... %@", url);
-    }];
+     [[StorageManager instance] setImage:self.imageview path:[photo path]];
+    self.imageview.contentMode = mode;
 }
 
 - (void)prepareForReuse

@@ -11,6 +11,8 @@ target 'RecettesMamieMone' do
   pod 'Firebase/Storage'
   pod 'Firebase/RemoteConfig'
   pod 'SDWebImage'
+  pod 'Fabric'
+  pod 'Crashlytics'
 
   target 'RecettesMamieMoneTests' do
     inherit! :search_paths

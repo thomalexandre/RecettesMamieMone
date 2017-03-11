@@ -32,6 +32,8 @@
 
 - (void)setupUI
 {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     UIView * line = [UIView new];
     line.backgroundColor = [[ThemeManager instance] line];
     [self addSubviewAutoLayout:line];
@@ -40,19 +42,18 @@
     [line snapRightConstant:20];
     [line setHeightConstant:1];
     
-    
     // title ...
     UILabel *titleLabel = [UILabel new];
     titleLabel.text = @"Photos";
     titleLabel.numberOfLines = 0;
     titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.font = [[ThemeManager instance] mediumFontWithSize:20];
+    titleLabel.textColor = [[ThemeManager instance] metaText];
+    titleLabel.font = [[ThemeManager instance] openSansBoldFontWithSize:20];
     [self addSubviewAutoLayout:titleLabel];
     [titleLabel snapTopConstant:20];
     [titleLabel snapLeftConstant:10];
     [titleLabel snapRightConstant:10];
     [titleLabel setHeightConstant:20];
-    
     
     //collection view ...
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
@@ -62,7 +63,7 @@
     self.collectionView.backgroundColor = [UIColor clearColor];
     [self.collectionView setDataSource:self];
     [self.collectionView setDelegate:self];
-    
+    self.collectionView.showsHorizontalScrollIndicator = NO;
     [self.collectionView registerClass:[PhotoCollectionViewCell class] forCellWithReuseIdentifier:kPhotoCollectionViewCellIdentifier];
     
     [self addSubviewAutoLayout:self.collectionView];
@@ -91,8 +92,15 @@
 {
     PhotoCollectionViewCell *cell = (PhotoCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kPhotoCollectionViewCellIdentifier forIndexPath:indexPath];
     Photo *photo = self.recipe.photos[indexPath.row];
-    [cell setup:photo];
+    [cell setup:photo mode:UIViewContentModeScaleAspectFill];
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(self.delegate && [self.delegate respondsToSelector:@selector(photoDidTapAtIndex:)]) {
+        [self.delegate photoDidTapAtIndex:indexPath.row];
+    }
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout

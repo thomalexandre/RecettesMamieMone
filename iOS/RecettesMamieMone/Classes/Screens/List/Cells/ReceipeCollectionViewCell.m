@@ -20,7 +20,8 @@
 
 @property (nonatomic, strong) UIImageView  *imageView;
 @property (nonatomic, strong) UILabel      *titleLabel;
-@property (nonatomic, strong) UIView *gradient;
+@property (nonatomic, strong) UIView       *gradient;
+//@property (nonatomic, strong) UIImage      *placeholder;
 
 @end
 
@@ -52,8 +53,10 @@
     self.layer.masksToBounds = NO;
     
     // image....
-    self.imageView = [UIImageView new];
+//    self.placeholder = [UIImage imageNamed:@"placeholder"];
+    self.imageView = [[UIImageView alloc] initWithImage:nil/*self.placeholder*/];
     self.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.imageView.backgroundColor = [[ThemeManager instance] cardBackground];
     self.imageView.clipsToBounds = YES;
     [self.contentView addSubviewAutoLayout:self.imageView];
     [self.imageView snap];
@@ -65,35 +68,30 @@
     [self.gradient snapBottom];
     [self.gradient snapLeft];
     [self.gradient snapRight];
-    [self.gradient setHeightConstant:kTextHeight];
+    [self.gradient setHeightConstant:kTextHeight+20];
     
     // text ...
     self.titleLabel           = [UILabel new];
     self.titleLabel.numberOfLines = 2;
     self.titleLabel.textColor = [[ThemeManager instance] cardText];
-    self.titleLabel.font      = [[ThemeManager instance] boldFontWithSize:15];
+    self.titleLabel.font      = [[ThemeManager instance] openSansRegularFontWithSize:15];
     [self.contentView addSubviewAutoLayout:self.titleLabel];
     [self.titleLabel snapBottom];
-    [self.titleLabel snapLeftConstant:6];
-    [self.titleLabel snapRightConstant:6];
+    [self.titleLabel snapLeftConstant:10];
+    [self.titleLabel snapRightConstant:10];
     [self.titleLabel setHeightConstant:kTextHeight];
 }
 
 - (void)prepareForReuse
 {
-    UIImage *image = [UIImage imageNamed:@"placeholder"];
-    self.imageView = [[UIImageView alloc] initWithImage:image];
+    self.imageView.image = nil;//self.placeholder;
     self.titleLabel.text = nil;
 }
 
 - (void)setup:(Recipe *)recipe
 {
     self.titleLabel.text = recipe.title;
-    __weak ReceipeCollectionViewCell * wSelf = self;
-    [[StorageManager instance] urlForPath:[recipe thumbnailPath] completion:^(NSURL *url, NSError *error) {
-        [wSelf.imageView sd_setImageWithURL:url];
-        NSLog(@"Loading... %@", url);
-    }];
+    [[StorageManager instance] setImage:self.imageView path:[recipe thumbnail]];
 }
 
 @end

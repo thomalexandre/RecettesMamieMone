@@ -29,9 +29,23 @@
 {
     self = [super init];
     if(self) {
+        [self printListOfFonts];
         [self configureProxies];
     }
     return self;
+}
+
+- (void)printListOfFonts
+{
+    for (NSString* family in [UIFont familyNames])
+    {
+        NSLog(@"%@", family);
+        
+        for (NSString* name in [UIFont fontNamesForFamilyName: family])
+        {
+            NSLog(@"  %@", name);
+        }
+    }
 }
 
 //// Components proxies
@@ -39,6 +53,8 @@
 - (void)configureProxies
 {
     [self configureNavigationBar];
+    
+    [[UISegmentedControl appearance] setTintColor:[self segmentedControl]];
 }
 
 - (void)configureNavigationBar
@@ -49,49 +65,67 @@
     [[UINavigationBar appearance] setTintColor:[self navBarText]];
     [[UINavigationBar appearance] setTranslucent:NO];
     [[UINavigationBar appearance] setTitleTextAttributes: @{NSForegroundColorAttributeName: [self navBarText],
-                                                            NSFontAttributeName: [self mediumFontWithSize:14]}];
+                                                            NSFontAttributeName: [self openSansBoldFontWithSize:15]}];
     
 }
 
 #pragma mark - colors
 
-/// palette https://coolors.co/e63946-f1faee-2c3037-457b9d-1d3557
+/// palette https://coolors.co/870055-d10068-6f3d96-d07fff-050505
 
-- (UIColor *)spaceCadet
+//- (UIColor *)frenchPlum
+//{
+//    return UIColorFromRGB(0xD10068);
+//}
+
+
+- (UIColor *)rubineRed
 {
-    return UIColorFromRGB(0x1D3557);
+    // https://material.io/guidelines/style/color.html#color-color-palette
+    // Google material pink 600
+    return UIColorFromRGB(0xD81B60);
 }
 
-- (UIColor *)queenBlue
+//- (UIColor *)purpleHeart
+//{
+//    return UIColorFromRGB(0x6F3D96);
+//}
+
+//- (UIColor *)heliotrope
+//{
+//    return UIColorFromRGB(0xD07FFF);
+//}
+
+- (UIColor *)whiteSmoke
 {
-    return UIColorFromRGB(0x457B9D);
+    return UIColorFromRGB(0xF7F7F7);
 }
 
-- (UIColor *)honeydew
+- (UIColor *)richBlack
 {
-    return UIColorFromRGB(0xF1FAEE);
+    return UIColorFromRGB(0x050505);
 }
 
-- (UIColor *)desire
+- (UIColor *)lightGray
 {
-    return UIColorFromRGB(0xE63946);
+    return [UIColorFromRGB(0xF0F0F0) colorWithAlphaComponent:0.8];
 }
 
-- (UIColor *)ghostWhite
+- (UIColor *)darkGray
 {
-    return UIColorFromRGB(0xF8F9FA);
-}
-
-- (UIColor *)gunMetal
-{
-    return UIColorFromRGB(0x2C3037);
+    return UIColorFromRGB(0x979797);
 }
 
 /// Colors for ui elements
 
+- (UIColor *)segmentedControl
+{
+    return [self rubineRed];   
+}
+
 - (UIColor *)navBar
 {
-    return [self spaceCadet];
+    return [self rubineRed];
 }
 
 - (UIColor *)navBar:(CGFloat)alpha
@@ -101,54 +135,104 @@
 
 - (UIColor *)navBarText
 {
-    return [self honeydew];
+    return [self whiteSmoke];
 }
 
 - (UIColor *)background
 {
-    return [self ghostWhite];
+    return [self whiteSmoke];
+}
+
+- (UIColor *)backgroundClickabke
+{
+    return [[self richBlack] colorWithAlphaComponent:0.4];
+}
+
+- (UIColor *)backgroundPhoto
+{
+    return [self richBlack];
+}
+
+- (UIColor *)backgroundButton
+{
+    return [self rubineRed];
 }
 
 - (UIColor *)text
 {
-    return [self gunMetal];
+    return [self richBlack];
+}
+
+- (UIColor *)textButton
+{
+    return [self whiteSmoke];
+}
+
+- (UIColor *)metaText
+{
+    return [self rubineRed];
 }
 
 - (UIColor *)cardText
 {
-    return [self ghostWhite];
+    return [self whiteSmoke];
+}
+
+- (UIColor *)cardBackground
+{
+    return [self lightGray];
 }
 
 - (UIColor *)line
 {
-    return [UIColorFromRGB(0xF0F0F0) colorWithAlphaComponent:0.8];
+    return [self lightGray];
+}
+
+- (UIColor *)border
+{
+    return [self darkGray];
 }
 
 #pragma mark - fonts
 
-- (UIFont *)semiBoldFontWithSize:(CGFloat)size
+//- (UIFont *)semiBoldFontWithSize:(CGFloat)size
+//{
+//    return [UIFont fontWithName:@"SFUIText-Semibold" size:size];
+//}
+//
+//- (UIFont *)boldFontWithSize:(CGFloat)size
+//{
+//    return [UIFont fontWithName:@"SFUIText-Bold" size:size];
+//}
+//
+//- (UIFont *)regularFontWithSize:(CGFloat)size
+//{
+//    return [UIFont fontWithName:@"SFUIText-Regular" size:size];
+//}
+//
+//- (UIFont *)lightFontWithSize:(CGFloat)size
+//{
+//    return [UIFont fontWithName:@"SFUIText-Light" size:size];
+//}
+//
+//- (UIFont *)mediumFontWithSize:(CGFloat)size
+//{
+//    return [UIFont fontWithName:@"SFUIText-Medium" size:size];
+//}
+
+- (UIFont *)openSansRegularFontWithSize:(CGFloat)size
 {
-    return [UIFont fontWithName:@"SFUIText-Semibold" size:size];
+    return [UIFont fontWithName:@"OpenSans" size:size];
 }
 
-- (UIFont *)boldFontWithSize:(CGFloat)size
+- (UIFont *)openSansBoldFontWithSize:(CGFloat)size
 {
-    return [UIFont fontWithName:@"SFUIText-Bold" size:size];
+    return [UIFont fontWithName:@"OpenSans-Bold" size:size];
 }
 
-- (UIFont *)regularFontWithSize:(CGFloat)size
+- (UIFont *)merriweatherFontWithSize:(CGFloat)size
 {
-    return [UIFont fontWithName:@"SFUIText-Regular" size:size];
-}
-
-- (UIFont *)lightFontWithSize:(CGFloat)size
-{
-    return [UIFont fontWithName:@"SFUIText-Light" size:size];
-}
-
-- (UIFont *)mediumFontWithSize:(CGFloat)size
-{
-    return [UIFont fontWithName:@"SFUIText-Medium" size:size];
+    return [UIFont fontWithName:@"Merriweather-Regular" size:size];
 }
 
 @end

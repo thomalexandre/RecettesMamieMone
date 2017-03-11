@@ -8,11 +8,15 @@
 
 #import "ConfigurationManager.h"
 #import <UIKit/UIKit.h>
+#import "NSString+Utils.h"
 @import FirebaseRemoteConfig;
+
+#define kConfigKey_devices_test @"devices_test"
 
 @interface ConfigurationManager ()
 
 @property (nonatomic, strong) FIRRemoteConfig *remoteConfig;
+@property (nonatomic, strong) NSArray<NSString *> * devicesTest;
 
 @end
 
@@ -66,6 +70,38 @@
     }];
 }
 
+#pragma mark - remote variable
+
+/*- (NSArray<NSString *> *)devicesTest
+{
+    if(!_devicesTest) {
+        
+        NSString *devicesTestString = self.remoteConfig[kConfigKey_devices_test].stringValue;
+        _devicesTest = [devicesTestString toArray];
+    }
+    
+    return _devicesTest;
+}
+
+- (BOOL)isTestDevice
+{
+//#if (TARGET_OS_SIMULATOR)
+    
+  //  return YES;
+    
+//#else
+    
+    NSString *currentDeviceUID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    for(NSString *deviceId in self.devicesTest) {
+        if([deviceId isEqualToString:currentDeviceUID]) {
+            return  YES;
+        }
+    }
+    
+    return NO;
+//#endif
+}*/
+
 #pragma mark persistent setting (stored in NSUserDefault)
 
 - (BOOL)setPersistentSetting:(id)setting forKey:(NSString *)key
@@ -104,6 +140,24 @@
 + (BOOL)isIphone
 {
     return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone;
+}
+
+#pragma mark - application
+
++ (NSString *)appVersion
+{
+    return [ConfigurationManager settingForKey:@"CFBundleShortVersionString"];
+}
+
++ (NSString *)appBuild
+{
+    return [ConfigurationManager settingForKey:@"CFBundleVersion"];
+}
+
++ (id)settingForKey:(NSString *)key
+{
+    NSBundle *mainBundle = [NSBundle mainBundle];
+    return [mainBundle objectForInfoDictionaryKey:key];
 }
 
 @end

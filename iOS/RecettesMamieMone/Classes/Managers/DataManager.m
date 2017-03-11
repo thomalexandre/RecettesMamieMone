@@ -8,6 +8,8 @@
 
 #import "DataManager.h"
 #import "RecipesParser.h"
+#import "RecipeTypesParser.h"
+#import "HardnessParser.h"
 @import FirebaseDatabase;
 
 @interface DataManager ()
@@ -37,9 +39,34 @@
     if(self) {
         [FIRDatabase database].persistenceEnabled = YES; // To test on device
         self.database = [[FIRDatabase database] reference];
+        
+//        [self setupFilters];
     }
     return self;
 }
+
+#pragma mark - Filters
+
+//- (void)setupFilters
+//{   
+//    [self fetchFilters:^(NSArray<RecipeType *> *recipeTypes, NSArray<Hardness *> * hardnesses) {
+//        self.filters = [[Filters alloc] initWithRecipeTypes:recipeTypes hardnesses:hardnesses];
+//    }];
+//}
+//
+//- (void)fetchFilters:(void (^)(NSArray<RecipeType *> *recipeTypes, NSArray<Hardness *> * hardnesses))completion
+//{
+//    [[self.database child:@"recipes"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshotTypes) {
+//        
+//        RecipeTypesParser *recipeTypesParser = [[RecipeTypesParser alloc] initWithDictionary:snapshotTypes.value[@"types"]];
+//        HardnessParser    *hardnessParser    = [[HardnessParser alloc] initWithDictionary:snapshotTypes.value[@"hardnesses"]];
+//        if(completion) {
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                completion(recipeTypesParser.recipeTypes, hardnessParser.hardnesses);
+//            });
+//        }
+//    }];
+//}
 
 #pragma mark - Recipes Management
 
@@ -47,11 +74,19 @@
 {
     [[self.database child:@"recipes"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshotRecipes) {
         
+        if(!self.filters) {
+            RecipeTypesParser *recipeTypesParser = [[RecipeTypesParser alloc] initWithDictionary:snapshotRecipes.value[@"types"]];
+            HardnessParser    *hardnessParser    = [[HardnessParser alloc]    initWithDictionary:snapshotRecipes.value[@"hardnesses"]];
+            self.filters = [[Filters alloc] initWithRecipeTypes:recipeTypesParser.recipeTypes hardnesses:hardnessParser.hardnesses];
+        }
+        
         RecipesParser *parser = [[RecipesParser alloc] initWithDictionary:snapshotRecipes.value];
+        
+        NSArray<Recipe *> *filteredRecipes = [self.filters filterRecipes:parser.recipes];
         
         if(completion) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                completion(parser.recipes);
+                completion(filteredRecipes);
             });
         }
     }];

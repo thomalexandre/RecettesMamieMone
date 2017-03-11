@@ -17,6 +17,7 @@
 @property (nonatomic, strong) GradientView *gradient;
 @property (nonatomic, strong) UIView       *barView;
 @property (nonatomic, strong) UILabel      *titleLabel;
+@property (nonatomic, strong) UIImageView  *borderImageView;
 
 @end
 
@@ -45,12 +46,12 @@
     self.barView.hidden = YES;
     
     // close button ...
-    static int closeButtonImageSize = 20.f;
-    static int closeButtonImageTop  = 28.f;
-    static int closeButtonImageLeft = 14.f;
+    static int closeButtonImageSize = 18.f;
+    static int closeButtonImageTop  = 32.f;
+    static int closeButtonImageLeft = 17.f;
     static int closeButtonSize      = 44.f;
     
-    UIImageView *closeButtonImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"close"]];
+    UIImageView *closeButtonImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon-close"]];
     [closeButtonImage setTintColor:[UIColor whiteColor]];
     [self addSubviewAutoLayout:closeButtonImage];
     [closeButtonImage setHeightConstant:closeButtonImageSize];
@@ -59,7 +60,6 @@
     [closeButtonImage snapLeftConstant:closeButtonImageLeft];
     
     UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//    closeButton.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:0.5];
     [closeButton addTarget:self action:@selector(closeButtonDidPress) forControlEvents:UIControlEventTouchUpInside];
     [self addSubviewAutoLayout:closeButton];
     [closeButton setHeightConstant:closeButtonSize];
@@ -69,14 +69,24 @@
     
     // title ...
     self.titleLabel = [UILabel new];
-    self.titleLabel.font = [[ThemeManager instance] mediumFontWithSize:15];
+    self.titleLabel.font = [[ThemeManager instance] openSansBoldFontWithSize:15];
     self.titleLabel.textColor = [[ThemeManager instance] navBarText];
     [self addSubviewAutoLayout:self.titleLabel];
-    [self.titleLabel snapTopConstant:10];
-    [self.titleLabel snapBottom];
-    [self.titleLabel snapRightConstant:8];
-    [self.titleLabel snapLeftToRight:10 relativeToView:closeButton];
+    [self.titleLabel snapTopConstant:20];
+    [self.titleLabel snapBottomConstant:kBorderDentelHeight];
+    [self.titleLabel centerX];
     self.titleLabel.hidden = YES;
+    
+    // border ...
+    self.borderImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hero-border-bottom"]];
+    self.borderImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.borderImageView.clipsToBounds = YES;
+    [self addSubviewAutoLayout:self.borderImageView];
+    [self.borderImageView snapBottom];
+    [self.borderImageView snapLeft];
+    [self.borderImageView snapRight];
+    [self.borderImageView setHeightConstant:kBorderDentelHeight];
+    self.borderImageView.hidden = YES;
 }
 
 - (void)closeButtonDidPress
@@ -86,12 +96,18 @@
     }
 }
 
-- (void)showTopBar:(BOOL)showBar recipe:(Recipe *)recipe
+- (void)showTopBar:(BOOL)showBar showText:(BOOL)showText recipe:(Recipe *)recipe
 {
-    self.gradient.hidden = showBar;
-    self.barView.hidden = !showBar;
-    self.titleLabel.hidden = !showBar;
-    self.titleLabel.text = recipe.title;
+    self.gradient.hidden        = showBar;
+    self.barView.hidden         = !showBar;
+    self.borderImageView.hidden = !showBar;
+    self.titleLabel.hidden      = !showText;
+    self.titleLabel.text        = recipe.title;
+}
+
+- (void)updateGradientAlpha:(CGFloat)alpha
+{
+    self.gradient.alpha = alpha;
 }
 
 @end

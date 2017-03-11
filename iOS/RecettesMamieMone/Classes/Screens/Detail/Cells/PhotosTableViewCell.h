@@ -11,7 +11,15 @@
 
 #define kPhotosTableViewCellIdentifier @"kPhotosTableViewCellIdentifier"
 
+@protocol PhotosTableViewCellDelegate <NSObject>
+
+- (void)photoDidTapAtIndex:(NSUInteger)photoIndex;
+
+@end
+
 @interface PhotosTableViewCell : UITableViewCell
+
+@property (nonatomic, weak) id<PhotosTableViewCellDelegate> delegate;
 
 - (void)setup:(Recipe *)recipe;
 

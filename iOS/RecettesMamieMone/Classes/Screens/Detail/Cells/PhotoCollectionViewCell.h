@@ -13,6 +13,6 @@
 
 @interface PhotoCollectionViewCell : UICollectionViewCell
 
-- (void)setup:(Photo *)photo;
+- (void)setup:(Photo *)photo mode:(UIViewContentMode)mode;
 
 @end

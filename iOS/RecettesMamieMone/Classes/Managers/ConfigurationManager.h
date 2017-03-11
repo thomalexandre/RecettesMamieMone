@@ -33,4 +33,10 @@
 /// return YES if the device is an iphone.
 + (BOOL)isIphone;
 
+/// Return YES if the device is a test device (taken from remote config)
+//- (BOOL)isTestDevice;
+
++ (NSString *)appVersion;
++ (NSString *)appBuild;
+
 @end

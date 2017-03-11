@@ -14,8 +14,10 @@
 #import "UIDetailHeaderView.h"
 #import "TitleContentTableViewCell.h"
 #import "PhotosTableViewCell.h"
+#import "ThemeManager.h"
+#import "PhotoViewerViewController.h"
 
-@interface RecipeViewController () <UITableViewDelegate, UITableViewDataSource, UIDetailHeaderViewDelegate>
+@interface RecipeViewController () <UITableViewDelegate, UITableViewDataSource, UIDetailHeaderViewDelegate, PhotosTableViewCellDelegate, HeroImageTableViewCellDelegate>
 
 @property (nonatomic, strong) Recipe *recipe;
 @property (nonatomic, strong) UITableView *tableView;
@@ -38,7 +40,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [[ThemeManager instance] background];
     self.title = self.recipe.title;
     [self setupTableView];
     [self setupHeader];
@@ -55,6 +57,7 @@
     self.tableView.estimatedRowHeight = 100;
     [self.view addSubviewAutoLayout:self.tableView];
     [self.tableView snap];
+    self.tableView.showsVerticalScrollIndicator = NO;
     
     // register cells
     [self.tableView registerClass:[HeroImageTableViewCell class]      forCellReuseIdentifier:kHeroImageTableViewCellIdentifier];
@@ -71,7 +74,7 @@
     [self.header snapTop];
     [self.header snapRight];
     [self.header snapLeft];
-    [self.header setHeightConstant:64];
+    [self.header setHeightConstant:64 + kBorderDentelHeight];
 }
 
 - (void)reloadData
@@ -116,6 +119,7 @@
 - (UITableViewCell *)heroImageCell
 {
     HeroImageTableViewCell *cell = (HeroImageTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:kHeroImageTableViewCellIdentifier];
+    cell.delegate = self;
     [cell setup:self.recipe];
     self.heroCell = cell;
     return cell;
@@ -138,6 +142,7 @@
 - (UITableViewCell *)photosCarousel
 {
     PhotosTableViewCell *cell = (PhotosTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:kPhotosTableViewCellIdentifier];
+    cell.delegate = self;
     [cell setup:self.recipe];
     return cell;
 }
@@ -146,11 +151,13 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    CGFloat scrollY = scrollView.contentOffset.y;
-    BOOL needToShowBar = [self.heroCell viewDidScroll:scrollY];
-    [self.header showTopBar:needToShowBar recipe:self.recipe];
+    CGFloat scrollY    = scrollView.contentOffset.y;
+    CGFloat alpha = [self.heroCell viewDidScroll:scrollY];
+    BOOL needToShowBar = alpha > 1.f;
+    [self.header showTopBar:needToShowBar showText:needToShowBar recipe:self.recipe];
+    [self.header updateGradientAlpha:1.f-alpha];
     
-    if(scrollY < -120) {
+    if(scrollY < -125) {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
@@ -160,6 +167,22 @@
 - (void)headerDidClose
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - PhotosTableViewCellDelegate
+
+- (void)photoDidTapAtIndex:(NSUInteger)photoIndex
+{
+    PhotoViewerViewController *viewer = [[PhotoViewerViewController alloc] initWithRecipe:self.recipe withPhotoIndex:photoIndex];
+    
+    [self presentViewController:viewer animated:YES completion:nil];
+}
+
+#pragma mark - HeroImageTableViewCellDelegate
+
+- (void)photoButtonDidSelect
+{
+    [self photoDidTapAtIndex:0];
 }
 
 @end

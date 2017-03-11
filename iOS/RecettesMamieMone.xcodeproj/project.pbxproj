@@ -20,6 +20,30 @@
 		9133C5741E54B57200959AFF /* RecettesMamieMoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9133C5731E54B57200959AFF /* RecettesMamieMoneTests.m */; };
 		91502A461E5C807500001D2B /* ReceipeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91502A451E5C807500001D2B /* ReceipeCollectionViewCell.m */; };
 		91502A4A1E5CE3C800001D2B /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91502A491E5CE3C800001D2B /* GradientView.m */; };
+		918368271E68A97500A480B7 /* 1024-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 918368261E68A97500A480B7 /* 1024-logo.png */; };
+		918368361E69CC7200A480B7 /* PhotoViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 918368351E69CC7200A480B7 /* PhotoViewerViewController.m */; };
+		91A8C3FF1E6858590009A78D /* Merriweather-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C3F71E6858590009A78D /* Merriweather-Black.ttf */; };
+		91A8C4001E6858590009A78D /* Merriweather-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C3F81E6858590009A78D /* Merriweather-BlackItalic.ttf */; };
+		91A8C4011E6858590009A78D /* Merriweather-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C3F91E6858590009A78D /* Merriweather-Bold.ttf */; };
+		91A8C4021E6858590009A78D /* Merriweather-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C3FA1E6858590009A78D /* Merriweather-BoldItalic.ttf */; };
+		91A8C4031E6858590009A78D /* Merriweather-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C3FB1E6858590009A78D /* Merriweather-Italic.ttf */; };
+		91A8C4041E6858590009A78D /* Merriweather-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C3FC1E6858590009A78D /* Merriweather-Light.ttf */; };
+		91A8C4051E6858590009A78D /* Merriweather-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C3FD1E6858590009A78D /* Merriweather-LightItalic.ttf */; };
+		91A8C4061E6858590009A78D /* Merriweather-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C3FE1E6858590009A78D /* Merriweather-Regular.ttf */; };
+		91A8C4121E6858750009A78D /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C4081E6858750009A78D /* OpenSans-Bold.ttf */; };
+		91A8C4131E6858750009A78D /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C4091E6858750009A78D /* OpenSans-BoldItalic.ttf */; };
+		91A8C4141E6858750009A78D /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C40A1E6858750009A78D /* OpenSans-ExtraBold.ttf */; };
+		91A8C4151E6858750009A78D /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C40B1E6858750009A78D /* OpenSans-ExtraBoldItalic.ttf */; };
+		91A8C4161E6858750009A78D /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C40C1E6858750009A78D /* OpenSans-Italic.ttf */; };
+		91A8C4171E6858750009A78D /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C40D1E6858750009A78D /* OpenSans-Light.ttf */; };
+		91A8C4181E6858750009A78D /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C40E1E6858750009A78D /* OpenSans-LightItalic.ttf */; };
+		91A8C4191E6858750009A78D /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C40F1E6858750009A78D /* OpenSans-Regular.ttf */; };
+		91A8C41A1E6858750009A78D /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C4101E6858750009A78D /* OpenSans-Semibold.ttf */; };
+		91A8C41B1E6858750009A78D /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C4111E6858750009A78D /* OpenSans-SemiboldItalic.ttf */; };
+		91B0B71A1E6D4F8B00DF6FA5 /* FilterSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B0B7191E6D4F8B00DF6FA5 /* FilterSelectorView.m */; };
+		91D6246A1E6B63D700FE40A2 /* SelectorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D624691E6B63D700FE40A2 /* SelectorCell.m */; };
+		91D6246D1E6B6E8500FE40A2 /* UIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D6246C1E6B6E8500FE40A2 /* UIImage+Utils.m */; };
+		91D624701E6C528300FE40A2 /* Filters.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D6246F1E6C528300FE40A2 /* Filters.m */; };
 		91D8934F1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D8934E1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.m */; };
 		91D893521E64D44C003E0C57 /* TitleContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D893511E64D44C003E0C57 /* TitleContentTableViewCell.m */; };
 		91D893551E65543A003E0C57 /* PhotosTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D893541E65543A003E0C57 /* PhotosTableViewCell.m */; };
@@ -31,7 +55,6 @@
 		91EB57301E5A01F400131FD4 /* RecipesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB572F1E5A01F400131FD4 /* RecipesParser.m */; };
 		91EB57331E5A025D00131FD4 /* RecipeTypesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB57321E5A025D00131FD4 /* RecipeTypesParser.m */; };
 		91EB57361E5A06D600131FD4 /* FiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB57351E5A06D600131FD4 /* FiltersViewController.m */; };
-		91EB573A1E5A30D900131FD4 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB57391E5A30D900131FD4 /* SearchViewController.m */; };
 		91EB573D1E5AC61600131FD4 /* Hardness.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB573C1E5AC61600131FD4 /* Hardness.m */; };
 		91EB57401E5AC66600131FD4 /* HardnessParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB573F1E5AC66600131FD4 /* HardnessParser.m */; };
 		91FEAE6B1E54FDD30023FEBE /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE6A1E54FDD30023FEBE /* RootViewController.m */; };
@@ -86,6 +109,35 @@
 		91502A451E5C807500001D2B /* ReceipeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceipeCollectionViewCell.m; sourceTree = "<group>"; };
 		91502A481E5CE3C800001D2B /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
 		91502A491E5CE3C800001D2B /* GradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
+		918368261E68A97500A480B7 /* 1024-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1024-logo.png"; path = "../../1024-logo.png"; sourceTree = "<group>"; };
+		918368341E69CC7200A480B7 /* PhotoViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewerViewController.h; sourceTree = "<group>"; };
+		918368351E69CC7200A480B7 /* PhotoViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewerViewController.m; sourceTree = "<group>"; };
+		91A8C3F71E6858590009A78D /* Merriweather-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Black.ttf"; sourceTree = "<group>"; };
+		91A8C3F81E6858590009A78D /* Merriweather-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-BlackItalic.ttf"; sourceTree = "<group>"; };
+		91A8C3F91E6858590009A78D /* Merriweather-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Bold.ttf"; sourceTree = "<group>"; };
+		91A8C3FA1E6858590009A78D /* Merriweather-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-BoldItalic.ttf"; sourceTree = "<group>"; };
+		91A8C3FB1E6858590009A78D /* Merriweather-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Italic.ttf"; sourceTree = "<group>"; };
+		91A8C3FC1E6858590009A78D /* Merriweather-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Light.ttf"; sourceTree = "<group>"; };
+		91A8C3FD1E6858590009A78D /* Merriweather-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-LightItalic.ttf"; sourceTree = "<group>"; };
+		91A8C3FE1E6858590009A78D /* Merriweather-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Regular.ttf"; sourceTree = "<group>"; };
+		91A8C4081E6858750009A78D /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		91A8C4091E6858750009A78D /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		91A8C40A1E6858750009A78D /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		91A8C40B1E6858750009A78D /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		91A8C40C1E6858750009A78D /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		91A8C40D1E6858750009A78D /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		91A8C40E1E6858750009A78D /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		91A8C40F1E6858750009A78D /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		91A8C4101E6858750009A78D /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		91A8C4111E6858750009A78D /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		91B0B7181E6D4F8B00DF6FA5 /* FilterSelectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterSelectorView.h; sourceTree = "<group>"; };
+		91B0B7191E6D4F8B00DF6FA5 /* FilterSelectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterSelectorView.m; sourceTree = "<group>"; };
+		91D624681E6B63D700FE40A2 /* SelectorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectorCell.h; sourceTree = "<group>"; };
+		91D624691E6B63D700FE40A2 /* SelectorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectorCell.m; sourceTree = "<group>"; };
+		91D6246B1E6B6E8500FE40A2 /* UIImage+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utils.h"; sourceTree = "<group>"; };
+		91D6246C1E6B6E8500FE40A2 /* UIImage+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utils.m"; sourceTree = "<group>"; };
+		91D6246E1E6C528300FE40A2 /* Filters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filters.h; sourceTree = "<group>"; };
+		91D6246F1E6C528300FE40A2 /* Filters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Filters.m; sourceTree = "<group>"; };
 		91D8934D1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeMetadataTableViewCell.h; sourceTree = "<group>"; };
 		91D8934E1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeMetadataTableViewCell.m; sourceTree = "<group>"; };
 		91D893501E64D44C003E0C57 /* TitleContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleContentTableViewCell.h; sourceTree = "<group>"; };
@@ -109,8 +161,6 @@
 		91EB57321E5A025D00131FD4 /* RecipeTypesParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeTypesParser.m; sourceTree = "<group>"; };
 		91EB57341E5A06D600131FD4 /* FiltersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiltersViewController.h; sourceTree = "<group>"; };
 		91EB57351E5A06D600131FD4 /* FiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiltersViewController.m; sourceTree = "<group>"; };
-		91EB57381E5A30D900131FD4 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
-		91EB57391E5A30D900131FD4 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		91EB573B1E5AC61600131FD4 /* Hardness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hardness.h; sourceTree = "<group>"; };
 		91EB573C1E5AC61600131FD4 /* Hardness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hardness.m; sourceTree = "<group>"; };
 		91EB573E1E5AC66600131FD4 /* HardnessParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HardnessParser.h; sourceTree = "<group>"; };
@@ -267,14 +317,86 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		918368331E69CC5400A480B7 /* PhotosViewer */ = {
+			isa = PBXGroup;
+			children = (
+				918368341E69CC7200A480B7 /* PhotoViewerViewController.h */,
+				918368351E69CC7200A480B7 /* PhotoViewerViewController.m */,
+			);
+			path = PhotosViewer;
+			sourceTree = "<group>";
+		};
+		91A8C3F51E6858240009A78D /* SanFransisco */ = {
+			isa = PBXGroup;
+			children = (
+				91FEAE861E54FFF20023FEBE /* SF-UI-Text-Bold.otf */,
+				91FEAE871E54FFF20023FEBE /* SF-UI-Text-Light.otf */,
+				91FEAE881E54FFF20023FEBE /* SF-UI-Text-Medium.otf */,
+				91FEAE891E54FFF20023FEBE /* SF-UI-Text-Regular.otf */,
+				91FEAE8A1E54FFF20023FEBE /* SF-UI-Text-Semibold.otf */,
+			);
+			path = SanFransisco;
+			sourceTree = "<group>";
+		};
+		91A8C3F61E6858490009A78D /* Merriweather */ = {
+			isa = PBXGroup;
+			children = (
+				91A8C3F71E6858590009A78D /* Merriweather-Black.ttf */,
+				91A8C3F81E6858590009A78D /* Merriweather-BlackItalic.ttf */,
+				91A8C3F91E6858590009A78D /* Merriweather-Bold.ttf */,
+				91A8C3FA1E6858590009A78D /* Merriweather-BoldItalic.ttf */,
+				91A8C3FB1E6858590009A78D /* Merriweather-Italic.ttf */,
+				91A8C3FC1E6858590009A78D /* Merriweather-Light.ttf */,
+				91A8C3FD1E6858590009A78D /* Merriweather-LightItalic.ttf */,
+				91A8C3FE1E6858590009A78D /* Merriweather-Regular.ttf */,
+			);
+			path = Merriweather;
+			sourceTree = "<group>";
+		};
+		91A8C4071E68585D0009A78D /* OpenSans */ = {
+			isa = PBXGroup;
+			children = (
+				91A8C4081E6858750009A78D /* OpenSans-Bold.ttf */,
+				91A8C4091E6858750009A78D /* OpenSans-BoldItalic.ttf */,
+				91A8C40A1E6858750009A78D /* OpenSans-ExtraBold.ttf */,
+				91A8C40B1E6858750009A78D /* OpenSans-ExtraBoldItalic.ttf */,
+				91A8C40C1E6858750009A78D /* OpenSans-Italic.ttf */,
+				91A8C40D1E6858750009A78D /* OpenSans-Light.ttf */,
+				91A8C40E1E6858750009A78D /* OpenSans-LightItalic.ttf */,
+				91A8C40F1E6858750009A78D /* OpenSans-Regular.ttf */,
+				91A8C4101E6858750009A78D /* OpenSans-Semibold.ttf */,
+				91A8C4111E6858750009A78D /* OpenSans-SemiboldItalic.ttf */,
+			);
+			path = OpenSans;
+			sourceTree = "<group>";
+		};
+		91D624631E6B61CA00FE40A2 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				91D624641E6B622800FE40A2 /* Views */,
+				91EB57341E5A06D600131FD4 /* FiltersViewController.h */,
+				91EB57351E5A06D600131FD4 /* FiltersViewController.m */,
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
+		91D624641E6B622800FE40A2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				91B0B7181E6D4F8B00DF6FA5 /* FilterSelectorView.h */,
+				91B0B7191E6D4F8B00DF6FA5 /* FilterSelectorView.m */,
+				91D624681E6B63D700FE40A2 /* SelectorCell.h */,
+				91D624691E6B63D700FE40A2 /* SelectorCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		91EB571B1E5796BA00131FD4 /* List */ = {
 			isa = PBXGroup;
 			children = (
 				91502A421E5B9CE200001D2B /* Cells */,
 				91EB57201E5796FA00131FD4 /* RecipesViewController.h */,
 				91EB57211E5796FA00131FD4 /* RecipesViewController.m */,
-				91EB57341E5A06D600131FD4 /* FiltersViewController.h */,
-				91EB57351E5A06D600131FD4 /* FiltersViewController.m */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -304,15 +426,6 @@
 			path = Parsers;
 			sourceTree = "<group>";
 		};
-		91EB57371E5A30BC00131FD4 /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				91EB57381E5A30D900131FD4 /* SearchViewController.h */,
-				91EB57391E5A30D900131FD4 /* SearchViewController.m */,
-			);
-			path = Search;
-			sourceTree = "<group>";
-		};
 		91FEAE641E54FBB80023FEBE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +452,7 @@
 		91FEAE661E54FBF10023FEBE /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				918368261E68A97500A480B7 /* 1024-logo.png */,
 				9133C5651E54B57200959AFF /* Assets.xcassets */,
 			);
 			path = Images;
@@ -347,7 +461,8 @@
 		91FEAE671E54FC010023FEBE /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				91EB57371E5A30BC00131FD4 /* Search */,
+				91D624631E6B61CA00FE40A2 /* Filters */,
+				918368331E69CC5400A480B7 /* PhotosViewer */,
 				91EB571C1E5796C800131FD4 /* Detail */,
 				91EB571B1E5796BA00131FD4 /* List */,
 				91FEAE681E54FDBF0023FEBE /* Root */,
@@ -384,6 +499,8 @@
 				91FEAE721E54FEB00023FEBE /* UIViewController+Utils.m */,
 				91FEAE741E54FEE10023FEBE /* NSString+Utils.h */,
 				91FEAE751E54FEE10023FEBE /* NSString+Utils.m */,
+				91D6246B1E6B6E8500FE40A2 /* UIImage+Utils.h */,
+				91D6246C1E6B6E8500FE40A2 /* UIImage+Utils.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -415,6 +532,8 @@
 				91EB573C1E5AC61600131FD4 /* Hardness.m */,
 				9108BCC81E65F7C50097B86B /* Photo.h */,
 				9108BCC91E65F7C50097B86B /* Photo.m */,
+				91D6246E1E6C528300FE40A2 /* Filters.h */,
+				91D6246F1E6C528300FE40A2 /* Filters.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -422,11 +541,9 @@
 		91FEAE851E54FFCF0023FEBE /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				91FEAE861E54FFF20023FEBE /* SF-UI-Text-Bold.otf */,
-				91FEAE871E54FFF20023FEBE /* SF-UI-Text-Light.otf */,
-				91FEAE881E54FFF20023FEBE /* SF-UI-Text-Medium.otf */,
-				91FEAE891E54FFF20023FEBE /* SF-UI-Text-Regular.otf */,
-				91FEAE8A1E54FFF20023FEBE /* SF-UI-Text-Semibold.otf */,
+				91A8C4071E68585D0009A78D /* OpenSans */,
+				91A8C3F61E6858490009A78D /* Merriweather */,
+				91A8C3F51E6858240009A78D /* SanFransisco */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -444,6 +561,7 @@
 				9133C5541E54B57200959AFF /* Resources */,
 				C7C205CFE471675D81C0D3F3 /* [CP] Embed Pods Frameworks */,
 				05415EDA8D86035D93AE969C /* [CP] Copy Pods Resources */,
+				91F1673A1E685D63008309F1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -527,13 +645,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				91FEAE8F1E54FFF20023FEBE /* SF-UI-Text-Semibold.otf in Resources */,
+				91A8C4181E6858750009A78D /* OpenSans-LightItalic.ttf in Resources */,
+				91A8C4001E6858590009A78D /* Merriweather-BlackItalic.ttf in Resources */,
+				91A8C4061E6858590009A78D /* Merriweather-Regular.ttf in Resources */,
+				91A8C4121E6858750009A78D /* OpenSans-Bold.ttf in Resources */,
 				912A9B491E578C59004DCCE0 /* GoogleService-Info.plist in Resources */,
 				91FEAE8B1E54FFF20023FEBE /* SF-UI-Text-Bold.otf in Resources */,
+				91A8C4161E6858750009A78D /* OpenSans-Italic.ttf in Resources */,
+				91A8C4131E6858750009A78D /* OpenSans-BoldItalic.ttf in Resources */,
+				91A8C4151E6858750009A78D /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				918368271E68A97500A480B7 /* 1024-logo.png in Resources */,
+				91A8C4031E6858590009A78D /* Merriweather-Italic.ttf in Resources */,
+				91A8C4051E6858590009A78D /* Merriweather-LightItalic.ttf in Resources */,
 				9133C5691E54B57200959AFF /* LaunchScreen.storyboard in Resources */,
+				91A8C4141E6858750009A78D /* OpenSans-ExtraBold.ttf in Resources */,
+				91A8C41B1E6858750009A78D /* OpenSans-SemiboldItalic.ttf in Resources */,
 				91FEAE8E1E54FFF20023FEBE /* SF-UI-Text-Regular.otf in Resources */,
+				91A8C3FF1E6858590009A78D /* Merriweather-Black.ttf in Resources */,
+				91A8C4041E6858590009A78D /* Merriweather-Light.ttf in Resources */,
 				91FEAE8C1E54FFF20023FEBE /* SF-UI-Text-Light.otf in Resources */,
 				91FEAE8D1E54FFF20023FEBE /* SF-UI-Text-Medium.otf in Resources */,
+				91A8C41A1E6858750009A78D /* OpenSans-Semibold.ttf in Resources */,
 				9133C5661E54B57200959AFF /* Assets.xcassets in Resources */,
+				91A8C4021E6858590009A78D /* Merriweather-BoldItalic.ttf in Resources */,
+				91A8C4171E6858750009A78D /* OpenSans-Light.ttf in Resources */,
+				91A8C4191E6858750009A78D /* OpenSans-Regular.ttf in Resources */,
+				91A8C4011E6858590009A78D /* Merriweather-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +729,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		91F1673A1E685D63008309F1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" a3b8c8bdcc0711be91c85db9a6971084eda9f084 06413eee201a615c169f59fcdcaccf0142153b8874d459712a4feb58e898dee7";
+		};
 		98B8A7F85A43C97F4C46EA53 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -645,15 +795,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				9133C55E1E54B57200959AFF /* AppDelegate.m in Sources */,
+				91B0B71A1E6D4F8B00DF6FA5 /* FilterSelectorView.m in Sources */,
 				91FEAE7B1E54FF3C0023FEBE /* Recipe.m in Sources */,
 				91FEAE761E54FEE10023FEBE /* NSString+Utils.m in Sources */,
 				91EB57221E5796FA00131FD4 /* RecipesViewController.m in Sources */,
+				918368361E69CC7200A480B7 /* PhotoViewerViewController.m in Sources */,
 				91D893551E65543A003E0C57 /* PhotosTableViewCell.m in Sources */,
 				91D893581E65D52D003E0C57 /* PhotoCollectionViewCell.m in Sources */,
 				91EB57251E57978A00131FD4 /* UIView+Layout.m in Sources */,
 				91EB573D1E5AC61600131FD4 /* Hardness.m in Sources */,
 				91FEAE6B1E54FDD30023FEBE /* RootViewController.m in Sources */,
-				91EB573A1E5A30D900131FD4 /* SearchViewController.m in Sources */,
 				91D8934F1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.m in Sources */,
 				91EB57361E5A06D600131FD4 /* FiltersViewController.m in Sources */,
 				910AA4EF1E64C9E500EAF56A /* UIDetailHeaderView.m in Sources */,
@@ -662,8 +813,10 @@
 				91FEAE7E1E54FF5D0023FEBE /* DataManager.m in Sources */,
 				91FEAE811E54FF780023FEBE /* StorageManager.m in Sources */,
 				91FEAE841E54FFB50023FEBE /* ThemeManager.m in Sources */,
+				91D6246D1E6B6E8500FE40A2 /* UIImage+Utils.m in Sources */,
 				9108BCCA1E65F7C50097B86B /* Photo.m in Sources */,
 				91EB57291E5A00E400131FD4 /* RecipeType.m in Sources */,
+				91D624701E6C528300FE40A2 /* Filters.m in Sources */,
 				91EB571F1E5796F000131FD4 /* RecipeViewController.m in Sources */,
 				91FEAE731E54FEB00023FEBE /* UIViewController+Utils.m in Sources */,
 				91D893521E64D44C003E0C57 /* TitleContentTableViewCell.m in Sources */,
@@ -673,6 +826,7 @@
 				91FEAE921E5500AE0023FEBE /* ConfigurationManager.m in Sources */,
 				91502A461E5C807500001D2B /* ReceipeCollectionViewCell.m in Sources */,
 				91EB57401E5AC66600131FD4 /* HardnessParser.m in Sources */,
+				91D6246A1E6B63D700FE40A2 /* SelectorCell.m in Sources */,
 				910AA4EC1E64BF3700EAF56A /* HeroImageTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -804,8 +958,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RecettesMamieMone/RecettesMamieMone.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = F93QSNY8PR;
 				INFOPLIST_FILE = RecettesMamieMone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.athomas.RecettesMamieMone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -818,8 +974,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RecettesMamieMone/RecettesMamieMone.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = F93QSNY8PR;
 				INFOPLIST_FILE = RecettesMamieMone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.athomas.RecettesMamieMone;
 				PRODUCT_NAME = "$(TARGET_NAME)";

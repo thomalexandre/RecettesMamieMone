@@ -11,11 +11,20 @@
 
 #define kHeroImageTableViewCellIdentifier @"kHeroImageTableViewCellIdentifier"
 
+@protocol HeroImageTableViewCellDelegate <NSObject>
+
+- (void)photoButtonDidSelect;
+
+@end
+
 @interface HeroImageTableViewCell : UITableViewCell
+
+@property (nonatomic, weak) id<HeroImageTableViewCellDelegate> delegate;
 
 - (void)setup:(Recipe *)recipe;
 
-// update the view based on scrolling. Returns YES, if the view has become hidden fully.
-- (BOOL)viewDidScroll:(CGFloat)scrollY;
+// update the view based on scrolling.
+// Return the alpha. if alpha > 1, the view has fully scrolled.
+- (CGFloat)viewDidScroll:(CGFloat)scrollY;
 
 @end

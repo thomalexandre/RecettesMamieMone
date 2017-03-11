@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Recipe.h"
 
+#define kBorderDentelHeight 10.f
+
 @protocol UIDetailHeaderViewDelegate <NSObject>
 
 - (void)headerDidClose;
@@ -19,6 +21,8 @@
 
 @property (nonatomic, weak) id<UIDetailHeaderViewDelegate> delegate;
 
-- (void)showTopBar:(BOOL)showBar recipe:(Recipe *)recipe;
+- (void)showTopBar:(BOOL)showBar showText:(BOOL)showText recipe:(Recipe *)recipe;
+
+- (void)updateGradientAlpha:(CGFloat)alpha;
 
 @end

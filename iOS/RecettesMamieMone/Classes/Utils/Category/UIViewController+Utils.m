@@ -7,33 +7,34 @@
 //
 
 #import "UIViewController+Utils.h"
-#import "UIView+Layout.h"
+#import "UIView+Utils.h"
+
 
 @implementation UIViewController (Utils)
 
-- (void)addContentController:(UIViewController *)content toView:(UIView *)view
-{
-    [self addContentController:content toView:view withTopMargin:0 withRightMargin:0 withBottomMargin:0 withleftMargin:0];
-}
-
-- (void)addContentController:(UIViewController *)content toView:(UIView *)view withTopMargin:(float)top withRightMargin:(float)right withBottomMargin:(float)bottom withleftMargin:(float)left
+- (void)addContentController:(UIViewController *)content
 {
     [self addChildViewController:content];
-    [view addSubview:content.view];
+    [self.view addSubviewAutoLayout:content.view];
     [content didMoveToParentViewController:self];
-    
-    [content.view setTranslatesAutoresizingMaskIntoConstraints:NO];
-    
-    [content.view snapTopConstant:top];
-    [content.view snapRightConstant:right];
-    [content.view snapLeftConstant:left];
-    [content.view snapBottomConstant:bottom];
 }
 
-- (void)addContentController:(UIViewController*)content
+- (void)snapContentController:(UIViewController*)content
 {
-    [self addContentController:content toView:self.view];
+//    [self addContentController:content withTopMargin:0 withRightMargin:0 withBottomMargin:0 withleftMargin:0];
+    [self addContentController:content];
+    [content.view snap];
 }
+
+//- (void)addContentController:(UIViewController *)content withTopMargin:(float)top withRightMargin:(float)right withBottomMargin:(float)bottom withleftMargin:(float)left
+//{
+//    [self addChildViewController:content];
+//    
+//    [content.view snapTopConstant:top];
+//    [content.view snapRightConstant:right];
+//    [content.view snapLeftConstant:left];
+//    [content.view snapBottomConstant:bottom];
+//}
 
 - (void)removeContentController:(UIViewController*)content
 {

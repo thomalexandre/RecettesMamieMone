@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "Recipe.h"
+#import "RecipeType.h"
+#import "Filters.h"
 
 @interface DataManager : NSObject
 
 + (instancetype)instance;
+
+@property (nonatomic, strong) Filters *filters;
 
 #pragma mark - Recipes Management
 

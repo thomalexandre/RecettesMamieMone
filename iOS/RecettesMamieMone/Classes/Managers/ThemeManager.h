@@ -20,16 +20,28 @@
 - (UIColor *)navBar:(CGFloat)alpha;
 - (UIColor *)navBarText;
 - (UIColor *)background;
+- (UIColor *)backgroundPhoto;
+- (UIColor *)backgroundClickabke;
+- (UIColor *)backgroundButton;
 - (UIColor *)text;
+- (UIColor *)textButton;
+- (UIColor *)metaText;
 - (UIColor *)cardText;
+- (UIColor *)cardBackground;
 - (UIColor *)line;
+- (UIColor *)border;
 
 #pragma mark - fonts
 
-- (UIFont *)semiBoldFontWithSize:(CGFloat)size;
-- (UIFont *)boldFontWithSize:(CGFloat)size;
-- (UIFont *)regularFontWithSize:(CGFloat)size;
-- (UIFont *)lightFontWithSize:(CGFloat)size;
-- (UIFont *)mediumFontWithSize:(CGFloat)size;
+//- (UIFont *)semiBoldFontWithSize:(CGFloat)size;
+//- (UIFont *)boldFontWithSize:(CGFloat)size;
+//- (UIFont *)regularFontWithSize:(CGFloat)size;
+//- (UIFont *)lightFontWithSize:(CGFloat)size;
+//- (UIFont *)mediumFontWithSize:(CGFloat)size;
+
+
+- (UIFont *)openSansRegularFontWithSize:(CGFloat)size;
+- (UIFont *)openSansBoldFontWithSize:(CGFloat)size;
+- (UIFont *)merriweatherFontWithSize:(CGFloat)size;
 
 @end

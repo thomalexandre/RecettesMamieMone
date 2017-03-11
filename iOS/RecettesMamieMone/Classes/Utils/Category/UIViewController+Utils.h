@@ -7,21 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIView+Layout.h"
 
 @interface UIViewController (Utils)
 
-/// Add content view controller as a sub view controller. view must be in the hierarchy.
-- (void)addContentController:(UIViewController *)content toView:(UIView *)view;
+/// Add content view controller as a sub view controller. DO not add any autolayout
+- (void)addContentController:(UIViewController *)content;
+
+/// Add content view controller as a sub view controller and snap.
+- (void)snapContentController:(UIViewController *)content;
 
 // Same as above and add margin.
-- (void)addContentController:(UIViewController *)content toView:(UIView *)view
-               withTopMargin:(float)top
-             withRightMargin:(float)right
-            withBottomMargin:(float)bottom
-              withleftMargin:(float)left;
-
-/// Add content view controller as a sub view controller.
-- (void)addContentController:(UIViewController *)content;
+//- (void)addContentController:(UIViewController *)content
+//               withTopMargin:(float)top
+//             withRightMargin:(float)right
+//            withBottomMargin:(float)bottom
+//              withleftMargin:(float)left;
 
 // Remove the content view controller from the current view controller.
 - (void)removeContentController:(UIViewController *)content;

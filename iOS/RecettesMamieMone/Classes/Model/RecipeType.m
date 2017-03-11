@@ -27,8 +27,23 @@
 {
     self = [super init];
     if(self) {
-        self.name = dict[@"name"];
+        self.name  = dict[@"name"];
+        self.image = dict[@"image"];
+        self.selected = NO;
     }
     return self;
 }
+
+- (id)copyWithZone:(nullable NSZone *)zone
+{
+    RecipeType *rt = [[[self class] allocWithZone:zone] init];
+    if(rt) {
+        rt.identifier = self.identifier;
+        rt.name = self.name;
+        rt.image = self.image;
+        rt.selected = self.selected;
+    }
+    return rt;
+}
+
 @end
