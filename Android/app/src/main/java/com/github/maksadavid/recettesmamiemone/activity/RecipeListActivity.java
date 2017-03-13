@@ -4,6 +4,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,10 +14,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.github.maksadavid.recettesmamiemone.R;
-import com.github.maksadavid.recettesmamiemone.fragment.RecipeDetailFragment;
 import com.github.maksadavid.recettesmamiemone.model.Recipe;
+import com.github.maksadavid.recettesmamiemone.model.RecipeFilter;
 import com.github.maksadavid.recettesmamiemone.service.ServiceHolder;
 import com.github.maksadavid.recettesmamiemone.util.Callback;
 import com.github.maksadavid.recettesmamiemone.viewholder.RecipeViewHolder;
@@ -32,9 +36,20 @@ import java.util.ArrayList;
  * item details. On tablets, the activity presents the list of items and
  * item details side-by-side using two vertical panes.
  */
-public class RecipeListActivity extends AppCompatActivity {
+public class RecipeListActivity extends AppCompatActivity implements RecipeFiltering {
+
+    private static final Boolean showsOnlyLiveRecipes = false;
 
     private RecyclerView recyclerView;
+    private RecipeFilter recipeFilter;
+    private DrawerLayout drawerLayout;
+    private ImageView filterImageView;
+
+    @Override
+    public void setFilter(RecipeFilter filter) {
+        this.recipeFilter = filter;
+        updateRecipes();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +59,42 @@ public class RecipeListActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawerLayout.addDrawerListener(new DrawerLayout.DrawerListener() {
+            @Override
+            public void onDrawerSlide(View drawerView, float slideOffset) {
 
+            }
+
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                updateFilterImageSate();
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                updateFilterImageSate();
+            }
+
+            @Override
+            public void onDrawerStateChanged(int newState) {
+
+            }
+        });
+        filterImageView = (ImageView) toolbar.findViewById(R.id.filter_image_view);
+        filterImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (drawerLayout.isDrawerOpen(GravityCompat.END)) {
+                    drawerLayout.closeDrawer(GravityCompat.END);
+                }
+                else {
+                    drawerLayout.openDrawer(GravityCompat.END);
+                }
+                updateFilterImageSate();
+            }
+        });
         recyclerView = (RecyclerView) findViewById(R.id.recipe_list);
-        assert recyclerView != null;
         recyclerView.setLayoutManager(new GridLayoutManager(this, getResources().getInteger(R.integer.recipe_list_column_count)));
         updateRecipes();
     }
@@ -63,12 +111,20 @@ public class RecipeListActivity extends AppCompatActivity {
                 }
             });
         }
+
+        updateFilterImageSate();
     }
 
     private void updateRecipes() {
         ServiceHolder.recipeService.getAllRecipes(new Callback<ArrayList<Recipe>>() {
             @Override
             public void execute(ArrayList<Recipe> result) {
+                if (recipeFilter != null) {
+                    result = recipeFilter.filterRecipes(result);
+                }
+                if (showsOnlyLiveRecipes) {
+                    result = RecipeFilter.filterRecipesForLive(result);
+                }
                 recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(result));
             }
         }, new Callback<Exception>() {
@@ -77,6 +133,15 @@ public class RecipeListActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void updateFilterImageSate() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.END)) {
+            filterImageView.setImageDrawable(ContextCompat.getDrawable(RecipeListActivity.this, R.drawable.ic_menu_close));
+        }
+        else {
+            filterImageView.setImageDrawable(ContextCompat.getDrawable(RecipeListActivity.this, R.drawable.ic_menu_filter));
+        }
     }
 
     public class SimpleItemRecyclerViewAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
@@ -116,4 +181,5 @@ public class RecipeListActivity extends AppCompatActivity {
         }
 
     }
+
 }

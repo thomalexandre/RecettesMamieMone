@@ -39,15 +39,17 @@ public class RecipeDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_recipe_detail, container, false);
+
         TextView ingredientsTextView = (TextView) rootView.findViewById(R.id.ingredients_text_view);
         TextView preparationTextView = (TextView) rootView.findViewById(R.id.preparation_text_view);
         ingredientsTextView.setTypeface(Fonts.MerriweatherRegular);
         preparationTextView.setTypeface(Fonts.MerriweatherRegular);
 
+        ((TextView)rootView.findViewById(R.id.preparation_title_text_view)).setTypeface(Fonts.OpenSansBold);
+        ((TextView)rootView.findViewById(R.id.ingredients_title_text_view)).setTypeface(Fonts.OpenSansBold);
+
         if (recipe != null) {
-            ingredientsTextView.setText(recipe.getType().toString() +
-                    "\n\n" + recipe.getHardness().toString() +
-                    "\n\n" + recipe.getIngredients());
+            ingredientsTextView.setText(recipe.getIngredients());
             preparationTextView.setText(recipe.getPreparation());
         }
 

@@ -1,6 +1,5 @@
 package com.github.maksadavid.recettesmamiemone.model;
 
-import com.github.maksadavid.recettesmamiemone.service.ServiceHolder;
 import com.google.firebase.database.DataSnapshot;
 
 import java.io.Serializable;
@@ -11,74 +10,21 @@ import java.util.ArrayList;
  */
 public class Recipe implements Serializable {
 
-    public enum Type {
-        TYPE0("type_0"), TYPE1("type_1"), TYPE2("type_2");
-        private static DataSnapshot dataSnapshot;
-        private String rawText;
-
-        public static void setDataSnapshot(DataSnapshot dataSnapshot) {
-            Type.dataSnapshot = dataSnapshot;
-        }
-        public static Type fromString(String text) {
-            for (Type t : Type.values()) {
-                if (t.rawText.equalsIgnoreCase(text)) {
-                    return t;
-                }
-            }
-            return null;
-        }
-
-        Type(String text) {
-            this.rawText = text;
-        }
-
-        @Override
-        public String toString() {
-            return (String) dataSnapshot.child(rawText).child("name").getValue();
-        }
-    }
-
-    public enum Hardness {
-        HARDNESS0("hardness_0"), HARDNESS1("hardness_1"), HARDNESS2("hardness_2");
-        private static DataSnapshot dataSnapshot;
-        private String rawText;
-
-        public static void setDataSnapshot(DataSnapshot dataSnapshot) {
-            Hardness.dataSnapshot = dataSnapshot;
-        }
-
-        public static Hardness fromString(String text) {
-            for (Hardness t : Hardness.values()) {
-                if (t.rawText.equalsIgnoreCase(text)) {
-                    return t;
-                }
-            }
-            return null;
-        }
-
-        Hardness(String text) {
-            this.rawText = text;
-        }
-
-        @Override
-        public String toString() {
-            return (String) dataSnapshot.child(rawText).child("name").getValue();
-        }
-    }
-
     private String id;
     private String title;
-    private Type type;
-    private Hardness hardness;
+    private RecipeType type;
+    private RecipeHardness hardness;
     private String ingredients;
     private String preparation;
     private ArrayList<String> photoPaths;
+    private boolean isLive; // false for recipes that are in development
 
     public Recipe(DataSnapshot recipeData) {
         this.id = recipeData.getKey();
         this.title = (String) recipeData.child("title").getValue();
-        this.type = Type.fromString((String) recipeData.child("type").getValue());
-        this.hardness = Hardness.fromString((String) recipeData.child("hardness").getValue());
+        this.type = new RecipeType((String) recipeData.child("type").getValue());
+        this.hardness = new RecipeHardness((String) recipeData.child("hardness").getValue());
+        this.isLive = (boolean) recipeData.child("live").getValue();
     }
 
     public String getId() {
@@ -89,11 +35,11 @@ public class Recipe implements Serializable {
         return title;
     }
 
-    public Type getType() {
+    public RecipeType getType() {
         return type;
     }
 
-    public Hardness getHardness() {
+    public RecipeHardness getHardness() {
         return hardness;
     }
 
@@ -119,6 +65,10 @@ public class Recipe implements Serializable {
 
     public void setPhotoPaths(ArrayList<String> photoPaths) {
         this.photoPaths = photoPaths;
+    }
+
+    public boolean isLive() {
+        return isLive;
     }
 
     @Override

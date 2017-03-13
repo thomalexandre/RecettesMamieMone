@@ -7,6 +7,8 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.github.maksadavid.recettesmamiemone.model.Recipe;
+import com.github.maksadavid.recettesmamiemone.model.RecipeHardness;
+import com.github.maksadavid.recettesmamiemone.model.RecipeType;
 import com.github.maksadavid.recettesmamiemone.util.Callback;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -45,8 +47,8 @@ public class RecipeServiceImpl implements RecipeService {
         recipesDbRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Recipe.Type.setDataSnapshot(dataSnapshot.child("types"));
-                Recipe.Hardness.setDataSnapshot(dataSnapshot.child("hardnesses"));
+                RecipeType.setDataSnapshot(dataSnapshot.child("types"));
+                RecipeHardness.setDataSnapshot(dataSnapshot.child("hardnesses"));
                 ArrayList<Recipe> newRecipes = new ArrayList<>();
                 for (DataSnapshot recipeData : dataSnapshot.child("list").getChildren()) {
                     newRecipes.add(new Recipe(recipeData));

@@ -17,27 +17,60 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:popupTheme="@style/AppTheme.PopupOverlay"/>
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <ImageView
+                android:id="@+id/filter_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/medium_padding"
+                android:layout_marginRight="@dimen/medium_padding"
+                android:layout_gravity="right"
+                android:src="@drawable/ic_menu_filter" />
+
+        </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/recipe_list"
-            android:name="com.github.maksadavid.recettesmamiemone.RecipeListFragment"
+        <FrameLayout
+            android:id="@+id/content_frame"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layoutManager="LinearLayoutManager"
-            tools:context=".activity.RecipeListActivity"
-            tools:listitem="@layout/item_recipe" />
+            android:layout_height="match_parent">
 
-    </FrameLayout>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recipe_list"
+                android:name="com.github.maksadavid.recettesmamiemone.RecipeListFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="LinearLayoutManager"
+                tools:context=".activity.RecipeListActivity"
+                tools:listitem="@layout/item_recipe" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/right_drawer"
+            android:layout_width="@dimen/drawer_width"
+            android:layout_gravity="end"
+            android:layout_height="match_parent"
+            android:background="@android:color/white">
+
+
+            <fragment
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                class="com.github.maksadavid.recettesmamiemone.fragment.RecipeFilterFragment">
+            </fragment>
+
+        </FrameLayout>
+
+    </android.support.v4.widget.DrawerLayout>
 
 </android.support.design.widget.CoordinatorLayout>

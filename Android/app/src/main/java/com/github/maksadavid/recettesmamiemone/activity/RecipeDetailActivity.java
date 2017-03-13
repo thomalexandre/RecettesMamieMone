@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.github.maksadavid.recettesmamiemone.R;
 import com.github.maksadavid.recettesmamiemone.fragment.PhotoCarouselFragment;
@@ -18,6 +19,7 @@ import com.github.maksadavid.recettesmamiemone.fragment.RecipeDetailFragment;
 import com.github.maksadavid.recettesmamiemone.model.Recipe;
 import com.github.maksadavid.recettesmamiemone.service.ServiceHolder;
 import com.github.maksadavid.recettesmamiemone.util.Callback;
+import com.github.maksadavid.recettesmamiemone.util.Fonts;
 
 /**
  * An activity representing a single Recipe detail screen. This
@@ -38,27 +40,21 @@ public class RecipeDetailActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         ImageView headerImageView = (ImageView) findViewById(R.id.header_image_view);
-        assert (headerImageView != null);
+        TextView headerTextView = (TextView) findViewById(R.id.header_text_view);
+        headerTextView.setTypeface(Fonts.MerriweatherRegular);
 
         if (getIntent().getExtras().containsKey(ARG_RECIPE)) {
             Recipe recipe = (Recipe) getIntent().getExtras().getSerializable(ARG_RECIPE);
             ServiceHolder.recipeService.loadImageForRecipe(this, recipe, headerImageView, null);
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
-            if (appBarLayout != null) {
-                appBarLayout.setTitle(recipe.getTitle());
-            }
+            appBarLayout.setTitle(recipe.getTitle());
+            headerTextView.setText(recipe.getType().toString() + " - " + recipe.getHardness().toString());
         }
 
         // Show the Up button in the action bar.
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
-        }
-
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        String[] sectionTitles = getResources().getStringArray(R.array.recipe_detail_section_titles);
-        for (String title : sectionTitles) {
-            tabLayout.addTab(tabLayout.newTab().setText(title));
         }
 
         final Recipe recipe = (Recipe) getIntent().getExtras().getSerializable(ARG_RECIPE);

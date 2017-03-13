@@ -6,4 +6,8 @@
     <dimen name="recipe_list_text_background_height">50dp</dimen>
     <dimen name="recipe_list_card_margin">6dp</dimen>
     <dimen name="tab_bar_height">40dp</dimen>
+    <dimen name="drawer_width">230dp</dimen>
+    <dimen name="small_padding">4dp</dimen>
+    <dimen name="medium_padding">8dp</dimen>
+    <dimen name="large_padding">16dp</dimen>
 </resources>
