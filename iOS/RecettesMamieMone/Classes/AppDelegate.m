@@ -26,6 +26,7 @@
     // Override point for customization after application launch.
     
     [FIRApp configure];
+    [[Fabric sharedSDK] setDebug: YES];
     [Fabric with:@[[Crashlytics class]]];
     
     [ConfigurationManager instance];
