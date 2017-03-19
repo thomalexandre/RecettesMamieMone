@@ -21,6 +21,7 @@
 @property (nonatomic, strong) Recipe *recipe;
 @property (nonatomic, assign) NSUInteger photoIndex;
 @property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) NSLayoutConstraint *topConstraint;
 
 @end
 
@@ -56,8 +57,10 @@
     self.collectionView.alwaysBounceVertical = YES;
     
     [self.view addSubviewAutoLayout:self.collectionView];
-    [self.collectionView snap];
-    
+    self.topConstraint = [self.collectionView snapTop];
+    [self.collectionView snapBottom];
+    [self.collectionView snapLeft];
+    [self.collectionView snapRight];
     
     // Navbar ...
     UIDetailHeaderView *header = [UIDetailHeaderView new];
@@ -124,6 +127,11 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat scrollY = scrollView.contentOffset.y;
+//    NSLog(@"%f", scrollY);
+    
+    if(scrollY > -30) {
+        self.topConstraint.constant = scrollY;
+    }
     if(scrollY < -100) {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
