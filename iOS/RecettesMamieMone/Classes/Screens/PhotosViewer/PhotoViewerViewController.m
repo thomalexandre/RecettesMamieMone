@@ -53,6 +53,7 @@
     [self.collectionView setPagingEnabled:YES];
     self.collectionView.showsHorizontalScrollIndicator = NO;
     [self.collectionView registerClass:[PhotoCollectionViewCell class] forCellWithReuseIdentifier:kPhotoCollectionViewCellIdentifier];
+    self.collectionView.alwaysBounceVertical = YES;
     
     [self.view addSubviewAutoLayout:self.collectionView];
     [self.collectionView snap];
@@ -116,6 +117,16 @@
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
     return 0;
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat scrollY = scrollView.contentOffset.y;
+    if(scrollY < -100) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 @end

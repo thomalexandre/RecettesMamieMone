@@ -21,6 +21,7 @@
 @property (nonatomic, readonly) BOOL        live;
 @property (nonatomic, strong)   RecipeType *type;
 @property (nonatomic, strong)   Hardness   *hardness;
+@property (nonatomic, readonly) NSString   *persons;
 @property (nonatomic, strong)   NSArray<Photo *> *photos;
 
 + (instancetype)recipe:(NSString *)identifier withDictionary:(NSDictionary *)dict;

@@ -15,6 +15,7 @@
 @property (nonatomic, strong, readwrite) NSString   *ingredients;
 @property (nonatomic, strong, readwrite) NSString   *preparation;
 @property (nonatomic, strong, readwrite) NSString   *thumbnail;
+@property (nonatomic, strong, readwrite) NSString   *persons;
 
 @end
 
@@ -34,6 +35,7 @@
         _title     = dict[@"title"];
         _thumbnail = dict[@"thumbnail"];
         _live      = [dict[@"live"] boolValue];
+        _persons   = dict[@"persons"];
     }
     return self;
 }
@@ -68,6 +70,5 @@
 {
     return [NSString stringWithFormat:@"%@/", self.identifier];
 }
-
 
 @end

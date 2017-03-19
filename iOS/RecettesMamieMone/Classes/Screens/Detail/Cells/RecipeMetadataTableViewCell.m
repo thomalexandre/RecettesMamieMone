@@ -60,7 +60,13 @@
 
 - (void)setup:(Recipe *)recipe
 {
-    self.typeLabel.text  = [NSString stringWithFormat:@"%@ - %@", [recipe.type.name uppercaseString], [recipe.hardness.name uppercaseString]] ;
+    NSString *type  = [NSString stringWithFormat:@"%@ - %@", [recipe.type.name uppercaseString],
+                                                                  [recipe.hardness.name uppercaseString]];
+    if([recipe.persons length] > 0) {
+        type = [NSString stringWithFormat:@"%@ - %@", type, [recipe.persons uppercaseString]];
+    }
+    
+    self.typeLabel.text  = type;
     self.titleLabel.text = recipe.title;
 }
 
