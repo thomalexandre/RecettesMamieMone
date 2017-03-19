@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true">
+
+    <TextView
+        android:id="@+id/type_title_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/large_padding"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textIsSelectable="false"
+        android:text="@string/type_de_plat"
+        android:layout_weight="0"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/medium_padding"
+        android:layout_weight="0">
+
+        <CheckBox
+            android:id="@+id/entry_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:text="@string/entree"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:gravity="center"
+            android:padding="@dimen/small_padding"/>
+
+        <CheckBox
+            android:id="@+id/main_dish_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:text="@string/plat_principale"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:gravity="center"
+            android:padding="@dimen/small_padding"/>
+
+        <CheckBox
+            android:id="@+id/dessert_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:text="@string/dessert"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:gravity="center"
+            android:padding="@dimen/small_padding"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/hardness_title_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/large_padding"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textIsSelectable="false"
+        android:text="@string/difficulte"
+        android:layout_weight="0"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/medium_padding"
+        android:layout_weight="0">
+
+        <RadioButton
+            android:id="@+id/all_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:text="@string/tous"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:gravity="center"
+            android:padding="@dimen/small_padding"/>
+
+        <RadioButton
+            android:id="@+id/easy_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:text="@string/facile"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:gravity="center"
+            android:padding="@dimen/small_padding"/>
+
+        <RadioButton
+            android:id="@+id/intermediate_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:text="@string/moyen"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:gravity="center"
+            android:padding="@dimen/small_padding"/>
+
+        <RadioButton
+            android:id="@+id/difficult_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:text="@string/difficile"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:gravity="center"
+            android:padding="@dimen/small_padding"/>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/appliquer_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/large_padding"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorLightText"
+        android:text="@string/appliquer"
+        android:layout_gravity="bottom"
+        android:layout_weight="0"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+    </Space>
+
+    <TextView
+        android:id="@+id/version_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textIsSelectable="false"
+        android:padding="@dimen/medium_padding"/>
+
+</LinearLayout>
