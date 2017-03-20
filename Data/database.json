@@ -8,6 +8,14 @@
 				"persons": "6/8 Personnes",
 				"thumbnail": "thumbnail.jpg",
 				"live": true
+			},
+			"recipe_1": {
+				"title": "Pâte à crêpes",
+				"type": "type_30",
+				"hardness": "hardness_0",
+				"persons": "env 10 crêpes",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
 			}
 		},
 		"types": {
@@ -46,6 +54,21 @@
 				},
 				{
 					"filename": "2.jpg"
+				}
+			]
+		},
+		"recipe_1": {
+			"ingredients": "TBD",
+			"preparation": "TBD",
+			"photos": [
+				{
+					"filename": "1.jpg"
+				},
+				{
+					"filename": "2.jpg"
+				},
+				{
+					"filename": "3.jpg"
 				}
 			]
 		}
