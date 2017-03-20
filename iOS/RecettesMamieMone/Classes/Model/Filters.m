@@ -113,10 +113,10 @@
             return typeSortingResult;
         }
         
-        NSComparisonResult hardnessSortingResult = [first.hardness.identifier compare:second.hardness.identifier];
-        if(hardnessSortingResult != NSOrderedSame) {
-            return hardnessSortingResult;
-        }
+//        NSComparisonResult hardnessSortingResult = [first.hardness.identifier compare:second.hardness.identifier];
+//        if(hardnessSortingResult != NSOrderedSame) {
+//            return hardnessSortingResult;
+//        }
         
         return [first.title compare:second.title];
     }];
