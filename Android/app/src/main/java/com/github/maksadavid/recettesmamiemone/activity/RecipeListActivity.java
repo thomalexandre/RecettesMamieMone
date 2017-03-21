@@ -14,9 +14,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.github.maksadavid.recettesmamiemone.R;
+import com.github.maksadavid.recettesmamiemone.fragment.RecipeFilterFragment;
 import com.github.maksadavid.recettesmamiemone.model.Recipe;
 import com.github.maksadavid.recettesmamiemone.model.RecipeFilter;
 import com.github.maksadavid.recettesmamiemone.service.ServiceHolder;
@@ -38,17 +40,21 @@ import java.util.ArrayList;
  */
 public class RecipeListActivity extends AppCompatActivity implements RecipeFiltering {
 
-    private static final Boolean showsOnlyLiveRecipes = false;
+    private static final Boolean showsOnlyLiveRecipes = true;
 
     private RecyclerView recyclerView;
     private RecipeFilter recipeFilter;
     private DrawerLayout drawerLayout;
     private ImageView filterImageView;
+    private RecipeFilterFragment filterFragment;
 
     @Override
     public void setFilter(RecipeFilter filter) {
         this.recipeFilter = filter;
         updateRecipes();
+        if (drawerLayout.isDrawerOpen(GravityCompat.END)) {
+            drawerLayout.closeDrawer(GravityCompat.END);
+        }
     }
 
     @Override
@@ -68,12 +74,12 @@ public class RecipeListActivity extends AppCompatActivity implements RecipeFilte
 
             @Override
             public void onDrawerOpened(View drawerView) {
-                updateFilterImageSate();
+                updateFilterImageState();
             }
 
             @Override
             public void onDrawerClosed(View drawerView) {
-                updateFilterImageSate();
+                updateFilterImageState();
             }
 
             @Override
@@ -91,11 +97,17 @@ public class RecipeListActivity extends AppCompatActivity implements RecipeFilte
                 else {
                     drawerLayout.openDrawer(GravityCompat.END);
                 }
-                updateFilterImageSate();
+                updateFilterImageState();
             }
         });
         recyclerView = (RecyclerView) findViewById(R.id.recipe_list);
         recyclerView.setLayoutManager(new GridLayoutManager(this, getResources().getInteger(R.integer.recipe_list_column_count)));
+
+        filterFragment = new RecipeFilterFragment();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.right_drawer, filterFragment)
+                .commit();
         updateRecipes();
     }
 
@@ -112,7 +124,7 @@ public class RecipeListActivity extends AppCompatActivity implements RecipeFilte
             });
         }
 
-        updateFilterImageSate();
+        updateFilterImageState();
     }
 
     private void updateRecipes() {
@@ -126,6 +138,9 @@ public class RecipeListActivity extends AppCompatActivity implements RecipeFilte
                     result = RecipeFilter.filterRecipesForLive(result);
                 }
                 recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(result));
+                if (recipeFilter == null) {
+                    filterFragment.updateFilterOptions();
+                }
             }
         }, new Callback<Exception>() {
             @Override
@@ -135,7 +150,7 @@ public class RecipeListActivity extends AppCompatActivity implements RecipeFilte
         });
     }
 
-    private void updateFilterImageSate() {
+    private void updateFilterImageState() {
         if (drawerLayout.isDrawerOpen(GravityCompat.END)) {
             filterImageView.setImageDrawable(ContextCompat.getDrawable(RecipeListActivity.this, R.drawable.ic_menu_close));
         }

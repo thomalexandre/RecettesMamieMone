@@ -5,6 +5,7 @@ import android.media.audiofx.Equalizer;
 import com.google.firebase.database.DataSnapshot;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * Created by maksadavid on 2017. 03. 07..
@@ -18,9 +19,20 @@ public class RecipeHardness implements Serializable {
         RecipeHardness.dataSnapshot = dataSnapshot;
     }
 
+    public static ArrayList<RecipeHardness> getAllHardnesses() {
+        ArrayList<RecipeHardness> hardnesses = new ArrayList<>();
+        if (dataSnapshot != null) {
+            for (DataSnapshot child : dataSnapshot.getChildren()) {
+                hardnesses.add(new RecipeHardness(child.getKey()));
+            }
+        }
+        return hardnesses;
+    }
+
     public RecipeHardness(String text) {
         this.rawText = text;
     }
+
 
     @Override
     public String toString() {

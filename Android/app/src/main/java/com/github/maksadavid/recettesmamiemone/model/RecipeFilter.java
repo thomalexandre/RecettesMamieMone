@@ -18,8 +18,12 @@ public class RecipeFilter {
     public ArrayList<Recipe> filterRecipes(ArrayList<Recipe> recipes) {
 
         ArrayList<Recipe> filteredRecipes = new ArrayList<>();
+
+        boolean showAllTypes = validTypes.isEmpty();
+        boolean showAllHardnesses = validHardnesses.isEmpty();
+
         for (Recipe recipe : recipes) {
-            if (validTypes.contains(recipe.getType()) && validHardnesses.contains(recipe.getHardness())){
+            if ((validTypes.contains(recipe.getType()) || showAllTypes) && (validHardnesses.contains(recipe.getHardness()) || showAllHardnesses)){
                 filteredRecipes.add(recipe);
             }
         }
