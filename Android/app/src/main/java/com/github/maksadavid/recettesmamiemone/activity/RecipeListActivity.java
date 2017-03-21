@@ -14,9 +14,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 
+import com.crashlytics.android.Crashlytics;
 import com.github.maksadavid.recettesmamiemone.R;
 import com.github.maksadavid.recettesmamiemone.fragment.RecipeFilterFragment;
 import com.github.maksadavid.recettesmamiemone.model.Recipe;
@@ -29,6 +29,8 @@ import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 
 import java.util.ArrayList;
+
+import io.fabric.sdk.android.Fabric;
 
 /**
  * An activity representing a list of Recipes. This activity
@@ -60,6 +62,7 @@ public class RecipeListActivity extends AppCompatActivity implements RecipeFilte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_recipe_list);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
