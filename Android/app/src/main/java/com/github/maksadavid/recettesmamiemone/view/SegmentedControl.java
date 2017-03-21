@@ -104,7 +104,7 @@ public class SegmentedControl extends LinearLayout implements Button.OnClickList
         }
         Drawable image = button.getCompoundDrawables()[1];
         if (image != null) {
-            image.setColorFilter(color, PorterDuff.Mode.OVERLAY);
+            image.setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
         }
         button.setTextColor(color);
     }
