@@ -6,9 +6,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.github.maksadavid.recettesmamiemone.BuildConfig;
@@ -18,6 +15,7 @@ import com.github.maksadavid.recettesmamiemone.model.RecipeFilter;
 import com.github.maksadavid.recettesmamiemone.model.RecipeHardness;
 import com.github.maksadavid.recettesmamiemone.model.RecipeType;
 import com.github.maksadavid.recettesmamiemone.util.Fonts;
+import com.github.maksadavid.recettesmamiemone.view.SegmentedControl;
 
 import java.util.ArrayList;
 
@@ -26,15 +24,8 @@ import java.util.ArrayList;
  */
 public class RecipeFilterFragment extends Fragment {
 
-    private CheckBox entryCheckbox;
-    private CheckBox mainDishCheckbox;
-    private CheckBox dessertCheckbox;
-
-    private RadioButton allButton;
-    private RadioButton easyButton;
-    private RadioButton intermediateButton;
-    private RadioButton hardButton;
-
+    private SegmentedControl typeSegmentedControl;
+    private SegmentedControl hardnessSegmentedControl;
     private RecipeFiltering recipeFiltering;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,28 +35,12 @@ public class RecipeFilterFragment extends Fragment {
         ((TextView)rootView.findViewById(R.id.type_title_text_view)).setTypeface(Fonts.OpenSansBold);
         ((TextView)rootView.findViewById(R.id.hardness_title_text_view)).setTypeface(Fonts.OpenSansBold);
 
+        typeSegmentedControl = (SegmentedControl) rootView.findViewById(R.id.type_segmented_control);
+        hardnessSegmentedControl = (SegmentedControl) rootView.findViewById(R.id.hardness_segmented_control);
+
         TextView versionTextView = (TextView) rootView.findViewById(R.id.version_text_view);
         versionTextView.setTypeface(Fonts.MerriweatherRegular);
         versionTextView.setText("v " + BuildConfig.VERSION_NAME + " " + BuildConfig.VERSION_CODE);
-
-        entryCheckbox = (CheckBox) rootView.findViewById(R.id.entry_checkbox);
-        entryCheckbox.setTypeface(Fonts.MerriweatherRegular);
-        entryCheckbox.setChecked(true);
-        mainDishCheckbox = (CheckBox) rootView.findViewById(R.id.main_dish_checkbox);
-        mainDishCheckbox.setTypeface(Fonts.MerriweatherRegular);
-        mainDishCheckbox.setChecked(true);
-        dessertCheckbox = (CheckBox) rootView.findViewById(R.id.dessert_checkbox);
-        dessertCheckbox.setTypeface(Fonts.MerriweatherRegular);
-        dessertCheckbox.setChecked(true);
-        allButton = (RadioButton) rootView.findViewById(R.id.all_button);
-        allButton.setTypeface(Fonts.MerriweatherRegular);
-        allButton.setChecked(true);
-        easyButton = (RadioButton) rootView.findViewById(R.id.easy_button);
-        easyButton.setTypeface(Fonts.MerriweatherRegular);
-        intermediateButton = (RadioButton) rootView.findViewById(R.id.intermediate_button);
-        intermediateButton.setTypeface(Fonts.MerriweatherRegular);
-        hardButton = (RadioButton) rootView.findViewById(R.id.difficult_button);
-        hardButton.setTypeface(Fonts.MerriweatherRegular);
 
         rootView.findViewById(R.id.appliquer_button).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,37 +64,30 @@ public class RecipeFilterFragment extends Fragment {
         }
     }
 
+    public void updateFilterOptions() {
+        typeSegmentedControl.removeAllViews();
+        for (RecipeType type : RecipeType.getAllTypes()) {
+            typeSegmentedControl.addSegment(type.toString(), type.getDrawable(), type);
+        }
+
+        hardnessSegmentedControl.removeAllViews();
+        for (RecipeHardness hardness : RecipeHardness.getAllHardnesses()) {
+            hardnessSegmentedControl.addSegment(hardness.toString(), null, hardness);
+        }
+    }
+
     private void applyFilter() {
 
+        // Just cast the ArrayList type
         ArrayList<RecipeType> validTypes = new ArrayList<>();
-
-        if (entryCheckbox.isChecked()) {
-            validTypes.add(new RecipeType("type_10"));
+        for (Object tag : typeSegmentedControl.getActiveTags()) {
+            validTypes.add((RecipeType) tag);
         }
 
-        if (mainDishCheckbox.isChecked()) {
-            validTypes.add(new RecipeType("type_20"));
-        }
-
-        if (dessertCheckbox.isChecked()) {
-            validTypes.add(new RecipeType("type_30"));
-        }
-
+        // Just cast the ArrayList type
         ArrayList<RecipeHardness> validHardnesses = new ArrayList<>();
-
-        if (allButton.isChecked()) {
-            validHardnesses.add(new RecipeHardness("hardness_0"));
-            validHardnesses.add(new RecipeHardness("hardness_1"));
-            validHardnesses.add(new RecipeHardness("hardness_2"));
-        }
-        else if (easyButton.isChecked()) {
-            validHardnesses.add(new RecipeHardness("hardness_0"));
-        }
-        else if (intermediateButton.isChecked()) {
-            validHardnesses.add(new RecipeHardness("hardness_1"));
-        }
-        else if (hardButton.isChecked()) {
-            validHardnesses.add(new RecipeHardness("hardness_2"));
+        for (Object tag : hardnessSegmentedControl.getActiveTags()) {
+            validHardnesses.add((RecipeHardness) tag);
         }
 
         recipeFiltering.setFilter(new RecipeFilter(validTypes, validHardnesses));

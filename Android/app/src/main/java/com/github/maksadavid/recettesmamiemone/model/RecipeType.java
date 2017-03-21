@@ -1,8 +1,15 @@
 package com.github.maksadavid.recettesmamiemone.model;
 
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+
+import com.github.maksadavid.recettesmamiemone.R;
+import com.github.maksadavid.recettesmamiemone.application.RMMApplication;
 import com.google.firebase.database.DataSnapshot;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * Created by maksadavid on 2017. 03. 07..
@@ -15,13 +22,39 @@ public class RecipeType implements Serializable {
         RecipeType.dataSnapshot = dataSnapshot;
     }
 
-    public RecipeType(String text) {
+    public static ArrayList<RecipeType> getAllTypes() {
+        ArrayList<RecipeType> types = new ArrayList<>();
+        if (dataSnapshot != null) {
+            for (DataSnapshot child : dataSnapshot.getChildren()) {
+                types.add(new RecipeType(child.getKey()));
+            }
+        }
+        return types;
+    }
+
+    RecipeType(String text) {
         this.rawText = text;
     }
 
     @Override
     public String toString() {
         return (String) dataSnapshot.child(rawText).child("name").getValue();
+    }
+
+    public Drawable getDrawable() {
+        String drawableName = (String) dataSnapshot.child(rawText).child("image").getValue();
+        drawableName = drawableName.replace("-", "_");
+        Context context = RMMApplication.getAppContext();
+        int drawableResourceId = context.getResources().getIdentifier(drawableName, "drawable", context.getPackageName());
+        if (drawableResourceId == 0) {
+            drawableResourceId = R.drawable.placeholder;
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            return context.getDrawable(drawableResourceId);
+        }
+        else {
+            return context.getResources().getDrawable(drawableResourceId);
+        }
     }
 
     @Override

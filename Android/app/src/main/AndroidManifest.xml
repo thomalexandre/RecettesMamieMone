@@ -30,6 +30,12 @@
             android:parentActivityName=".activity.RecipeDetailActivity"
             android:theme="@style/AppTheme.TransparentActionBar">
         </activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="a3b8c8bdcc0711be91c85db9a6971084eda9f084"
+            />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
