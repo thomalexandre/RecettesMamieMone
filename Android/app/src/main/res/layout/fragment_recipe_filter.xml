@@ -1,74 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clickable="true">
+    android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/type_title_text_view"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/large_padding"
-        android:gravity="center"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textIsSelectable="false"
-        android:text="@string/type_de_plat"
-        android:layout_weight="0"/>
+        android:layout_height="match_parent"
+        android:clickable="true">
 
-    <com.github.maksadavid.recettesmamiemone.view.SegmentedControl
-        android:id="@+id/type_segmented_control"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="@dimen/medium_padding"
-        app:singleSelection="false"/>
+        <TextView
+            android:id="@+id/type_title_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/large_padding"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textIsSelectable="false"
+            android:text="@string/type_de_plat"
+            android:layout_weight="0"/>
 
-    <TextView
-        android:id="@+id/hardness_title_text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/large_padding"
-        android:gravity="center"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textIsSelectable="false"
-        android:text="@string/difficulte"
-        android:layout_weight="0"/>
+        <com.github.maksadavid.recettesmamiemone.view.SegmentedControl
+            android:id="@+id/type_segmented_control"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/medium_padding"
+            android:layout_weight="0"
+            app:singleSelection="false"/>
 
-    <com.github.maksadavid.recettesmamiemone.view.SegmentedControl
-        android:id="@+id/hardness_segmented_control"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="@dimen/medium_padding"
-        app:singleSelection="true"/>
+        <TextView
+            android:id="@+id/hardness_title_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/large_padding"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textIsSelectable="false"
+            android:text="@string/difficulte"
+            android:layout_weight="0"/>
 
-    <Button
-        android:id="@+id/appliquer_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/large_padding"
-        android:background="@color/colorPrimary"
-        android:textColor="@color/colorLightText"
-        android:text="@string/appliquer"
-        android:layout_gravity="bottom"
-        android:layout_weight="0"/>
+        <com.github.maksadavid.recettesmamiemone.view.SegmentedControl
+            android:id="@+id/hardness_segmented_control"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/medium_padding"
+            android:layout_weight="0"
+            app:singleSelection="true"/>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1">
-    </Space>
+        <Button
+            android:id="@+id/appliquer_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/large_padding"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/colorLightText"
+            android:text="@string/appliquer"
+            android:layout_gravity="bottom"
+            android:layout_weight="0"/>
 
-    <TextView
-        android:id="@+id/version_text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:gravity="center"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textIsSelectable="false"
-        android:padding="@dimen/medium_padding"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+        </Space>
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/version_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textIsSelectable="false"
+            android:padding="@dimen/medium_padding"/>
+
+    </LinearLayout>
+
+</ScrollView>

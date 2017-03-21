@@ -109,7 +109,7 @@ public class RecipeListActivity extends AppCompatActivity implements RecipeFilte
         filterFragment = new RecipeFilterFragment();
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.right_drawer, filterFragment)
+                .replace(R.id.right_drawer, filterFragment)
                 .commit();
         updateRecipes();
     }
