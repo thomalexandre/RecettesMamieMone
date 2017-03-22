@@ -65,11 +65,6 @@
 		91FEAE7E1E54FF5D0023FEBE /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE7D1E54FF5D0023FEBE /* DataManager.m */; };
 		91FEAE811E54FF780023FEBE /* StorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE801E54FF780023FEBE /* StorageManager.m */; };
 		91FEAE841E54FFB50023FEBE /* ThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE831E54FFB50023FEBE /* ThemeManager.m */; };
-		91FEAE8B1E54FFF20023FEBE /* SF-UI-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91FEAE861E54FFF20023FEBE /* SF-UI-Text-Bold.otf */; };
-		91FEAE8C1E54FFF20023FEBE /* SF-UI-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91FEAE871E54FFF20023FEBE /* SF-UI-Text-Light.otf */; };
-		91FEAE8D1E54FFF20023FEBE /* SF-UI-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91FEAE881E54FFF20023FEBE /* SF-UI-Text-Medium.otf */; };
-		91FEAE8E1E54FFF20023FEBE /* SF-UI-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91FEAE891E54FFF20023FEBE /* SF-UI-Text-Regular.otf */; };
-		91FEAE8F1E54FFF20023FEBE /* SF-UI-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91FEAE8A1E54FFF20023FEBE /* SF-UI-Text-Semibold.otf */; };
 		91FEAE921E5500AE0023FEBE /* ConfigurationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE911E5500AE0023FEBE /* ConfigurationManager.m */; };
 /* End PBXBuildFile section */
 
@@ -181,11 +176,6 @@
 		91FEAE801E54FF780023FEBE /* StorageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageManager.m; sourceTree = "<group>"; };
 		91FEAE821E54FFB50023FEBE /* ThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeManager.h; sourceTree = "<group>"; };
 		91FEAE831E54FFB50023FEBE /* ThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeManager.m; sourceTree = "<group>"; };
-		91FEAE861E54FFF20023FEBE /* SF-UI-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Bold.otf"; sourceTree = "<group>"; };
-		91FEAE871E54FFF20023FEBE /* SF-UI-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Light.otf"; sourceTree = "<group>"; };
-		91FEAE881E54FFF20023FEBE /* SF-UI-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Medium.otf"; sourceTree = "<group>"; };
-		91FEAE891E54FFF20023FEBE /* SF-UI-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Regular.otf"; sourceTree = "<group>"; };
-		91FEAE8A1E54FFF20023FEBE /* SF-UI-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Semibold.otf"; sourceTree = "<group>"; };
 		91FEAE901E5500AE0023FEBE /* ConfigurationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigurationManager.h; sourceTree = "<group>"; };
 		91FEAE911E5500AE0023FEBE /* ConfigurationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurationManager.m; sourceTree = "<group>"; };
 		AF64229C5EDC34087E501168 /* Pods-RecettesMamieMoneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecettesMamieMoneTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecettesMamieMoneTests/Pods-RecettesMamieMoneTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -324,18 +314,6 @@
 				918368351E69CC7200A480B7 /* PhotoViewerViewController.m */,
 			);
 			path = PhotosViewer;
-			sourceTree = "<group>";
-		};
-		91A8C3F51E6858240009A78D /* SanFransisco */ = {
-			isa = PBXGroup;
-			children = (
-				91FEAE861E54FFF20023FEBE /* SF-UI-Text-Bold.otf */,
-				91FEAE871E54FFF20023FEBE /* SF-UI-Text-Light.otf */,
-				91FEAE881E54FFF20023FEBE /* SF-UI-Text-Medium.otf */,
-				91FEAE891E54FFF20023FEBE /* SF-UI-Text-Regular.otf */,
-				91FEAE8A1E54FFF20023FEBE /* SF-UI-Text-Semibold.otf */,
-			);
-			path = SanFransisco;
 			sourceTree = "<group>";
 		};
 		91A8C3F61E6858490009A78D /* Merriweather */ = {
@@ -543,7 +521,6 @@
 			children = (
 				91A8C4071E68585D0009A78D /* OpenSans */,
 				91A8C3F61E6858490009A78D /* Merriweather */,
-				91A8C3F51E6858240009A78D /* SanFransisco */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -644,13 +621,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91FEAE8F1E54FFF20023FEBE /* SF-UI-Text-Semibold.otf in Resources */,
 				91A8C4181E6858750009A78D /* OpenSans-LightItalic.ttf in Resources */,
 				91A8C4001E6858590009A78D /* Merriweather-BlackItalic.ttf in Resources */,
 				91A8C4061E6858590009A78D /* Merriweather-Regular.ttf in Resources */,
 				91A8C4121E6858750009A78D /* OpenSans-Bold.ttf in Resources */,
 				912A9B491E578C59004DCCE0 /* GoogleService-Info.plist in Resources */,
-				91FEAE8B1E54FFF20023FEBE /* SF-UI-Text-Bold.otf in Resources */,
 				91A8C4161E6858750009A78D /* OpenSans-Italic.ttf in Resources */,
 				91A8C4131E6858750009A78D /* OpenSans-BoldItalic.ttf in Resources */,
 				91A8C4151E6858750009A78D /* OpenSans-ExtraBoldItalic.ttf in Resources */,
@@ -660,11 +635,8 @@
 				9133C5691E54B57200959AFF /* LaunchScreen.storyboard in Resources */,
 				91A8C4141E6858750009A78D /* OpenSans-ExtraBold.ttf in Resources */,
 				91A8C41B1E6858750009A78D /* OpenSans-SemiboldItalic.ttf in Resources */,
-				91FEAE8E1E54FFF20023FEBE /* SF-UI-Text-Regular.otf in Resources */,
 				91A8C3FF1E6858590009A78D /* Merriweather-Black.ttf in Resources */,
 				91A8C4041E6858590009A78D /* Merriweather-Light.ttf in Resources */,
-				91FEAE8C1E54FFF20023FEBE /* SF-UI-Text-Light.otf in Resources */,
-				91FEAE8D1E54FFF20023FEBE /* SF-UI-Text-Medium.otf in Resources */,
 				91A8C41A1E6858750009A78D /* OpenSans-Semibold.ttf in Resources */,
 				9133C5661E54B57200959AFF /* Assets.xcassets in Resources */,
 				91A8C4021E6858590009A78D /* Merriweather-BoldItalic.ttf in Resources */,
