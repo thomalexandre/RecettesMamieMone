@@ -16,10 +16,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/large_padding"
-            android:gravity="center"
+            android:gravity="left"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textIsSelectable="false"
             android:text="@string/type_de_plat"
+            android:layout_margin="@dimen/large_padding"
             android:layout_weight="0"/>
 
         <com.github.maksadavid.recettesmamiemone.view.SegmentedControl
@@ -36,7 +37,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/large_padding"
-            android:gravity="center"
+            android:layout_margin="@dimen/large_padding"
+            android:gravity="left"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textIsSelectable="false"
             android:text="@string/difficulte"
@@ -67,6 +69,18 @@
             android:layout_height="wrap_content"
             android:layout_weight="1">
         </Space>
+
+
+        <TextView
+            android:id="@+id/message_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:gravity="center"
+            android:text="Á notre mamie ♥"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textIsSelectable="false"
+            android:padding="@dimen/medium_padding"/>
 
         <TextView
             android:id="@+id/version_text_view"

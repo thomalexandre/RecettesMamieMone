@@ -25,6 +25,7 @@ public class RecipeType implements Serializable {
     public static ArrayList<RecipeType> getAllTypes() {
         ArrayList<RecipeType> types = new ArrayList<>();
         if (dataSnapshot != null) {
+
             for (DataSnapshot child : dataSnapshot.getChildren()) {
                 types.add(new RecipeType(child.getKey()));
             }
@@ -34,6 +35,10 @@ public class RecipeType implements Serializable {
 
     RecipeType(String text) {
         this.rawText = text;
+    }
+
+    public String getRawText() {
+        return rawText;
     }
 
     @Override

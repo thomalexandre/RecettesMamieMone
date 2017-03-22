@@ -32,15 +32,18 @@ public class RecipeFilterFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_recipe_filter, container, false);
 
-        ((TextView)rootView.findViewById(R.id.type_title_text_view)).setTypeface(Fonts.OpenSansBold);
-        ((TextView)rootView.findViewById(R.id.hardness_title_text_view)).setTypeface(Fonts.OpenSansBold);
+        ((TextView)rootView.findViewById(R.id.type_title_text_view)).setTypeface(Fonts.OpenSansRegular);
+        ((TextView)rootView.findViewById(R.id.hardness_title_text_view)).setTypeface(Fonts.OpenSansRegular);
 
         typeSegmentedControl = (SegmentedControl) rootView.findViewById(R.id.type_segmented_control);
         hardnessSegmentedControl = (SegmentedControl) rootView.findViewById(R.id.hardness_segmented_control);
 
         TextView versionTextView = (TextView) rootView.findViewById(R.id.version_text_view);
-        versionTextView.setTypeface(Fonts.MerriweatherRegular);
+        versionTextView.setTypeface(Fonts.OpenSansRegular);
         versionTextView.setText("v " + BuildConfig.VERSION_NAME + " " + BuildConfig.VERSION_CODE);
+
+        TextView messageTextView = (TextView) rootView.findViewById(R.id.message_text_view);
+        messageTextView.setTypeface(Fonts.OpenSansRegular);
 
         rootView.findViewById(R.id.appliquer_button).setOnClickListener(new View.OnClickListener() {
             @Override

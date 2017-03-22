@@ -23,6 +23,8 @@ import com.google.firebase.storage.StorageMetadata;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -53,6 +55,7 @@ public class RecipeServiceImpl implements RecipeService {
                 for (DataSnapshot recipeData : dataSnapshot.child("list").getChildren()) {
                     newRecipes.add(new Recipe(recipeData));
                 }
+                Collections.sort(newRecipes, new RecipeComparator());
                 success.execute(newRecipes);
             }
 
@@ -98,6 +101,18 @@ public class RecipeServiceImpl implements RecipeService {
                 .using(new FirebaseImageLoader())
                 .load(storageReference)
                 .into(imageView);
+    }
+
+    public class RecipeComparator implements Comparator<Recipe> {
+        public int compare(Recipe recipe1, Recipe recipe2) {
+
+            int compareType = recipe1.getType().getRawText().compareTo(recipe2.getType().getRawText());
+            if(compareType != 0) {
+                return compareType;
+            }
+
+            return recipe1.getTitle().compareTo(recipe2.getTitle());
+        }
     }
 
 }
