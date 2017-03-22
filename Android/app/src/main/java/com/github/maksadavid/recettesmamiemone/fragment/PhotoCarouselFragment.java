@@ -8,6 +8,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import com.github.maksadavid.recettesmamiemone.util.Fonts;
 
 import com.github.maksadavid.recettesmamiemone.R;
 import com.github.maksadavid.recettesmamiemone.activity.PhotoPresenterActivity;
@@ -31,6 +33,9 @@ public class PhotoCarouselFragment extends Fragment {
             RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recycle_view);
             recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(recipe));
         }
+
+        TextView photosTitle = ((TextView)rootView.findViewById(R.id.photos_title_text_view));
+        photosTitle.setTypeface(Fonts.OpenSansBold);
 
         return rootView;
     }
