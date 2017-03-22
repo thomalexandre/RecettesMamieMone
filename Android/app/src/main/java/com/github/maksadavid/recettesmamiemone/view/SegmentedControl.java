@@ -82,7 +82,7 @@ public class SegmentedControl extends LinearLayout implements Button.OnClickList
         else {
             button.setTextAppearance(android.R.style.TextAppearance_Small);
         }
-        button.setTypeface(Fonts.MerriweatherRegular);
+        button.setTypeface(Fonts.OpenSansRegular);
         button.setOnClickListener(this);
         addView(button);
         activeTags.add(tag);
@@ -95,18 +95,21 @@ public class SegmentedControl extends LinearLayout implements Button.OnClickList
     }
 
     private void updateSegmentUI(Button button, boolean active) {
-        int color;
+        int colorText;
+        int colorImage;
         if (active) {
-            color = ContextCompat.getColor(RMMApplication.getAppContext(),R.color.colorPrimary);
+            colorText = ContextCompat.getColor(RMMApplication.getAppContext(),R.color.colorRichBlack);
+            colorImage = ContextCompat.getColor(RMMApplication.getAppContext(),R.color.colorPrimary);
         }
         else {
-            color = Color.LTGRAY;
+            colorText = Color.LTGRAY;
+            colorImage = Color.LTGRAY;
         }
         Drawable image = button.getCompoundDrawables()[1];
         if (image != null) {
-            image.setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
+            image.setColorFilter(colorImage, PorterDuff.Mode.SRC_ATOP);
         }
-        button.setTextColor(color);
+        button.setTextColor(colorText);
     }
 
     @Override

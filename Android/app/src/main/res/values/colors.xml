@@ -5,4 +5,5 @@
     <color name="colorAccent">#D10068</color>
     <color name="colorBlackTranslucent">#8000</color>
     <color name="colorLightText">#FFF</color>
+    <color name="colorRichBlack">#050505</color>
 </resources>
