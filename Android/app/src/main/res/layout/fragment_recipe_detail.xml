@@ -25,6 +25,7 @@
                 android:gravity="center"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textIsSelectable="false"
+                android:textColor="@color/colorPrimary"
                 android:text="@string/ingredients"/>
 
             <TextView
@@ -54,11 +55,12 @@
                 android:id="@+id/preparation_title_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="16dp"
                 android:gravity="center"
+                android:paddingTop="16dp"
+                android:textColor="@color/colorPrimary"
+                android:text="@string/preparation"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textIsSelectable="false"
-                android:text="@string/preparation"/>
+                android:textIsSelectable="false" />
 
             <TextView
                 android:id="@+id/preparation_text_view"

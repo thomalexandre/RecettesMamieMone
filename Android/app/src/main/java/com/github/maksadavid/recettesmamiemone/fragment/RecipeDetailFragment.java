@@ -45,8 +45,11 @@ public class RecipeDetailFragment extends Fragment {
         ingredientsTextView.setTypeface(Fonts.MerriweatherRegular);
         preparationTextView.setTypeface(Fonts.MerriweatherRegular);
 
-        ((TextView)rootView.findViewById(R.id.preparation_title_text_view)).setTypeface(Fonts.OpenSansBold);
-        ((TextView)rootView.findViewById(R.id.ingredients_title_text_view)).setTypeface(Fonts.OpenSansBold);
+        TextView preparationTitle = ((TextView)rootView.findViewById(R.id.preparation_title_text_view));
+        preparationTitle.setTypeface(Fonts.OpenSansBold);
+
+        TextView ingredientTitle = ((TextView)rootView.findViewById(R.id.ingredients_title_text_view));
+        ingredientTitle.setTypeface(Fonts.OpenSansBold);
 
         if (recipe != null) {
             ingredientsTextView.setText(recipe.getIngredients());

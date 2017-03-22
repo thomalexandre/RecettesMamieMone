@@ -41,7 +41,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
         ImageView headerImageView = (ImageView) findViewById(R.id.header_image_view);
         TextView headerTextView = (TextView) findViewById(R.id.header_text_view);
-        headerTextView.setTypeface(Fonts.MerriweatherRegular);
+        headerTextView.setTypeface(Fonts.OpenSansRegular);
 
         if (getIntent().getExtras().containsKey(ARG_RECIPE)) {
             Recipe recipe = (Recipe) getIntent().getExtras().getSerializable(ARG_RECIPE);
