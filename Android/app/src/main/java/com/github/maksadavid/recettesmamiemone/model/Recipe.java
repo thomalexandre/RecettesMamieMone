@@ -14,6 +14,7 @@ public class Recipe implements Serializable {
     private String title;
     private RecipeType type;
     private RecipeHardness hardness;
+    private String persons;
     private String ingredients;
     private String preparation;
     private ArrayList<String> photoPaths;
@@ -24,6 +25,7 @@ public class Recipe implements Serializable {
         this.title = (String) recipeData.child("title").getValue();
         this.type = new RecipeType((String) recipeData.child("type").getValue());
         this.hardness = new RecipeHardness((String) recipeData.child("hardness").getValue());
+        this.persons = (String) recipeData.child("persons").getValue();
         this.isLive = (boolean) recipeData.child("live").getValue();
     }
 
@@ -41,6 +43,10 @@ public class Recipe implements Serializable {
 
     public RecipeHardness getHardness() {
         return hardness;
+    }
+
+    public String getPersons() {
+        return persons;
     }
 
     public String getIngredients() {

@@ -48,7 +48,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
             ServiceHolder.recipeService.loadImageForRecipe(this, recipe, headerImageView, null);
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
             appBarLayout.setTitle(recipe.getTitle());
-            headerTextView.setText(recipe.getType().toString() + " - " + recipe.getHardness().toString());
+            headerTextView.setText(recipe.getType().toString() + " - " + recipe.getHardness().toString() + " - " + recipe.getPersons());
         }
 
         // Show the Up button in the action bar.
