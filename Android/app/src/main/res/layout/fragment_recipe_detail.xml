@@ -33,6 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
+                android:lineSpacingExtra="10dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textIsSelectable="true"/>
 
@@ -67,6 +68,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
+                android:lineSpacingExtra="10dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textIsSelectable="true" />
 
