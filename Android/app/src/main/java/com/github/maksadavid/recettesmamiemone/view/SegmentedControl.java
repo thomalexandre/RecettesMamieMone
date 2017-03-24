@@ -85,9 +85,8 @@ public class SegmentedControl extends LinearLayout implements Button.OnClickList
         button.setTypeface(Fonts.OpenSansRegular);
         button.setOnClickListener(this);
         addView(button);
-        activeTags.add(tag);
         button.setTag(tag);
-        updateSegmentUI(button, !singleSelection);
+        updateSegmentUI(button, false);
     }
 
     public ArrayList<Object> getActiveTags() {
