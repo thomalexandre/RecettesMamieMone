@@ -56,7 +56,7 @@ public class PhotoCarouselFragment extends Fragment {
         }
 
         @Override
-        public void onBindViewHolder(final PhotoCarouselViewHolder holder, int position) {
+        public void onBindViewHolder(final PhotoCarouselViewHolder holder, final int position) {
             final String path = recipe.getPhotoPaths().get(position);
             ServiceHolder.recipeService.loadImageForRecipe(PhotoCarouselFragment.this.getActivity(), recipe, holder.imageView, path);
             holder.view.setOnClickListener(new View.OnClickListener() {
@@ -65,7 +65,7 @@ public class PhotoCarouselFragment extends Fragment {
                     Intent intent = new Intent(PhotoCarouselFragment.this.getActivity(), PhotoPresenterActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putSerializable(PhotoPresenterActivity.ARG_RECIPE, recipe);
-                    bundle.putSerializable(PhotoPresenterActivity.ARG_PHOTO_PATH, path);
+                    bundle.putSerializable(PhotoPresenterActivity.ARG_PHOTO_INDEX, position);
                     intent.putExtras(bundle);
                     PhotoCarouselFragment.this.getActivity().startActivity(intent);
                 }

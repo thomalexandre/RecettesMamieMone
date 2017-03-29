@@ -1,10 +1,14 @@
 package com.github.maksadavid.recettesmamiemone.service;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.github.maksadavid.recettesmamiemone.model.Recipe;
 import com.github.maksadavid.recettesmamiemone.model.RecipeHardness;
@@ -91,7 +95,7 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public void loadImageForRecipe(Context context, Recipe recipe, ImageView imageView, String path) {
+    public void loadImageForRecipe(Context context, Recipe recipe, final ImageView imageView, String path) {
         if (path == null) {
             path = "thumbnail.jpg";
         }
@@ -100,6 +104,19 @@ public class RecipeServiceImpl implements RecipeService {
         Glide.with(imageView.getContext())
                 .using(new FirebaseImageLoader())
                 .load(storageReference)
+                .listener(new RequestListener<StorageReference, GlideDrawable>() {
+                    @Override
+                    public boolean onException(Exception e, StorageReference model, Target<GlideDrawable> target, boolean isFirstResource) {
+                        imageView.setBackgroundColor(Color.BLACK);
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onResourceReady(GlideDrawable resource, StorageReference model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
+                        imageView.setBackgroundColor(Color.BLACK);
+                        return false;
+                    }
+                })
                 .into(imageView);
     }
 
