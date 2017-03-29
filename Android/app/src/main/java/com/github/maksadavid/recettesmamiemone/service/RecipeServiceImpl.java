@@ -10,6 +10,8 @@ import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
+import com.github.maksadavid.recettesmamiemone.R;
+import com.github.maksadavid.recettesmamiemone.application.RMMApplication;
 import com.github.maksadavid.recettesmamiemone.model.Recipe;
 import com.github.maksadavid.recettesmamiemone.model.RecipeHardness;
 import com.github.maksadavid.recettesmamiemone.model.RecipeType;
@@ -23,6 +25,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageException;
 import com.google.firebase.storage.StorageMetadata;
 import com.google.firebase.storage.StorageReference;
 
@@ -107,7 +110,7 @@ public class RecipeServiceImpl implements RecipeService {
                 .listener(new RequestListener<StorageReference, GlideDrawable>() {
                     @Override
                     public boolean onException(Exception e, StorageReference model, Target<GlideDrawable> target, boolean isFirstResource) {
-                        imageView.setBackgroundColor(Color.BLACK);
+                        imageView.setBackgroundColor(Color.WHITE);
                         return false;
                     }
 
@@ -117,6 +120,7 @@ public class RecipeServiceImpl implements RecipeService {
                         return false;
                     }
                 })
+                .error(R.drawable.placeholder)
                 .into(imageView);
     }
 

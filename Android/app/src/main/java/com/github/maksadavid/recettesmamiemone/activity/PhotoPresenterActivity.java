@@ -46,7 +46,7 @@ public class PhotoPresenterActivity extends AppCompatActivity {
         viewPager.setAdapter(pagerAdapter);
 
         setTitle(recipe.getTitle());
-        
+
         if (savedInstanceState != null) {
             currentPageIndex = (int) savedInstanceState.getSerializable(ARG_PHOTO_INDEX);
         }

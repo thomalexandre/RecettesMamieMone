@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.github.maksadavid.recettesmamiemone.util.SquareRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:layout_margin="@dimen/recipe_list_card_margin">
 
-    <ImageView
-        android:id="@+id/image_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-    <com.github.maksadavid.recettesmamiemone.util.SquareRelativeLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
         <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="@dimen/recipe_list_text_background_height"
             android:background="@color/colorBlackTranslucent"
-            android:layout_alignParentBottom="true"
             android:textColor="@color/colorLightText"
             android:textAppearance="?android:textAppearanceMedium"
             android:lines="1"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:layout_gravity="bottom"/>
 
-    </com.github.maksadavid.recettesmamiemone.util.SquareRelativeLayout>
+    </android.support.v7.widget.CardView>
 
-</android.support.v7.widget.CardView>
+</com.github.maksadavid.recettesmamiemone.util.SquareRelativeLayout>
