@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.crashlytics.android.Crashlytics;
 import com.github.maksadavid.recettesmamiemone.R;
@@ -23,10 +24,13 @@ import com.github.maksadavid.recettesmamiemone.model.Recipe;
 import com.github.maksadavid.recettesmamiemone.model.RecipeFilter;
 import com.github.maksadavid.recettesmamiemone.service.ServiceHolder;
 import com.github.maksadavid.recettesmamiemone.util.Callback;
+import com.github.maksadavid.recettesmamiemone.util.Fonts;
 import com.github.maksadavid.recettesmamiemone.viewholder.RecipeViewHolder;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.GooglePlayServicesUtil;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -49,6 +53,7 @@ public class RecipeListActivity extends AppCompatActivity implements RecipeFilte
     private DrawerLayout drawerLayout;
     private ImageView filterImageView;
     private RecipeFilterFragment filterFragment;
+    private TextView emptyAwareTextView;
 
     @Override
     public void setFilter(RecipeFilter filter) {
@@ -67,7 +72,6 @@ public class RecipeListActivity extends AppCompatActivity implements RecipeFilte
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setTitle(getTitle());
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawerLayout.addDrawerListener(new DrawerLayout.DrawerListener() {
             @Override
@@ -83,6 +87,7 @@ public class RecipeListActivity extends AppCompatActivity implements RecipeFilte
             @Override
             public void onDrawerClosed(View drawerView) {
                 updateFilterImageState();
+                filterFragment.restoreToPreviousState();
             }
 
             @Override
@@ -105,6 +110,8 @@ public class RecipeListActivity extends AppCompatActivity implements RecipeFilte
         });
         recyclerView = (RecyclerView) findViewById(R.id.recipe_list);
         recyclerView.setLayoutManager(new GridLayoutManager(this, getResources().getInteger(R.integer.recipe_list_column_count)));
+        emptyAwareTextView = (TextView) findViewById(R.id.empty_aware_text_view);
+        emptyAwareTextView.setTypeface(Fonts.OpenSansBold);
 
         filterFragment = new RecipeFilterFragment();
         getSupportFragmentManager()
@@ -140,6 +147,7 @@ public class RecipeListActivity extends AppCompatActivity implements RecipeFilte
                 if (showsOnlyLiveRecipes) {
                     result = RecipeFilter.filterRecipesForLive(result);
                 }
+                emptyAwareTextView.setVisibility(result.size() == 0 ? View.VISIBLE : View.GONE);
                 recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(result));
                 if (recipeFilter == null) {
                     filterFragment.updateFilterOptions();

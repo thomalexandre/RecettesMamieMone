@@ -30,6 +30,7 @@ public class SegmentedControl extends LinearLayout implements Button.OnClickList
 
     private boolean singleSelection = true;
     private ArrayList<Object> activeTags = new ArrayList<>();
+    private ArrayList<Object> previousActiveTags = new ArrayList<>();
 
     public SegmentedControl(Context context) {
         super(context);
@@ -90,7 +91,16 @@ public class SegmentedControl extends LinearLayout implements Button.OnClickList
     }
 
     public ArrayList<Object> getActiveTags() {
+        previousActiveTags = new ArrayList<>(activeTags);
         return activeTags;
+    }
+
+    public void restoreToPreviousState() {
+        for (int i=0; i<getChildCount(); i++) {
+            Button button = (Button) getChildAt(i);
+            updateSegmentUI(button, previousActiveTags.contains(button.getTag()));
+        }
+        activeTags = new ArrayList<>(previousActiveTags);
     }
 
     private void updateSegmentUI(Button button, boolean active) {

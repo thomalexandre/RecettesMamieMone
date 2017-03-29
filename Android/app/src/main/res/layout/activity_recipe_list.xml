@@ -17,7 +17,8 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:popupTheme="@style/AppTheme.PopupOverlay">
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="@string/activity_recipe_list_title">
 
             <ImageView
                 android:id="@+id/filter_image_view"
@@ -52,6 +53,15 @@
                 app:layoutManager="LinearLayoutManager"
                 tools:context=".activity.RecipeListActivity"
                 tools:listitem="@layout/item_recipe" />
+
+            <TextView
+                android:id="@+id/empty_aware_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:visibility="gone"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/recipe_list_empty_aware_text" />
 
         </FrameLayout>
 

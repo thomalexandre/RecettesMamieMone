@@ -79,6 +79,11 @@ public class RecipeFilterFragment extends Fragment {
         }
     }
 
+    public void restoreToPreviousState() {
+        typeSegmentedControl.restoreToPreviousState();
+        hardnessSegmentedControl.restoreToPreviousState();
+    }
+
     private void applyFilter() {
 
         // Just cast the ArrayList type

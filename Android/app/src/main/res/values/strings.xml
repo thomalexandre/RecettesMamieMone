@@ -16,4 +16,6 @@
     <string name="tous">Tous</string>
     <string name="filtre">Filtre</string>
     <string name="appTitle">Mamie Mone</string>
+    <string name="recipe_list_empty_aware_text">Aucune recette !</string>
+    <string name="activity_recipe_list_title">Les Recettes de Mamie Mone</string>
 </resources>
