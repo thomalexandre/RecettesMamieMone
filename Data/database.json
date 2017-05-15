@@ -24,6 +24,54 @@
 				"persons": "2 gâteaux d'environ 20 cm de diam",
 				"thumbnail": "thumbnail.jpg",
 				"live": true
+			},
+			"recipe_3": {
+				"title": "Recette terrine de dinde Mone",
+				"type": "type_10",
+				"hardness": "hardness_1",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_4": {
+				"title": "Sablés",
+				"type": "type_30",
+				"hardness": "hardness_1",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_5": {
+				"title": "Vacherin à la crème",
+				"type": "type_30",
+				"hardness": "hardness_2",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_6": {
+				"title": "Créme à la vanille",
+				"type": "type_30",
+				"hardness": "hardness_1",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_7": {
+				"title": "Meringues ordinaires",
+				"type": "type_30",
+				"hardness": "hardness_0",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_8": {
+				"title": "Meringues avancées",
+				"type": "type_30",
+				"hardness": "hardness_1",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
 			}
 		},
 		"types": {
@@ -90,6 +138,42 @@
 				{
 					"filename": "2.jpg"
 				}
+			]
+		},
+		"recipe_3": {
+			"ingredients": "• 500g de flanc de dinde (c'est le blanc)\n• 500g de chair à saucisse\n• 1 oeuf\n• 1 oignon\n• sel, poivre\n• 2 grosses cuillerées de crème fraîche\n• thym, laurier\n• alcool (whisky, palinka, cognac, ... au choix)",
+			"preparation": "• Hacher la dinde et l'oignon.\n• Mélanger la viande hachée avec la chair à saucisse.\n• Ajouter l'oeuf, la crème, les épices et un peu d'alcool.\n• Verser la préparation dans une terrine et placer au-dessus une feuille de laurier et une branche de thym.\n• Cuire au four à env 180° pendant 1 heure.",
+			"photos": [
+			]
+		},
+		"recipe_4": {
+			"ingredients": "• 125g de sucre en poudre\n• sel\n• 1 oeuf\n• 125g de beurre\n• 250g de farine",
+			"preparation": "• Mélanger la farine avec le sel, le sucre et le beurre.\n• Ajouter l'oeuf.\n• Laisser reposer la pâte 1 heure.\n• Aplatir au rouleau et découper avec des emporte-pièces.\n• Faire cuire 10 à 15 min à four modéré (180°).",
+			"photos": [
+			]
+		},
+		"recipe_5": {
+			"ingredients": "• 4 blancs d'oeufs\n• 160g de sucre en poudre\n• 1 sachet de sucre vanillé",
+			"preparation": "• Battre les blancs d'oeufs avec le sucre au bain-Marie.\n• Ajouter le sucre vanillé à la meringue bien épaisse.\n• Sur un papier sulfurisé, dresser à la douille 2 croûtes: l'une avec des bords\n• pour le fond du gâteau, l'autre ajourée pour le dessus.\n• Faire cuire à four très doux au moins 1 heure.\n• Remplir le gâteau avec une crème fouettée ou une crème à la vanille.",
+			"photos": [
+			]
+		},
+		"recipe_6": {
+			"ingredients": "• 1⁄2 litre de lait\n• 1 sachet de sucre vanillé\n• 4 jaunes d'oeufs\n• 75g de sucre en poudre\n• 25g de farine\n• 125g de crème fraîche sucrée",
+			"preparation": "• Faire bouillir le lait avec le sucre vanillé.\n• Travailler les jaunes, le sucre, et la farine.\n• Verser le lait bouillant sur ce mélange.\n• Faire prendre sur le feu en tournant.\n• Retirer au premier bouillon.\n• Fouetter la crème fraîche sucrée.\n• Laisser refroidir et ajouter la crème fouettée.",
+			"photos": [
+			]
+		},
+		"recipe_7": {
+			"ingredients": "• 1 blanc d'oeuf\n• 60 g de sucre",
+			"preparation": "• Battre le blanc en neige très ferme.\n• Ajouter délicatement le sucre.\n• Dresser par petits tas sur un papier sulfurisé.\n• Cuire à four très doux le plus longtemps possible.",
+			"photos": [
+			]
+		},
+		"recipe_8": {
+			"ingredients": "• 1 blanc d'oeuf\n• 40g + 20g de sucre",
+			"preparation": "• Mettre le blanc d'oeuf avec 40g de sucre dans une terrine.\n• Placer la terrine sur une casserole d'eau bouillante.\n• Fouetter vigoureusement pour obtenir un mélange très épais.\n• Retirer du bain-Marie .\n• Ajouter 20g de sucre en poudre très délicatement.\n• Dresser sur papier sulfurisé.\n• Cuire 1 heure environ à feu très doux.",
+			"photos": [
 			]
 		}
 	}
