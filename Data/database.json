@@ -120,6 +120,46 @@
 				"persons": "",
 				"thumbnail": "thumbnail.jpg",
 				"live": true
+			},
+			"recipe_15": {
+				"title": "Parfait au chocolat",
+				"type": "type_30",
+				"hardness": "hardness_1",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_16": {
+				"title": "Crème au beurre au chocolat",
+				"type": "type_30",
+				"hardness": "hardness_0",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_17": {
+				"title": "Tuiles au chocolat",
+				"type": "type_30",
+				"hardness": "hardness_2",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_18": {
+				"title": "Kouglof",
+				"type": "type_30",
+				"hardness": "hardness_2",
+				"persons": "2 gâteaux",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_19": {
+				"title": "Mousse au chocolat",
+				"type": "type_30",
+				"hardness": "hardness_0",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
 			}
 		},
 		"types": {
@@ -261,6 +301,42 @@
 			"ingredients": "• 125g de farine\n• 100g de sucre\n• 2 oeufs\n• 6 cuillérées de lait\n• 6 cuillérées d'huile\n• sel\n• 1 paquet de levure",
 			"preparation": "• Mélanger le tout.\n• Placer dans une tourtière.\n• Poser les fruits choisis dessus\n• Cuire à four chaud.",
 			"photos": [
+			]
+		},
+		"recipe_15": {
+			"ingredients": "• 3 ou 4 oeufs\n• Même poids de beurre que les oeufs\n• Même poids de chocolat",
+			"preparation": "• Ramollir le chocolat.\n• Le travailler en pâte.\n• Ajouter le beurre et bien travailler.\n• Ajouter un oeuf, travailler.\n• Faire de même avec les autres oeufs, un par un.\n• Verser la préparation dans un moule à charlotte.\n• Niveler et faire prendre au frais.\n• Démouler en plongeant quelques secondes dans l'eau chaude.\n• Lisser avec un couteau chaud.\n• Décorer à volonté et servir avec un gâteau très sec.",
+			"photos": [
+			]
+		},
+		"recipe_16": {
+			"ingredients": "• 100g de chocolat\n• 80g de sucre\n• 1dl d'eau\n• 1 jaune d'oeuf\n• 1 cuil à café de fécule\n• 125g de beurre",
+			"preparation": "• Faire cuire le chocolat, le sucre et l'eau.\n• Travailler le jaune d'oeuf avec la fécule.\n• Verser le chocolat chaud dessus .\n• Faire cuire.\n• Laisser refroidir et ajouter le beurre.",
+			"photos": [
+			]
+		},
+		"recipe_17": {
+			"ingredients": "• 100g de chocolat\n• 100g d'amandes ou de noisettes mondées et hâchées.",
+			"preparation": "• Râper le chocolat.\n• Le faire fondre au bain-Marie .\n• Une fois fondu, le retirer et le travailler à la cuiller en bois jusqu'à refroidissement.\n• Remettre au bain-Marie.\n• Refaire fondre et ajouter les noisettes.\n• Découper des petits carrés de papier sulfurisé, former sur chacun une galette ronde et mince.\n• Déposer le côté papier sur le rouleau à pâtisserie pour le courber.\n• Tenir au frais jusqu'à complet refroidissement.",
+			"photos": [
+			]
+		},
+		"recipe_18": {
+			"ingredients": "• 370g de farine\n• 50g de sucre\n• 25g de levure de boulanger\n• 150g de lait\n• 250g de beurre\n• 5g de sel\n• 4 oeufs\n• 100g de raisins de Corinthe",
+			"preparation": "• Mettre la farine dans une terrine.\n• Faire une fontaine et y placer tous les ingrédients.\n• Mélanger.\n• Ajouter les raisins en dernier.\n• Battre la pâte à la main quelques minutes.\n• Mettre dans les moules à kouglof beurrés.\n• Faire lever jusqu'en haut des moules dans un endroit tiède.\n• Cuire à bon four.",
+			"photos": [
+				{
+					"filename": "1.jpg"
+				}
+			]
+		},
+		"recipe_19": {
+			"ingredients": "• 75g de chocolat noir\n• 50g de sucre\n• un peu de lait\n• 5 à 6 blancs d'oeufs",
+			"preparation": "• Faire cuire le chocolat avec le sucre et le lait.\n• Battre les blancs en neige.\n• Mélanger un peu de blanc au chocolat et ajouter le reste délicatement.\n• Placer au frais.",
+			"photos": [
+				{
+					"filename": "1.jpg"
+				}
 			]
 		}
 	}
