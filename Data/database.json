@@ -72,6 +72,54 @@
 				"persons": "",
 				"thumbnail": "thumbnail.jpg",
 				"live": true
+			},
+			"recipe_9": {
+				"title": "Gateau marbré",
+				"type": "type_30",
+				"hardness": "hardness_0",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_10": {
+				"title": "Gateau de riz au caramel",
+				"type": "type_30",
+				"hardness": "hardness_0",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_11": {
+				"title": "Croissants",
+				"type": "type_30",
+				"hardness": "hardness_1",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_12": {
+				"title": "Gateau à l'ananas",
+				"type": "type_30",
+				"hardness": "hardness_1",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_13": {
+				"title": "Gateau aux biscuits roses",
+				"type": "type_30",
+				"hardness": "hardness_1",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_14": {
+				"title": "Tarte minute",
+				"type": "type_30",
+				"hardness": "hardness_0",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
 			}
 		},
 		"types": {
@@ -173,6 +221,45 @@
 		"recipe_8": {
 			"ingredients": "• 1 blanc d'oeuf\n• 40g + 20g de sucre",
 			"preparation": "• Mettre le blanc d'oeuf avec 40g de sucre dans une terrine.\n• Placer la terrine sur une casserole d'eau bouillante.\n• Fouetter vigoureusement pour obtenir un mélange très épais.\n• Retirer du bain-Marie .\n• Ajouter 20g de sucre en poudre très délicatement.\n• Dresser sur papier sulfurisé.\n• Cuire 1 heure environ à feu très doux.",
+			"photos": [
+			]
+		},
+		"recipe_9": {
+			"ingredients": "• 250g de sucre\n• 250g de farine\n• 3 oeufs\n• 1 paquet de levure chimique\n• 1 paquet de sucre vanillé\n• 1 petite tasse à café de lait\n• 2 cuil à soupe de chocolat en poudre (cacao)",
+			"preparation": "• Mélanger les jaunes d'oeufs et le sucre.\n• Ajouter le beurre ramolli en crème.\n• Ajouter la farine, le sucre et la levure.\n• Mouiller avec le lait.\n• Incorporer à la pâte les blancs battus en neige.\n• Verser la moitié de la pâte dans un moule beurré.\n• Ajouter le chocolat au reste de la pâte.\n• La verser dans le moule.\n• Cuire à feu doux.\n\nOn peut aussi alterner les cuillérées de pâte foncée et claire.",
+			"photos": [
+			]
+		},
+		"recipe_10": {
+			"ingredients": "• riz\n• sucre\n• 1 litre de lait\n• vanille\n• 4 oeufs",
+			"preparation": "• Faire cuire un bon riz dans le lait sucré et vanillé.\n• Y ajouter 4 oeufs entiers.\n• Verser la préparation dans un moule à charlotte caramélisé.\n• Cuire au four.\n• Peut se manger chaud ou froid.",
+			"photos": [
+			]
+		},
+		"recipe_11": {
+			"ingredients": "• 250g de farine\n• 7g de sel\n• 15g de sucre\n• 1 verre de lait tiède\n• 5g de levure\n• 125g de beurre\n• 1 oeuf battu",
+			"preparation": "• Mettre dans une terrine la farine, le sel et le sucre.\n• Faire un puits.\n• Ajouter au milieu le lait tiède et la levure.\n• Faire dissoudre la levure dans le lait en pétrissant du bout des doigts.\n• Incorporer petit à petit la farine dans le puits.\n• Rompre la pâte.\n• La battre un eptit peu et la mettre à augmenter dans une terrine au chaud.\n• Quand la pâte a doublé de volume, continuer comme pour une pâte feuilletée en ajoutant le beurre et en donnant seulement 4 tours.\n• Laisser reposer env 15 min entre 2 tours.\n• Abaisser la pâte assez mince.\n• Découper des bandes de 10 cm de large.\n• Dans les bandes, découper des triangles, rouler en forme de croissants.\n• Dorer à l'oeuf battu.\n• Cuire 10 min à four chaud.",
+			"photos": [
+				{
+					"filename": "1.jpg"
+				}
+			]
+		},
+		"recipe_12": {
+			"ingredients": "• 1 boîte de 1kg d'ananas\n• 250g de sucre\n• kirsch\n• 2 cuil de farine\n• 8 oeufs",
+			"preparation": "• Récupérer le jus de la boîte d'ananas\n• Le faire bouillir 12 min avec le sucre.\n• Ajouter les tranches d'ananas coupés en petits morceaux.\n• Faire bouillir à nouveau 2 min.\n• Casser les oeufs dans un bol.\n• Ajouter 4 cuil de kirsch et la farine.\n• Battre en omelette.\n• Verser le jus dessus.\n• Faire un caramel dans le moule.\n• Verser la préparation dessus.\n• Cuire au bain-Marie 1 heure à four moyen.\n\nOn peut mettre de côté quelques tranches d'ananas pour décorer le dessert.",
+			"photos": [
+			]
+		},
+		"recipe_13": {
+			"ingredients": "• 12 biscuits roses\n• 1⁄2 litre de lait\n• 70g de sucre\n• de la vanille\n• 1 cuil de rhum\n• 3 oeufs",
+			"preparation": "• Faire un caramel dans le moule.\n• Faire bouillir le lait avec le sucre, le rhum et la vanille.\n• Le verser sur les biscuits roses.\n• Ajouter les oeufs battus en omelette.\n• Faire cuire au bain-Marie env 3/4h.",
+			"photos": [
+			]
+		},
+		"recipe_14": {
+			"ingredients": "• 125g de farine\n• 100g de sucre\n• 2 oeufs\n• 6 cuillérées de lait\n• 6 cuillérées d'huile\n• sel\n• 1 paquet de levure",
+			"preparation": "• Mélanger le tout.\n• Placer dans une tourtière.\n• Poser les fruits choisis dessus\n• Cuire à four chaud.",
 			"photos": [
 			]
 		}
