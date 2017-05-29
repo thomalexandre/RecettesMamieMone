@@ -160,6 +160,22 @@
 				"persons": "",
 				"thumbnail": "thumbnail.jpg",
 				"live": true
+			},
+			"recipe_20": {
+				"title": "Genoise Mamie",
+				"type": "type_30",
+				"hardness": "hardness_0",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_21": {
+				"title": "Crème moka",
+				"type": "type_30",
+				"hardness": "hardness_2",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
 			}
 		},
 		"types": {
@@ -337,6 +353,18 @@
 				{
 					"filename": "1.jpg"
 				}
+			]
+		},
+		"recipe_20": {
+			"ingredients": "• 125g de sucre en poudre\n• 4 oeufs entiers\n• 1⁄2 gousse de vanille\n• 125g de farine tamisée\n• 80g de beurre fondu tiède",
+			"preparation": "• Mettre le sucre, les oeufs et la vanille dans une terrine.\n• Placer la terrine sur feu doux et fouetter sans arrêt jusqu'à ce que le pâte soit très montée (15 à 20 min environ).\n• Retirer du feu et incorporer délicatement la farine tamisée et le beurre.\n• Garnir aux 3⁄4 un moule à manqué beurré et fariné.\n• Cuire à four doux 30 min.\n• Démouler et laisser refroidir sue la grille.",
+			"photos": [
+			]
+		},
+		"recipe_21": {
+			"ingredients": "• 60 g de sucre\n• un peu d'eau\n• 1 jaune d'oeuf\n• 1 cuil à café de fécule de pomme de terre\n• 50g de beurre\n• café fort ou essence de café",
+			"preparation": "• Faire bouillir le sucre avec l'eau.\n• Obtenir un sirop épais mais pas cristallisé.\n• Travailler le jaune d'oeuf avec la fécule.\n• Verser dessus peu à peu le sirop bouillant.\n• Tourner.\n• Remettre sur feu pas trop vif et cuire en tournant jusqu'à épaississement.\n• Retirer du feu et laisser refroidir.\n• Ajouter le beurre petit à petit.\n• Parfumer avec le café.\n• Laisser reposer avant d'utiliser la crème.",
+			"photos": [
 			]
 		}
 	}
