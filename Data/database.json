@@ -176,6 +176,126 @@
 				"persons": "",
 				"thumbnail": "thumbnail.jpg",
 				"live": true
+			},
+			"recipe_22": {
+				"title": "Mulatre",
+				"type": "type_30",
+				"hardness": "hardness_1",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_23": {
+				"title": "Tuiles à l'orange",
+				"type": "type_30",
+				"hardness": "hardness_1",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_24": {
+				"title": "Savarin",
+				"type": "type_30",
+				"hardness": "hardness_2",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_25": {
+				"title": "Quatre quarts",
+				"type": "type_30",
+				"hardness": "hardness_0",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_26": {
+				"title": "Tarte meringuée",
+				"type": "type_30",
+				"hardness": "hardness_2",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_27": {
+				"title": "Tarte limousine",
+				"type": "type_30",
+				"hardness": "hardness_0",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_28": {
+				"title": "Chococrème gourmets",
+				"type": "type_30",
+				"hardness": "hardness_1",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_29": {
+				"title": "Petites pommes de terre",
+				"type": "type_30",
+				"hardness": "hardness_1",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_30": {
+				"title": "Pudding pelerin",
+				"type": "type_30",
+				"hardness": "hardness_2",
+				"persons": "6 à 7 personnes",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_31": {
+				"title": "Pudding rose",
+				"type": "type_30",
+				"hardness": "hardness_1",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_32": {
+				"title": "Biscuit roulé",
+				"type": "type_30",
+				"hardness": "hardness_1",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_33": {
+				"title": "Gateau bourgogne",
+				"type": "type_30",
+				"hardness": "hardness_1",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_34": {
+				"title": "Buche de noël",
+				"type": "type_30",
+				"hardness": "hardness_1",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_35": {
+				"title": "Gateau à l'orange",
+				"type": "type_30",
+				"hardness": "hardness_1",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_36": {
+				"title": "Cake aux fruits confits",
+				"type": "type_30",
+				"hardness": "hardness_0",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
 			}
 		},
 		"types": {
@@ -206,7 +326,7 @@
 	},
 	"details": {
 		"recipe_0": {
-			"ingredients": "Gâteau\n• 215g de sucre en poudre\n• 3 œufs\n• 60g de fécule\n• 60g de farine\n• kirsh\n\nCrème\n• 3/4 d'un verre de lait\n• 50g de sucre en poudre\n• 3 jaunes\n• 100g de beurre\n• gousse de vanille ou sucre vanillé",
+			"ingredients": "Gâteau:\n• 215g de sucre en poudre\n• 3 œufs\n• 60g de fécule\n• 60g de farine\n• kirsh\n\nCrème:\n• 3/4 d'un verre de lait\n• 50g de sucre en poudre\n• 3 jaunes\n• 100g de beurre\n• gousse de vanille ou sucre vanillé",
 			"preparation": "Travailler fortement le sucre en poudre avec les 3 jaunes d'œuf et 2 cuillères de kirsh. Ajouter la fécule et les blancs d'œufs battus en neige ferme, puis la farine tamisée.\nCuire dans un moule à four modéré (pas plus de thermostat 6 • 180°C)\n\nLaisser refroidir le gâteau, le couper en 2 et le fourrer avec la crème suivante :\n\nDans une casserole, faire bouillir le lait avec le sucre en poudre et une gousse de vanille (ou un sachet de sucre vanillé).\nVerser le lait chaud sucré sur 3 jaunes d'œufs et faire épaissir à feu doux.\nLaisser tiédir et verser sur le beurre coupé en petits morceaux.\nLaisser prendre la crème au moins XX heures au réfrigérateur.",
 			"photos": [
 				{
@@ -260,36 +380,54 @@
 			"ingredients": "• 4 blancs d'oeufs\n• 160g de sucre en poudre\n• 1 sachet de sucre vanillé",
 			"preparation": "• Battre les blancs d'oeufs avec le sucre au bain-Marie.\n• Ajouter le sucre vanillé à la meringue bien épaisse.\n• Sur un papier sulfurisé, dresser à la douille 2 croûtes: l'une avec des bords\n• pour le fond du gâteau, l'autre ajourée pour le dessus.\n• Faire cuire à four très doux au moins 1 heure.\n• Remplir le gâteau avec une crème fouettée ou une crème à la vanille.",
 			"photos": [
+				{
+					"filename": "1.jpg"
+				}
 			]
 		},
 		"recipe_6": {
 			"ingredients": "• 1⁄2 litre de lait\n• 1 sachet de sucre vanillé\n• 4 jaunes d'oeufs\n• 75g de sucre en poudre\n• 25g de farine\n• 125g de crème fraîche sucrée",
 			"preparation": "• Faire bouillir le lait avec le sucre vanillé.\n• Travailler les jaunes, le sucre, et la farine.\n• Verser le lait bouillant sur ce mélange.\n• Faire prendre sur le feu en tournant.\n• Retirer au premier bouillon.\n• Fouetter la crème fraîche sucrée.\n• Laisser refroidir et ajouter la crème fouettée.",
 			"photos": [
+				{
+					"filename": "1.jpg"
+				}
 			]
 		},
 		"recipe_7": {
 			"ingredients": "• 1 blanc d'oeuf\n• 60 g de sucre",
 			"preparation": "• Battre le blanc en neige très ferme.\n• Ajouter délicatement le sucre.\n• Dresser par petits tas sur un papier sulfurisé.\n• Cuire à four très doux le plus longtemps possible.",
 			"photos": [
+				{
+					"filename": "1.jpg"
+				}
 			]
 		},
 		"recipe_8": {
 			"ingredients": "• 1 blanc d'oeuf\n• 40g + 20g de sucre",
 			"preparation": "• Mettre le blanc d'oeuf avec 40g de sucre dans une terrine.\n• Placer la terrine sur une casserole d'eau bouillante.\n• Fouetter vigoureusement pour obtenir un mélange très épais.\n• Retirer du bain-Marie .\n• Ajouter 20g de sucre en poudre très délicatement.\n• Dresser sur papier sulfurisé.\n• Cuire 1 heure environ à feu très doux.",
 			"photos": [
+				{
+					"filename": "1.jpg"
+				}
 			]
 		},
 		"recipe_9": {
 			"ingredients": "• 250g de sucre\n• 250g de farine\n• 3 oeufs\n• 1 paquet de levure chimique\n• 1 paquet de sucre vanillé\n• 1 petite tasse à café de lait\n• 2 cuil à soupe de chocolat en poudre (cacao)",
 			"preparation": "• Mélanger les jaunes d'oeufs et le sucre.\n• Ajouter le beurre ramolli en crème.\n• Ajouter la farine, le sucre et la levure.\n• Mouiller avec le lait.\n• Incorporer à la pâte les blancs battus en neige.\n• Verser la moitié de la pâte dans un moule beurré.\n• Ajouter le chocolat au reste de la pâte.\n• La verser dans le moule.\n• Cuire à feu doux.\n\nOn peut aussi alterner les cuillérées de pâte foncée et claire.",
 			"photos": [
+				{
+					"filename": "1.jpg"
+				}
 			]
 		},
 		"recipe_10": {
 			"ingredients": "• riz\n• sucre\n• 1 litre de lait\n• vanille\n• 4 oeufs",
 			"preparation": "• Faire cuire un bon riz dans le lait sucré et vanillé.\n• Y ajouter 4 oeufs entiers.\n• Verser la préparation dans un moule à charlotte caramélisé.\n• Cuire au four.\n• Peut se manger chaud ou froid.",
 			"photos": [
+				{
+					"filename": "1.jpg"
+				}
 			]
 		},
 		"recipe_11": {
@@ -305,6 +443,9 @@
 			"ingredients": "• 1 boîte de 1kg d'ananas\n• 250g de sucre\n• kirsch\n• 2 cuil de farine\n• 8 oeufs",
 			"preparation": "• Récupérer le jus de la boîte d'ananas\n• Le faire bouillir 12 min avec le sucre.\n• Ajouter les tranches d'ananas coupés en petits morceaux.\n• Faire bouillir à nouveau 2 min.\n• Casser les oeufs dans un bol.\n• Ajouter 4 cuil de kirsch et la farine.\n• Battre en omelette.\n• Verser le jus dessus.\n• Faire un caramel dans le moule.\n• Verser la préparation dessus.\n• Cuire au bain-Marie 1 heure à four moyen.\n\nOn peut mettre de côté quelques tranches d'ananas pour décorer le dessert.",
 			"photos": [
+				{
+					"filename": "1.jpg"
+				}
 			]
 		},
 		"recipe_13": {
@@ -335,6 +476,9 @@
 			"ingredients": "• 100g de chocolat\n• 100g d'amandes ou de noisettes mondées et hâchées.",
 			"preparation": "• Râper le chocolat.\n• Le faire fondre au bain-Marie .\n• Une fois fondu, le retirer et le travailler à la cuiller en bois jusqu'à refroidissement.\n• Remettre au bain-Marie.\n• Refaire fondre et ajouter les noisettes.\n• Découper des petits carrés de papier sulfurisé, former sur chacun une galette ronde et mince.\n• Déposer le côté papier sur le rouleau à pâtisserie pour le courber.\n• Tenir au frais jusqu'à complet refroidissement.",
 			"photos": [
+				{
+					"filename": "1.jpg"
+				}
 			]
 		},
 		"recipe_18": {
@@ -365,6 +509,108 @@
 			"ingredients": "• 60 g de sucre\n• un peu d'eau\n• 1 jaune d'oeuf\n• 1 cuil à café de fécule de pomme de terre\n• 50g de beurre\n• café fort ou essence de café",
 			"preparation": "• Faire bouillir le sucre avec l'eau.\n• Obtenir un sirop épais mais pas cristallisé.\n• Travailler le jaune d'oeuf avec la fécule.\n• Verser dessus peu à peu le sirop bouillant.\n• Tourner.\n• Remettre sur feu pas trop vif et cuire en tournant jusqu'à épaississement.\n• Retirer du feu et laisser refroidir.\n• Ajouter le beurre petit à petit.\n• Parfumer avec le café.\n• Laisser reposer avant d'utiliser la crème.",
 			"photos": [
+			]
+		},
+		"recipe_22": {
+			"ingredients": "• 125g de sucre\n• 125g de beurre\n• 200g de biscuits à la cuiller\n• 3 jaunes d'oeufs\n• du café",
+			"preparation": "• Travailler très fortement le sucre avec le beurre jusqu'à ce que la pâte soit blanche.\n• Emietter les biscuits à la cuiller.\n• Les ajouter à la pâte.\n• Ajouter les jaunes et un bon café bien fort.\n• Verser dans un moule à charlotte.\n• Presser et laisser un poids dessus.\n• Faire prendre au frais.\n• Démouler et napper de crème anglaise au café très froide.",
+			"photos": [
+			]
+		},
+		"recipe_23": {
+			"ingredients": "• 100g de sucre en poudre\n• 30g d'écorce d'orange confites\n• 2 blancs d'oeufs\n• 70g de farine\n• 40 g de beurre fondu",
+			"preparation": "• Mélanger le sucre et les écorces coupées finement.\n• Ajouter les blancs d'oeufs, puis la farine et le beurre.\n• Dresser en forme de grandes tuiles sur une tôle beurrée.\n• Cuire quelques minutes à four chaud.\n• Rouler chaud sur un rouleau à pâtisserie.",
+			"photos": [
+				{
+					"filename": "1.jpg"
+				}
+			]
+		},
+		"recipe_24": {
+			"ingredients": "Pour faire la pâte:\n• 125g de farine\n• sel\n• 60g de beurre\n• 5g de levure de boulanger\n• 1 cuillérée de sucre\n• 2 cuillérées de lait\n• 2 oeufs\n• 60g de raisins de Corinthe\n\nPour faire le sirop:\n• 300g de sucre\n• 1⁄2 litre d'eau\n• 1 zeste de citron\n• 1 verre de rhum",
+			"preparation": "Pour faire la pâte:\n• Délayer la levure dans le lait tiède.\n• Y ajouter environ le quart de la farine.\n• Mélanger et mettre cette pâte à gonfler.\n• En 30 min, le levain doit doubler de volume.\n• Travailler le reste de la farine avec les 2 oeufs entiers incorporés successivement.\n• Ajouter le sel, le sucre, le beurre bien manié.\n• Ajouter enfin le levain, puis les raisins.\n• Verser dans un moule bien beurré (n'emplir qu'à moitié).\n• Laisser lever dans un endroit tiède environ 1 heure; le moule doit alors être plein.\n• Cuire à four chaud environ 25 à 30 min.\n• Démouler dès que le gâteau est cuit et arroser d'un sirop au rhum.\n\nPour faire le sirop:\n• Faire bouillir le tout.\n• Ajouter le verre de rhum au dernier moment.",
+			"photos": [
+			]
+		},
+		"recipe_25": {
+			"ingredients": "• 2, 3, ou 4 oeufs\n• Poids des oeufs en beurre\n• même poids en sucre\n• même poids en farine.\n• un peu de levure\n• vanille ou zeste de citron",
+			"preparation": "• Mélanger le beurre et le sucre pour obtenir une belle crème.\n• Ajouter les oeufs un à un en travaillant bien entre chaque.\n• Ajouter la farine tamisée.\n• Ajouter la vanille ou le zeste de citron.\n• Ajouter la levure.\n• Cuire à four modéré pendant 1 heure.\n\nAutre recette: On peur aussi travailler le jaune avec le sucre, joindre le beurre, la farine, la levure, les blancs battis en neige en alternant une cuillérée de farine et une de blancs.",
+			"photos": [
+				{
+					"filename": "1.jpg"
+				}
+			]
+		},
+		"recipe_26": {
+			"ingredients": "• 125g de poudre d'amandes\n• 125g de sucre\n• 125g de beurre\n• 125g de farine\n• 1 oeuf\n\n• 3 blancs d'oeufs\n• 170g de sucre en poudre\n\n• fruits rouges\n• gelée au parfum des fruits choisis.",
+			"preparation": "• Préparer une pâte sablée avec la poudre d'amandes, le sucre, le beurre et la farine.\n• La lier à l'oeuf.\n• Beurrer une tourtière.\n• Y placer la pâte et cuire à blanc au four 20 min.\n\n• Battre les blancs en neige très ferme.\n• Ajouter le sucre.\n• Dresser sur la tarte.\n• Remettre à cuire à feu doux.\n\n• Laisser refroidir.\n• Placer les fruits rouges par dessus.\n\n• Préparer un sirop avec un peu de gelée et d'eau.\n• Verser sur les fruits",
+			"photos": [
+				{
+					"filename": "1.jpg"
+				}
+			]
+		},
+		"recipe_27": {
+			"ingredients": "• 1 oeuf entier\n• 1 cuil à soupe de sucre\n• 1 cuil d'huile\n• 200g de farine\n• 100g de beurre\n• 1 tasse de lait\n• sel\n• 1 paquet de levure",
+			"preparation": "• Travailler le tout rapidement et sommairement.\n• Mettre les fruits.\n• Cuire à four chaud.",
+			"photos": [
+			]
+		},
+		"recipe_28": {
+			"ingredients": "• 100g de chocolat à cuire\n• 1⁄2 litre de lait\n• 4 feuilles de gélatine\n• 8 morceaux de sucre n°4 (env 40g)",
+			"preparation": "• Dans une casserole, faire fondre le chocolat dans le lait.\n• Bien mélanger et faire bouillir 1 min.\n• Faire tremper les feuilles de gélatine 2 min dans l'eau froide.\n• Ajouter dans la casserole les feuilles de gélatine et le sucre .\n• Répartir le mélange dans 5 gourmets huilés au pinceau.\n• Laisser refroidir et démouler délicatement.",
+			"photos": [
+			]
+		},
+		"recipe_29": {
+			"ingredients": "• 125g de sucre en poudre\n• 125g de poudre d'amandes\n• 100g de petits beurres écrasés\n• 2 cuillérées de rhum\n• chocolat râpé ou cacao",
+			"preparation": "• Mélanger le tout.\n• Former des boulettes de pâte.\n• Rouler dans le chocolat râpé.\n• Faire prendre au frais.\n• Placer dans des barquettes en papier.\n\nPeut aussi se faire avec des noisettes ou des noix.",
+			"photos": [
+			]
+		},
+		"recipe_30": {
+			"ingredients": "• 75g d'amandes en poudre\n• 125g de beurre\n• 75g de sucre en poudre\n• 1⁄2 dl de kirsch\n• Biscuits à la cuiller",
+			"preparation": "• Mélanger parfaitement tous les ingrédients.\n• Garnir le fond et les côtés d'un moule à charlotte avec les biscuits à la cuiller rapidement trempés dans un sirop au kirsch.\n• Mettre dans le moule une couche de biscuits, une couche de crème, etc...\n• Terminer par une couche de biscuits.\n• Presser légèrement et mettre au frais.\n• Démouler.\n• Garnir le dessus avec un peu de mélange réservé à cet effet.\n• Verser tout autour une crème anglaise parfumée au kirsch.",
+			"photos": [
+			]
+		},
+		"recipe_31": {
+			"ingredients": "• 9 biscuits roses\n• 4 cuillérées de sucre en poudre\n• 4 oeufs\n• 125g de raisins de Corinthe\n• 1 petit verre de rhum",
+			"preparation": "• Faire macérer les raisins dans le rhum.\n• Ecraser les biscuits.\n• Ajouter le sucre en poudre.\n• Ajouter les jaunes d'oeufs.\n• Battre les blancs en neige ferme.\n• Ajouter délicatement les blancs.\n• Ajouter les raisins égouttés.\n• Verser dans un moule à cheminée bien beurré.\n• Cuire au four au bain-marie jusqu'à ce qu'il soit doré.\n• Démouler et servir froid avec une crème anglaise.",
+			"photos": [
+			]
+		},
+		"recipe_32": {
+			"ingredients": "• 4 oeufs\n• 75g de sucre en poudre\n• 75g de farine\n• 30g de beurre fondu tiède",
+			"preparation": "• Casser les oeufs.\n• Travailler les jaunes avec le sucre jusqu'à ce que la pâte blanchisse et retombe en ruban souple.\n• Battre les blancs en neige très ferme.\n• Ajouter la farine et les blancs aux jaunes en alternant les cuillérées.\n• Ajouter le beurre très délicatement.\n• Garnir une plaque de pâtisserie de papier sulfurisé.\n• Verser la pâte dessus sur 1⁄2 cm d'épaisseur.\n• Cuire à four chaud 7 min.\n• Retourner sur un papier beurré et saupoudré de sucre.\n• Garnir de crème, rouler et envelopper dans le papier.\n• Laisser refroidir.",
+			"photos": [
+			]
+		},
+		"recipe_33": {
+			"ingredients": "• 1⁄2 litre de lait\n• 125g de sucre\n• vanille\n• 80g de beurre\n• 50g de farine\n• 4 oeufs",
+			"preparation": "• Faire bouillir le lait avec le sucre et la vanille.\n• Dans une autre casserole, faire fondre le beurre.\n• Y ajouter la farine .\n• Faire un roux blanc en mouillant petit à petit avec le lait sucré bouillant.\n• Tourner soigneusement.\n• Faire bouillir 1 min.\n• Retirer du feu et laisser tiédir en tournant de temps en temps.\n• Ajouter les oeufs entiers l'un après l'autre.\n• Verser dans un moule à charlotte caramélisé.\n• Faire cuire au four au bain-Marie pendant 1 heure.\n• Servir très froid ou bien chaud.",
+			"photos": [
+			]
+		},
+		"recipe_34": {
+			"ingredients": "",
+			"preparation": "• Faire un biscuit roulé.\n• Le fourrer avec une crème au beurre au chocolat.\n• Le rouler.\n• L'envelopper avec du papier beurré et saupoudré de sucre en poudre.\n• Laisser refroidir.\n• Couper les extrémités en biais et les recouvrir de crème moka.\n• Enduire le dessus de la bûche de crème au chocolat.\n• Imiter le bois avec les dents d'une fourchette.\n• Faire des noeuds de bois avec un peu de crème moka.\n• Décorer à volonté avec des sujets de Noël.",
+			"photos": [
+			]
+		},
+		"recipe_35": {
+			"ingredients": "• 150g de sucre\n• 150g de farine\n• 2 oeufs\n• 40g de beurre\n• 1 jus et 1 zeste d'orange\n• 1⁄2 paquet de levure",
+			"preparation": "• Battre les jaunes avec le sucre jusqu'à ce qu'ils forment un ruban.\n• Ajouter le jus et le zeste d'orange.\n• Ajouter la farine petit à petit.\n• Puis ajouter le beurre en pommade et la levure.\n• Battre les blancs en neige.\n• Les ajouter délicatement à la préparation.\n• Cuire 3⁄4 h environ dans un moule à manqué.\n\nOn peut glacer le gâteau ou le garnir d'amandes grillées.",
+			"photos": [
+			]
+		},
+		"recipe_36": {
+			"ingredients": "• 3 oeufs\n• 125g de sucre semoule\n• 150g de fruits confits (ou 75g de raisins secs et 75g de fruits confits)\n• 125g de beurre ou 4 cuil d'huile\n• 250g de farine\n• 1 paquet de levure\n• rhum ou eau de vie",
+			"preparation": "• Faire macérer les fruits confits dans le rhum ou l'eau de vie.\n• Bien battre les oeufs entiers.\n• Incorporer le sucre.\n• Ajouter la matière grasse et les fruits coupés en morceaux.\n• Finalement ajouter la farine et la levure.\n• Verser le mélange dans un moule à cake rectangulaire beurré et fariné.\n• Cuire à four moyen environ 45 min.",
+			"photos": [
+				{
+					"filename": "1.jpg"
+				}
 			]
 		}
 	}

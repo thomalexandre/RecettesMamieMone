@@ -31,6 +31,9 @@
     
     [ConfigurationManager instance];
     [[ThemeManager instance] configureProxies];
+    
+    [FIRDatabase database].persistenceEnabled = YES;
+    
     [self setupRootViewController];
     
     return YES;

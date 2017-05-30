@@ -17,12 +17,21 @@
 #import "ThemeManager.h"
 #import "PhotoViewerViewController.h"
 
+typedef NS_ENUM(NSInteger, RecipeDetailSection) {
+    RecipeDetailSectionHeader       = 0,
+    RecipeDetailSectionMetadata     = 1,
+    RecipeDetailSectionIngredients  = 2,
+    RecipeDetailSectionPreparation  = 3,
+    RecipeDetailSectionPhotos       = 4,
+};
+
 @interface RecipeViewController () <UITableViewDelegate, UITableViewDataSource, UIDetailHeaderViewDelegate, PhotosTableViewCellDelegate, HeroImageTableViewCellDelegate>
 
 @property (nonatomic, strong) Recipe *recipe;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, weak)   HeroImageTableViewCell *heroCell;
 @property (nonatomic, strong) UIDetailHeaderView *header;
+@property (nonatomic, strong) NSArray<NSNumber *>  *sections;
 
 @end
 
@@ -81,6 +90,19 @@
 {
     [[DataManager instance] fetchDetails:self.recipe completion:^(Recipe *recipe) {
         self.recipe = recipe;
+        
+        /// check available sections
+        NSMutableArray<NSNumber *> *sections = [NSMutableArray new];
+        [sections addObject:@(RecipeDetailSectionHeader)];
+        [sections addObject:@(RecipeDetailSectionMetadata)];
+        if([self.recipe.ingredients length] > 0)
+            [sections addObject:@(RecipeDetailSectionIngredients)];
+        if([self.recipe.preparation length] > 0)
+            [sections addObject:@(RecipeDetailSectionPreparation)];
+        if([self.recipe.photos count] > 0)
+            [sections addObject:@(RecipeDetailSectionPhotos)];
+        self.sections = sections;
+        
         [self.tableView reloadData];
     }];
 }
@@ -94,25 +116,27 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSInteger count = 4;
-    
-    if([self.recipe.photos count] > 0) {
-        count ++;
-    }
-    
-    return count;
+//    NSInteger count = 4;
+//    
+//    if([self.recipe.photos count] > 0) {
+//        count ++;
+//    }
+//    
+//    return count;
+
+    return [self.sections count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    switch (indexPath.row) {
-        case 0: return [self heroImageCell]; break;
-        case 1: return [self metadataCell];  break;
-        case 2: return [self titleContent:RecipeContentTypeIngredients];  break;
-        case 3: return [self titleContent:RecipeContentTypePreparation];  break;
-        case 4: return [self photosCarousel]; break;
-            
-        default: return nil; break;
+    RecipeDetailSection section = [self.sections[indexPath.row] intValue];
+    
+    switch (section) {
+        case RecipeDetailSectionHeader:      return [self heroImageCell]; break;
+        case RecipeDetailSectionMetadata:    return [self metadataCell];  break;
+        case RecipeDetailSectionIngredients: return [self titleContent:RecipeContentTypeIngredients];  break;
+        case RecipeDetailSectionPreparation: return [self titleContent:RecipeContentTypePreparation];  break;
+        case RecipeDetailSectionPhotos:      return [self photosCarousel]; break;
     }
 }
     
