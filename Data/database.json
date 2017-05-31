@@ -296,6 +296,14 @@
 				"persons": "",
 				"thumbnail": "thumbnail.jpg",
 				"live": true
+			},
+			"recipe_37": {
+				"title": "Brioche",
+				"type": "type_30",
+				"hardness": "hardness_0",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
 			}
 		},
 		"types": {
@@ -611,6 +619,12 @@
 				{
 					"filename": "1.jpg"
 				}
+			]
+		},
+		"recipe_37": {
+			"ingredients": "• 400g de farine\n• 200g de beurre ramolli\n• 100g de sucre\n• sel\n• 1 sachet de levure délayé dans 1 verre de lait",
+			"preparation": "• Verser la farine dans une jatte.\n• Y faire un puits.\n• Verser dans ce puits tous les ingrédients.\n• Battre très fort et laisser reposer une nuit.\n• Le lendemain battre à nouveau et verser dans le moule beurré.\n• Cuire.",
+			"photos": [
 			]
 		}
 	}
