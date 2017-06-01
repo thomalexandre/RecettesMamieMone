@@ -328,6 +328,22 @@
 				"persons": "",
 				"thumbnail": "thumbnail.jpg",
 				"live": true
+			},
+			"recipe_41": {
+				"title": "Crème aux noisettes",
+				"type": "type_30",
+				"hardness": "hardness_1",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_42": {
+				"title": "Mousseline aux noisettes",
+				"type": "type_30",
+				"hardness": "hardness_2",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
 			}
 		},
 		"types": {
@@ -666,6 +682,18 @@
 		"recipe_40": {
 			"ingredients": "• 250g de très bon chocolat\n• 5 caramels mous d'un autre parfum\n• Des noix",
 			"preparation": "• Faire ramollir le chocolat.\n• Y ajouter les caramels mous.\n• Mélanger et faire cuire.\n• Verser dans des barquettes en papier.\n• Mettre 1⁄2 noix dans chaque bonbon. Faire prendre au frais.\n• On peut mettre les débris de noix dans la pâte.",
+			"photos": [
+			]
+		},
+		"recipe_41": {
+			"ingredients": "• 50g de noisettes\n• 1⁄2 litre de lait\n• 1 oeuf entier\n• 3 jaunes d'oeufs\n• 75g de sucre en poudre\n• 30g de beurre",
+			"preparation": "• Faire griller les noisettes.\n• Les frotter et les râper.\n• Les mettre dans le lait et faire bouillir 20 min.\n• Passer au tamis et jeter les noisettes.\n• Réserver le liquide.\n• Travailler les oeufs et le sucre.\n• Verser le lait bouillant dessus.\n• Faire prendre au bain-marie en tournant jusqu'à ce que ça nappe la cuiller.\n• Retirer du feu et ajouter le beurre.\n• Laisser refroidir.",
+			"photos": [
+			]
+		},
+		"recipe_42": {
+			"ingredients": "Le poids des oeufs sert de mesure\n\n• 3 ou 4 oeufs\n• 1 mesure de sucre en poudre\n• 1⁄2 de mesure de noisettes décortiquées\n• 1⁄4 de mesure de farine\n• 1⁄4 de mesure de fécule de pomme de terre",
+			"preparation": "• Mettre les noisettes décortiquées au four.\n• Les faire griller quelques minutes, les frotter pour ôter ce que l'on pourra de peaux.\n• Les râper.\n• Travailler les jaunes d'oeufs avec le sucre .\n• Ajouter les noisettes.\n• Battre les blancs en neige ferme.\n• Les ajouter à la pâte en alternant avec le fécule et la farine.\n• Garnir le fond d'un moule à manqué de papier sulfurisé beurré.\n• Saupoudrer le fond de noisettes hachées.\n• Cuire à four modéré pendant 1 heure.",
 			"photos": [
 			]
 		}
