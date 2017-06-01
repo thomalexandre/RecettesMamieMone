@@ -320,6 +320,14 @@
 				"persons": "",
 				"thumbnail": "thumbnail.jpg",
 				"live": true
+			},
+			"recipe_40": {
+				"title": "Caramels aux noix",
+				"type": "type_30",
+				"hardness": "hardness_1",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
 			}
 		},
 		"types": {
@@ -652,6 +660,12 @@
 		"recipe_39": {
 			"ingredients": "• 1⁄2 litre de lait\n• 100g de sucre\n• de la vanille ou un autre parfum\n• 2 cuil de farine de maïs\n• quelques cuil de lait froid\n• 2 oeufs",
 			"preparation": "• Faire bouillir le lait avec le sucre et la vanille.\n• Délayer la farine de maïs dans le lait froid.\n• Ajouter les oeufs battus.\n• Verser le lait bouillant sur ce mélange.\n• Faire cuire en tournant 2 ou 3 min.\n• Faire prendre au frais.\n\nSe servir de cette crème pour garnir des éclairs ou des cornets.",
+			"photos": [
+			]
+		},
+		"recipe_40": {
+			"ingredients": "• 250g de très bon chocolat\n• 5 caramels mous d'un autre parfum\n• Des noix",
+			"preparation": "• Faire ramollir le chocolat.\n• Y ajouter les caramels mous.\n• Mélanger et faire cuire.\n• Verser dans des barquettes en papier.\n• Mettre 1⁄2 noix dans chaque bonbon. Faire prendre au frais.\n• On peut mettre les débris de noix dans la pâte.",
 			"photos": [
 			]
 		}
