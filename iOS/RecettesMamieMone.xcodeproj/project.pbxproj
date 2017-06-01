@@ -18,9 +18,10 @@
 		9133C5661E54B57200959AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9133C5651E54B57200959AFF /* Assets.xcassets */; };
 		9133C5691E54B57200959AFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9133C5671E54B57200959AFF /* LaunchScreen.storyboard */; };
 		9133C5741E54B57200959AFF /* RecettesMamieMoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9133C5731E54B57200959AFF /* RecettesMamieMoneTests.m */; };
+		9144DAF41EDF1952005FAFFF /* RecipePagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9144DAF31EDF1952005FAFFF /* RecipePagesViewController.m */; };
 		91502A461E5C807500001D2B /* ReceipeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91502A451E5C807500001D2B /* ReceipeCollectionViewCell.m */; };
 		91502A4A1E5CE3C800001D2B /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91502A491E5CE3C800001D2B /* GradientView.m */; };
-		918368271E68A97500A480B7 /* 1024-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 918368261E68A97500A480B7 /* 1024-logo.png */; };
+		918368271E68A97500A480B7 /* 1024-logo0.png in Resources */ = {isa = PBXBuildFile; fileRef = 918368261E68A97500A480B7 /* 1024-logo0.png */; };
 		918368361E69CC7200A480B7 /* PhotoViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 918368351E69CC7200A480B7 /* PhotoViewerViewController.m */; };
 		91A8C3FF1E6858590009A78D /* Merriweather-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C3F71E6858590009A78D /* Merriweather-Black.ttf */; };
 		91A8C4001E6858590009A78D /* Merriweather-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C3F81E6858590009A78D /* Merriweather-BlackItalic.ttf */; };
@@ -100,11 +101,13 @@
 		9133C56F1E54B57200959AFF /* RecettesMamieMoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecettesMamieMoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9133C5731E54B57200959AFF /* RecettesMamieMoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecettesMamieMoneTests.m; sourceTree = "<group>"; };
 		9133C5751E54B57200959AFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9144DAF21EDF1952005FAFFF /* RecipePagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipePagesViewController.h; sourceTree = "<group>"; };
+		9144DAF31EDF1952005FAFFF /* RecipePagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipePagesViewController.m; sourceTree = "<group>"; };
 		91502A441E5C807500001D2B /* ReceipeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceipeCollectionViewCell.h; sourceTree = "<group>"; };
 		91502A451E5C807500001D2B /* ReceipeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceipeCollectionViewCell.m; sourceTree = "<group>"; };
 		91502A481E5CE3C800001D2B /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
 		91502A491E5CE3C800001D2B /* GradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
-		918368261E68A97500A480B7 /* 1024-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1024-logo.png"; path = "../../1024-logo.png"; sourceTree = "<group>"; };
+		918368261E68A97500A480B7 /* 1024-logo0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1024-logo0.png"; path = "../../1024-logo0.png"; sourceTree = "<group>"; };
 		918368341E69CC7200A480B7 /* PhotoViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewerViewController.h; sourceTree = "<group>"; };
 		918368351E69CC7200A480B7 /* PhotoViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewerViewController.m; sourceTree = "<group>"; };
 		91A8C3F71E6858590009A78D /* Merriweather-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Black.ttf"; sourceTree = "<group>"; };
@@ -387,6 +390,8 @@
 				91EB571E1E5796F000131FD4 /* RecipeViewController.m */,
 				910AA4ED1E64C9E500EAF56A /* UIDetailHeaderView.h */,
 				910AA4EE1E64C9E500EAF56A /* UIDetailHeaderView.m */,
+				9144DAF21EDF1952005FAFFF /* RecipePagesViewController.h */,
+				9144DAF31EDF1952005FAFFF /* RecipePagesViewController.m */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -430,7 +435,7 @@
 		91FEAE661E54FBF10023FEBE /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				918368261E68A97500A480B7 /* 1024-logo.png */,
+				918368261E68A97500A480B7 /* 1024-logo0.png */,
 				9133C5651E54B57200959AFF /* Assets.xcassets */,
 			);
 			path = Images;
@@ -629,7 +634,7 @@
 				91A8C4161E6858750009A78D /* OpenSans-Italic.ttf in Resources */,
 				91A8C4131E6858750009A78D /* OpenSans-BoldItalic.ttf in Resources */,
 				91A8C4151E6858750009A78D /* OpenSans-ExtraBoldItalic.ttf in Resources */,
-				918368271E68A97500A480B7 /* 1024-logo.png in Resources */,
+				918368271E68A97500A480B7 /* 1024-logo0.png in Resources */,
 				91A8C4031E6858590009A78D /* Merriweather-Italic.ttf in Resources */,
 				91A8C4051E6858590009A78D /* Merriweather-LightItalic.ttf in Resources */,
 				9133C5691E54B57200959AFF /* LaunchScreen.storyboard in Resources */,
@@ -788,6 +793,7 @@
 				91D6246D1E6B6E8500FE40A2 /* UIImage+Utils.m in Sources */,
 				9108BCCA1E65F7C50097B86B /* Photo.m in Sources */,
 				91EB57291E5A00E400131FD4 /* RecipeType.m in Sources */,
+				9144DAF41EDF1952005FAFFF /* RecipePagesViewController.m in Sources */,
 				91D624701E6C528300FE40A2 /* Filters.m in Sources */,
 				91EB571F1E5796F000131FD4 /* RecipeViewController.m in Sources */,
 				91FEAE731E54FEB00023FEBE /* UIViewController+Utils.m in Sources */,

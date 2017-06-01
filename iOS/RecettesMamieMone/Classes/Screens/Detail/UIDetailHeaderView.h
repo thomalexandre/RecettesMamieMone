@@ -25,4 +25,6 @@
 
 - (void)updateGradientAlpha:(CGFloat)alpha;
 
+- (void)makeDisappear;
+
 @end

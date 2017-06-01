@@ -110,4 +110,26 @@
     self.gradient.alpha = alpha;
 }
 
+
+- (void)makeDisappear
+{
+    if(self.gradient.hidden) {
+        self.gradient.alpha = 0;
+        self.gradient.hidden = NO;
+    }
+    [UIView animateWithDuration:0.3 animations:^{
+        self.barView.alpha = 0;
+        self.titleLabel.alpha = 0;
+        self.borderImageView.alpha = 0;
+        self.gradient.alpha = 1;
+    } completion:^(BOOL finished) {
+        self.barView.alpha = 1;
+        self.barView.hidden = YES;
+        self.titleLabel.alpha = 1;
+        self.titleLabel.hidden = YES;
+        self.borderImageView.alpha = 1;
+        self.borderImageView.hidden = YES;
+    }];
+}
+
 @end

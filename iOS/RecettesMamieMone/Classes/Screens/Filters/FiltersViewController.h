@@ -11,6 +11,7 @@
 @protocol FiltersViewControllerDelegate <NSObject>
 
 - (void)filtersDidApply;
+- (void)closeFilters;
 
 @end
 
@@ -19,5 +20,6 @@
 @property (nonatomic, weak) id<FiltersViewControllerDelegate> delegate;
 
 - (void)reset;
+- (void)hasOpened;
 
 @end

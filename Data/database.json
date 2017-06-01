@@ -304,6 +304,22 @@
 				"persons": "",
 				"thumbnail": "thumbnail.jpg",
 				"live": true
+			},
+			"recipe_38": {
+				"title": "Gateau au yahourth",
+				"type": "type_30",
+				"hardness": "hardness_0",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
+			},
+			"recipe_39": {
+				"title": "Crème pour éclairs ou cornets",
+				"type": "type_30",
+				"hardness": "hardness_0",
+				"persons": "",
+				"thumbnail": "thumbnail.jpg",
+				"live": true
 			}
 		},
 		"types": {
@@ -624,6 +640,18 @@
 		"recipe_37": {
 			"ingredients": "• 400g de farine\n• 200g de beurre ramolli\n• 100g de sucre\n• sel\n• 1 sachet de levure délayé dans 1 verre de lait",
 			"preparation": "• Verser la farine dans une jatte.\n• Y faire un puits.\n• Verser dans ce puits tous les ingrédients.\n• Battre très fort et laisser reposer une nuit.\n• Le lendemain battre à nouveau et verser dans le moule beurré.\n• Cuire.",
+			"photos": [
+			]
+		},
+		"recipe_38": {
+			"ingredients": "Unité de mesure: le pot de yaourth\n\n• 1 yaourth\n• 3 pots de farine\n• 2 pots de sucre en poudre\n• 1⁄2 pot d'huile\n• 2 oeufs\n• 1 sachet de levure",
+			"preparation": "• Dans un grand saladier, mélanger le tout avec une cuiller en bois.\n• Verser dans un moule à quatre quarts beurré.\n• Cuire à four moyen 3/4h environ.",
+			"photos": [
+			]
+		},
+		"recipe_39": {
+			"ingredients": "• 1⁄2 litre de lait\n• 100g de sucre\n• de la vanille ou un autre parfum\n• 2 cuil de farine de maïs\n• quelques cuil de lait froid\n• 2 oeufs",
+			"preparation": "• Faire bouillir le lait avec le sucre et la vanille.\n• Délayer la farine de maïs dans le lait froid.\n• Ajouter les oeufs battus.\n• Verser le lait bouillant sur ce mélange.\n• Faire cuire en tournant 2 ou 3 min.\n• Faire prendre au frais.\n\nSe servir de cette crème pour garnir des éclairs ou des cornets.",
 			"photos": [
 			]
 		}

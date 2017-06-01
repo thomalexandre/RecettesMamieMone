@@ -21,6 +21,7 @@
 
 @property (nonatomic, strong) FilterTypeView     *typeView;
 @property (nonatomic, strong) FilterHardnessView *hardnessView;
+@property (nonatomic, assign) CGFloat initialMenuViewCenterX;
 
 @end
 
@@ -34,6 +35,10 @@
     [self setupShadhow];
     
     [self setupUI];
+    
+    
+    UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGestureOnScreen:)];
+    [self.view addGestureRecognizer:panGestureRecognizer];
 }
 
 - (void)setupShadhow
@@ -133,6 +138,44 @@
     if(self.delegate && [self.delegate respondsToSelector:@selector(filtersDidApply)]) {
         [self.delegate filtersDidApply];
     }
+}
+
+- (void)closeMenuViewController
+{
+    if ([self.delegate respondsToSelector:@selector(closeFilters)]) {
+        [self.delegate closeFilters];
+    }
+}
+
+- (void)handlePanGestureOnScreen:(UIPanGestureRecognizer *)gestureRecognizer {
+    
+    CGFloat translationX = [gestureRecognizer translationInView:self.view].x;
+    CGFloat velocityX = [gestureRecognizer velocityInView:self.view].x;
+    
+    switch (gestureRecognizer.state) {
+        case UIGestureRecognizerStateChanged: {
+            self.view.center = CGPointMake(MAX(self.initialMenuViewCenterX, self.initialMenuViewCenterX + translationX), self.view.center.y);
+        }
+            break;
+        case UIGestureRecognizerStateEnded:
+        case UIGestureRecognizerStateCancelled: {
+            if (velocityX >= 0) {
+                [self closeMenuViewController];
+            }
+            else {
+                gestureRecognizer.view.center = CGPointMake(self.initialMenuViewCenterX, self.view.center.y);
+            }
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
+
+- (void)hasOpened
+{
+    self.initialMenuViewCenterX = self.view.center.x;
 }
 
 @end

@@ -119,7 +119,9 @@
         [UIView animateWithDuration:kAnimationDuration delay:0 usingSpringWithDamping:1 initialSpringVelocity:0.5 options:0 animations:^{
             self.filterLeftConstraint.constant = -kFiltersWidth;
             [self.view layoutIfNeeded];
-        } completion:nil];
+        } completion:^(BOOL finished) {
+             [self.filters hasOpened];
+        }];
         self.menuIsOpened = YES;
         [self setupNavBar];
     }
@@ -145,6 +147,11 @@
 {
     [self closeMenu];
     [self.recipes reloadData];
+}
+
+- (void)closeFilters
+{
+    [self closeMenu];
 }
 
 @end

@@ -11,7 +11,6 @@
 #import "DataManager.h"
 #import "HeroImageTableViewCell.h"
 #import "RecipeMetadataTableViewCell.h"
-#import "UIDetailHeaderView.h"
 #import "TitleContentTableViewCell.h"
 #import "PhotosTableViewCell.h"
 #import "ThemeManager.h"
@@ -30,7 +29,6 @@ typedef NS_ENUM(NSInteger, RecipeDetailSection) {
 @property (nonatomic, strong) Recipe *recipe;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, weak)   HeroImageTableViewCell *heroCell;
-@property (nonatomic, strong) UIDetailHeaderView *header;
 @property (nonatomic, strong) NSArray<NSNumber *>  *sections;
 
 @end
@@ -52,7 +50,6 @@ typedef NS_ENUM(NSInteger, RecipeDetailSection) {
     self.view.backgroundColor = [[ThemeManager instance] background];
     self.title = self.recipe.title;
     [self setupTableView];
-    [self setupHeader];
     [self reloadData];
 }
 
@@ -75,17 +72,6 @@ typedef NS_ENUM(NSInteger, RecipeDetailSection) {
     [self.tableView registerClass:[PhotosTableViewCell class]         forCellReuseIdentifier:kPhotosTableViewCellIdentifier];
 }
 
-- (void)setupHeader
-{
-    self.header = [UIDetailHeaderView new];
-    self.header.delegate = self;
-    [self.view addSubviewAutoLayout:self.header];
-    [self.header snapTop];
-    [self.header snapRight];
-    [self.header snapLeft];
-    [self.header setHeightConstant:64 + kBorderDentelHeight];
-}
-
 - (void)reloadData
 {
     [[DataManager instance] fetchDetails:self.recipe completion:^(Recipe *recipe) {
@@ -105,6 +91,11 @@ typedef NS_ENUM(NSInteger, RecipeDetailSection) {
         
         [self.tableView reloadData];
     }];
+}
+
+- (void)scrollToTop
+{
+    [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
 }
 
 #pragma mark - UITableViewDataSource
@@ -175,7 +166,12 @@ typedef NS_ENUM(NSInteger, RecipeDetailSection) {
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    CGFloat scrollY    = scrollView.contentOffset.y;
+    [self updateHeaderBasedOnScrolling];
+}
+
+- (void)updateHeaderBasedOnScrolling
+{
+    CGFloat scrollY    = self.tableView.contentOffset.y;
     CGFloat alpha = [self.heroCell viewDidScroll:scrollY];
     BOOL needToShowBar = alpha > 1.f;
     [self.header showTopBar:needToShowBar showText:needToShowBar recipe:self.recipe];

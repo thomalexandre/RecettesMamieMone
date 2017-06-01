@@ -15,12 +15,14 @@
 #import "ConfigurationManager.h"
 #import "ReceipeCollectionViewCell.h"
 #import "ThemeManager.h"
+#import "RecipePagesViewController.h"
 
 @interface RecipesViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) UILabel *emptyStateLabel;
 @property (nonatomic, strong) NSArray<Recipe *> *recipes;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -33,6 +35,7 @@
     
     [self setupCollectionView];
     [self setupEmptyState];
+    [self createRefreshControl];
     
     [self reloadData];
     self.view.backgroundColor = [[ThemeManager instance] background];
@@ -71,6 +74,7 @@
         self.emptyStateLabel.hidden = [recipes count] >  0;
         self.collectionView.hidden  = [recipes count] == 0;
         [self.collectionView reloadData];
+        [self.refreshControl endRefreshing];
     }];
 }
 
@@ -83,6 +87,18 @@
             [self.collectionView setCollectionViewLayout:self.collectionView.collectionViewLayout animated:YES];
         } completion:nil];
     }];
+}
+
+- (void)createRefreshControl
+{
+//    if (!self.refreshControl) {
+//        self.refreshControl = [[UIRefreshControl alloc] init];
+//        self.refreshControl.translatesAutoresizingMaskIntoConstraints = NO;
+//        [self.refreshControl addTarget:self action:@selector(reloadData) forControlEvents:UIControlEventValueChanged];
+//        [self.collectionView addSubview:self.refreshControl];
+//        [self.refreshControl centerX];
+//        [self.refreshControl snapTopConstant:-22];
+//    }
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -103,10 +119,13 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    Recipe *recipe = self.recipes[indexPath.row];
-    RecipeViewController *recipeViewController = [[RecipeViewController alloc] initWithRecipe:recipe];
-//    [self.navigationController pushViewController:recipeViewController animated:YES];
-    [self presentViewController:recipeViewController animated:YES completion:nil];
+//    Recipe *recipe = self.recipes[indexPath.row];
+//    RecipeViewController *recipeViewController = [[RecipeViewController alloc] initWithRecipe:recipe];
+//    [self presentViewController:recipeViewController animated:YES completion:nil];
+
+     RecipePagesViewController *recipesVC = [[RecipePagesViewController alloc] initWithRecipes:self.recipes startIndex:indexPath.row];
+     [self presentViewController:recipesVC animated:YES completion:nil];
+
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
