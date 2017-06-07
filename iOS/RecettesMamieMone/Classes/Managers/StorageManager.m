@@ -77,14 +77,25 @@
 {
     NSURL *url = [self.pathToURLs objectForKey:path];
     if(url) {
-        if([SDWebImageManager.sharedManager cachedImageExistsForURL:url]) {
-            [imageView sd_setImageWithURL:url];
-            return;
-        }
-    }
-
-    [self urlForPath:path completion:^(NSURL *url, NSError *error) {
         
+        [SDWebImageManager.sharedManager cachedImageExistsForURL:url completion:^(BOOL isInCache) {
+            
+            if(isInCache) {
+                [imageView sd_setImageWithURL:url];
+            }
+            else {
+                [self setImageAndCache:imageView path:path];
+            }
+        }];
+    }
+    else {
+        [self setImageAndCache:imageView path:path];
+    }
+}
+
+- (void)setImageAndCache:(UIImageView *)imageView path:(NSString *)path
+{
+    [self urlForPath:path completion:^(NSURL *url, NSError *error) {
         if(url) {
             [imageView sd_setImageWithURL:url];
         } else {
@@ -92,6 +103,7 @@
         }
     }];
 }
+
 
 - (void)saveURL:(NSURL *)url forPath:(NSString *)path
 {
