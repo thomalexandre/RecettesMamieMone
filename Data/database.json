@@ -601,6 +601,9 @@
 			"photos": [
 				{
 					"filename": "1.jpg"
+				},
+				{
+					"filename": "2.jpg"
 				}
 			]
 		},
