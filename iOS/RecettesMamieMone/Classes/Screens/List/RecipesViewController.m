@@ -19,7 +19,6 @@
 
 @interface RecipesViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
-//@property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) UILabel *emptyStateLabel;
 @property (nonatomic, strong) NSArray<Recipe *> *recipes;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
