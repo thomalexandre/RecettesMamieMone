@@ -24,7 +24,7 @@
 		9144DAF41EDF1952005FAFFF /* RecipePagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9144DAF31EDF1952005FAFFF /* RecipePagesViewController.m */; };
 		91502A461E5C807500001D2B /* ReceipeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91502A451E5C807500001D2B /* ReceipeCollectionViewCell.m */; };
 		91502A4A1E5CE3C800001D2B /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91502A491E5CE3C800001D2B /* GradientView.m */; };
-		918368271E68A97500A480B7 /* 1024-logo0.png in Resources */ = {isa = PBXBuildFile; fileRef = 918368261E68A97500A480B7 /* 1024-logo0.png */; };
+		918368271E68A97500A480B7 /* 1024-logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 918368261E68A97500A480B7 /* 1024-logo1.png */; };
 		918368361E69CC7200A480B7 /* PhotoViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 918368351E69CC7200A480B7 /* PhotoViewerViewController.m */; };
 		91A8C3FF1E6858590009A78D /* Merriweather-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C3F71E6858590009A78D /* Merriweather-Black.ttf */; };
 		91A8C4001E6858590009A78D /* Merriweather-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C3F81E6858590009A78D /* Merriweather-BlackItalic.ttf */; };
@@ -109,7 +109,7 @@
 		91502A451E5C807500001D2B /* ReceipeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceipeCollectionViewCell.m; sourceTree = "<group>"; };
 		91502A481E5CE3C800001D2B /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
 		91502A491E5CE3C800001D2B /* GradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
-		918368261E68A97500A480B7 /* 1024-logo0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1024-logo0.png"; path = "../../1024-logo0.png"; sourceTree = "<group>"; };
+		918368261E68A97500A480B7 /* 1024-logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1024-logo1.png"; path = "../../1024-logo1.png"; sourceTree = "<group>"; };
 		918368341E69CC7200A480B7 /* PhotoViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewerViewController.h; sourceTree = "<group>"; };
 		918368351E69CC7200A480B7 /* PhotoViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewerViewController.m; sourceTree = "<group>"; };
 		91A8C3F71E6858590009A78D /* Merriweather-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Black.ttf"; sourceTree = "<group>"; };
@@ -423,7 +423,7 @@
 		91FEAE661E54FBF10023FEBE /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				918368261E68A97500A480B7 /* 1024-logo0.png */,
+				918368261E68A97500A480B7 /* 1024-logo1.png */,
 				9133C5651E54B57200959AFF /* Assets.xcassets */,
 			);
 			path = Images;
@@ -606,7 +606,7 @@
 				91A8C4161E6858750009A78D /* OpenSans-Italic.ttf in Resources */,
 				91A8C4131E6858750009A78D /* OpenSans-BoldItalic.ttf in Resources */,
 				91A8C4151E6858750009A78D /* OpenSans-ExtraBoldItalic.ttf in Resources */,
-				918368271E68A97500A480B7 /* 1024-logo0.png in Resources */,
+				918368271E68A97500A480B7 /* 1024-logo1.png in Resources */,
 				91A8C4031E6858590009A78D /* Merriweather-Italic.ttf in Resources */,
 				91A8C4051E6858590009A78D /* Merriweather-LightItalic.ttf in Resources */,
 				9133C5691E54B57200959AFF /* LaunchScreen.storyboard in Resources */,
