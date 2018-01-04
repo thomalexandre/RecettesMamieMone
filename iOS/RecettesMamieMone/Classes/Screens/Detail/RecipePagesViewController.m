@@ -71,7 +71,7 @@
     [self.header snapTop];
     [self.header snapRight];
     [self.header snapLeft];
-    [self.header setHeightConstant:64 + kBorderDentelHeight];
+    [self.header setHeightConstant:([SETTING isIphoneX] ? 88 :64) + kBorderDentelHeight];
 }
 
 #pragma mark - UIPageViewControllerDelegate

@@ -14,7 +14,6 @@
 #import "ATKApp.h"
 
 #define kHeroImageHeight   300.f
-#define kHeroNavbarHeight  64.f
 
 @interface HeroImageTableViewCell ()
 
@@ -109,7 +108,8 @@
     self.heightConstraint.constant = scrollY > 0 ? kHeroImageHeight-scrollY/2 : kHeroImageHeight + fabs(scrollY);
     
     //CGFloat alpha = scrollY > kHeroImageHeight / 3.f ? (kHeroImageHeight/3.f-(kHeroImageHeight-scrollY)) / (kHeroImageHeight/3.f) : 0;
-    CGFloat alpha = scrollY > kHeroImageHeight / 3.f ? (scrollY - kHeroImageHeight / 3.0) / ((kHeroImageHeight - 74) - (kHeroImageHeight / 3.0)) : 0;
+    CGFloat limit = [SETTING isIphoneX] ? 88 + 10 : 64 + 10; // Size of the nav bar + dentel
+    CGFloat alpha = scrollY > kHeroImageHeight / 3.f ? (scrollY - kHeroImageHeight / 3.0) / ((kHeroImageHeight - limit) - (kHeroImageHeight / 3.0)) : 0;
     self.overView.backgroundColor = [[COLOR primary] colorWithAlphaComponent:alpha];
     self.photoButton.alpha = 1.f - alpha * 10.;
     

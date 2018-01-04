@@ -47,7 +47,6 @@
     
     // close button ...
     static int closeButtonImageSize = 18.f;
-    static int closeButtonImageTop  = 32.f;
     static int closeButtonImageLeft = 17.f;
     static int closeButtonSize      = 44.f;
     
@@ -56,7 +55,12 @@
     [self addSubviewAutoLayout:closeButtonImage];
     [closeButtonImage setHeightConstant:closeButtonImageSize];
     [closeButtonImage setWidthConstant:closeButtonImageSize];
-    [closeButtonImage snapTopConstant:closeButtonImageTop];
+    if ([SETTING isIphoneX]) {
+        [closeButtonImage snapTopConstant:12+44];
+    } else {
+        [closeButtonImage snapTopConstant:12+20];
+    }
+    
     [closeButtonImage snapLeftConstant:closeButtonImageLeft];
     
     UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -64,7 +68,12 @@
     [self addSubviewAutoLayout:closeButton];
     [closeButton setHeightConstant:closeButtonSize];
     [closeButton setWidthConstant:closeButtonSize];
-    [closeButton snapTopConstant:closeButtonImageTop - (closeButtonSize - closeButtonImageSize) / 2.f];
+    if ([SETTING isIphoneX]) {
+        [closeButton snapTopConstant:12+44 - (closeButtonSize - closeButtonImageSize) / 2.f];
+    } else {
+        [closeButton snapTopConstant:12+20 - (closeButtonSize - closeButtonImageSize) / 2.f];
+    }
+    
     [closeButton snapLeftConstant:closeButtonImageLeft - (closeButtonSize - closeButtonImageSize) / 2.f];
     
     // title ...
@@ -72,7 +81,13 @@
     self.titleLabel.font = [FONT fontWithSize:15 withWeight:ATKFontWeightBold];
     self.titleLabel.textColor = [COLOR uitext];
     [self addSubviewAutoLayout:self.titleLabel];
-    [self.titleLabel snapTopConstant:20];
+    
+     if (@available(iOS 11, *)) {
+         [self.titleLabel snapTopSafe];
+     } else {
+         [self.titleLabel snapTopConstant:20];
+     }
+    
     [self.titleLabel snapBottomConstant:kBorderDentelHeight];
     [self.titleLabel centerX];
     self.titleLabel.hidden = YES;

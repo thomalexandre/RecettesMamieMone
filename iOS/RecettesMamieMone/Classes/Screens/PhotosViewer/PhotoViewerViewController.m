@@ -70,7 +70,7 @@
     [header snapTop];
     [header snapRight];
     [header snapLeft];
-    [header setHeightConstant:64];
+    [header setHeightConstant:[SETTING isIphoneX] ? 88 :64];
     [header showTopBar:NO showText:YES recipe:self.recipe];
 }
 
