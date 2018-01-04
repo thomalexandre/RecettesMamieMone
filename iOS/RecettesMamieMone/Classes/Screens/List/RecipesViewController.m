@@ -13,10 +13,9 @@
 #import "RecipeViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "StorageManager.h"
-#import "ConfigurationManager.h"
 #import "ReceipeCollectionViewCell.h"
-#import "ThemeManager.h"
 #import "RecipePagesViewController.h"
+#import "ATKApp.h"
 
 @interface RecipesViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -39,14 +38,14 @@
     [self createRefreshControl];
     
     [self reloadData];
-    self.view.backgroundColor = [[ThemeManager instance] background];
+    self.view.backgroundColor = [COLOR background];
 }
 
 - (void)setupCollectionView
 {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:layout];
-    self.collectionView.backgroundColor = [[ThemeManager instance] background];
+    self.collectionView.backgroundColor = [COLOR background];
     [self.collectionView setDataSource:self];
     [self.collectionView setDelegate:self];
     self.collectionView.showsHorizontalScrollIndicator = NO;
@@ -61,8 +60,8 @@
     self.emptyStateLabel = [UILabel new];
     self.emptyStateLabel.text = @"Aucune recette !";
     self.emptyStateLabel.textAlignment = NSTextAlignmentCenter;
-    self.emptyStateLabel.textColor = [[ThemeManager instance] text];
-    self.emptyStateLabel.font = [[ThemeManager instance] openSansBoldFontWithSize:18];
+    self.emptyStateLabel.textColor = [COLOR text];
+    self.emptyStateLabel.font = [FONT fontWithSize:18 withWeight:ATKFontWeightBold];
     [self.view addSubviewAutoLayout:self.emptyStateLabel];
     [self.emptyStateLabel snap];
     self.emptyStateLabel.hidden = YES;
@@ -133,7 +132,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if([ConfigurationManager isIphone]) {
+    if([SETTING isIphone]) {
         CGFloat width       = (collectionView.frame.size.width - 3 * 16) / 2;
 //        CGFloat pictheight  = width / 1.5f;
 //        CGFloat textHeight  = 34.f;
@@ -154,13 +153,13 @@
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    CGFloat margin = [ConfigurationManager isIphone] ? 16.f : 20.f;
+    CGFloat margin = [SETTING isIphone] ? 16.f : 20.f;
     return UIEdgeInsetsMake(margin, margin, margin, margin);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
-    CGFloat spacing = [ConfigurationManager isIphone] ? 16.f : 20.f;
+    CGFloat spacing = [SETTING isIphone] ? 16.f : 20.f;
     return spacing;
 }
 

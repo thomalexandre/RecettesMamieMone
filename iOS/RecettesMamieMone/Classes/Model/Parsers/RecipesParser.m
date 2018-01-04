@@ -9,7 +9,6 @@
 #import "RecipesParser.h"
 #import "RecipeTypesParser.h"
 #import "HardnessParser.h"
-#import "ConfigurationManager.h"
 
 @interface RecipesParser ()
 

@@ -8,9 +8,8 @@
 
 #import "TitleContentTableViewCell.h"
 #import "UIView+Layout.h"
-#import "ThemeManager.h"
 #import "UIView+Utils.h"
-#import "ConfigurationManager.h"
+#import "ATKApp.h"
 
 @interface TitleContentTableViewCell ()
 
@@ -33,10 +32,10 @@
 - (void)setupUI
 {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    CGFloat margin = [ConfigurationManager isIphone] ? 15 : 40;
+    CGFloat margin = [SETTING isIphone] ? 15 : 40;
     
     UIView * line = [UIView new];
-    line.backgroundColor = [[ThemeManager instance] line];
+    line.backgroundColor = [COLOR ui];
     [self addSubviewAutoLayout:line];
     [line snapTopConstant:0];
     [line snapLeftConstant:margin];
@@ -46,8 +45,8 @@
     // title ...
     self.titleLabel = [UILabel new];
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
-    self.titleLabel.font = [[ThemeManager instance] openSansBoldFontWithSize:18];
-    self.titleLabel.textColor = [[ThemeManager instance] metaText];
+    self.titleLabel.font = [FONT fontWithSize:18 withWeight:ATKFontWeightBold];
+    self.titleLabel.textColor = [COLOR primary];
     [self addSubviewAutoLayout:self.titleLabel];
     [self.titleLabel snapTopConstant:30];
     [self.titleLabel snapLeftConstant:10];
@@ -58,7 +57,7 @@
     self.contentLabel = [UILabel new];
     self.contentLabel.numberOfLines = 0;
     self.contentLabel.textAlignment = NSTextAlignmentLeft;
-    self.contentLabel.textColor = [[ThemeManager instance] text];
+    self.contentLabel.textColor = [COLOR text];
 //    self.contentLabel.font = ;
     [self addSubviewAutoLayout:self.contentLabel];
     [self.contentLabel snapBottomConstant:30];
@@ -94,7 +93,7 @@
     style.minimumLineHeight = 28.f;
     style.maximumLineHeight = 28.f;
     NSDictionary *attributtes = @{NSParagraphStyleAttributeName : style,
-                                  NSFontAttributeName: [[ThemeManager instance] merriweatherFontWithSize:16]};
+                                  NSFontAttributeName: [FONT fontWithSize:16 withWeight:ATKFontWeightText]};
     self.contentLabel.attributedText = [[NSAttributedString alloc] initWithString:text
                                                              attributes:attributtes];
     [self.contentLabel sizeToFit];

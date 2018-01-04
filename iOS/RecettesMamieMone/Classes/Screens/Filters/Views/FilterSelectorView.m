@@ -10,8 +10,8 @@
 #import "UIView+Layout.h"
 #import "UIView+Utils.h"
 #import "DataManager.h"
-#import "ThemeManager.h"
 #import "SelectorCell.h"
+#import "ATKApp.h"
 
 @interface FilterSelectorView () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -34,7 +34,7 @@
 {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     self.collectionView = [[UICollectionView alloc] initWithFrame:self.frame collectionViewLayout:layout];
-    self.collectionView.backgroundColor = [[ThemeManager instance] background];
+    self.collectionView.backgroundColor = [COLOR background];
     [self.collectionView setDataSource:self];
     [self.collectionView setDelegate:self];
     
@@ -45,7 +45,7 @@
     [self addSubviewAutoLayout:self.collectionView];
     [self.collectionView snap];
     
-    self.collectionView.layer.borderColor = [[ThemeManager instance] border].CGColor;
+    self.collectionView.layer.borderColor = [COLOR accent].CGColor;
     self.collectionView.layer.borderWidth = 1.f;
     self.collectionView.layer.cornerRadius  = 4.0f;
     

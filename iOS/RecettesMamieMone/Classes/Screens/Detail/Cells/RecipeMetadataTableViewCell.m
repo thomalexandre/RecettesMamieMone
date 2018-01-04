@@ -8,8 +8,8 @@
 
 #import "RecipeMetadataTableViewCell.h"
 #import "UIView+Layout.h"
-#import "ThemeManager.h"
 #import "UIView+Utils.h"
+#import "ATKApp.h"
 
 @interface RecipeMetadataTableViewCell ()
 
@@ -35,9 +35,9 @@
     
     // type ...
     self.typeLabel = [UILabel new];
-    self.typeLabel.textColor = [[ThemeManager instance] metaText];
+    self.typeLabel.textColor = [COLOR primary];
     self.typeLabel.textAlignment = NSTextAlignmentCenter;
-    self.typeLabel.font = [[ThemeManager instance] openSansBoldFontWithSize:12];
+    self.typeLabel.font = [FONT fontWithSize:12 withWeight:ATKFontWeightBold];
     [self addSubviewAutoLayout:self.typeLabel];
     [self.typeLabel snapTopConstant:10];
     [self.typeLabel snapLeftConstant:10];
@@ -48,8 +48,8 @@
     self.titleLabel = [UILabel new];
     self.titleLabel.numberOfLines = 0;
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
-    self.titleLabel.textColor = [[ThemeManager instance] text];
-    self.titleLabel.font = [[ThemeManager instance] openSansBoldFontWithSize:20];
+    self.titleLabel.textColor = [COLOR text];
+    self.titleLabel.font = [FONT fontWithSize:20 withWeight:ATKFontWeightBold];
     [self addSubviewAutoLayout:self.titleLabel];
     [self.titleLabel snapBottomConstant:20];
     [self.titleLabel snapLeftConstant:10];
@@ -73,6 +73,7 @@
 
 - (void)prepareForReuse
 {
+    [super prepareForReuse];
     self.typeLabel.text = nil;
     self.titleLabel.text = nil;
 }

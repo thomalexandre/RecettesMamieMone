@@ -9,9 +9,8 @@
 #import "PhotosTableViewCell.h"
 #import "UIView+Layout.h"
 #import "UIView+Utils.h"
-#import "ThemeManager.h"
 #import "PhotoCollectionViewCell.h"
-#import "ConfigurationManager.h"
+#import "ATKApp.h"
 
 @interface PhotosTableViewCell () <UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -36,7 +35,7 @@
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
     UIView * line = [UIView new];
-    line.backgroundColor = [[ThemeManager instance] line];
+    line.backgroundColor = [COLOR ui];
     [self addSubviewAutoLayout:line];
     [line snapTopConstant:0];
     [line snapLeftConstant:20];
@@ -48,8 +47,8 @@
     titleLabel.text = @"Photos";
     titleLabel.numberOfLines = 0;
     titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.textColor = [[ThemeManager instance] metaText];
-    titleLabel.font = [[ThemeManager instance] openSansBoldFontWithSize:20];
+    titleLabel.textColor = [COLOR primary];
+    titleLabel.font = [FONT fontWithSize:20 withWeight:ATKFontWeightBold];
     [self addSubviewAutoLayout:titleLabel];
     [titleLabel snapTopConstant:20];
     [titleLabel snapLeftConstant:10];
@@ -113,13 +112,13 @@
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    CGFloat margin = [ConfigurationManager isIphone] ? 16.f : 20.f;
+    CGFloat margin = [SETTING isIphone] ? 16.f : 20.f;
     return UIEdgeInsetsMake(margin, margin, margin, margin);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
-    CGFloat spacing = [ConfigurationManager isIphone] ? 16.f : 20.f;
+    CGFloat spacing = [SETTING isIphone] ? 16.f : 20.f;
     return spacing;
 }
 

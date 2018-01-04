@@ -7,12 +7,11 @@
 //
 
 #import "FiltersViewController.h"
-#import "ThemeManager.h"
 #import "UIView+Utils.h"
 #import "UIView+Layout.h"
 #import "FilterSelectorView.h"
 #import "DataManager.h"
-#import "ConfigurationManager.h"
+#import "AtkApp.h"
 
 #define kMarginSection 25.f
 #define kMarginTitleContent 15.f
@@ -31,7 +30,7 @@
 {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [[ThemeManager instance] background];
+    self.view.backgroundColor = [COLOR background];
     [self setupShadhow];
     
     [self setupUI];
@@ -58,8 +57,8 @@
     /// Recipe type
     UILabel *typeLabel = [UILabel new];
     typeLabel.text = @"Type de plat";
-    typeLabel.font = [[ThemeManager instance] openSansRegularFontWithSize:18];
-    typeLabel.textColor = [[ThemeManager instance] text];
+    typeLabel.font = [FONT fontWithSize:18 withWeight:ATKFontWeightNormal];
+    typeLabel.textColor = [COLOR text];
     [self.view addSubviewAutoLayout:typeLabel];
     [typeLabel snapTopConstant:kMarginSection];
     [typeLabel snapLeftConstant:margin];
@@ -75,8 +74,8 @@
     /// Hardness title ....
     UILabel *hardnessLabel = [UILabel new];
     hardnessLabel.text = @"Difficulté";
-    hardnessLabel.font = [[ThemeManager instance] openSansRegularFontWithSize:18.f];
-    hardnessLabel.textColor = [[ThemeManager instance] text];
+    hardnessLabel.font = [FONT fontWithSize:18 withWeight:ATKFontWeightNormal];
+    hardnessLabel.textColor = [COLOR text];
     [self.view addSubviewAutoLayout:hardnessLabel];
     [hardnessLabel snapTopToBottom:kMarginSection relativeToView:self.typeView];
     [hardnessLabel snapLeftConstant:margin];
@@ -92,9 +91,9 @@
     /// Apply button ...
     UIButton *applyButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [applyButton setTitle:@"Appliquer" forState:UIControlStateNormal];
-    applyButton.titleLabel.font = [[ThemeManager instance] openSansBoldFontWithSize:14.f];
-    applyButton.titleLabel.textColor = [[ThemeManager instance] textButton];
-    applyButton.backgroundColor =  [[ThemeManager instance] backgroundButton];
+    applyButton.titleLabel.font = [FONT fontWithSize:14 withWeight:ATKFontWeightBold];
+    applyButton.titleLabel.textColor = [COLOR uitext];
+    applyButton.backgroundColor =  [COLOR primary];
     static CGFloat buttonHeight = 44.f;
     applyButton.layer.cornerRadius = buttonHeight / 2.f;
     [self.view addSubviewAutoLayout:applyButton];
@@ -114,9 +113,9 @@
     UILabel *bottomLabel = [UILabel new];
     bottomLabel.numberOfLines = 0;
     bottomLabel.textAlignment = NSTextAlignmentCenter;
-    bottomLabel.text = [NSString stringWithFormat:@"Á notre mamie ♥\nv %@", [ConfigurationManager appVersion]];
-    bottomLabel.font = [[ThemeManager instance] openSansBoldFontWithSize:14];
-    bottomLabel.textColor = [[ThemeManager instance] text];
+    bottomLabel.text = [NSString stringWithFormat:@"Á notre mamie ♥\nv %@", [SETTING appVersion]];
+    bottomLabel.font = [FONT fontWithSize:14 withWeight:ATKFontWeightBold];
+    bottomLabel.textColor = [COLOR text];
     [self.view addSubviewAutoLayout:bottomLabel];
     [bottomLabel snapBottomConstant:10];
     [bottomLabel centerX];

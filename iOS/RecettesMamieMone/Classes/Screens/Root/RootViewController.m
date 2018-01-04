@@ -10,10 +10,10 @@
 #import "RecipesViewController.h"
 #import "UIViewController+Utils.h"
 #import "FiltersViewController.h"
-#import "ThemeManager.h"
 #import "DataManager.h"
 #import "UIView+Layout.h"
 #import "UIView+Utils.h"
+#import "ATKApp.h"
 
 #define kFiltersWidth       300.f
 #define kAnimationDuration  0.3f
@@ -87,7 +87,7 @@
 {
     if(!_backgroundButton) {
         _backgroundButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _backgroundButton.backgroundColor = [[ThemeManager instance] backgroundClickabke];
+        _backgroundButton.backgroundColor = [COLOR uilight];
         [self.view addSubviewAutoLayout:_backgroundButton];
         [_backgroundButton snap];
         [_backgroundButton addTarget:self action:@selector(closeMenu) forControlEvents:UIControlEventTouchUpInside];

@@ -8,8 +8,11 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
-#import "ThemeManager.h"
-#import "ConfigurationManager.h"
+#import "ATKApp.h"
+#import "ColorTheme.h"
+#import "FontTheme.h"
+#import "UIAppearance.h"
+
 @import Fabric;
 @import Crashlytics;
 @import Firebase;
@@ -29,8 +32,14 @@
     [[Fabric sharedSDK] setDebug: YES];
     [Fabric with:@[[Crashlytics class]]];
     
-    [ConfigurationManager instance];
-    [[ThemeManager instance] configureProxies];
+    
+    // setup application
+    [ATKApp instance].uiConfig.colorTheme   = [ColorTheme new];
+    [ATKApp instance].uiConfig.fontTheme    = [FontTheme new];
+//    [ATKApp instance].uiConfig.systemTheme  = [ATKDefaultSystemTheme new];
+    [ATKApp instance].uiConfig.appearance   = [UIAppearance new];
+//    [ATKApp instance].settings              = [SBSettings new];
+    [[ATKApp instance].uiConfig configureApplication];
     
     [FIRDatabase database].persistenceEnabled = YES;
     
@@ -62,9 +71,9 @@
 }
 
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
-    if ([ConfigurationManager isIpad]) {
+    if([SETTING isIpad]) {
         return UIInterfaceOrientationMaskAll;
-    } else if ([ConfigurationManager isIphone]) {
+    } else if ([SETTING isIphone]) {
         return UIInterfaceOrientationMaskPortrait;
     }
     return 0;

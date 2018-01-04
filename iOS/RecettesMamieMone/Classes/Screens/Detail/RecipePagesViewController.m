@@ -8,10 +8,10 @@
 
 #import "RecipePagesViewController.h"
 #import "UIView+Layout.h"
-#import "ThemeManager.h"
 #import "RecipeViewController.h"
 #import "UIDetailHeaderView.h"
 #import "UIView+Utils.h"
+#import "ATKApp.h"
 
 @interface RecipePagesViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIDetailHeaderViewDelegate>
 
@@ -37,7 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [[ThemeManager instance] background];
+    self.view.backgroundColor = [COLOR background];
     
     [self setupPageViewController];
     [self setupHeader];
@@ -60,7 +60,7 @@
     self.pageVC.dataSource = self;
     self.pageVC.delegate = self;
     
-    self.pageVC.view.backgroundColor = [[ThemeManager instance] background];
+    self.pageVC.view.backgroundColor = [COLOR background];
 }
 
 - (void)setupHeader

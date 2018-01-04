@@ -10,7 +10,7 @@
 #import "GradientView.h"
 #import "UIView+Layout.h"
 #import "UIView+Utils.h"
-#import "ThemeManager.h"
+#import "ATKApp.h"
 
 @interface UIDetailHeaderView ()
 
@@ -40,7 +40,7 @@
     [self.gradient snap];
     
     self.barView = [UIView new];
-    self.barView.backgroundColor = [[ThemeManager instance] navBar];
+    self.barView.backgroundColor = [COLOR primary];
     [self addSubviewAutoLayout:self.barView];
     [self.barView snap];
     self.barView.hidden = YES;
@@ -69,8 +69,8 @@
     
     // title ...
     self.titleLabel = [UILabel new];
-    self.titleLabel.font = [[ThemeManager instance] openSansBoldFontWithSize:15];
-    self.titleLabel.textColor = [[ThemeManager instance] navBarText];
+    self.titleLabel.font = [FONT fontWithSize:15 withWeight:ATKFontWeightBold];
+    self.titleLabel.textColor = [COLOR uitext];
     [self addSubviewAutoLayout:self.titleLabel];
     [self.titleLabel snapTopConstant:20];
     [self.titleLabel snapBottomConstant:kBorderDentelHeight];

@@ -12,10 +12,9 @@
 #import "GradientView.h"
 #import "UIView+Utils.h"
 #import "StorageManager.h"
-#import "ThemeManager.h"
 #import "UIDetailHeaderView.h"
 #import "PhotoCollectionViewCell.h"
-#import "ConfigurationManager.h"
+#import "ATKApp.h"
 
 @interface PhotoViewerViewController () <UIDetailHeaderViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -42,7 +41,7 @@
 {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [[ThemeManager instance] backgroundPhoto];
+    self.view.backgroundColor = [COLOR text];
 
     // image carousel ...
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
@@ -54,6 +53,7 @@
     self.collectionView.backgroundColor = [UIColor clearColor];
     [self.collectionView setPagingEnabled:YES];
     self.collectionView.showsHorizontalScrollIndicator = NO;
+    self.collectionView.showsVerticalScrollIndicator = NO;
     [self.collectionView registerClass:[PhotoCollectionViewCell class] forCellWithReuseIdentifier:kPhotoCollectionViewCellIdentifier];
     self.collectionView.alwaysBounceVertical = YES;
     

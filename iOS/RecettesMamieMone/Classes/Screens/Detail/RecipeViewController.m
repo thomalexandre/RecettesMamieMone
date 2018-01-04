@@ -13,8 +13,8 @@
 #import "RecipeMetadataTableViewCell.h"
 #import "TitleContentTableViewCell.h"
 #import "PhotosTableViewCell.h"
-#import "ThemeManager.h"
 #import "UIView+Utils.h"
+#import "ATKApp.h"
 #import "PhotoViewerViewController.h"
 
 typedef NS_ENUM(NSInteger, RecipeDetailSection) {
@@ -48,7 +48,7 @@ typedef NS_ENUM(NSInteger, RecipeDetailSection) {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [[ThemeManager instance] background];
+    self.view.backgroundColor = [COLOR background];
     self.title = self.recipe.title;
     [self setupTableView];
     [self reloadData];

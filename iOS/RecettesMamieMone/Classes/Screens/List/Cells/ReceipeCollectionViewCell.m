@@ -11,8 +11,8 @@
 #import "StorageManager.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "UIView+Utils.h"
-#import "ThemeManager.h"
 #import "GradientView.h"
+#import "AtkApp.h"
 
 #define kTextHeight 50
 
@@ -56,7 +56,7 @@
 //    self.placeholder = [UIImage imageNamed:@"placeholder"];
     self.imageView = [[UIImageView alloc] initWithImage:nil/*self.placeholder*/];
     self.imageView.contentMode = UIViewContentModeScaleAspectFill;
-    self.imageView.backgroundColor = [[ThemeManager instance] cardBackground];
+    self.imageView.backgroundColor = [COLOR ui];
     self.imageView.clipsToBounds = YES;
     [self.contentView addSubviewAutoLayout:self.imageView];
     [self.imageView snap];
@@ -73,8 +73,8 @@
     // text ...
     self.titleLabel           = [UILabel new];
     self.titleLabel.numberOfLines = 2;
-    self.titleLabel.textColor = [[ThemeManager instance] cardText];
-    self.titleLabel.font      = [[ThemeManager instance] openSansRegularFontWithSize:15];
+    self.titleLabel.textColor = [COLOR uitext];
+    self.titleLabel.font      = [FONT fontWithSize:15 withWeight:ATKFontWeightNormal];
     [self.contentView addSubviewAutoLayout:self.titleLabel];
     [self.titleLabel snapBottom];
     [self.titleLabel snapLeftConstant:10];

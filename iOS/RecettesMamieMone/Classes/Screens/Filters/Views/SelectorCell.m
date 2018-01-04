@@ -8,9 +8,9 @@
 
 #import "SelectorCell.h"
 #import "UIView+Layout.h"
-#import "ThemeManager.h"
 #import "UIImage+Utils.h"
 #import "UIView+Utils.h"
+#import "ATKApp.h"
 
 @interface SelectorCell ()
 
@@ -33,8 +33,7 @@
 
 - (void)setup
 {
-//    self.contentView.backgroundColor = [[ThemeManager instance] cardBackground];
-    self.contentView.layer.borderColor = [[ThemeManager instance] border].CGColor;
+    self.contentView.layer.borderColor = [COLOR accent].CGColor;
     self.contentView.layer.borderWidth = 0.5f;
     
     self.imageView = [[UIImageView alloc] initWithImage:nil/*self.placeholder*/];
@@ -48,8 +47,8 @@
     self.imageHeightConstraint = [self.imageView setHeightConstant:63.f];
     
     self.typeLabel = [UILabel new];
-    self.typeLabel.textColor = [[ThemeManager instance] border];
-    self.typeLabel.font = [[ThemeManager instance] openSansBoldFontWithSize:12];
+    self.typeLabel.textColor = [COLOR accent];
+    self.typeLabel.font = [FONT fontWithSize:12 withWeight:ATKFontWeightBold];
     self.typeLabel.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubviewAutoLayout:self.typeLabel];
     [self.typeLabel snapBottomConstant:10];
@@ -80,13 +79,13 @@
 - (void)updateSelected:(BOOL)selected
 {
     if(selected) {
-        self.contentView.backgroundColor = [[ThemeManager instance] cardBackground];
-        self.typeLabel.textColor = [[ThemeManager instance] text];
-        [self.imageView setTintColor:[[ThemeManager instance] navBar]];
+        self.contentView.backgroundColor = [COLOR ui];
+        self.typeLabel.textColor = [COLOR text];
+        [self.imageView setTintColor:[COLOR primary]];
     } else {
         self.contentView.backgroundColor = [UIColor clearColor];
-        self.typeLabel.textColor = [[ThemeManager instance] border];
-        [self.imageView setTintColor:[[ThemeManager instance] border]];
+        self.typeLabel.textColor = [COLOR accent];
+        [self.imageView setTintColor:[COLOR accent]];
     }
 }
 

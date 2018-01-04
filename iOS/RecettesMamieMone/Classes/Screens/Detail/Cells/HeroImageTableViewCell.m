@@ -10,8 +10,8 @@
 #import "UIView+Layout.h"
 #import "StorageManager.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "ThemeManager.h"
 #import "UIView+Utils.h"
+#import "ATKApp.h"
 
 #define kHeroImageHeight   300.f
 #define kHeroNavbarHeight  64.f
@@ -41,10 +41,14 @@
 {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
+    self.contentView.clipsToBounds = YES;
+    self.contentView.layer.masksToBounds = YES;
+    
     // image....
     self.heroImageView = [UIImageView new];
     self.heroImageView.contentMode = UIViewContentModeScaleAspectFill;
     self.heroImageView.clipsToBounds = YES;
+    self.heroImageView.layer.masksToBounds = YES;
     [self.contentView addSubviewAutoLayout:self.heroImageView];
     self.topConstraint = [self.heroImageView snapTop];
     [self.heroImageView snapLeft];
@@ -67,17 +71,17 @@
     [borderImageView snapLeft];
     [borderImageView snapRight];
     [borderImageView setHeightConstant:10];
-    
+
     /// photos buttons
     self.photoButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.photoButton setImage:[UIImage imageNamed:@"icon-camera"] forState:UIControlStateNormal];
-    [self.photoButton addTarget:self action:@selector(cameraButtondidClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.photoButton addTarget:self action:@selector(cameraButtonDidClick) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubviewAutoLayout:self.photoButton];
     [self.photoButton snapBottomConstant:12];
     [self.photoButton snapRightConstant:8];
     [self.photoButton setHeightConstant:40];
     [self.photoButton setWidthConstant:60];
-    self.photoButton.titleLabel.font = [[ThemeManager instance] openSansBoldFontWithSize:10];
+    self.photoButton.titleLabel.font = [FONT fontWithSize:10 withWeight:ATKFontWeightBold];
     self.photoButton.titleLabel.textAlignment = NSTextAlignmentRight;
     [self.photoButton setTitleEdgeInsets: UIEdgeInsetsMake(2,-45,0,0)];
     [self.photoButton setImageEdgeInsets: UIEdgeInsetsMake(0,25,0,0)];
@@ -90,12 +94,13 @@
     self.photoButton.hidden = [recipe.photos count] == 0;
     [self.photoButton setTitle:[NSString stringWithFormat:@"%ld", [recipe.photos count] ] forState:UIControlStateNormal];
 
-    [self updateConstraintsIfNeeded];
+//    [self layoutIfNeeded];
 }
     
 - (void)prepareForReuse
 {
-    //self.heroImageView.image = nil;
+    [super prepareForReuse];
+    self.heroImageView.image = nil;
 }
 
 - (CGFloat)viewDidScroll:(CGFloat)scrollY
@@ -105,7 +110,7 @@
     
     //CGFloat alpha = scrollY > kHeroImageHeight / 3.f ? (kHeroImageHeight/3.f-(kHeroImageHeight-scrollY)) / (kHeroImageHeight/3.f) : 0;
     CGFloat alpha = scrollY > kHeroImageHeight / 3.f ? (scrollY - kHeroImageHeight / 3.0) / ((kHeroImageHeight - 74) - (kHeroImageHeight / 3.0)) : 0;
-    self.overView.backgroundColor = [[ThemeManager instance] navBar:alpha];
+    self.overView.backgroundColor = [[COLOR primary] colorWithAlphaComponent:alpha];
     self.photoButton.alpha = 1.f - alpha * 10.;
     
    // NSLog(@"%f %f", scrollY, alpha);
@@ -113,7 +118,7 @@
     return alpha;
 }
 
-- (void)cameraButtondidClick
+- (void)cameraButtonDidClick
 {
     if(self.delegate && [self.delegate respondsToSelector:@selector(photoButtonDidSelect)]) {
         [self.delegate photoButtonDidSelect];
