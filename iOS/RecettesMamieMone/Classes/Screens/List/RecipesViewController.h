@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ATKCollectionViewController.h"
 
-@interface RecipesViewController : UIViewController
+@interface RecipesViewController : ATKCollectionViewController
 
-- (void)reloadData;
+//- (void)reloadData;
 
 @end

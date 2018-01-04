@@ -19,7 +19,7 @@
 
 @interface RecipesViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
-@property (nonatomic, strong) UICollectionView *collectionView;
+//@property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) UILabel *emptyStateLabel;
 @property (nonatomic, strong) NSArray<Recipe *> *recipes;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
@@ -33,26 +33,9 @@
     [super viewDidLoad];
     self.title = @"Recettes";
     
-    [self setupCollectionView];
     [self setupEmptyState];
     [self createRefreshControl];
-    
-    [self reloadData];
     self.view.backgroundColor = [COLOR background];
-}
-
-- (void)setupCollectionView
-{
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:layout];
-    self.collectionView.backgroundColor = [COLOR background];
-    [self.collectionView setDataSource:self];
-    [self.collectionView setDelegate:self];
-    self.collectionView.showsHorizontalScrollIndicator = NO;
-    [self.collectionView registerClass:[ReceipeCollectionViewCell class] forCellWithReuseIdentifier:kReceipeCollectionViewCellIdentifier];
-    
-    [self.view addSubviewAutoLayout:self.collectionView];
-    [self.collectionView snap];
 }
 
 - (void)setupEmptyState
@@ -66,18 +49,6 @@
     [self.emptyStateLabel snap];
     self.emptyStateLabel.hidden = YES;
 }
-
-- (void)reloadData
-{
-    [[DataManager instance] fetchRecipes:^(NSArray<Recipe *> *recipes) {
-        self.recipes = recipes;
-        self.emptyStateLabel.hidden = [recipes count] >  0;
-        self.collectionView.hidden  = [recipes count] == 0;
-        [self.collectionView reloadData];
-        [self.refreshControl endRefreshing];
-    }];
-}
-
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 {
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
@@ -91,14 +62,37 @@
 
 - (void)createRefreshControl
 {
-//    if (!self.refreshControl) {
-//        self.refreshControl = [[UIRefreshControl alloc] init];
-//        self.refreshControl.translatesAutoresizingMaskIntoConstraints = NO;
-//        [self.refreshControl addTarget:self action:@selector(reloadData) forControlEvents:UIControlEventValueChanged];
-//        [self.collectionView addSubview:self.refreshControl];
-//        [self.refreshControl centerX];
-//        [self.refreshControl snapTopConstant:-22];
-//    }
+    //    if (!self.refreshControl) {
+    //        self.refreshControl = [[UIRefreshControl alloc] init];
+    //        self.refreshControl.translatesAutoresizingMaskIntoConstraints = NO;
+    //        [self.refreshControl addTarget:self action:@selector(reloadData) forControlEvents:UIControlEventValueChanged];
+    //        [self.collectionView addSubview:self.refreshControl];
+    //        [self.refreshControl centerX];
+    //        [self.refreshControl snapTopConstant:-22];
+    //    }
+}
+
+#pragma mark - ATKCollectionViewController
+
+- (void)loadData
+{
+    [[DataManager instance] fetchRecipes:^(NSArray<Recipe *> *recipes) {
+        self.recipes = recipes;
+        self.emptyStateLabel.hidden = [recipes count] >  0;
+        self.collectionView.hidden  = [recipes count] == 0;
+        [self refreshCollectionViewContent];
+        [self.refreshControl endRefreshing];
+    }];
+}
+     
+- (void)extraCollectionViewSetup:(UICollectionView *)collectionView
+ {
+     [collectionView registerClass:[ReceipeCollectionViewCell class] forCellWithReuseIdentifier:kReceipeCollectionViewCellIdentifier];
+ }
+
+- (UICollectionViewLayout *)layout
+{
+    return [[UICollectionViewFlowLayout alloc] init];
 }
 
 #pragma mark - UICollectionViewDataSource

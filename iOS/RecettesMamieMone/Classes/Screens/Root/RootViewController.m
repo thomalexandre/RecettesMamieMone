@@ -148,7 +148,7 @@
 - (void)filtersDidApply
 {
     [self closeMenu];
-    [self.recipes reloadData];
+    [self.recipes loadData];
 }
 
 - (void)closeFilters

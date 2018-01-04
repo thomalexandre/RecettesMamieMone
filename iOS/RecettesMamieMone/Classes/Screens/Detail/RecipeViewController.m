@@ -50,8 +50,6 @@ typedef NS_ENUM(NSInteger, RecipeDetailSection) {
     [super viewDidLoad];
     self.view.backgroundColor = [COLOR background];
     self.title = self.recipe.title;
-//    [self setupTableView];
-//    [self reloadData];
 }
 
 #pragma mark - ATKTableViewController
@@ -80,10 +78,10 @@ typedef NS_ENUM(NSInteger, RecipeDetailSection) {
 - (void)extraTableViewSetup:(UITableView *)tableView
 {
     // register cells
-    [self.tableView registerClass:[HeroImageTableViewCell class]      forCellReuseIdentifier:kHeroImageTableViewCellIdentifier];
-    [self.tableView registerClass:[RecipeMetadataTableViewCell class] forCellReuseIdentifier:kRecipeMetadataTableViewCellIdentifier];
-    [self.tableView registerClass:[TitleContentTableViewCell class]   forCellReuseIdentifier:kTitleContentTableViewCellIdentifier];
-    [self.tableView registerClass:[PhotosTableViewCell class]         forCellReuseIdentifier:kPhotosTableViewCellIdentifier];
+    [tableView registerClass:[HeroImageTableViewCell class]      forCellReuseIdentifier:kHeroImageTableViewCellIdentifier];
+    [tableView registerClass:[RecipeMetadataTableViewCell class] forCellReuseIdentifier:kRecipeMetadataTableViewCellIdentifier];
+    [tableView registerClass:[TitleContentTableViewCell class]   forCellReuseIdentifier:kTitleContentTableViewCellIdentifier];
+    [tableView registerClass:[PhotosTableViewCell class]         forCellReuseIdentifier:kPhotosTableViewCellIdentifier];
 }
 
 - (void)scrollToTop
