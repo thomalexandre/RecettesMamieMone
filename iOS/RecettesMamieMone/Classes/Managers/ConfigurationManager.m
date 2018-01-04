@@ -8,7 +8,6 @@
 
 #import "ConfigurationManager.h"
 #import <UIKit/UIKit.h>
-#import "NSString+Utils.h"
 @import FirebaseRemoteConfig;
 
 #define kConfigKey_devices_test @"devices_test"
