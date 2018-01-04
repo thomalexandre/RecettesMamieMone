@@ -28,7 +28,7 @@ typedef NS_ENUM(NSInteger, RecipeDetailSection) {
 @interface RecipeViewController () <UITableViewDelegate, UITableViewDataSource, UIDetailHeaderViewDelegate, PhotosTableViewCellDelegate, HeroImageTableViewCellDelegate>
 
 @property (nonatomic, strong) Recipe *recipe;
-@property (nonatomic, strong) UITableView *tableView;
+//@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, weak)   HeroImageTableViewCell *heroCell;
 @property (nonatomic, strong) NSArray<NSNumber *>  *sections;
 
@@ -50,30 +50,13 @@ typedef NS_ENUM(NSInteger, RecipeDetailSection) {
     [super viewDidLoad];
     self.view.backgroundColor = [COLOR background];
     self.title = self.recipe.title;
-    [self setupTableView];
-    [self reloadData];
+//    [self setupTableView];
+//    [self reloadData];
 }
 
-- (void)setupTableView
-{
-    self.tableView = [UITableView new];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.estimatedRowHeight = 100;
-    [self.view addSubviewAutoLayout:self.tableView];
-    [self.tableView snap];
-    self.tableView.showsVerticalScrollIndicator = NO;
-    
-    // register cells
-    [self.tableView registerClass:[HeroImageTableViewCell class]      forCellReuseIdentifier:kHeroImageTableViewCellIdentifier];
-    [self.tableView registerClass:[RecipeMetadataTableViewCell class] forCellReuseIdentifier:kRecipeMetadataTableViewCellIdentifier];
-    [self.tableView registerClass:[TitleContentTableViewCell class]   forCellReuseIdentifier:kTitleContentTableViewCellIdentifier];
-    [self.tableView registerClass:[PhotosTableViewCell class]         forCellReuseIdentifier:kPhotosTableViewCellIdentifier];
-}
+#pragma mark - ATKTableViewController
 
-- (void)reloadData
+- (void)loadData
 {
     [[DataManager instance] fetchDetails:self.recipe completion:^(Recipe *recipe) {
         self.recipe = recipe;
@@ -90,8 +73,17 @@ typedef NS_ENUM(NSInteger, RecipeDetailSection) {
             [sections addObject:@(RecipeDetailSectionPhotos)];
         self.sections = sections;
         
-        [self.tableView reloadData];
+        [self refreshTableViewContent];
     }];
+}
+
+- (void)extraTableViewSetup:(UITableView *)tableView
+{
+    // register cells
+    [self.tableView registerClass:[HeroImageTableViewCell class]      forCellReuseIdentifier:kHeroImageTableViewCellIdentifier];
+    [self.tableView registerClass:[RecipeMetadataTableViewCell class] forCellReuseIdentifier:kRecipeMetadataTableViewCellIdentifier];
+    [self.tableView registerClass:[TitleContentTableViewCell class]   forCellReuseIdentifier:kTitleContentTableViewCellIdentifier];
+    [self.tableView registerClass:[PhotosTableViewCell class]         forCellReuseIdentifier:kPhotosTableViewCellIdentifier];
 }
 
 - (void)scrollToTop

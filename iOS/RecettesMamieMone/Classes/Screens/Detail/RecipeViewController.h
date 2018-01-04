@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Recipe.h"
 #import "UIDetailHeaderView.h"
+#import "ATKTableViewController.h"
 
-@interface RecipeViewController : UIViewController
+@interface RecipeViewController : ATKTableViewController
 
 @property (nonatomic, assign) NSInteger pageIndex;
 @property (nonatomic, weak) UIDetailHeaderView *header;
