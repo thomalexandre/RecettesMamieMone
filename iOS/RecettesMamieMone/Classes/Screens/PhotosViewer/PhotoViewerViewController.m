@@ -10,6 +10,7 @@
 #import "UIViewController+Utils.h"
 #import "UIView+Layout.h"
 #import "GradientView.h"
+#import "UIView+Utils.h"
 #import "StorageManager.h"
 #import "ThemeManager.h"
 #import "UIDetailHeaderView.h"

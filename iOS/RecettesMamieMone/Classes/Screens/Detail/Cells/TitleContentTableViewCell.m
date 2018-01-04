@@ -9,6 +9,7 @@
 #import "TitleContentTableViewCell.h"
 #import "UIView+Layout.h"
 #import "ThemeManager.h"
+#import "UIView+Utils.h"
 #import "ConfigurationManager.h"
 
 @interface TitleContentTableViewCell ()

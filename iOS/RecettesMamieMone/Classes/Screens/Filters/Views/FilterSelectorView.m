@@ -8,6 +8,7 @@
 
 #import "FilterSelectorView.h"
 #import "UIView+Layout.h"
+#import "UIView+Utils.h"
 #import "DataManager.h"
 #import "ThemeManager.h"
 #import "SelectorCell.h"

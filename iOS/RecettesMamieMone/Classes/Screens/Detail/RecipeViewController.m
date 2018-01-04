@@ -14,6 +14,7 @@
 #import "TitleContentTableViewCell.h"
 #import "PhotosTableViewCell.h"
 #import "ThemeManager.h"
+#import "UIView+Utils.h"
 #import "PhotoViewerViewController.h"
 
 typedef NS_ENUM(NSInteger, RecipeDetailSection) {

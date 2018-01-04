@@ -10,6 +10,7 @@
 #import "UIView+Layout.h"
 #import "ThemeManager.h"
 #import "UIImage+Utils.h"
+#import "UIView+Utils.h"
 
 @interface SelectorCell ()
 

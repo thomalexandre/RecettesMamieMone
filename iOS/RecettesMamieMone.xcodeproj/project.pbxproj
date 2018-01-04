@@ -43,7 +43,6 @@
 		91A8C41B1E6858750009A78D /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C4111E6858750009A78D /* OpenSans-SemiboldItalic.ttf */; };
 		91B0B71A1E6D4F8B00DF6FA5 /* FilterSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B0B7191E6D4F8B00DF6FA5 /* FilterSelectorView.m */; };
 		91D6246A1E6B63D700FE40A2 /* SelectorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D624691E6B63D700FE40A2 /* SelectorCell.m */; };
-		91D6246D1E6B6E8500FE40A2 /* UIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D6246C1E6B6E8500FE40A2 /* UIImage+Utils.m */; };
 		91D624701E6C528300FE40A2 /* Filters.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D6246F1E6C528300FE40A2 /* Filters.m */; };
 		91D8934F1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D8934E1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.m */; };
 		91D893521E64D44C003E0C57 /* TitleContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D893511E64D44C003E0C57 /* TitleContentTableViewCell.m */; };
@@ -51,7 +50,6 @@
 		91D893581E65D52D003E0C57 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D893571E65D52D003E0C57 /* PhotoCollectionViewCell.m */; };
 		91EB571F1E5796F000131FD4 /* RecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB571E1E5796F000131FD4 /* RecipeViewController.m */; };
 		91EB57221E5796FA00131FD4 /* RecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB57211E5796FA00131FD4 /* RecipesViewController.m */; };
-		91EB57251E57978A00131FD4 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB57241E57978A00131FD4 /* UIView+Layout.m */; };
 		91EB57291E5A00E400131FD4 /* RecipeType.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB57281E5A00E400131FD4 /* RecipeType.m */; };
 		91EB57301E5A01F400131FD4 /* RecipesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB572F1E5A01F400131FD4 /* RecipesParser.m */; };
 		91EB57331E5A025D00131FD4 /* RecipeTypesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB57321E5A025D00131FD4 /* RecipeTypesParser.m */; };
@@ -59,8 +57,6 @@
 		91EB573D1E5AC61600131FD4 /* Hardness.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB573C1E5AC61600131FD4 /* Hardness.m */; };
 		91EB57401E5AC66600131FD4 /* HardnessParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EB573F1E5AC66600131FD4 /* HardnessParser.m */; };
 		91FEAE6B1E54FDD30023FEBE /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE6A1E54FDD30023FEBE /* RootViewController.m */; };
-		91FEAE701E54FE870023FEBE /* UIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE6F1E54FE870023FEBE /* UIView+Utils.m */; };
-		91FEAE731E54FEB00023FEBE /* UIViewController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE721E54FEB00023FEBE /* UIViewController+Utils.m */; };
 		91FEAE761E54FEE10023FEBE /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE751E54FEE10023FEBE /* NSString+Utils.m */; };
 		91FEAE7B1E54FF3C0023FEBE /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE7A1E54FF3C0023FEBE /* Recipe.m */; };
 		91FEAE7E1E54FF5D0023FEBE /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FEAE7D1E54FF5D0023FEBE /* DataManager.m */; };
@@ -132,8 +128,6 @@
 		91B0B7191E6D4F8B00DF6FA5 /* FilterSelectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterSelectorView.m; sourceTree = "<group>"; };
 		91D624681E6B63D700FE40A2 /* SelectorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectorCell.h; sourceTree = "<group>"; };
 		91D624691E6B63D700FE40A2 /* SelectorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectorCell.m; sourceTree = "<group>"; };
-		91D6246B1E6B6E8500FE40A2 /* UIImage+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utils.h"; sourceTree = "<group>"; };
-		91D6246C1E6B6E8500FE40A2 /* UIImage+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utils.m"; sourceTree = "<group>"; };
 		91D6246E1E6C528300FE40A2 /* Filters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filters.h; sourceTree = "<group>"; };
 		91D6246F1E6C528300FE40A2 /* Filters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Filters.m; sourceTree = "<group>"; };
 		91D8934D1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeMetadataTableViewCell.h; sourceTree = "<group>"; };
@@ -148,8 +142,6 @@
 		91EB571E1E5796F000131FD4 /* RecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeViewController.m; sourceTree = "<group>"; };
 		91EB57201E5796FA00131FD4 /* RecipesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesViewController.h; sourceTree = "<group>"; };
 		91EB57211E5796FA00131FD4 /* RecipesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipesViewController.m; sourceTree = "<group>"; };
-		91EB57231E57978A00131FD4 /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
-		91EB57241E57978A00131FD4 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
 		91EB57261E588B8200131FD4 /* RecettesMamieMone.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RecettesMamieMone.entitlements; sourceTree = "<group>"; };
 		91EB57271E5A00E400131FD4 /* RecipeType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeType.h; sourceTree = "<group>"; };
 		91EB57281E5A00E400131FD4 /* RecipeType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeType.m; sourceTree = "<group>"; };
@@ -165,10 +157,6 @@
 		91EB573F1E5AC66600131FD4 /* HardnessParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HardnessParser.m; sourceTree = "<group>"; };
 		91FEAE691E54FDD30023FEBE /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		91FEAE6A1E54FDD30023FEBE /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		91FEAE6E1E54FE870023FEBE /* UIView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utils.h"; sourceTree = "<group>"; };
-		91FEAE6F1E54FE870023FEBE /* UIView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utils.m"; sourceTree = "<group>"; };
-		91FEAE711E54FEB00023FEBE /* UIViewController+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Utils.h"; sourceTree = "<group>"; };
-		91FEAE721E54FEB00023FEBE /* UIViewController+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utils.m"; sourceTree = "<group>"; };
 		91FEAE741E54FEE10023FEBE /* NSString+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
 		91FEAE751E54FEE10023FEBE /* NSString+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
 		91FEAE791E54FF3C0023FEBE /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
@@ -474,16 +462,8 @@
 		91FEAE6D1E54FE680023FEBE /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				91EB57231E57978A00131FD4 /* UIView+Layout.h */,
-				91EB57241E57978A00131FD4 /* UIView+Layout.m */,
-				91FEAE6E1E54FE870023FEBE /* UIView+Utils.h */,
-				91FEAE6F1E54FE870023FEBE /* UIView+Utils.m */,
-				91FEAE711E54FEB00023FEBE /* UIViewController+Utils.h */,
-				91FEAE721E54FEB00023FEBE /* UIViewController+Utils.m */,
 				91FEAE741E54FEE10023FEBE /* NSString+Utils.h */,
 				91FEAE751E54FEE10023FEBE /* NSString+Utils.m */,
-				91D6246B1E6B6E8500FE40A2 /* UIImage+Utils.h */,
-				91D6246C1E6B6E8500FE40A2 /* UIImage+Utils.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -688,7 +668,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		6A328B72F920CADBBF059B86 /* [CP] Check Pods Manifest.lock */ = {
@@ -703,7 +683,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		91F1673A1E685D63008309F1 /* ShellScript */ = {
@@ -779,24 +759,20 @@
 				918368361E69CC7200A480B7 /* PhotoViewerViewController.m in Sources */,
 				91D893551E65543A003E0C57 /* PhotosTableViewCell.m in Sources */,
 				91D893581E65D52D003E0C57 /* PhotoCollectionViewCell.m in Sources */,
-				91EB57251E57978A00131FD4 /* UIView+Layout.m in Sources */,
 				91EB573D1E5AC61600131FD4 /* Hardness.m in Sources */,
 				91FEAE6B1E54FDD30023FEBE /* RootViewController.m in Sources */,
 				91D8934F1E64D0D1003E0C57 /* RecipeMetadataTableViewCell.m in Sources */,
 				91EB57361E5A06D600131FD4 /* FiltersViewController.m in Sources */,
 				910AA4EF1E64C9E500EAF56A /* UIDetailHeaderView.m in Sources */,
 				91502A4A1E5CE3C800001D2B /* GradientView.m in Sources */,
-				91FEAE701E54FE870023FEBE /* UIView+Utils.m in Sources */,
 				91FEAE7E1E54FF5D0023FEBE /* DataManager.m in Sources */,
 				91FEAE811E54FF780023FEBE /* StorageManager.m in Sources */,
 				91FEAE841E54FFB50023FEBE /* ThemeManager.m in Sources */,
-				91D6246D1E6B6E8500FE40A2 /* UIImage+Utils.m in Sources */,
 				9108BCCA1E65F7C50097B86B /* Photo.m in Sources */,
 				91EB57291E5A00E400131FD4 /* RecipeType.m in Sources */,
 				9144DAF41EDF1952005FAFFF /* RecipePagesViewController.m in Sources */,
 				91D624701E6C528300FE40A2 /* Filters.m in Sources */,
 				91EB571F1E5796F000131FD4 /* RecipeViewController.m in Sources */,
-				91FEAE731E54FEB00023FEBE /* UIViewController+Utils.m in Sources */,
 				91D893521E64D44C003E0C57 /* TitleContentTableViewCell.m in Sources */,
 				9133C55B1E54B57200959AFF /* main.m in Sources */,
 				91EB57301E5A01F400131FD4 /* RecipesParser.m in Sources */,

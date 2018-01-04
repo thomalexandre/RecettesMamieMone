@@ -11,6 +11,7 @@
 #import "ThemeManager.h"
 #import "RecipeViewController.h"
 #import "UIDetailHeaderView.h"
+#import "UIView+Utils.h"
 
 @interface RecipePagesViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIDetailHeaderViewDelegate>
 

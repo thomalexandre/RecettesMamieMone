@@ -8,6 +8,7 @@
 
 #import "PhotosTableViewCell.h"
 #import "UIView+Layout.h"
+#import "UIView+Utils.h"
 #import "ThemeManager.h"
 #import "PhotoCollectionViewCell.h"
 #import "ConfigurationManager.h"

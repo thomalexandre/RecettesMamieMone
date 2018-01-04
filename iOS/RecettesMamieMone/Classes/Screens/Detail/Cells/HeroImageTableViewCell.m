@@ -11,6 +11,7 @@
 #import "StorageManager.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "ThemeManager.h"
+#import "UIView+Utils.h"
 
 #define kHeroImageHeight   300.f
 #define kHeroNavbarHeight  64.f
