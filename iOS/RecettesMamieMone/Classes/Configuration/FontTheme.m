@@ -21,7 +21,6 @@
     return [self openSansRegularFontWithSize:size];
 }
 
-
 - (UIFont *)openSansRegularFontWithSize:(CGFloat)size
 {
     return [UIFont fontWithName:@"OpenSans" size:size];

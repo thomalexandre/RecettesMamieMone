@@ -307,6 +307,19 @@
 			path = PhotosViewer;
 			sourceTree = "<group>";
 		};
+		918FAB801FFF741800A5EFC8 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				910D38811FFEBBA8004EDFC7 /* ColorTheme.h */,
+				910D38821FFEBBA8004EDFC7 /* ColorTheme.m */,
+				910D38841FFEBC9C004EDFC7 /* FontTheme.h */,
+				910D38851FFEBC9C004EDFC7 /* FontTheme.m */,
+				910D38871FFEBDFF004EDFC7 /* UIAppearance.h */,
+				910D38881FFEBDFF004EDFC7 /* UIAppearance.m */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		91A8C3F61E6858490009A78D /* Merriweather */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +415,7 @@
 			children = (
 				9133C55C1E54B57200959AFF /* AppDelegate.h */,
 				9133C55D1E54B57200959AFF /* AppDelegate.m */,
+				918FAB801FFF741800A5EFC8 /* Configuration */,
 				91FEAE781E54FF240023FEBE /* Model */,
 				91FEAE771E54FF030023FEBE /* Managers */,
 				91FEAE6C1E54FE4B0023FEBE /* Utils */,
@@ -465,12 +479,6 @@
 				91FEAE7D1E54FF5D0023FEBE /* DataManager.m */,
 				91FEAE7F1E54FF780023FEBE /* StorageManager.h */,
 				91FEAE801E54FF780023FEBE /* StorageManager.m */,
-				910D38811FFEBBA8004EDFC7 /* ColorTheme.h */,
-				910D38821FFEBBA8004EDFC7 /* ColorTheme.m */,
-				910D38841FFEBC9C004EDFC7 /* FontTheme.h */,
-				910D38851FFEBC9C004EDFC7 /* FontTheme.m */,
-				910D38871FFEBDFF004EDFC7 /* UIAppearance.h */,
-				910D38881FFEBDFF004EDFC7 /* UIAppearance.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";

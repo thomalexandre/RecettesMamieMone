@@ -12,6 +12,7 @@
 #import "FilterSelectorView.h"
 #import "DataManager.h"
 #import "AtkApp.h"
+#import "UIButton+InnerShadow.h"
 
 #define kMarginSection 25.f
 #define kMarginTitleContent 15.f
@@ -94,8 +95,9 @@
     applyButton.titleLabel.font = [FONT fontWithSize:14 withWeight:ATKFontWeightBold];
     applyButton.titleLabel.textColor = [COLOR uitext];
     applyButton.backgroundColor =  [COLOR primary];
-    static CGFloat buttonHeight = 44.f;
+    static CGFloat buttonHeight = 50.f;
     applyButton.layer.cornerRadius = buttonHeight / 2.f;
+    [applyButton innerShadow:[COLOR secondary]];
     [self.view addSubviewAutoLayout:applyButton];
 //    [applyButton setWidthConstant:270.f];
     [applyButton setHeightConstant:buttonHeight];

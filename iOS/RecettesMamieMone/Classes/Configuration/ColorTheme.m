@@ -29,8 +29,8 @@
 - (void)configureColors
 {
     NSMutableDictionary *dic = [NSMutableDictionary new];
-    [dic setObject:UIColorFromRGB(0xD81B60) forKey:@"primary"];
-    [dic setObject:UIColorFromRGB(0xD81B60) forKey:@"secondary"];
+    [dic setObject:UIColorFromRGB(0xD81B60) forKey:@"primary"]; // pink palette 600
+    [dic setObject:UIColorFromRGB(0xAD1457) forKey:@"secondary"]; // pink palette 800
     [dic setObject:UIColorFromRGB(0x979797) forKey:@"accent"];     
     [dic setObject:UIColorFromRGB(0xF7F7F7) forKey:@"background"];
     [dic setObject:UIColorFromRGB(0x050505) forKey:@"text"];
@@ -39,6 +39,7 @@
     [dic setObject:[[UIColorFromRGB(0xF0F0F0) colorWithAlphaComponent:0.8] colorWithAlphaComponent:0.4] forKey:@"uilight"];
     [dic setObject:UIColorFromRGB(0xD81B60) forKey:@"error"];
     [dic setObject:UIColorFromRGB(0xD81B60) forKey:@"warning"];
+    [dic setObject:UIColorFromRGB(0xD81B60) forKey:@"success"];
     
     self.colors = [dic copy];
 }
@@ -91,6 +92,11 @@
 - (UIColor *)warning
 {
     return self.colors[@"warning"];
+}
+
+- (UIColor *)success
+{
+    return self.colors[@"success"];
 }
 
 @end
