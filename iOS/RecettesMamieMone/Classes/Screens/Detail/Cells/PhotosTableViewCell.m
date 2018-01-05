@@ -44,7 +44,7 @@
     
     // title ...
     UILabel *titleLabel = [UILabel new];
-    titleLabel.text = @"Photos";
+    titleLabel.text = [LANG text:@"recipe_photos"];
     titleLabel.numberOfLines = 0;
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.textColor = [COLOR primary];

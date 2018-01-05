@@ -51,7 +51,7 @@
     self.recipes = [RecipesViewController new];
     [self snapContentController:self.recipes];
     
-    self.title = @"Les Recettes de Mamie Mone";
+    self.title = [LANG text:@"app_title"];
     
     [self setupNavBar];
 }

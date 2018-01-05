@@ -71,12 +71,12 @@
 {
     switch (type) {
         case RecipeContentTypeIngredients:
-            self.titleLabel.text = @"Ingrédients";
+            self.titleLabel.text = [LANG text:@"recipe_ingredients"];
             [self contentText:recipe.ingredients];
             break;
             
         case RecipeContentTypePreparation:
-            self.titleLabel.text = @"Préparation";
+            self.titleLabel.text = [LANG text:@"recipe_preparation"];
             [self contentText:recipe.preparation];
             break;
     }

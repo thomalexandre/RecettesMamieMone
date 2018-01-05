@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  RecettesMamieMone
+
+  Created by Alexandre Thomas on 1/5/18.
+  Copyright © 2018 MBC. All rights reserved.
+*/
+
+"app_title"             = "The Recipes of Mamie Mone";
+"filter_food_type"      = "Type of food";
+"filter_hardness"       = "Difficulty";
+"filter_apply"          = "Apply";
+"to_our_grand_mother"   = "To out grandma ♥\nv %@";
+"recipe_ingredients"    = "Ingredients";
+"recipe_preparation"    = "Preparation";
+"recipe_photos"         = "Photos";
+"no_recipes"            = "No Recipes !";

@@ -26,6 +26,7 @@
 		91502A4A1E5CE3C800001D2B /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91502A491E5CE3C800001D2B /* GradientView.m */; };
 		918368271E68A97500A480B7 /* 1024-logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 918368261E68A97500A480B7 /* 1024-logo1.png */; };
 		918368361E69CC7200A480B7 /* PhotoViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 918368351E69CC7200A480B7 /* PhotoViewerViewController.m */; };
+		918FAB901FFFB5C100A5EFC8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 918FAB921FFFB5C100A5EFC8 /* Localizable.strings */; };
 		91A8C3FF1E6858590009A78D /* Merriweather-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C3F71E6858590009A78D /* Merriweather-Black.ttf */; };
 		91A8C4001E6858590009A78D /* Merriweather-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C3F81E6858590009A78D /* Merriweather-BlackItalic.ttf */; };
 		91A8C4011E6858590009A78D /* Merriweather-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91A8C3F91E6858590009A78D /* Merriweather-Bold.ttf */; };
@@ -112,6 +113,9 @@
 		918368261E68A97500A480B7 /* 1024-logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1024-logo1.png"; path = "../../1024-logo1.png"; sourceTree = "<group>"; };
 		918368341E69CC7200A480B7 /* PhotoViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewerViewController.h; sourceTree = "<group>"; };
 		918368351E69CC7200A480B7 /* PhotoViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewerViewController.m; sourceTree = "<group>"; };
+		918FAB8F1FFFB5B500A5EFC8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		918FAB931FFFB5C400A5EFC8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		918FAB941FFFB5D100A5EFC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		91A8C3F71E6858590009A78D /* Merriweather-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Black.ttf"; sourceTree = "<group>"; };
 		91A8C3F81E6858590009A78D /* Merriweather-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-BlackItalic.ttf"; sourceTree = "<group>"; };
 		91A8C3F91E6858590009A78D /* Merriweather-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Bold.ttf"; sourceTree = "<group>"; };
@@ -320,6 +324,14 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
+		918FAB8C1FFFB57E00A5EFC8 /* Translation */ = {
+			isa = PBXGroup;
+			children = (
+				918FAB921FFFB5C100A5EFC8 /* Localizable.strings */,
+			);
+			path = Translation;
+			sourceTree = "<group>";
+		};
 		91A8C3F61E6858490009A78D /* Merriweather */ = {
 			isa = PBXGroup;
 			children = (
@@ -427,6 +439,7 @@
 		91FEAE651E54FBD00023FEBE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				918FAB8C1FFFB57E00A5EFC8 /* Translation */,
 				91FEAE851E54FFCF0023FEBE /* Fonts */,
 				91FEAE661E54FBF10023FEBE /* Images */,
 				9133C5671E54B57200959AFF /* LaunchScreen.storyboard */,
@@ -589,6 +602,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 9133C54D1E54B57200959AFF;
 			productRefGroup = 9133C5571E54B57200959AFF /* Products */;
@@ -608,6 +622,7 @@
 			files = (
 				91A8C4181E6858750009A78D /* OpenSans-LightItalic.ttf in Resources */,
 				91A8C4001E6858590009A78D /* Merriweather-BlackItalic.ttf in Resources */,
+				918FAB901FFFB5C100A5EFC8 /* Localizable.strings in Resources */,
 				91A8C4061E6858590009A78D /* Merriweather-Regular.ttf in Resources */,
 				91A8C4121E6858750009A78D /* OpenSans-Bold.ttf in Resources */,
 				912A9B491E578C59004DCCE0 /* GoogleService-Info.plist in Resources */,
@@ -808,9 +823,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				9133C5681E54B57200959AFF /* Base */,
+				918FAB8F1FFFB5B500A5EFC8 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		918FAB921FFFB5C100A5EFC8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				918FAB931FFFB5C400A5EFC8 /* fr */,
+				918FAB941FFFB5D100A5EFC8 /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -820,6 +845,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -868,6 +894,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

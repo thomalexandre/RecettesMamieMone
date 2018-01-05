@@ -40,7 +40,7 @@
 - (void)setupEmptyState
 {
     self.emptyStateLabel = [UILabel new];
-    self.emptyStateLabel.text = @"Aucune recette !";
+    self.emptyStateLabel.text = [LANG text:@"no_recipes"];
     self.emptyStateLabel.textAlignment = NSTextAlignmentCenter;
     self.emptyStateLabel.textColor = [COLOR text];
     self.emptyStateLabel.font = [FONT fontWithSize:18 withWeight:ATKFontWeightBold];

@@ -57,7 +57,7 @@
     
     /// Recipe type
     UILabel *typeLabel = [UILabel new];
-    typeLabel.text = @"Type de plat";
+    typeLabel.text = [LANG text:@"filter_food_type"];
     typeLabel.font = [FONT fontWithSize:18 withWeight:ATKFontWeightNormal];
     typeLabel.textColor = [COLOR text];
     [self.view addSubviewAutoLayout:typeLabel];
@@ -74,7 +74,7 @@
 
     /// Hardness title ....
     UILabel *hardnessLabel = [UILabel new];
-    hardnessLabel.text = @"Difficulté";
+    hardnessLabel.text = [LANG text:@"filter_hardness"];
     hardnessLabel.font = [FONT fontWithSize:18 withWeight:ATKFontWeightNormal];
     hardnessLabel.textColor = [COLOR text];
     [self.view addSubviewAutoLayout:hardnessLabel];
@@ -91,7 +91,7 @@
     
     /// Apply button ...
     UIButton *applyButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [applyButton setTitle:@"Appliquer" forState:UIControlStateNormal];
+    [applyButton setTitle:[LANG text:@"filter_apply"] forState:UIControlStateNormal];
     applyButton.titleLabel.font = [FONT fontWithSize:14 withWeight:ATKFontWeightBold];
     applyButton.titleLabel.textColor = [COLOR uitext];
     applyButton.backgroundColor =  [COLOR primary];
@@ -115,7 +115,7 @@
     UILabel *bottomLabel = [UILabel new];
     bottomLabel.numberOfLines = 0;
     bottomLabel.textAlignment = NSTextAlignmentCenter;
-    bottomLabel.text = [NSString stringWithFormat:@"Á notre mamie ♥\nv %@", [SETTING appVersion]];
+    bottomLabel.text = [NSString stringWithFormat:[LANG text:@"to_our_grand_mother"], [SETTING appVersion]];
     bottomLabel.font = [FONT fontWithSize:14 withWeight:ATKFontWeightBold];
     bottomLabel.textColor = [COLOR text];
     [self.view addSubviewAutoLayout:bottomLabel];
