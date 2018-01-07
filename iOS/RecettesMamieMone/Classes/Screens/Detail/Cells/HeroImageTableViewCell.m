@@ -7,11 +7,7 @@
 //
 
 #import "HeroImageTableViewCell.h"
-#import "UIView+Layout.h"
 #import "StorageManager.h"
-#import <SDWebImage/UIImageView+WebCache.h>
-#import "UIView+Utils.h"
-#import "ATKApp.h"
 
 #define kHeroImageHeight   300.f
 

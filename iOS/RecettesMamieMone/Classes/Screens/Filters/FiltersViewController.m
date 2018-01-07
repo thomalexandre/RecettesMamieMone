@@ -11,8 +11,6 @@
 #import "UIView+Layout.h"
 #import "FilterSelectorView.h"
 #import "DataManager.h"
-#import "AtkApp.h"
-#import "UIButton+InnerShadow.h"
 
 #define kMarginSection 25.f
 #define kMarginTitleContent 15.f

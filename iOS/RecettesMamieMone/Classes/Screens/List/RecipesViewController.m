@@ -8,14 +8,10 @@
 
 #import "RecipesViewController.h"
 #import "DataManager.h"
-#import "UIView+Layout.h"
-#import "UIView+Utils.h"
 #import "RecipeViewController.h"
-#import <SDWebImage/UIImageView+WebCache.h>
 #import "StorageManager.h"
 #import "ReceipeCollectionViewCell.h"
 #import "RecipePagesViewController.h"
-#import "ATKApp.h"
 
 @interface RecipesViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 

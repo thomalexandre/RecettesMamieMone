@@ -7,10 +7,8 @@
 //
 
 #import "PhotosTableViewCell.h"
-#import "UIView+Layout.h"
-#import "UIView+Utils.h"
 #import "PhotoCollectionViewCell.h"
-#import "ATKApp.h"
+
 
 @interface PhotosTableViewCell () <UICollectionViewDelegate, UICollectionViewDataSource>
 

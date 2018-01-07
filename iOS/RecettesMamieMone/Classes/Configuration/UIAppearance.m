@@ -7,8 +7,6 @@
 //
 
 #import "UIAppearance.h"
-#import <UIKit/UIKit.h>
-#import "ATKApp.h"
 
 @implementation UIAppearance
 

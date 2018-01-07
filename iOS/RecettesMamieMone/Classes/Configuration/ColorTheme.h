@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ATKColorThemeProtocol.h"
 
 @interface ColorTheme : NSObject <ATKColorThemeProtocol>
 

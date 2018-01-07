@@ -7,12 +7,8 @@
 //
 
 #import "ReceipeCollectionViewCell.h"
-#import "UIView+Layout.h"
 #import "StorageManager.h"
-#import <SDWebImage/UIImageView+WebCache.h>
-#import "UIView+Utils.h"
 #import "GradientView.h"
-#import "AtkApp.h"
 
 #define kTextHeight 50
 

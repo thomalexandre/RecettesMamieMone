@@ -13,7 +13,7 @@ target 'RecettesMamieMone' do
   pod 'SDWebImage'
 #  pod 'Fabric'
 #  pod 'Crashlytics'
-  pod 'atkit-ios', :path => '../../atkit/atk-ios/atkit-ios'
+  pod 'atkit-ios', :path => '../../atkit/atk-ios/atkit-ios', :inhibit_warnings => true
 
   target 'RecettesMamieMoneTests' do
     inherit! :search_paths

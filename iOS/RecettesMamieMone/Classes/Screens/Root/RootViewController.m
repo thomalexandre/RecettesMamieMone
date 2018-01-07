@@ -11,9 +11,6 @@
 #import "UIViewController+Utils.h"
 #import "FiltersViewController.h"
 #import "DataManager.h"
-#import "UIView+Layout.h"
-#import "UIView+Utils.h"
-#import "ATKApp.h"
 
 #define kFiltersWidth       300.f
 #define kAnimationDuration  0.3f

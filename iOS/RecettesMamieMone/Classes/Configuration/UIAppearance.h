@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ATKAppearanceProtocol.h"
 
 @interface UIAppearance : NSObject <ATKAppearanceProtocol>
 

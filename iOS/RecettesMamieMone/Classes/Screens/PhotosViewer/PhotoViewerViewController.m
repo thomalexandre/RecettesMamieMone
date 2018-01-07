@@ -7,14 +7,10 @@
 //
 
 #import "PhotoViewerViewController.h"
-#import "UIViewController+Utils.h"
-#import "UIView+Layout.h"
 #import "GradientView.h"
-#import "UIView+Utils.h"
 #import "StorageManager.h"
 #import "UIDetailHeaderView.h"
 #import "PhotoCollectionViewCell.h"
-#import "ATKApp.h"
 
 @interface PhotoViewerViewController () <UIDetailHeaderViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 

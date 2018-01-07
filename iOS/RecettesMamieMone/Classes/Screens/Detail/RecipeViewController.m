@@ -7,14 +7,11 @@
 //
 
 #import "RecipeViewController.h"
-#import "UIView+Layout.h"
 #import "DataManager.h"
 #import "HeroImageTableViewCell.h"
 #import "RecipeMetadataTableViewCell.h"
 #import "TitleContentTableViewCell.h"
 #import "PhotosTableViewCell.h"
-#import "UIView+Utils.h"
-#import "ATKApp.h"
 #import "PhotoViewerViewController.h"
 
 typedef NS_ENUM(NSInteger, RecipeDetailSection) {

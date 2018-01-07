@@ -7,7 +7,6 @@
 //
 
 #import "ColorTheme.h"
-#import "UIColor+Utils.h"
 
 @interface ColorTheme()
 

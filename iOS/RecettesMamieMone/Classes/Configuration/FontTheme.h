@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ATKFontThemeProtocol.h"
 
 @interface FontTheme : NSObject <ATKFontThemeProtocol>
 

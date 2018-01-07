@@ -7,9 +7,6 @@
 //
 
 #import "RecipeMetadataTableViewCell.h"
-#import "UIView+Layout.h"
-#import "UIView+Utils.h"
-#import "ATKApp.h"
 
 @interface RecipeMetadataTableViewCell ()
 

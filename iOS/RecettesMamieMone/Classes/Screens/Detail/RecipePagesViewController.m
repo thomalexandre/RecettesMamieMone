@@ -7,11 +7,8 @@
 //
 
 #import "RecipePagesViewController.h"
-#import "UIView+Layout.h"
 #import "RecipeViewController.h"
 #import "UIDetailHeaderView.h"
-#import "UIView+Utils.h"
-#import "ATKApp.h"
 
 @interface RecipePagesViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIDetailHeaderViewDelegate>
 

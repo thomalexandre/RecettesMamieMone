@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
-#import "ATKApp.h"
 #import "ColorTheme.h"
 #import "FontTheme.h"
 #import "UIAppearance.h"
