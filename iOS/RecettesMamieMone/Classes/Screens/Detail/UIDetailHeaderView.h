@@ -15,11 +15,16 @@
 
 - (void)headerDidClose;
 
+@optional
+- (void)headerDidShare;
+
 @end
 
 @interface UIDetailHeaderView : UIView
 
 @property (nonatomic, weak) id<UIDetailHeaderViewDelegate> delegate;
+
+- (instancetype)initWithShare:(BOOL)share;
 
 - (void)showTopBar:(BOOL)showBar showText:(BOOL)showText recipe:(Recipe *)recipe;
 

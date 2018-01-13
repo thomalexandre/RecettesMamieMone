@@ -20,16 +20,16 @@
 
 @implementation UIDetailHeaderView
 
-- (instancetype)initWithFrame:(CGRect)frame
+- (instancetype)initWithShare:(BOOL)share
 {
-    self = [super initWithFrame:frame];
+    self = [super init];
     if(self) {
-        [self setupUI];
+        [self setupUI:share];
     }
     return self;
 }
 
-- (void)setupUI
+- (void)setupUI:(BOOL)share
 {
     // gradient ...
     self.gradient = [[GradientView alloc] init:GradientDownTop];
@@ -73,6 +73,25 @@
     
     [closeButton snapLeftConstant:closeButtonImageLeft - (closeButtonSize - closeButtonImageSize) / 2.f];
     
+    if(share) {
+        UIButton *shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        UIImage *shareImage = [[UIImage imageNamed:@"icon-share"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [shareButton setImage:shareImage forState:UIControlStateNormal];
+        shareButton.imageView.tintColor = [UIColor whiteColor];
+        [shareButton addTarget:self action:@selector(shareButtonDidPress) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubviewAutoLayout:shareButton];
+        shareButton.translatesAutoresizingMaskIntoConstraints = NO;
+        [shareButton setHeightConstant:closeButtonSize];
+        [shareButton setWidthConstant:closeButtonSize];
+        [shareButton snapRight];
+        if ([SETTING isIphoneX]) {
+            [shareButton snapTopConstant:12+44 - (closeButtonSize - closeButtonImageSize) / 2.f];
+        } else {
+            [shareButton snapTopConstant:12+20 - (closeButtonSize - closeButtonImageSize) / 2.f];
+        }
+    }
+    
+    
     // title ...
     self.titleLabel = [UILabel new];
     self.titleLabel.font = [FONT fontWithSize:15 withWeight:ATKFontWeightBold];
@@ -105,6 +124,13 @@
 {
     if(self.delegate && [self.delegate respondsToSelector:@selector(headerDidClose)]) {
         [self.delegate headerDidClose];
+    }
+}
+
+- (void)shareButtonDidPress
+{
+    if(self.delegate && [self.delegate respondsToSelector:@selector(headerDidShare)]) {
+        [self.delegate headerDidShare];
     }
 }
 

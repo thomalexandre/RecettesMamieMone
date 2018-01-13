@@ -60,7 +60,7 @@
     [self.collectionView snapRight];
     
     // Navbar ...
-    UIDetailHeaderView *header = [UIDetailHeaderView new];
+    UIDetailHeaderView *header = [[UIDetailHeaderView alloc] initWithShare:NO];
     header.delegate = self;
     [self.view addSubviewAutoLayout:header];
     [header snapTop];

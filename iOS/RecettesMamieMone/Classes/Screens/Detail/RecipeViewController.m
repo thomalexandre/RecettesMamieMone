@@ -177,6 +177,11 @@ typedef NS_ENUM(NSInteger, RecipeDetailSection) {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)headerDidShare
+{
+    int a = 0;
+}
+
 #pragma mark - PhotosTableViewCellDelegate
 
 - (void)photoDidTapAtIndex:(NSUInteger)photoIndex

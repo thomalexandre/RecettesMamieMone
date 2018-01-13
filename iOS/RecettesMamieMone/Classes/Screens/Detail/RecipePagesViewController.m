@@ -13,6 +13,7 @@
 @interface RecipePagesViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIDetailHeaderViewDelegate>
 
 @property (nonatomic, strong) NSArray<Recipe *> *recipes;
+@property (nonatomic, strong) Recipe *currentRecipe;
 @property (nonatomic, assign) NSInteger startIndex;
 @property (nonatomic, strong) UIPageViewController *pageVC;
 @property (nonatomic, strong) UIDetailHeaderView *header;
@@ -62,7 +63,7 @@
 
 - (void)setupHeader
 {
-    self.header = [UIDetailHeaderView new];
+    self.header = [[UIDetailHeaderView alloc] initWithShare:NO];
     self.header.delegate = self;
     [self.view addSubviewAutoLayout:self.header];
     [self.header snapTop];
@@ -133,7 +134,7 @@
         return nil;
     }
     Recipe *recipe = self.recipes[index];
-    
+    self.currentRecipe = recipe;
     
     RecipeViewController *recipeViewController = [[RecipeViewController alloc] initWithRecipe:recipe];
     recipeViewController.pageIndex = index;
@@ -146,6 +147,35 @@
 - (void)headerDidClose
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)headerDidShare
+{
+//    if(self.currentRecipe.photos.count > 0) {
+//        // Need to fetch image and share it along
+//    }
+//    else {
+        [self shareWithImage:nil];
+//    }
+}
+
+- (void)shareWithImage:(UIImage *)image
+{
+    NSString *recipeToShare = [NSString stringWithFormat:@"%@\n\n%@\n%@\n\n%@\n%@",
+                               self.currentRecipe.title,
+                               [LANG text:@"recipe_ingredients"],
+                               self.currentRecipe.ingredients,
+                               [LANG text:@"recipe_preparation"],
+                               self.currentRecipe.preparation];
+    
+    NSMutableArray *objectsToShare = [@[recipeToShare] mutableCopy];
+    if(image) {
+        [objectsToShare addObject:image];
+    }
+    
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
+    
+    [self presentViewController:activityVC animated:YES completion:nil];
 }
 
 @end
